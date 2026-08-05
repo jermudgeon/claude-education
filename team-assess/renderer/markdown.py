@@ -18,6 +18,7 @@ def render_markdown(snapshot: dict, trend: dict | None = None) -> str:
     period = snapshot["period"]
 
     health = snapshot["overall_health"]
+    # Check for top-level trend (legacy) first
     if trend:
         delta = trend["overall_health_delta"]
         direction = DIRECTION_ARROWS[trend["overall_direction"]]
@@ -38,11 +39,16 @@ def render_markdown(snapshot: dict, trend: dict | None = None) -> str:
         label = DIMENSION_LABELS.get(key, key.title())
         score = dim["score"]
         bar = _score_bar(score)
-        if trend and key in trend["dimensions"]:
-            t = trend["dimensions"][key]
-            arrow = DIRECTION_ARROWS[t["direction"]]
-            delta_str = f"{arrow} {_fmt_delta(t['delta'])}"
-            warning = "  ⚠" if t["warning"] else ""
+
+        # Prefer trend embedded in dimension (new schema), fall back to top-level trend arg
+        dim_trend = dim.get("trend")
+        if dim_trend is None and trend and key in trend.get("dimensions", {}):
+            dim_trend = trend["dimensions"][key]
+
+        if dim_trend:
+            arrow = DIRECTION_ARROWS[dim_trend["direction"]]
+            delta_str = f"{arrow} {_fmt_delta(dim_trend['delta'])}"
+            warning = "  ⚠" if dim_trend["warning"] else ""
             lines.append(f"{label:<16} {bar}  {score:.1f}  {delta_str}{warning}")
         else:
             lines.append(f"{label:<16} {bar}  {score:.1f}")
@@ -61,11 +67,50 @@ def render_markdown(snapshot: dict, trend: dict | None = None) -> str:
         for evidence in dim.get("evidence", []):
             lines.append(f'- "{evidence}"')
 
+    # Facet Detail section — only if any dimension has facets
+    facet_lines = _render_facet_detail(dims_sorted)
+    if facet_lines:
+        lines.append("")
+        lines.extend(facet_lines)
+
     lines.append("")
     lines.append(f"*Inputs: {', '.join(snapshot['input_files'])}*")
     lines.append(f"*Run date: {snapshot['run_date']}*")
 
     return "\n".join(lines)
+
+
+def _render_facet_detail(dims_sorted: list) -> list[str]:
+    """Render medium+high confidence facets grouped by dimension. Returns [] if nothing to show."""
+    section_lines = []
+    for key, dim in dims_sorted:
+        facets = dim.get("facets", {})
+        if not facets:
+            continue
+
+        observable = {
+            fkey: fdata
+            for fkey, fdata in facets.items()
+            if fdata.get("confidence") in ("medium", "high")
+        }
+        if not observable:
+            continue
+
+        label = DIMENSION_LABELS.get(key, key.title())
+        dim_score = dim["score"]
+        section_lines.append(f"### {label} ({dim_score:.1f})")
+        for fkey, fdata in observable.items():
+            fscore = fdata["score"]
+            fconf = fdata["confidence"]
+            bar = _score_bar(fscore)
+            section_lines.append(f"  {fkey}  {bar}  {fscore:.1f}  ({fconf} confidence)")
+            for ev in fdata.get("evidence", []):
+                section_lines.append(f'    - "{ev}"')
+        section_lines.append("")
+
+    if section_lines:
+        return ["## Facet Detail", ""] + section_lines
+    return []
 
 
 def _sort_dimensions_by_score(dimensions: dict) -> list:
