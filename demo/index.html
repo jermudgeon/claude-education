@@ -282,8 +282,10 @@ td.pol{font-size:.78rem;font-weight:600}
       <div class="cardhead"><div><span class="eyebrow">The model</span><h3>Five dysfunctions, one pyramid</h3></div>
         <span class="dim" style="font-size:.72rem">fix trust first, or everything built on top of it regresses</span></div>
       <div class="pyramid" id="pyramid"></div>
-      <p class="note" style="text-align:center">Grounded in Lencioni's Five Dysfunctions of a Team. Each layer shows this
-        meeting's marks; a layer built on a weak one inherits the weakness, so read from the bottom up. Click a layer for its evidence.</p>
+      <p class="note" style="text-align:center">Grounded in Lencioni's Five Dysfunctions of a Team. Each layer carries its
+        score from the latest <code>assessments/</code> run and how far it moved since the previous one, so the fill reads as
+        strength rather than as how much anyone wrote down. A layer built on a weak one inherits the weakness, so read from the
+        bottom up. Click a layer for the coded evidence behind it.</p>
     </div>
 
     <div class="card" style="margin-bottom:16px">
@@ -643,19 +645,44 @@ function buildReadout(){
    (dataviz six-checks: worst adjacent pair deutan ΔE 8.2, direct labels everywhere). */
 const DIMCOLOR = {Trust:'#0fa89a', Conflict:'#e1460e', Commitment:'#1772dd', Accountability:'#e04080', Results:'#22a52f'};
 
+/* The pyramid reads team-assess scores, not the authored marks. A layer's
+   score is the run's, and its movement is against the previous run. The marks
+   are evidence and live in the cards below, labeled as authored. */
+function snapshot(period){
+  return (D.assessments || []).find(a => a.period === period);
+}
+
+function layerScore(dim){
+  const key = dim.toLowerCase();
+  const runs = (D.assessments || []).filter(a => a.dimensions && a.dimensions[key]);
+  if (!runs.length) return null;
+  const latest = runs[runs.length - 1], prior = runs.length > 1 ? runs[runs.length - 2] : null;
+  const score = latest.dimensions[key].score;
+  return {
+    score,
+    period: latest.period,
+    priorPeriod: prior ? prior.period : null,
+    delta: prior ? +(score - prior.dimensions[key].score).toFixed(2) : null
+  };
+}
+
 function buildPyramid(tallies){
   const W = 620, LH = 58, INSET = 36;
   const layers = tallies.map((d, j) => {
     const apex = j === 4;
     const bw = W - 2*INSET*j, tw = apex ? 0 : W - 2*INSET*(j+1);
     const y = (4-j) * LH, cx = W/2;
-    const conf = confidence(d.clusters);
-    const tallyText = d.marks.length
-      ? `+${d.pos}${d.neg ? ` / −${d.neg}` : ''} · ${conf} confidence`
-      : 'no signal';
+    const s = layerScore(d.dim);
+    /* Fill carries the score, so a strong layer reads strong. Previously it
+       carried whether anyone had authored a mark, which made Results look
+       empty at 4.42. */
+    const opacity = s ? (0.10 + 0.05 * Math.max(0, Math.min(5, s.score))).toFixed(3) : 0.10;
+    const tallyText = s
+      ? `${s.score.toFixed(2)} of 5` + (s.delta === null ? '' : ` · ${s.delta > 0 ? '+' : ''}${s.delta.toFixed(2)} vs ${s.priorPeriod.replace('-2026','')}`)
+      : 'not scored in this run';
     return `<g class="layer" data-dim="${d.dim}">
       <path d="M ${cx-bw/2} ${y+LH} L ${cx+bw/2} ${y+LH} L ${cx+tw/2} ${y} L ${cx-tw/2} ${y} Z"
-        fill="${DIMCOLOR[d.dim]}" fill-opacity="${d.marks.length ? .28 : .10}"
+        fill="${DIMCOLOR[d.dim]}" fill-opacity="${opacity}"
         stroke="${DIMCOLOR[d.dim]}" stroke-opacity=".55" stroke-width="1.5"/>
       <text class="lname" x="${cx}" y="${y + (apex ? 34 : 24)}" text-anchor="middle">${d.dim}</text>
       <text class="ltally" x="${cx}" y="${y + (apex ? 51 : 41)}" text-anchor="middle">${tallyText}</text>
@@ -670,7 +697,13 @@ function buildPyramid(tallies){
 }
 
 function buildCoding(){
-  el('csub').textContent = `${D.summary.title} · ${D.summary.date} · ${MARKS.length} marks over ${CODING.rubric.total_codes} codes`;
+  /* The coded meeting is named "Q3 Roadmap Review" in the dataset but was held
+     in Q2, so the era is stated to stop the title reading as a Q3 analysis. */
+  const era = (CODING.era || '').startsWith('before') ? 'Q2 2026' : 'Q3 2026';
+  const latest = (D.assessments || [])[D.assessments.length - 1];
+  el('csub').textContent = `Scores from the ${latest ? latest.period : 'latest'} run`
+    + ` · evidence coded from ${D.summary.title}, held ${D.summary.date} in ${era}`
+    + ` · ${MARKS.length} marks over ${CODING.rubric.total_codes} codes`;
   buildPyramid(tally(MARKS));
   el('cprov').innerHTML = `<b>Authored, not measured.</b> ${esc(CODING.provenance)}
     Coder: ${esc(CODING.authored_by)}, ${esc(CODING.authored_on)}.`;
