@@ -218,3 +218,20 @@ def test_report_handles_none_overall_health():
     report = render_markdown(snapshot_no_health)
     assert "N/A" in report
     assert "None" not in report
+
+
+def test_embedded_overall_health_trend_shown_in_header():
+    snapshot_with_oht = {
+        **SNAPSHOT,
+        "overall_health_trend": {
+            "compared_to": "Q1-2025",
+            "delta": 0.3,
+            "direction": "improving",
+        },
+    }
+    report = render_markdown(snapshot_with_oht)
+    first_lines = report.split("\n")[:3]
+    header_block = "\n".join(first_lines)
+    assert "↑" in header_block
+    assert "+0.3" in header_block
+    assert "Q1-2025" in header_block

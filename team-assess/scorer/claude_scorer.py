@@ -192,7 +192,7 @@ class ClaudeScorer:
             else None
         )
 
-        return {
+        snapshot = {
             "period": period,
             "run_date": date.today().isoformat(),
             "input_files": input_files,
@@ -200,3 +200,15 @@ class ClaudeScorer:
             "dimensions": dimensions_out,
             "recommendations": tool_result["recommendations"],
         }
+
+        if prior_snapshot and overall_health is not None:
+            prior_health = prior_snapshot.get("overall_health")
+            if prior_health is not None:
+                delta = round(overall_health - prior_health, 2)
+                snapshot["overall_health_trend"] = {
+                    "compared_to": prior_snapshot["period"],
+                    "delta": delta,
+                    "direction": _direction(delta),
+                }
+
+        return snapshot

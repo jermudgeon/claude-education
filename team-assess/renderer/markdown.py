@@ -23,8 +23,17 @@ def render_markdown(snapshot: dict, trend: dict | None = None) -> str:
     else:
         health_str = "N/A (insufficient signal)"
 
-    # Check for top-level trend (legacy) first
-    if trend:
+    # Check embedded overall_health_trend first, fall back to legacy top-level trend arg
+    oht = snapshot.get("overall_health_trend")
+    if oht:
+        delta = oht["delta"]
+        direction = DIRECTION_ARROWS[oht["direction"]]
+        prior = oht["compared_to"]
+        if health is not None:
+            health_line = f"Overall Health: {health_str} / 5  ({direction} {_fmt_delta(delta)} from {prior})"
+        else:
+            health_line = f"Overall Health: {health_str}"
+    elif trend:
         delta = trend["overall_health_delta"]
         direction = DIRECTION_ARROWS[trend["overall_direction"]]
         prior = trend["before_period"]
