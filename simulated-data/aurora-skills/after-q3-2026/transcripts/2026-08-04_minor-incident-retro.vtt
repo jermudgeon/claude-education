@@ -271,7 +271,7 @@ NOTE Minor Incident Retro — 2026-08-04
 <v Ben Larsson>Sorry, can you go back to the point about the review pass?
 
 68
-00:09:18.000 --> 00:09:22.800
+00:09:17.1000 --> 00:09:22.800
 <v Ben Larsson>Let me pull up the numbers so we're not going off memory.
 
 69
@@ -331,7 +331,7 @@ NOTE Minor Incident Retro — 2026-08-04
 <v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
 
 83
-00:10:57.200 --> 00:11:02.000
+00:10:57.200 --> 00:11:01.1000
 <v Tomás Reyes>Yeah, that's consistent with what we talked about in the last sync.
 
 84
@@ -343,7 +343,7 @@ NOTE Minor Incident Retro — 2026-08-04
 <v Tomás Reyes>That's fair. I'll withdraw the concern.
 
 86
-00:11:24.000 --> 00:11:30.000
+00:11:23.1000 --> 00:11:29.1000
 <v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
 
 87
@@ -355,11 +355,11 @@ NOTE Minor Incident Retro — 2026-08-04
 <v Naomi Kito>Can someone capture that in the notes close to verbatim?
 
 89
-00:11:59.000 --> 00:12:12.200
+00:11:58.1000 --> 00:12:12.200
 <v Naomi Kito>For the record from my side: Ben pinged me the moment the test went red, which is exactly what I asked him for back in April. The fast disclosure is the system working.
 
 90
-00:12:15.400 --> 00:12:21.000
+00:12:15.400 --> 00:12:20.1000
 <v Ben Larsson>I don't feel strongly on this one — I'll defer to whoever owns it.
 
 91
@@ -371,7 +371,7 @@ NOTE Minor Incident Retro — 2026-08-04
 <v Tomás Reyes>Time-to-surface was under an hour. In Q2 the comparable one took four days. That's the whole difference.
 
 93
-00:12:36.000 --> 00:12:41.200
+00:12:35.1000 --> 00:12:41.200
 <v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
 
 94
@@ -423,11 +423,11 @@ NOTE Minor Incident Retro — 2026-08-04
 <v Ben Larsson>Let's not rathole on this — can we take the fine detail offline?
 
 106
-00:14:24.400 --> 00:14:34.000
+00:14:24.400 --> 00:14:33.1000
 <v Sarah Kowalski>And nobody had to talk Ben into saying it. Ben, a quarter ago this exact situation cost us four days of silence. What changed?
 
 107
-00:14:34.000 --> 00:14:39.200
+00:14:33.1000 --> 00:14:39.200
 <v Ben Larsson>Let's not rathole on this — can we take the fine detail offline?
 
 108
@@ -471,7 +471,7 @@ NOTE Minor Incident Retro — 2026-08-04
 <v Tomás Reyes>Let's confirm in the channel.
 
 118
-00:15:59.000 --> 00:16:04.200
+00:15:58.1000 --> 00:16:04.200
 <v Naomi Kito>How does this interact with the manifest schema and validator, if at all?
 
 119

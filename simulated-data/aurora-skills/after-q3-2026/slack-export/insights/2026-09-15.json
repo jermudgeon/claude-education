@@ -1,0 +1,20 @@
+[
+  {
+    "type": "message",
+    "user": "U99",
+    "user_name": "Collaboration Insights",
+    "text": "\ud83d\udcc8 Quarter summary: every collaboration metric improved vs Q2. Talk-time balance \u2191, dissent-before-decision \u2191, reopened conflicts 3\u21920, silent-but-present members 3\u21920, psychological-safety 3.75\u21924.74. Mapped to the five-dysfunctions rubric: Trust/Conflict/Commitment +2.0, Results +1.5, Accountability +1.0.",
+    "ts": "1789459200.000055",
+    "reactions": [
+      {
+        "name": "chart_with_upwards_trend",
+        "users": [
+          "U01",
+          "U07",
+          "U08"
+        ],
+        "count": 3
+      }
+    ]
+  }
+]

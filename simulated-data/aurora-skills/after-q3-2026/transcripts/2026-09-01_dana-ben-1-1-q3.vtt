@@ -59,7 +59,7 @@ NOTE 1:1 — Dana & Ben (Q3) — 2026-09-01
 <v Dana Whitfield>Makes sense to me.
 
 15
-00:01:36.000 --> 00:01:37.600
+00:01:35.1000 --> 00:01:37.600
 <v Dana Whitfield>Sure — one sec.
 
 16
@@ -67,11 +67,11 @@ NOTE 1:1 — Dana & Ben (Q3) — 2026-09-01
 <v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
 
 17
-00:01:47.000 --> 00:01:49.000
+00:01:46.1000 --> 00:01:48.1000
 <v Ben Larsson>Sure, I can own that.
 
 18
-00:01:51.000 --> 00:01:57.400
+00:01:50.1000 --> 00:01:57.400
 <v Ben Larsson>I'll take that one — it's adjacent to the label renderer and the validator tests anyway.
 
 19
@@ -419,7 +419,7 @@ NOTE 1:1 — Dana & Ben (Q3) — 2026-09-01
 <v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
 
 105
-00:11:16.200 --> 00:11:21.000
+00:11:16.200 --> 00:11:20.1000
 <v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
 
 106
@@ -439,7 +439,7 @@ NOTE 1:1 — Dana & Ben (Q3) — 2026-09-01
 <v Ben Larsson>Let's confirm in the channel.
 
 110
-00:11:46.000 --> 00:11:48.000
+00:11:45.1000 --> 00:11:47.1000
 <v Dana Whitfield>Right, that's what I meant.
 
 111
@@ -451,11 +451,11 @@ NOTE 1:1 — Dana & Ben (Q3) — 2026-09-01
 <v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
 
 113
-00:12:21.200 --> 00:12:22.000
+00:12:21.200 --> 00:12:21.1000
 <v Ben Larsson>That's fair.
 
 114
-00:12:22.000 --> 00:12:30.800
+00:12:21.1000 --> 00:12:30.800
 <v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
 
 115
@@ -487,7 +487,7 @@ NOTE 1:1 — Dana & Ben (Q3) — 2026-09-01
 <v Ben Larsson>Right, and that lines up with the constraint we set at kickoff.
 
 122
-00:13:21.000 --> 00:13:22.600
+00:13:20.1000 --> 00:13:22.600
 <v Dana Whitfield>Makes sense to me.
 
 123
@@ -511,7 +511,7 @@ NOTE 1:1 — Dana & Ben (Q3) — 2026-09-01
 <v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
 
 128
-00:13:54.000 --> 00:13:56.800
+00:13:53.1000 --> 00:13:56.800
 <v Ben Larsson>Mm, let me sit with that one.
 
 129
@@ -551,7 +551,7 @@ NOTE 1:1 — Dana & Ben (Q3) — 2026-09-01
 <v Ben Larsson>Good — as long as it's reversible, I'm comfortable moving.
 
 138
-00:14:47.000 --> 00:14:54.600
+00:14:46.1000 --> 00:14:54.600
 <v Dana Whitfield>That matches what I was seeing on my end with the roadmap and keeping the two tracks in sync.
 
 139
@@ -571,7 +571,7 @@ NOTE 1:1 — Dana & Ben (Q3) — 2026-09-01
 <v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
 
 143
-00:15:23.000 --> 00:15:24.600
+00:15:22.1000 --> 00:15:24.600
 <v Ben Larsson>Makes sense to me.
 
 144
@@ -583,7 +583,7 @@ NOTE 1:1 — Dana & Ben (Q3) — 2026-09-01
 <v Ben Larsson>That's fair. I'll withdraw the concern.
 
 146
-00:15:34.200 --> 00:15:35.000
+00:15:34.200 --> 00:15:34.1000
 <v Dana Whitfield>Yeah, exactly.
 
 147

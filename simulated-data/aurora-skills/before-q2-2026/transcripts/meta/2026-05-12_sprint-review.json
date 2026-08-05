@@ -74,6 +74,9 @@
     "interruptions": 0,
     "dominant_speaker": "Priya Nair",
     "dominant_pct": 31.4,
+    "led_by": "Dana Whitfield",
+    "dominant_is_lead": false,
+    "dominance_expected": false,
     "present_but_silent": [
       "Ben Larsson"
     ],

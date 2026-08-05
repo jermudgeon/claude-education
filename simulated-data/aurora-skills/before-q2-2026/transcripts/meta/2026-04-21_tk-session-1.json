@@ -94,6 +94,9 @@
     "interruptions": 0,
     "dominant_speaker": "Sarah Kowalski",
     "dominant_pct": 37.6,
+    "led_by": "Sarah Kowalski",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
     "present_but_silent": [
       "Dana Whitfield",
       "Marcus Bell",

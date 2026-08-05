@@ -343,11 +343,11 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Dana Whitfield>Good point — let's do that.
 
 86
-00:11:44.400 --> 00:11:50.000
+00:11:44.400 --> 00:11:49.1000
 <v Sarah Kowalski>Okay, I think I follow. So the plan is basically what you just described.
 
 87
-00:11:50.000 --> 00:11:54.800
+00:11:49.1000 --> 00:11:54.800
 <v Sarah Kowalski>I'd rather over-communicate here — can we write down who's doing what?
 
 88
@@ -427,11 +427,11 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Rachel Green>Can we make sure that lands as an action item so it doesn't get lost?
 
 107
-00:14:17.200 --> 00:14:24.000
+00:14:17.200 --> 00:14:23.1000
 <v Dana Whitfield>How does this interact with the roadmap and keeping the two tracks in sync, if at all?
 
 108
-00:14:24.000 --> 00:14:28.800
+00:14:23.1000 --> 00:14:28.800
 <v Rachel Green>I'd rather over-communicate here — can we write down who's doing what?
 
 109
@@ -447,7 +447,7 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Marcus Bell>Right, that's what I meant.
 
 112
-00:14:52.000 --> 00:14:53.600
+00:14:51.1000 --> 00:14:53.600
 <v Sarah Kowalski>Makes sense to me.
 
 113
@@ -483,11 +483,11 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
 
 121
-00:16:06.400 --> 00:16:08.000
+00:16:06.400 --> 00:16:07.1000
 <v Rachel Green>Okay, works for me.
 
 122
-00:16:08.000 --> 00:16:13.600
+00:16:07.1000 --> 00:16:13.600
 <v Sarah Kowalski>I don't feel strongly on this one — I'll defer to whoever owns it.
 
 123
@@ -495,7 +495,7 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Dana Whitfield>Sure, I can own that.
 
 124
-00:16:29.000 --> 00:16:38.600
+00:16:28.1000 --> 00:16:38.600
 <v Rachel Green>The needs board doesn't actually depend on the registry beta. I could ship it earlier and it'd de-risk the access story for the fundraiser.
 
 125
@@ -535,7 +535,7 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Marcus Bell>Yeah, exactly.
 
 134
-00:17:34.000 --> 00:17:34.800
+00:17:33.1000 --> 00:17:34.800
 <v Marcus Bell>Yeah, exactly.
 
 135
@@ -595,7 +595,7 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Sarah Kowalski>Mm, let me sit with that one.
 
 149
-00:19:27.000 --> 00:19:27.800
+00:19:26.1000 --> 00:19:27.800
 <v Sarah Kowalski>That's fair.
 
 150
@@ -603,11 +603,11 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Rachel Green>Fair.
 
 151
-00:19:35.200 --> 00:19:40.000
+00:19:35.200 --> 00:19:39.1000
 <v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
 
 152
-00:19:43.000 --> 00:19:56.600
+00:19:42.1000 --> 00:19:56.600
 <v Marcus Bell>I'll flag the same thing I flagged in the retro — that was a decision made fast without much room for the objection. Rachel just gave you new information and the sequence didn't move.
 
 153
@@ -619,7 +619,7 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Dana Whitfield>Yeah, exactly.
 
 155
-00:20:10.000 --> 00:20:14.000
+00:20:09.1000 --> 00:20:13.1000
 <v Marcus Bell>Can we double-check that against what we agreed last week?
 
 156
@@ -655,11 +655,11 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
 
 164
-00:21:17.000 --> 00:21:22.600
+00:21:16.1000 --> 00:21:22.600
 <v Rachel Green>One concern and then I'll drop it: are we sure about the sequencing here?
 
 165
-00:21:24.200 --> 00:21:27.000
+00:21:24.200 --> 00:21:26.1000
 <v Marcus Bell>Mm, let me sit with that one.
 
 166
@@ -675,7 +675,7 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Dana Whitfield>Let me park that and come back to it.
 
 169
-00:21:46.400 --> 00:21:54.000
+00:21:46.400 --> 00:21:53.1000
 <v Dana Whitfield>...Fair. Okay. Rachel, if the needs board is independent, pull it forward. I'm doing the thing again, aren't I.
 
 170
@@ -727,7 +727,7 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Sarah Kowalski>Can someone capture that in the notes close to verbatim?
 
 182
-00:23:11.000 --> 00:23:16.200
+00:23:10.1000 --> 00:23:16.200
 <v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
 
 183
@@ -743,7 +743,7 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Dana Whitfield>Okay, works for me.
 
 186
-00:23:35.800 --> 00:23:41.000
+00:23:35.800 --> 00:23:40.1000
 <v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
 
 187
@@ -835,11 +835,11 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
 
 209
-00:26:26.400 --> 00:26:32.000
+00:26:26.400 --> 00:26:31.1000
 <v Sarah Kowalski>I want to make sure I understand the tradeoff before we commit to anything.
 
 210
-00:26:32.000 --> 00:26:36.000
+00:26:31.1000 --> 00:26:35.1000
 <v Rachel Green>Can we double-check that against what we agreed last week?
 
 211
@@ -847,11 +847,11 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Dana Whitfield>That's fair.
 
 212
-00:26:45.000 --> 00:26:45.800
+00:26:44.1000 --> 00:26:45.800
 <v Marcus Bell>That tracks.
 
 213
-00:27:08.200 --> 00:27:13.000
+00:27:08.200 --> 00:27:12.1000
 <v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
 
 214
@@ -875,7 +875,7 @@ NOTE Q3 Roadmap Review — 2026-06-09
 <v Marcus Bell>Should I loop anyone else in on the the backend capability model and the provenance schema side, or is that covered?
 
 219
-00:28:01.000 --> 00:28:07.000
+00:28:00.1000 --> 00:28:06.1000
 <v Dana Whitfield>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
 220

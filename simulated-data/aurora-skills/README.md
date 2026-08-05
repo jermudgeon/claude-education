@@ -34,14 +34,26 @@ readouts (`insights-bot`) — the tool's output as data, cross-referencing the b
 
 Top level also has:
 
+- **`assessments/`** — the closed loop. `report-Q2-2026.md` is the team-assess output on Q2 whose
+  **recommendations the team enacts in Q3**; `report-Q3-2026.md` re-measures and shows the trend.
+  `five-dysfunctions-signal-map.json` maps every seeded signal to a rubric **v0.9** dimension +
+  observable facet + verbatim act. See `assessments/README.md`.
 - **`prds/`** — 6 PRDs (registry, security pipeline, TK governance, access, the insights tool
   itself, and the classroom facilitator).
 - **`wiki/`** — team directory, glossary, ways-of-working, decision log, and `wiki/adr/` (4 ADRs).
-- **`ground_truth.json`** — machine-readable key: every seeded signal, where it lives, and the
-  expected detection. For the scoring rubric.
+- **`ground_truth.json`** — machine-readable key: every seeded signal, where it lives, the expected
+  detection, the Five-Dysfunctions mapping, and the Q2→feedback→Q3 loop map.
 - **`GROUND_TRUTH.md`** — the same, narrated, with the computed before/after table.
-- **`_comparison/before_after.json`** — computed before-vs-after metrics.
+- **`_comparison/before_after.json`** — computed before-vs-after metrics (incl. dominance nuance:
+  `led_by` / `dominant_is_lead` / `small_led_dominance`).
 - **`generate.py`** — regenerates everything (deterministic). `python3 generate.py`.
+
+## The assessment loop (why this dataset is more than before/after)
+
+Run the rubric on Q2 → it emits recommendations → the team enacts them in Q3 → run the rubric on
+Q3 → scores improve, **traceably**. Overall health 2.7 → 4.4; the biggest gains (trust, conflict,
+commitment, each +2.0) land on exactly the dimensions Q2 flagged. Full mapping in
+`ground_truth.json → assessment_loop`.
 
 ## The cast (both quarters)
 

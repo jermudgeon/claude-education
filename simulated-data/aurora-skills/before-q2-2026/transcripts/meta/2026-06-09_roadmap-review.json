@@ -134,6 +134,9 @@
     "interruptions": 1,
     "dominant_speaker": "Dana Whitfield",
     "dominant_pct": 66.2,
+    "led_by": "Dana Whitfield",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
     "present_but_silent": [
       "Priya Nair",
       "Tom\u00e1s Reyes",

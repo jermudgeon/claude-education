@@ -84,6 +84,9 @@
     "interruptions": 0,
     "dominant_speaker": "Dana Whitfield",
     "dominant_pct": 35.1,
+    "led_by": "Dana Whitfield",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
     "present_but_silent": [],
     "era": "after"
   },
@@ -162,6 +165,9 @@
     "interruptions": 0,
     "dominant_speaker": "Dana Whitfield",
     "dominant_pct": 25.5,
+    "led_by": "Dana Whitfield",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
     "present_but_silent": [],
     "era": "after"
   },
@@ -230,6 +236,9 @@
     "interruptions": 0,
     "dominant_speaker": "Ben Larsson",
     "dominant_pct": 40.1,
+    "led_by": "Sarah Kowalski",
+    "dominant_is_lead": false,
+    "dominance_expected": false,
     "present_but_silent": [],
     "era": "after"
   },
@@ -298,6 +307,9 @@
     "interruptions": 0,
     "dominant_speaker": "Dana Whitfield",
     "dominant_pct": 26.5,
+    "led_by": "Dana Whitfield",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
     "present_but_silent": [],
     "era": "after"
   },
@@ -336,6 +348,9 @@
     "interruptions": 0,
     "dominant_speaker": "Dana Whitfield",
     "dominant_pct": 55.6,
+    "led_by": "Dana Whitfield",
+    "dominant_is_lead": true,
+    "dominance_expected": true,
     "present_but_silent": [],
     "era": "after"
   },
@@ -374,6 +389,9 @@
     "interruptions": 0,
     "dominant_speaker": "Lily Chen",
     "dominant_pct": 53.5,
+    "led_by": "Marcus Bell",
+    "dominant_is_lead": false,
+    "dominance_expected": false,
     "present_but_silent": [],
     "era": "after"
   },
@@ -452,6 +470,456 @@
     "interruptions": 0,
     "dominant_speaker": "Sarah Kowalski",
     "dominant_pct": 24.4,
+    "led_by": "Sarah Kowalski",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-07-01_q2-assessment-review": {
+    "id": "2026-07-01_q2-assessment-review",
+    "title": "Q2 Team-Health Assessment Review",
+    "date": "2026-07-01",
+    "duration_s": 1127.3,
+    "duration_min": 18.8,
+    "speech_s": 635.6,
+    "content_speech_s": 127.2,
+    "silence_ratio": 0.44,
+    "attendee_count": 6,
+    "speakers": {
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 50.4,
+        "talk_pct": 39.6,
+        "turns": 4,
+        "questions": 0,
+        "assertions": 12,
+        "q_to_a": 0.0
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 16.8,
+        "talk_pct": 13.2,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 16.4,
+        "talk_pct": 12.9,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "rachel": {
+        "name": "Rachel Green",
+        "attended": true,
+        "talk_s": 11.6,
+        "talk_pct": 9.1,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 18.0,
+        "talk_pct": 14.2,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 14.0,
+        "talk_pct": 11.0,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 4,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Sarah Kowalski",
+    "dominant_pct": 39.6,
+    "led_by": "Sarah Kowalski",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-07-10_blameless-practice": {
+    "id": "2026-07-10_blameless-practice",
+    "title": "Blameless Practice Working Session",
+    "date": "2026-07-10",
+    "duration_s": 1091.9,
+    "duration_min": 18.2,
+    "speech_s": 594.8,
+    "content_speech_s": 55.2,
+    "silence_ratio": 0.46,
+    "attendee_count": 4,
+    "speakers": {
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 13.2,
+        "talk_pct": 23.9,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 21.2,
+        "talk_pct": 38.4,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 10.8,
+        "talk_pct": 19.6,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 10.0,
+        "talk_pct": 18.1,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Sarah Kowalski",
+    "dominant_pct": 38.4,
+    "led_by": "Tom\u00e1s Reyes",
+    "dominant_is_lead": false,
+    "dominance_expected": false,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-07-17_facilitation-format": {
+    "id": "2026-07-17_facilitation-format",
+    "title": "Facilitation Format Rollout",
+    "date": "2026-07-17",
+    "duration_s": 1161.9,
+    "duration_min": 19.4,
+    "speech_s": 634.8,
+    "content_speech_s": 95.2,
+    "silence_ratio": 0.45,
+    "attendee_count": 5,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 14.8,
+        "talk_pct": 15.5,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 20.8,
+        "talk_pct": 21.8,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 32.8,
+        "talk_pct": 34.5,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 4,
+        "q_to_a": 0.0
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 11.6,
+        "talk_pct": 12.2,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 15.2,
+        "talk_pct": 16.0,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Naomi Kito",
+    "dominant_pct": 34.5,
+    "led_by": "Dana Whitfield",
+    "dominant_is_lead": false,
+    "dominance_expected": false,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-07-24_reviewer-onboarding": {
+    "id": "2026-07-24_reviewer-onboarding",
+    "title": "Second Reviewer Onboarding & Peer Feedback",
+    "date": "2026-07-24",
+    "duration_s": 1222.2,
+    "duration_min": 20.4,
+    "speech_s": 673.2,
+    "content_speech_s": 50.8,
+    "silence_ratio": 0.45,
+    "attendee_count": 3,
+    "speakers": {
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 25.2,
+        "talk_pct": 49.6,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 15.6,
+        "talk_pct": 30.7,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 10.0,
+        "talk_pct": 19.7,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Tom\u00e1s Reyes",
+    "dominant_pct": 49.6,
+    "led_by": "Tom\u00e1s Reyes",
+    "dominant_is_lead": true,
+    "dominance_expected": true,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-08-11_outcome-over-optics": {
+    "id": "2026-08-11_outcome-over-optics",
+    "title": "Q4 Planning \u2014 Outcome Over Optics",
+    "date": "2026-08-11",
+    "duration_s": 1090.2,
+    "duration_min": 18.2,
+    "speech_s": 600.0,
+    "content_speech_s": 96.4,
+    "silence_ratio": 0.45,
+    "attendee_count": 4,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 19.2,
+        "talk_pct": 19.9,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "rachel": {
+        "name": "Rachel Green",
+        "attended": true,
+        "talk_s": 27.6,
+        "talk_pct": 28.6,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "kevin": {
+        "name": "Kevin Osei",
+        "attended": true,
+        "talk_s": 30.8,
+        "talk_pct": 32.0,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 18.8,
+        "talk_pct": 19.5,
+        "turns": 2,
+        "questions": 1,
+        "assertions": 2,
+        "q_to_a": 0.5
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Kevin Osei",
+    "dominant_pct": 32.0,
+    "led_by": "Dana Whitfield",
+    "dominant_is_lead": false,
+    "dominance_expected": false,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-08-25_decision-hygiene": {
+    "id": "2026-08-25_decision-hygiene",
+    "title": "Decision Hygiene Review",
+    "date": "2026-08-25",
+    "duration_s": 1138.3,
+    "duration_min": 19.0,
+    "speech_s": 610.0,
+    "content_speech_s": 50.4,
+    "silence_ratio": 0.46,
+    "attendee_count": 3,
+    "speakers": {
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 26.4,
+        "talk_pct": 52.4,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "mark": {
+        "name": "Mark Dupont",
+        "attended": true,
+        "talk_s": 16.0,
+        "talk_pct": 31.7,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 8.0,
+        "talk_pct": 15.9,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Sarah Kowalski",
+    "dominant_pct": 52.4,
+    "led_by": "Sarah Kowalski",
+    "dominant_is_lead": true,
+    "dominance_expected": true,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-09-22_q3-assessment-readout": {
+    "id": "2026-09-22_q3-assessment-readout",
+    "title": "Q3 Team-Health Assessment Readout",
+    "date": "2026-09-22",
+    "duration_s": 1258.4,
+    "duration_min": 21.0,
+    "speech_s": 676.0,
+    "content_speech_s": 66.8,
+    "silence_ratio": 0.46,
+    "attendee_count": 5,
+    "speakers": {
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 26.4,
+        "talk_pct": 39.5,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 8,
+        "q_to_a": 0.0
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 11.2,
+        "talk_pct": 16.8,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 5.6,
+        "talk_pct": 8.4,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "mark": {
+        "name": "Mark Dupont",
+        "attended": true,
+        "talk_s": 6.0,
+        "talk_pct": 9.0,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 17.6,
+        "talk_pct": 26.3,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 4,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Sarah Kowalski",
+    "dominant_pct": 39.5,
+    "led_by": "Sarah Kowalski",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
     "present_but_silent": [],
     "era": "after"
   }

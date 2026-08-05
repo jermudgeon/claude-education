@@ -70,6 +70,26 @@
         }
       ],
       "comments": []
+    },
+    {
+      "number": 115,
+      "title": "Ways of working: blameless notes + decision reopening bar",
+      "author": "sarah",
+      "created": "2026-07-11",
+      "merged": "2026-07-12",
+      "state": "merged",
+      "base": "main",
+      "head": "process/ways-of-working",
+      "era": "after",
+      "body": "Codifies Q2 assessment recommendations #1 (Trust \u2014 blameless incident notes, celebrate the andon cord) and #3 (Commitment \u2014 a written reopening bar on every ADR). See assessments/report-Q2-2026.md. This is the loop turning feedback into durable practice.",
+      "reviews": [
+        {
+          "reviewer": "tomas",
+          "state": "approved",
+          "body": "The trust + commitment recommendations made durable instead of living in one retro's memory. Approving."
+        }
+      ],
+      "comments": []
     }
   ]
 }

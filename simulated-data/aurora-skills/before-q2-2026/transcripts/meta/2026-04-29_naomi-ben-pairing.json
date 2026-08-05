@@ -34,6 +34,9 @@
     "interruptions": 0,
     "dominant_speaker": "Naomi Kito",
     "dominant_pct": 73.1,
+    "led_by": "Naomi Kito",
+    "dominant_is_lead": true,
+    "dominance_expected": true,
     "present_but_silent": [],
     "era": "before"
   },

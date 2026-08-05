@@ -1,0 +1,559 @@
+WEBVTT
+
+NOTE Q2 Team-Health Assessment Review — 2026-07-01
+
+1
+00:00:00.000 --> 00:00:05.600
+<v Sarah Kowalski>Okay, let's give it another minute for folks to join, then we'll get going.
+
+2
+00:01:14.800 --> 00:01:22.000
+<v Sarah Kowalski>Alright, I think we've got most people — I see Dana, Tomás, Rachel, Naomi, James. Let's get started.
+
+3
+00:01:22.000 --> 00:01:24.400
+<v Dana Whitfield>Can everyone see my screen alright?
+
+4
+00:01:24.400 --> 00:01:25.600
+<v Sarah Kowalski>Yep, looks good.
+
+5
+00:01:25.600 --> 00:01:35.600
+<v Sarah Kowalski>Quick agenda: I want to get through the main topic, leave room for questions, and land on clear action items before we drop. Sound good?
+
+6
+00:01:39.100 --> 00:01:53.900
+<v Sarah Kowalski>We ran the team-assess tool on everything from Q2 — transcripts, chat, PRs, retros, the pulse survey. Overall health came back 2.7 out of 5. I want to be clear this isn't a gotcha; it's a mirror.
+
+7
+00:01:55.200 --> 00:02:08.800
+<v Sarah Kowalski>Our three lowest dimensions are trust, conflict, and commitment, all at 2.5. The report gives five recommendations. Let's put a name on each one, because a recommendation nobody owns is just a nice sentence.
+
+8
+00:02:12.100 --> 00:02:22.500
+<v Dana Whitfield>I'll own the conflict recommendation, because it's squarely about how I run meetings. The report literally cites me holding 56 to 66 percent of the airtime.
+
+9
+00:02:24.000 --> 00:02:29.200
+<v Naomi Kito>I'm a little worried about the timeline, but I'm not blocking on it.
+
+10
+00:02:31.600 --> 00:02:33.200
+<v James Ahkivgak>Makes sense to me.
+
+11
+00:02:35.300 --> 00:02:41.700
+<v Dana Whitfield>Round-robin, async pre-reads, and I'll let the insights tool nudge me when I pass 40 percent.
+
+12
+00:02:41.700 --> 00:02:46.900
+<v Naomi Kito>I'm a little worried about the timeline, but I'm not blocking on it.
+
+13
+00:02:46.900 --> 00:02:50.900
+<v Rachel Green>Can we double-check that against what we agreed last week?
+
+14
+00:02:53.800 --> 00:02:59.400
+<v James Ahkivgak>How does this interact with community review and the advisory process, if at all?
+
+15
+00:03:01.100 --> 00:03:02.700
+<v Sarah Kowalski>Agreed, let's capture it.
+
+16
+00:03:07.600 --> 00:03:12.400
+<v Tomás Reyes>Right, and that lines up with the constraint we set at kickoff.
+
+17
+00:03:17.000 --> 00:03:19.400
+<v Rachel Green>Good point — let's do that.
+
+18
+00:03:23.200 --> 00:03:28.000
+<v Sarah Kowalski>Yeah, that's consistent with what we talked about in the last sync.
+
+19
+00:03:28.000 --> 00:03:36.800
+<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
+
+20
+00:03:41.500 --> 00:03:42.300
+<v Tomás Reyes>That's fair.
+
+21
+00:03:42.300 --> 00:03:47.100
+<v Sarah Kowalski>How does this interact with the CARE governance framework, if at all?
+
+22
+00:03:49.600 --> 00:03:51.600
+<v James Ahkivgak>Let's confirm in the channel.
+
+23
+00:03:58.100 --> 00:04:02.100
+<v Sarah Kowalski>Can someone capture that in the notes close to verbatim?
+
+24
+00:04:05.400 --> 00:04:14.200
+<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
+
+25
+00:04:14.200 --> 00:04:19.800
+<v James Ahkivgak>Okay, I think I follow. So the plan is basically what you just described.
+
+26
+00:04:23.800 --> 00:04:25.800
+<v Tomás Reyes>Let's confirm in the channel.
+
+27
+00:04:29.600 --> 00:04:34.400
+<v Sarah Kowalski>Is there a risk we're solving a problem we don't have yet?
+
+28
+00:04:36.400 --> 00:04:42.000
+<v Tomás Reyes>I want to make sure I understand the tradeoff before we commit to anything.
+
+29
+00:04:43.900 --> 00:04:48.700
+<v Naomi Kito>I'd rather over-communicate here — can we write down who's doing what?
+
+30
+00:04:53.300 --> 00:04:54.100
+<v Naomi Kito>Yep.
+
+31
+00:05:02.000 --> 00:05:08.800
+<v Tomás Reyes>I'll take the trust one with Sarah — blameless incident notes and celebrating pulling the cord early.
+
+32
+00:05:09.900 --> 00:05:13.500
+<v Rachel Green>What would it take to de-risk that a little?
+
+33
+00:05:16.800 --> 00:05:18.800
+<v Tomás Reyes>Let's confirm in the channel.
+
+34
+00:05:20.900 --> 00:05:30.500
+<v Tomás Reyes>And the accountability recommendation is partly mine to fix: I'm the security single point of failure, so I'll onboard a second reviewer this quarter.
+
+35
+00:05:30.500 --> 00:05:36.500
+<v Naomi Kito>That matches what I was seeing on my end with the manifest schema and validator.
+
+36
+00:05:40.300 --> 00:05:41.100
+<v Tomás Reyes>Yeah, exactly.
+
+37
+00:05:44.100 --> 00:05:49.700
+<v Sarah Kowalski>I want to make sure I understand the tradeoff before we commit to anything.
+
+38
+00:05:53.300 --> 00:05:57.300
+<v Naomi Kito>Good — as long as it's reversible, I'm comfortable moving.
+
+39
+00:06:02.200 --> 00:06:04.200
+<v Rachel Green>Sure, I can own that.
+
+40
+00:06:06.000 --> 00:06:06.800
+<v Rachel Green>Right, right.
+
+41
+00:06:06.800 --> 00:06:11.600
+<v James Ahkivgak>Sorry, can you go back to the point about the review pass?
+
+42
+00:06:11.600 --> 00:06:17.200
+<v James Ahkivgak>How does this interact with community review and the advisory process, if at all?
+
+43
+00:06:27.100 --> 00:06:37.500
+<v Sarah Kowalski>I'll pair on trust, and I'll own commitment — the written reopening bar so a settled decision like the license question stops coming back three times.
+
+44
+00:06:37.500 --> 00:06:42.700
+<v Rachel Green>Let's not rathole on this — can we take the fine detail offline?
+
+45
+00:06:42.700 --> 00:06:45.100
+<v Dana Whitfield>That's fair. I'll withdraw the concern.
+
+46
+00:06:45.100 --> 00:06:49.100
+<v Dana Whitfield>Good — as long as it's reversible, I'm comfortable moving.
+
+47
+00:06:54.100 --> 00:06:56.100
+<v Naomi Kito>Sure, I can own that.
+
+48
+00:07:01.900 --> 00:07:06.700
+<v Dana Whitfield>Yeah, that's consistent with what we talked about in the last sync.
+
+49
+00:07:06.700 --> 00:07:11.500
+<v James Ahkivgak>Right, and that lines up with the constraint we set at kickoff.
+
+50
+00:07:18.700 --> 00:07:22.700
+<v James Ahkivgak>Can we double-check that against what we agreed last week?
+
+51
+00:07:25.600 --> 00:07:27.600
+<v Dana Whitfield>Let's confirm in the channel.
+
+52
+00:07:27.600 --> 00:07:33.600
+<v Tomás Reyes>Can we make sure that lands as an action item so it doesn't get lost?
+
+53
+00:07:36.000 --> 00:07:37.600
+<v Dana Whitfield>Agreed, let's capture it.
+
+54
+00:07:42.300 --> 00:07:44.300
+<v Naomi Kito>Sure, I can own that.
+
+55
+00:07:46.700 --> 00:07:51.900
+<v Rachel Green>Let's not rathole on this — can we take the fine detail offline?
+
+56
+00:07:54.500 --> 00:07:57.300
+<v Dana Whitfield>Mm, let me sit with that one.
+
+57
+00:07:57.300 --> 00:08:04.500
+<v Dana Whitfield>I'll take that one — it's adjacent to the roadmap and keeping the two tracks in sync anyway.
+
+58
+00:08:11.000 --> 00:08:15.800
+<v Tomás Reyes>How does this interact with the security review pipeline, if at all?
+
+59
+00:08:20.700 --> 00:08:21.500
+<v Naomi Kito>Yeah, exactly.
+
+60
+00:08:26.700 --> 00:08:32.300
+<v Rachel Green>One concern and then I'll drop it: are we sure about the sequencing here?
+
+61
+00:08:32.300 --> 00:08:37.100
+<v Tomás Reyes>I'd rather over-communicate here — can we write down who's doing what?
+
+62
+00:08:43.900 --> 00:08:47.900
+<v Naomi Kito>Good — as long as it's reversible, I'm comfortable moving.
+
+63
+00:08:49.800 --> 00:08:51.800
+<v Dana Whitfield>Sure, I can own that.
+
+64
+00:08:53.900 --> 00:08:59.100
+<v Dana Whitfield>I'm a little worried about the timeline, but I'm not blocking on it.
+
+65
+00:08:59.100 --> 00:09:05.500
+<v Rachel Green>That matches what I was seeing on my end with the access needs-board and credits broker.
+
+66
+00:09:09.700 --> 00:09:14.500
+<v Rachel Green>I'd rather over-communicate here — can we write down who's doing what?
+
+67
+00:09:19.000 --> 00:09:23.800
+<v Tomás Reyes>Let me pull up the numbers so we're not going off memory.
+
+68
+00:09:28.600 --> 00:09:29.400
+<v Rachel Green>That's fair.
+
+69
+00:09:35.500 --> 00:09:37.100
+<v Naomi Kito>Okay, works for me.
+
+70
+00:09:40.000 --> 00:09:41.600
+<v Sarah Kowalski>Agreed, let's capture it.
+
+71
+00:09:44.000 --> 00:09:49.600
+<v Sarah Kowalski>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+72
+00:09:52.900 --> 00:09:53.700
+<v Rachel Green>That's fair.
+
+73
+00:09:57.900 --> 00:10:02.700
+<v Dana Whitfield>Sorry, can you go back to the point about the review pass?
+
+74
+00:10:05.800 --> 00:10:06.600
+<v Naomi Kito>Hmm, okay.
+
+75
+00:10:06.600 --> 00:10:10.200
+<v Sarah Kowalski>What would it take to de-risk that a little?
+
+76
+00:10:13.100 --> 00:10:14.700
+<v Naomi Kito>Makes sense to me.
+
+77
+00:10:16.300 --> 00:10:19.900
+<v Sarah Kowalski>What would it take to de-risk that a little?
+
+78
+00:10:23.600 --> 00:10:26.000
+<v Tomás Reyes>Good point — let's do that.
+
+79
+00:10:37.600 --> 00:10:38.800
+<v Sarah Kowalski>Alright, moving on.
+
+80
+00:10:38.800 --> 00:10:50.400
+<v Rachel Green>Dana and I will take results — outcome over optics. Q4 fundraiser is coming and that's exactly when the optics pressure spikes, so we'll watch each other on it.
+
+81
+00:10:51.600 --> 00:10:52.400
+<v Tomás Reyes>Sure.
+
+82
+00:10:52.400 --> 00:11:00.000
+<v Rachel Green>Just flagging that this touches the access needs-board and credits broker, so loop me in when it firms up.
+
+83
+00:11:04.100 --> 00:11:08.900
+<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
+
+84
+00:11:08.900 --> 00:11:14.100
+<v Dana Whitfield>I'm a little worried about the timeline, but I'm not blocking on it.
+
+85
+00:11:17.400 --> 00:11:19.000
+<v James Ahkivgak>Agreed, let's capture it.
+
+86
+00:11:24.600 --> 00:11:25.400
+<v Naomi Kito>That's fair.
+
+87
+00:11:28.300 --> 00:11:29.900
+<v Dana Whitfield>Agreed, let's capture it.
+
+88
+00:11:39.500 --> 00:11:45.100
+<v Naomi Kito>One concern and then I'll drop it: are we sure about the sequencing here?
+
+89
+00:11:48.900 --> 00:11:50.900
+<v Rachel Green>Let's confirm in the channel.
+
+90
+00:11:52.800 --> 00:11:59.200
+<v Naomi Kito>On the conflict one — I want the format to include async pre-reads, not just round-robin.
+
+91
+00:12:00.100 --> 00:12:06.100
+<v Naomi Kito>Do we actually need a decision on this today, or can it wait a week?
+
+92
+00:12:09.500 --> 00:12:21.100
+<v Naomi Kito>I contribute better having read ahead, and the report flagged that I was scored near zero in meetings while being the top chat contributor. I'll help design the format.
+
+93
+00:12:21.100 --> 00:12:26.300
+<v Tomás Reyes>I'm a little worried about the timeline, but I'm not blocking on it.
+
+94
+00:12:31.200 --> 00:12:33.600
+<v Naomi Kito>Good point — let's do that.
+
+95
+00:12:35.800 --> 00:12:39.800
+<v Rachel Green>Can someone capture that in the notes close to verbatim?
+
+96
+00:12:41.700 --> 00:12:43.700
+<v Naomi Kito>Sure, I can own that.
+
+97
+00:12:47.200 --> 00:12:52.800
+<v Rachel Green>How does this interact with the access needs-board and credits broker, if at all?
+
+98
+00:12:52.800 --> 00:12:58.000
+<v Sarah Kowalski>I'm a little worried about the timeline, but I'm not blocking on it.
+
+99
+00:13:02.700 --> 00:13:07.900
+<v Tomás Reyes>Let me play that back to make sure we're all aligned on it.
+
+100
+00:13:12.700 --> 00:13:13.500
+<v Dana Whitfield>That's fair.
+
+101
+00:13:15.500 --> 00:13:21.500
+<v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
+
+102
+00:13:28.000 --> 00:13:28.800
+<v Tomás Reyes>That's fair.
+
+103
+00:13:31.700 --> 00:13:36.900
+<v Tomás Reyes>I'll take that one — it's adjacent to the security review pipeline anyway.
+
+104
+00:13:39.500 --> 00:13:42.300
+<v Naomi Kito>Mm, let me sit with that one.
+
+105
+00:13:44.300 --> 00:13:51.500
+<v Dana Whitfield>I'll take that one — it's adjacent to the roadmap and keeping the two tracks in sync anyway.
+
+106
+00:13:54.300 --> 00:13:55.900
+<v Sarah Kowalski>Agreed, let's capture it.
+
+107
+00:13:55.900 --> 00:14:01.900
+<v James Ahkivgak>I'll take that one — it's adjacent to community review and the advisory process anyway.
+
+108
+00:14:09.800 --> 00:14:23.800
+<v James Ahkivgak>One caution before we run off and implement. Let's make sure we're changing behavior, not gaming a number. The report is a mirror, not the goal. If we optimize the score we've missed the point.
+
+109
+00:14:23.800 --> 00:14:28.600
+<v James Ahkivgak>Let me pull up the numbers so we're not going off memory.
+
+110
+00:14:30.800 --> 00:14:32.800
+<v Naomi Kito>Right, that's what I meant.
+
+111
+00:14:37.200 --> 00:14:44.000
+<v Dana Whitfield>How does this interact with the roadmap and keeping the two tracks in sync, if at all?
+
+112
+00:14:46.900 --> 00:14:47.700
+<v Sarah Kowalski>Mm-hm.
+
+113
+00:14:59.100 --> 00:15:10.700
+<v Sarah Kowalski>Agreed, and that's the frame I want to keep. Owners are assigned. We run a fresh assessment at the end of Q3 and see whether the behaviors actually moved.
+
+114
+00:15:10.700 --> 00:15:16.300
+<v Rachel Green>One concern and then I'll drop it: are we sure about the sequencing here?
+
+115
+00:15:16.300 --> 00:15:23.900
+<v James Ahkivgak>Just flagging that this touches community review and the advisory process, so loop me in when it firms up.
+
+116
+00:15:31.100 --> 00:15:33.100
+<v Naomi Kito>Sure, I can own that.
+
+117
+00:15:37.100 --> 00:15:41.100
+<v Dana Whitfield>Can we double-check that against what we agreed last week?
+
+118
+00:15:44.600 --> 00:15:46.200
+<v Sarah Kowalski>Agreed, let's capture it.
+
+119
+00:15:46.200 --> 00:15:49.800
+<v Tomás Reyes>What would it take to de-risk that a little?
+
+120
+00:15:51.400 --> 00:15:53.000
+<v Rachel Green>Okay, works for me.
+
+121
+00:16:00.300 --> 00:16:01.100
+<v Rachel Green>Right.
+
+122
+00:16:01.100 --> 00:16:05.900
+<v Naomi Kito>Let me pull up the numbers so we're not going off memory.
+
+123
+00:16:10.700 --> 00:16:12.700
+<v Tomás Reyes>Right, that's what I meant.
+
+124
+00:16:20.1000 --> 00:16:24.1000
+<v Sarah Kowalski>Can we double-check that against what we agreed last week?
+
+125
+00:16:24.1000 --> 00:16:30.600
+<v Naomi Kito>I want to make sure I understand the tradeoff before we commit to anything.
+
+126
+00:16:30.600 --> 00:16:32.1000
+<v Naomi Kito>That's fair. I'll withdraw the concern.
+
+127
+00:16:42.700 --> 00:16:43.500
+<v Dana Whitfield>Yeah, exactly.
+
+128
+00:16:50.200 --> 00:16:52.1000
+<v Sarah Kowalski>Okay — any questions before we wrap?
+
+129
+00:16:56.500 --> 00:17:03.300
+<v Tomás Reyes>Should I loop anyone else in on the the security review pipeline side, or is that covered?
+
+130
+00:17:08.500 --> 00:17:14.500
+<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+131
+00:17:15.900 --> 00:17:23.500
+<v James Ahkivgak>Should I loop anyone else in on the community review and the advisory process side, or is that covered?
+
+132
+00:17:27.100 --> 00:17:33.100
+<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+133
+00:17:35.900 --> 00:17:43.500
+<v Rachel Green>Should I loop anyone else in on the the access needs-board and credits broker side, or is that covered?
+
+134
+00:17:48.300 --> 00:17:54.300
+<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+135
+00:17:59.900 --> 00:18:05.500
+<v Sarah Kowalski>Alright, let me read back the action items so we're aligned before we drop.
+
+136
+00:18:10.900 --> 00:18:17.700
+<v Sarah Kowalski>Sarah has the follow-up on the CARE governance framework — I'll capture the specifics in the notes.
+
+137
+00:18:21.300 --> 00:18:30.100
+<v Sarah Kowalski>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
+
+138
+00:18:33.200 --> 00:18:39.1000
+<v Sarah Kowalski>Tomás has the follow-up on the security review pipeline — I'll capture the specifics in the notes.
+
+139
+00:18:41.700 --> 00:18:47.300
+<v Sarah Kowalski>Great. I'll write it all up and drop it in the channel. Thanks everyone.

@@ -101,6 +101,9 @@ CHANNELS = [
     # AFTER-era only: the insights tool posts periodic readouts here.
     ("C600", "insights",             "Automated collaboration-insights readouts",
      ["dana","marcus","priya","tomas","naomi","ben","sarah","james","rachel","kevin","lily","mark","insights-bot"]),
+    # AFTER-era only: where the Q2 assessment is shared and its actions are tracked.
+    ("C700", "team-health",          "Team-health assessments & action items",
+     ["dana","marcus","priya","tomas","naomi","ben","sarah","james","rachel","kevin","lily","mark"]),
 ]
 
 # --------------------------------------------------------------------------
@@ -524,6 +527,15 @@ ATTENDEES = {
     "2026-06-23_tk-decision": TK_CROSS,
 }
 
+# Who was meant to lead / facilitate each meeting. Dominance by the designated lead
+# of a small working session is EXPECTED (not a dysfunction signal); dominance by a
+# non-lead, or heavy dominance in a large all-hands, is the signal worth flagging.
+# Default lead = the first substantive speaker (the facilitator); overrides below.
+LEAD = {
+    "2026-05-05_incident-retro": "sarah",
+    "2026-08-04_minor-incident-retro": "sarah",
+}
+
 # ==========================================================================
 # AFTER-QUARTER TRANSCRIPTS (Q3 2026) — tool live; collaboration improved.
 # Dana's turns are short and distributed; Naomi speaks in group meetings;
@@ -644,12 +656,107 @@ msg("registry-platform","2026-08-04","10:02","marcus","This is the exact situati
 msg("incidents","2026-08-04","09:20","ben","INC note: label-renderer regression, self-introduced, self-disclosed 41 min after commit. No user impact (caught pre-beta). Fix + regression test up. Filing blameless per AUR-12.", era="after", reactions=[("heart",["sarah","tomas","dana"])])
 
 # ==========================================================================
+# Q3 LOOP MEETINGS — the team explicitly enacts the Q2 assessment's
+# recommendations (see assessments/report-Q2-2026.md). Each meeting names the
+# recommendation it implements. era="after" is set explicitly.
+# ==========================================================================
+# L0. The pivot: review the Q2 assessment and assign an owner to each recommendation.
+transcript("2026-07-01_q2-assessment-review", "Q2 Team-Health Assessment Review", "2026-07-01", "10:00", [
+ ("sarah","We ran the team-assess tool on everything from Q2 — transcripts, chat, PRs, retros, the pulse survey. Overall health came back 2.7 out of 5. I want to be clear this isn't a gotcha; it's a mirror. Our three lowest dimensions are trust, conflict, and commitment, all at 2.5. The report gives five recommendations. Let's put a name on each one, because a recommendation nobody owns is just a nice sentence."),
+ ("dana","I'll own the conflict recommendation, because it's squarely about how I run meetings. The report literally cites me holding 56 to 66 percent of the airtime. Round-robin, async pre-reads, and I'll let the insights tool nudge me when I pass 40 percent."),
+ ("tomas","I'll take the trust one with Sarah — blameless incident notes and celebrating pulling the cord early. And the accountability recommendation is partly mine to fix: I'm the security single point of failure, so I'll onboard a second reviewer this quarter."),
+ ("sarah","I'll pair on trust, and I'll own commitment — the written reopening bar so a settled decision like the license question stops coming back three times."),
+ ("rachel","Dana and I will take results — outcome over optics. Q4 fundraiser is coming and that's exactly when the optics pressure spikes, so we'll watch each other on it."),
+ ("naomi","On the conflict one — I want the format to include async pre-reads, not just round-robin. I contribute better having read ahead, and the report flagged that I was scored near zero in meetings while being the top chat contributor. I'll help design the format."),
+ ("james","One caution before we run off and implement. Let's make sure we're changing behavior, not gaming a number. The report is a mirror, not the goal. If we optimize the score we've missed the point."),
+ ("sarah","Agreed, and that's the frame I want to keep. Owners are assigned. We run a fresh assessment at the end of Q3 and see whether the behaviors actually moved."),
+], era="after")
+
+# L1. Trust (rec #1): blameless practice.
+transcript("2026-07-10_blameless-practice", "Blameless Practice Working Session", "2026-07-10", "13:00", [
+ ("tomas","Recommendation one from the assessment: make surfacing mistakes safe. Here's the blameless incident-note template. Every incident gets one, no names attached to blame, the whole focus is the system that let it happen."),
+ ("sarah","And we explicitly celebrate pulling the cord early. Ben, you're the example of what we want now — the thing we're changing is the four-day delay, not the fact that a bug happened."),
+ ("ben","Honestly the retro already shifted it for me. I don't think I'd sit on something now. It stopped feeling like a mistake meant I didn't belong here."),
+ ("marcus","Let's put the norm in ways-of-working so it outlives whoever's in the room today. A practice that lives in someone's head dies when they leave."),
+ ("sarah","Done. Blameless note on every incident, cord-pulls get called out as wins in the retro. That's the trust recommendation, closed."),
+], era="after")
+
+# L2. Conflict (rec #2): facilitation format rollout.
+transcript("2026-07-17_facilitation-format", "Facilitation Format Rollout", "2026-07-17", "14:00", [
+ ("dana","Recommendation two: dissent in the room before decisions, and balanced airtime. I'll keep this deliberately short, since it's literally about me talking less. Sarah's going to run it."),
+ ("sarah","Two mechanisms. Round-robin so everyone present takes a turn, and I run the facilitation nudge — the insights tool pings me privately when one person passes about 40 percent, and I open the floor to whoever hasn't spoken by name."),
+ ("naomi","And async pre-reads, which I care about most. If the material goes out ahead of time, the people who think in writing aren't drowned out by whoever's fastest to talk. That's the format that finally fits how I work, and the assessment specifically flagged that I was scored near zero in meetings while being the top contributor in chat."),
+ ("priya","From my side it means fewer decisions made by whoever's loudest. I'll build the pre-read step into the meeting-notes flow so it's automatic, not something we have to remember."),
+ ("marcus","The tell that it's actually working won't be the airtime number itself. It'll be whether objections show up before the decision instead of in a channel afterward. That's the behavior we're buying, the number is just the proxy."),
+ ("sarah","Right. Airtime is the mirror; dissent-timing is the goal. I'll watch both."),
+ ("naomi","One more — let's rotate who starts the round-robin, so it isn't always the same voice framing the problem before anyone else speaks."),
+ ("dana","Good call. That's the conflict recommendation, owned and rolling."),
+], era="after")
+
+# L3. Accountability (rec #4): reviewer onboarding + peer feedback norms.
+transcript("2026-07-24_reviewer-onboarding", "Second Reviewer Onboarding & Peer Feedback", "2026-07-24", "11:00", [
+ ("tomas","Recommendation four: kill the single point of failure and normalize peer feedback. The second security reviewer starts today. Here's the review checklist and the handoff — I am no longer the only person who can approve a skill."),
+ ("marcus","And the peer-feedback half: we call things out in the room, peer to peer, instead of escalating to Dana. If I think a decision was rushed, I say so to the group, not in a DM to the lead."),
+ ("dana","Which I want, for the record. When Marcus flagged in the roadmap review that I'd decided too fast, that was the system working, not insubordination."),
+ ("tomas","Bus factor on review is two now. That's the accountability recommendation — the structural half is done, the cultural half is a habit we keep."),
+], era="after")
+
+# L4. Results (rec #5): outcome over optics.
+transcript("2026-08-11_outcome-over-optics", "Q4 Planning — Outcome Over Optics", "2026-08-11", "10:00", [
+ ("dana","Recommendation five: shared outcome over individual optics. I'll name my own pattern and then get out of the way — last quarter I sequenced the roadmap for fundraiser optics over what actually de-risked the work. Rachel, if I do it again in Q4, call it in the room."),
+ ("rachel","Deal. The concrete version: the needs board ships when it's actually useful to a teacher, not when it demos best for a slide. I'd rather show a rough thing that works than a polished thing that doesn't."),
+ ("kevin","The districts I talk to care whether it works, not how the pitch looks. When we optimize for the demo we're optimizing for the wrong audience — the funders are a means, the classrooms are the point."),
+ ("sarah","So here's the decision rule I'd propose we adopt: when optics and outcome conflict, we write down which one we chose and why. That makes the tradeoff visible in the record instead of defaulting to optics silently."),
+ ("rachel","I like that it's a paper trail, not a vibe. If we choose optics for a real reason — say a funder deadline — that's fine, but we said so on purpose."),
+ ("kevin","And it gives me something honest to tell the districts about where they are in the queue."),
+ ("sarah","Anyone object to making that the standard for Q4 planning?"),
+ ("kevin","No — it's the same principle as publishing our before/after openly. The win belongs to the mission, not to any one of us."),
+], era="after")
+
+# L5. Commitment (rec #3): decision hygiene as standard practice.
+transcript("2026-08-25_decision-hygiene", "Decision Hygiene Review", "2026-08-25", "13:00", [
+ ("sarah","Recommendation three: close decisions with a written reopening bar so settled questions stop being relitigated. The license ADR set the pattern — we snapshotted the mitigation and wrote down exactly what would justify reopening. I want that to be standard for every significant decision, not a one-off."),
+ ("mark","I'll grant it works, and I'm the person who reopened that one three times. The moment the reopening bar was explicit — new information required, not the same concern restated — I stopped. Ambiguity was doing the relitigating, not stubbornness."),
+ ("dana","So every ADR from now on ends with a one-line reopening bar. Cheap to write, saves us the third round."),
+ ("sarah","That's commitment. The measure isn't that we never reopen — it's that we only reopen with genuinely new information."),
+], era="after")
+
+# L6. Loop close: the Q3 assessment readout.
+transcript("2026-09-22_q3-assessment-readout", "Q3 Team-Health Assessment Readout", "2026-09-22", "10:00", [
+ ("sarah","Fresh assessment is in. Overall health went from 2.7 to 4.4. Every dimension improved, and the biggest gains landed on the three we deliberately targeted — trust, conflict, and commitment, each up two full points."),
+ ("dana","The airtime and dissent-timing stuff moved the most. The nudges did what I couldn't do by watching myself. My peak airtime went from two-thirds to about a third."),
+ ("ben","Trust — same-day disclosure instead of four days. That's the one that felt personal."),
+ ("mark","Commitment — we didn't reopen the license question once this quarter. Or anything else, really."),
+ ("james","I'll be the one to slow the celebration. Accountability is our new lowest at 4.0. That's not a failure, but it's where to look next — let's keep peer feedback horizontal as the beta scales instead of sliding back to escalating everything to Dana."),
+ ("sarah","Exactly right, and that's already the top recommendation in the new report. The loop worked because we treated the Q2 assessment as a mirror, not a target. We keep doing that."),
+], era="after")
+
+# ==========================================================================
+# Q3 assessment/loop chat
+# ==========================================================================
+msg("team-health","2026-07-01","12:30","sarah",
+    "Shared the Q2 team-health assessment (report-Q2-2026). Overall 2.7/5; lowest dimensions trust/conflict/commitment at 2.5. Five recommendations, owners assigned in today's review: Trust → Tomás+me, Conflict → Dana+Naomi, Commitment → me, Accountability → Tomás, Results → Dana+Rachel. Fresh assessment end of Q3.",
+    era="after", thread="q2assess", reactions=[("eyes",["dana","tomas","naomi","mark","james","rachel"])])
+msg("team-health","2026-07-01","12:48","james","Reminder as we act on this: it's a mirror, not a target. Change the behavior, not the number.", era="after", thread="q2assess", reactions=[("100",["sarah","dana","naomi"])])
+msg("team-health","2026-07-11","09:10","tomas","Trust rec: blameless incident-note template is live and in ways-of-working. Cord-pulls get celebrated in retro. ✅", era="after", thread="q2assess")
+msg("team-health","2026-07-18","09:00","dana","Conflict rec: round-robin + async pre-reads rolled out; insights tool nudges me past 40% airtime. ✅", era="after", thread="q2assess")
+msg("team-health","2026-07-25","16:20","tomas","Accountability rec: second security reviewer onboarded, bus factor now 2. ✅", era="after", thread="q2assess")
+msg("team-health","2026-08-26","15:00","sarah","Commitment rec: written reopening bar is now standard on every ADR. ✅", era="after", thread="q2assess")
+msg("team-health","2026-09-22","11:30","sarah",
+    "Q3 assessment in: overall 4.4/5 (↑ from 2.7). Trust/Conflict/Commitment each +2.0. Accountability now our lowest at 4.0 — next quarter's focus. The loop closed. 🎯",
+    era="after", thread="q2assess", reactions=[("tada",["dana","ben","naomi","marcus","mark","rachel","kevin","james","lily","priya","tomas"])])
+msg("insights","2026-09-15","08:00","insights-bot",
+    "📈 Quarter summary: every collaboration metric improved vs Q2. Talk-time balance ↑, dissent-before-decision ↑, reopened conflicts 3→0, silent-but-present members 3→0, psychological-safety 3.75→4.74. Mapped to the five-dysfunctions rubric: Trust/Conflict/Commitment +2.0, Results +1.5, Accountability +1.0.",
+    era="after", reactions=[("chart_with_upwards_trend",["dana","sarah","james"])])
+
+# ==========================================================================
 # TRANSCRIPT EMIT + turn metadata + metrics
 # ==========================================================================
 WPS = 2.5  # ~150 words/min
 
 def hhmmss(seconds):
-    s, ms = divmod(int(round(seconds * 1000)), 1000)
+    ms = int(round((seconds - int(seconds)) * 1000))
+    s = int(seconds)
     return f"{s//3600:02d}:{(s%3600)//60:02d}:{s%60:02d}.{ms:03d}"
 
 # --- realistic meeting texture ---------------------------------------------
@@ -1002,7 +1109,13 @@ def emit_transcripts(era, paths):
             }
         interruptions = sum(1 for mt in meta_turns if mt["interrupt"])
         dominant = max(speakers.items(), key=lambda kv: kv[1]["talk_pct"])
+        dominant_handle = dominant[0]
         total_speech = sum(mt["dur_s"] for mt in meta_turns)
+        lead_handle = LEAD.get(tr["id"]) or next(
+            (mt["handle"] for mt in meta_turns if mt["kind"] == "content"), dominant_handle)
+        dominant_is_lead = dominant_handle == lead_handle
+        # A dominant lead in a small (<5) working session is expected, not a red flag.
+        expected_dominance = dominant_is_lead and len(attendees) < 5
         summary = {
             "id": tr["id"], "title": tr["title"], "date": tr["date"],
             "duration_s": round(prev_end, 1),
@@ -1015,6 +1128,10 @@ def emit_transcripts(era, paths):
             "interruptions": interruptions,
             "dominant_speaker": dominant[1]["name"],
             "dominant_pct": dominant[1]["talk_pct"],
+            "led_by": NAME[lead_handle],
+            "dominant_is_lead": dominant_is_lead,
+            # True when high talk-share is explained by "they were meant to lead this small session"
+            "dominance_expected": expected_dominance,
             # attended but never spoke substantively, or spoke <3% of substantive airtime
             "present_but_silent": [NAME[h] for h in roster_for_meeting
                                    if speakers[h]["attended"] and speakers[h]["talk_pct"] < 3.0],
@@ -1137,6 +1254,19 @@ def emit_git(era, paths):
             ],
             "comments": [],
         },
+        {
+            "number": 115, "title": "Ways of working: blameless notes + decision reopening bar",
+            "author": "sarah", "created": "2026-07-11", "merged": "2026-07-12",
+            "state": "merged", "base": "main", "head": "process/ways-of-working", "era": "after",
+            "body": "Codifies Q2 assessment recommendations #1 (Trust — blameless incident notes, celebrate the "
+                    "andon cord) and #3 (Commitment — a written reopening bar on every ADR). See "
+                    "assessments/report-Q2-2026.md. This is the loop turning feedback into durable practice.",
+            "reviews": [
+                {"reviewer": "tomas", "state": "approved",
+                 "body": "The trust + commitment recommendations made durable instead of living in one retro's memory. Approving."},
+            ],
+            "comments": [],
+        },
     ]
 
     kept = [p for p in prs if p["era"] == era]
@@ -1197,6 +1327,10 @@ def emit_issues(era, paths):
          ["security"], "Bus factor now 2."),
         ("AUR-17","Label snapshot + annual-review automation","mark","governance","done","P1","2026-06-24","2026-07-12",
          ["governance","tk"], "Implements the ADR-0003 mitigation: snapshot Local Contexts defs, annual review reminder."),
+        ("AUR-18","Written reopening bar standard on ADRs","sarah","governance","done","P2","2026-08-25","2026-08-26",
+         ["process","commitment"], "Q2 assessment rec #3 (Commitment). Every ADR now ends with an explicit reopening bar."),
+        ("AUR-19","Q2 assessment action tracker","sarah","platform","done","P1","2026-07-01","2026-09-22",
+         ["process","meta"], "Tracks the 5 Q2 team-health recommendations to closure. See assessments/. Loop closed at the Q3 readout."),
     ]
     issues = before if era == "before" else after
     out = []
@@ -1384,11 +1518,32 @@ def era_rollup(metrics, survey):
     naomi_talk = _mean([s["speakers"]["naomi"]["talk_pct"] for s in naomi_att])
     naomi_silent = sum(1 for s in naomi_att if "Naomi Kito" in s["present_but_silent"])
     dana_group = [s["speakers"]["dana"]["talk_pct"] for s in group if "dana" in s["speakers"]]
+    # Dominance is worth noting everywhere, but with nuance: a designated lead running a
+    # small (<5) working session is EXPECTED. The headline dominance number is therefore
+    # taken over substantial (>=5) meetings, where high talk-share is a real signal; small
+    # led sessions are noted separately (not dropped) so the nuance is explicit.
+    big = [s for s in group if s["attendee_count"] >= 5]
+    small_led = [
+        {"meeting": s["id"], "dominant": s["dominant_speaker"], "pct": s["dominant_pct"],
+         "led_by": s.get("led_by"), "expected": s.get("dominance_expected", False)}
+        for s in group if s["attendee_count"] < 5 and s["dominant_pct"] >= 40
+    ]
+    # Dominance by someone who was NOT the meeting's lead — the genuine red flag, any size.
+    unexpected = [
+        {"meeting": s["id"], "dominant": s["dominant_speaker"], "pct": s["dominant_pct"],
+         "led_by": s.get("led_by")}
+        for s in group if s["dominant_pct"] >= 45 and not s.get("dominant_is_lead", True)
+    ]
     return {
         "group_meetings": len(group),
-        # Peak tells the dominance story; avg is diluted by meetings the person barely spoke in.
-        "peak_dominant_talk_pct": max((s["dominant_pct"] for s in group), default=None),
-        "avg_dominant_talk_pct": _mean([s["dominant_pct"] for s in group]),
+        "substantial_group_meetings": len(big),
+        # Headline: dominance in substantial meetings (small led sessions excluded from the
+        # number but reported in small_led_dominance below).
+        "peak_dominant_talk_pct": max((s["dominant_pct"] for s in big), default=None),
+        "avg_dominant_talk_pct": _mean([s["dominant_pct"] for s in big]),
+        "peak_dominant_any_group": max((s["dominant_pct"] for s in group), default=None),
+        "small_led_dominance": small_led,          # noted, with the "meant to lead" nuance
+        "unexpected_dominance": unexpected,         # dominance by a non-lead (the real flag)
         "dana_peak_talk_pct": max(dana_group, default=None),
         "dana_avg_talk_pct": dana_talk,
         "naomi_avg_talk_pct": naomi_talk,

@@ -92,5 +92,31 @@
     "topic": {
       "value": "Automated collaboration-insights readouts"
     }
+  },
+  {
+    "id": "C700",
+    "name": "team-health",
+    "created": 1775433600,
+    "is_archived": false,
+    "members": [
+      "U01",
+      "U02",
+      "U03",
+      "U04",
+      "U05",
+      "U06",
+      "U07",
+      "U08",
+      "U09",
+      "U10",
+      "U11",
+      "U12"
+    ],
+    "purpose": {
+      "value": "Team-health assessments & action items"
+    },
+    "topic": {
+      "value": "Team-health assessments & action items"
+    }
   }
 ]
