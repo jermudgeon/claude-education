@@ -15,13 +15,15 @@ cites a real code id and a quote that appears verbatim in the cited turn, and fa
 
 ```bash
 python3 demo/build_demo_data.py     # writes demo/data.js
+python3 demo/build_scores_data.py   # writes demo/scores.js (snapshots + moments)
 open demo/index.html                # no server needed
 ```
 
-`build_demo_data.py` reads only from `simulated-data/aurora-skills` and has no dependencies outside
-the standard library.
+Both build scripts read only from `simulated-data/aurora-skills` and have no dependencies outside
+the standard library. When a real team-assess run lands its snapshots in `assessments/`, rerun
+`build_scores_data.py` and the Scores & trend cards fill in.
 
-## The four views
+## The three views
 
 **Live session** replays `2026-06-09_roadmap-review` turn by turn at a selectable 15x/60x/240x and
 runs four rules from PRD 05's metric contract as the transcript arrives. Each nudge fires only once
@@ -39,7 +41,16 @@ surface, all of it matching `GROUND_TRUTH.md`:
 | Questions are participation | Flags a question-heavy speaker as participating, never as low engagement |
 | Interruption | One seeded interruption, logged and explicitly not scored |
 
-**Analysis** is the rubric consuming the same meeting, with the Lencioni pyramid at the top: five
+**Analysis** now also holds the meeting readout, so the coding and the metric contract sit on one
+page. It opens with the Lencioni pyramid, then **Scores & trend**: one card per dimension carrying
+score, confidence, and trend slots that fill in from `assessments/snapshot-<period>.json` the moment
+a real scorer run lands, and stay visibly pending until then, never invented. Each card features one
+verbatim moment from a Q3 transcript with its timestamp (Ben disclosing his own regression is why
+vulnerability is up), the Q2 → Q3 contrast for the matching seeded signal, and a drill-down into the
+raw JSON. Moment extraction is anchored to the transcript text and fails loudly if a regeneration
+drops an anchor.
+
+Below the cards, the rubric consumes the same meeting the live view replays: five
 layers, Trust at the base, each showing the meeting's marks and cluster-spread confidence, each
 clicking through to its evidence. Below it, 14 authored marks over the 120-code book, grouped by
 dimension in pyramid order, each with its stable code id, verbatim quote, and speaker. It follows the team-assess spec's rules: evidence cites a code id, observations matching
@@ -48,7 +59,7 @@ confidence, and no 1–5 score appears because the scorer that would compute one
 view also names what the codebook cannot see: Dana's 66.2% dominance is an aggregate, so it belongs
 to the metric contract, not to any single-utterance code. The two layers are complements.
 
-**Meeting readout** is the per-attendee table on both measurement bases. Content-only reproduces the
+The **meeting readout**, at the bottom of Analysis, is the per-attendee table on both measurement bases. Content-only reproduces the
 66.2% that `GROUND_TRUTH.md` publishes for this meeting; all-speech is what a live tool actually
 hears. Both cross the 40% threshold, so the nudge fires either way. The dataset sanctions both bases
 (`ground_truth.json` → `metrics_note`); mixing them silently is the thing to avoid.

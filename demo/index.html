@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,13 +26,6 @@ h1,h2,h3{font-family:"PT Serif",Georgia,serif;font-weight:700;letter-spacing:0}
 button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .muted{color:rgb(var(--fg)/.6)} .dim{color:rgb(var(--fg)/.4)}
 .eyebrow{font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--aurora)}
-
-.provenance{
-  background:rgba(19,198,183,.10);border-bottom:1px solid rgba(19,198,183,.25);
-  font-size:.75rem;padding:7px 20px;text-align:center;color:rgb(var(--fg)/.75);
-}
-.provenance b{color:var(--glacial);font-weight:600}
-.provenance code{font-family:ui-monospace,Menlo,monospace;font-size:.72rem}
 
 header.top{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
 .logo{height:44px;width:auto;border-radius:9px;display:block}
@@ -141,8 +134,6 @@ tr:last-child td{border-bottom:0}
 .codemark.negative{border-left-color:var(--sunset)}
 .codemark.positive{border-left-color:var(--aurora)}
 .kindtag{display:inline-block;padding:1px 7px;border-radius:999px;border:1px solid var(--line);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgb(var(--fg)/.45);margin-left:6px}
-.authored{background:rgba(239,167,18,.09);border:1px solid rgba(239,167,18,.3);border-radius:12px;padding:12px 15px;font-size:.8rem;line-height:1.6;color:rgb(var(--fg)/.75);margin-bottom:16px}
-.authored b{color:var(--harvest)}
 .pyramid{display:flex;justify-content:center}
 .pyramid svg{max-width:620px;width:100%;height:auto}
 .pyramid .layer{cursor:pointer}
@@ -163,10 +154,6 @@ tr:last-child td{border-bottom:0}
 #meetingchart svg{width:100%;height:auto;display:block}
 .axis{font-size:10.5px;fill:rgb(var(--fg)/.42)}
 .eralabel{font-size:11px;font-weight:600;fill:rgb(var(--fg)/.55);letter-spacing:.08em}
-td.pol{font-size:.78rem;font-weight:600}
-.pol-good{color:var(--aurora)} .pol-bad{color:var(--sunset)} .pol-part{color:var(--harvest)}
-.dimtag{display:inline-flex;align-items:center;gap:6px;font-size:.76rem}
-.dimtag i{width:8px;height:8px;border-radius:2px;flex:none}
 .dimcard{border:1px solid var(--line);border-radius:14px;padding:15px 16px}
 .dimcard h4{font-family:"PT Serif",Georgia,serif;font-size:.95rem}
 .dimhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:8px}
@@ -184,25 +171,53 @@ td.pol{font-size:.78rem;font-weight:600}
 .stack{display:flex;flex-direction:column;gap:16px}
 .lead{font-size:.95rem;line-height:1.7;color:rgb(var(--fg)/.72);max-width:70ch;margin-bottom:18px}
 
-@media (max-width:900px){ .grid{grid-template-columns:1fr} main{padding:16px 14px 32px} }
+/* scores & trend (fed by assessments/ when a real scorer run lands) */
+.scorecards{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:16px;margin-bottom:16px}
+.scorecard .cat{font-family:"PT Serif",Georgia,serif;font-size:1.08rem;font-weight:700;text-transform:capitalize}
+.scorehead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.chip{font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:rgb(var(--fg)/.5)}
+.chip.high{color:var(--aurora);border-color:rgba(43,201,58,.4)}
+.chip.medium{color:var(--harvest);border-color:rgba(239,167,18,.4)}
+.trend{margin-left:auto;font-size:.8rem;font-variant-numeric:tabular-nums;color:rgb(var(--fg)/.6)}
+.trend.up{color:var(--aurora)} .trend.down{color:var(--sunset)}
+.trend .warn{color:var(--harvest);cursor:help}
+.scorebar{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.scorebar .rail{flex:1;height:8px;border-radius:4px;background:rgb(var(--fg)/.08);overflow:hidden}
+.scorebar .fill{display:block;height:100%;background:var(--aurora);border-radius:4px}
+.scorebar .val{font-variant-numeric:tabular-nums;font-size:.92rem;font-weight:600}
+.scorebar.pending .rail{background:repeating-linear-gradient(45deg,rgb(var(--fg)/.06),rgb(var(--fg)/.06) 6px,rgb(var(--fg)/.12) 6px,rgb(var(--fg)/.12) 12px)}
+.moment{border-left:3px solid var(--glacial);padding:2px 0 2px 14px;margin:12px 0}
+.moment .q{font-family:"PT Serif",Georgia,serif;font-size:.97rem;line-height:1.55}
+.moment .at{font-size:.72rem;color:rgb(var(--fg)/.45);margin-top:6px}
+.moment .at code{font-size:.68rem}
+.why{font-size:.8rem;line-height:1.6;color:rgb(var(--fg)/.6);margin:10px 0}
+.why b{color:rgb(var(--fg)/.85);font-weight:600}
+details.drill{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}
+details.drill>summary{cursor:pointer;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgb(var(--fg)/.45);list-style:none}
+details.drill>summary::before{content:"▸ "}
+details.drill[open]>summary::before{content:"▾ "}
+.jt{font-family:ui-monospace,Menlo,monospace;font-size:.74rem;line-height:1.65;overflow-x:auto;margin-top:8px}
+.jt details{padding-left:16px}
+.jt>details{padding-left:0}
+.jt summary{cursor:pointer;list-style:none;white-space:nowrap}
+.jt summary::before{content:"▸ ";color:rgb(var(--fg)/.4)}
+.jt details[open]>summary::before{content:"▾ ";color:rgb(var(--fg)/.4)}
+.jt details>div{padding-left:16px;white-space:nowrap}
+.jt .k{color:var(--cobalt)} .jt .s{color:var(--glacial)} .jt .n{color:var(--harvest)} .jt .b{color:var(--rose)}
+.subhead{margin:28px 0 12px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.subhead h3{font-size:1.12rem}
+
+@media (max-width:900px){ .grid,.scorecards{grid-template-columns:1fr} main{padding:16px 14px 32px} }
 </style>
 </head>
 <body>
 
-<div class="provenance">
-  <b>Every number on this page is read from the repo</b>, not invented here:
-  <code>simulated-data/aurora-skills</code>, a synthetic dataset whose collaboration signals are documented in <code>GROUND_TRUTH.md</code>.
-  One labeled exception: behavior-code assignments are authored judgment, marked as such where they appear.
-</div>
-
 <header class="top">
   <img class="logo" src="../claude-impact-lab-logo.png" alt="Claude Code, struck through: Team Insights">
-  <span class="dim" style="font-size:.78rem">PRD 05 and PRD 06, running on the repo's own data</span>
   <div class="tabs">
     <button class="tab on" data-view="live">Live session</button>
-    <button class="tab" data-view="readout">Meeting readout</button>
-    <button class="tab" data-view="coding">All-time analysis</button>
-    <button class="tab" id="theme">Light</button>
+    <button class="tab" data-view="coding">Analysis</button>
+    <button class="tab" id="theme">Dark</button>
   </div>
 </header>
 
@@ -213,15 +228,8 @@ td.pol{font-size:.78rem;font-weight:600}
       <h2 id="mtitle">—</h2>
       <span class="sub" id="msub">—</span>
     </div>
-    <p class="lead">
-      This replays a real transcript from the dataset, turn by turn, and runs PRD 05's metric contract
-      as it goes. The facilitator only surfaces a pattern once the transcript actually supports it, so
-      nothing appears before the evidence does.
-    </p>
-
     <div class="transport">
       <button class="btn btn-primary" id="play">Play</button>
-      <button class="btn btn-ghost" id="jump">Jump to the first nudge</button>
       <button class="btn btn-ghost" id="reset">Reset</button>
       <span class="clock" id="clock">00:00 / 29:08</span>
       <span class="track" id="track"><i></i></span>
@@ -274,9 +282,9 @@ td.pol{font-size:.78rem;font-weight:600}
     </div>
   </section>
 
-  <!-- ALL-TIME ANALYSIS -->
+  <!-- ANALYSIS -->
   <section class="view" id="view-coding">
-    <div class="meta"><h2>All-time analysis</h2><span class="sub" id="csub">—</span></div>
+    <div class="meta"><h2>Analysis</h2><span class="sub" id="csub">—</span></div>
 
     <div class="card" style="margin-bottom:16px">
       <div class="cardhead"><div><span class="eyebrow">The model</span><h3>Five dysfunctions, one pyramid</h3></div>
@@ -286,47 +294,18 @@ td.pol{font-size:.78rem;font-weight:600}
         meeting's marks; a layer built on a weak one inherits the weakness, so read from the bottom up. Click a layer for its evidence.</p>
     </div>
 
+    <div class="subhead"><h3>Scores &amp; trend</h3><span class="sub" id="ssub">—</span></div>
+    <div class="scorecards" id="scorecards"></div>
+
     <div class="card" style="margin-bottom:16px">
       <div class="cardhead"><div><span class="eyebrow">Trend</span><h3>The five dimensions over time</h3></div>
         <span class="dim" style="font-size:.72rem" id="trendsub"></span></div>
       <div class="multiples" id="multiples"></div>
-      <p class="note" id="trendnote"></p>
       <div class="cardhead" style="margin:20px 0 6px"><div><span class="eyebrow">Every meeting</span><h3>The countable signals underneath the scores</h3></div>
         <span class="dim" style="font-size:.72rem">peak share of content speech per group meeting (4+ people) · healthy ceiling 40% · pairings and 1:1s excluded, a ceiling has no meaning for two voices</span></div>
       <div id="meetingchart"></div>
-      <p class="note"><b>Two grains, one story.</b> Dimension scores exist at quarter grain because that is when
-        team-assess ran; the bars are per meeting, computed from the transcript metadata, and they are what the
-        scores have to answer to. Hover any bar for the meeting, its dominant speaker, interruptions, and
-        silent-but-present count.</p>
     </div>
 
-    <div class="card scroller" style="margin-bottom:16px">
-      <div class="cardhead"><div><span class="eyebrow">Quarter over quarter</span><h3>The eleven computed signals</h3></div>
-        <span class="dim" style="font-size:.72rem" id="qsub"></span></div>
-      <table id="quarter"></table>
-      <p class="note">
-        <b>Why this matters more than the scores.</b> A ground-truth table is an accuracy test, not just
-        sample data. It turns "does the scorer work" from an opinion into a measurement, and it is the
-        thing that decides whether the trend feature can ship.
-      </p>
-    </div>
-
-    <div class="card scroller" style="margin-bottom:16px">
-      <div class="cardhead"><div><span class="eyebrow">Signal map</span><h3>Every seeded signal, before and after</h3></div>
-        <span class="dim" style="font-size:.72rem">from assessments/five-dysfunctions-signal-map.json</span></div>
-      <table id="sigmap"></table>
-      <p class="note"><b>The closed loop.</b> Q2's assessment produced recommendations, the team enacted them,
-        and Q3's data shows the flips. Hover a row's polarity cells for the verbatim evidence.</p>
-    </div>
-
-    <p class="lead">
-      This is the rubric from <code>rubric/obm-behavior-codes.json</code> consuming the same meeting the
-      live view replays: 120 observable behaviors scored across the five team dimensions, applied to the
-      transcript per the team-assess spec. Every dimension is backed by concrete, quotable signals, never
-      a vague AI impression. Marks, not verdicts: no 1–5 score appears here because the scorer that would
-      compute one is not built yet, and inventing one would be exactly the failure the spec guards against.
-    </p>
-    <div class="authored" id="cprov"></div>
     <div class="codegrid">
       <div class="stack" id="dimcards"></div>
       <div class="stack">
@@ -341,11 +320,8 @@ td.pol{font-size:.78rem;font-weight:600}
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- READOUT -->
-  <section class="view" id="view-readout">
-    <div class="meta"><h2>Meeting readout</h2><span class="sub" id="rsub">—</span></div>
+    <div class="subhead"><h3>Meeting readout</h3><span class="sub" id="rsub">—</span></div>
     <p class="lead">
       PRD 05's metric contract, computed for this one meeting. The dataset authors content-only numbers
       as the exact signal and wraps them in procedural texture, so both bases are shown: content-only
@@ -356,10 +332,10 @@ td.pol{font-size:.78rem;font-weight:600}
       <p class="note" id="rnote"></p>
     </div>
   </section>
-
 </main>
 
 <script src="data.js"></script>
+<script src="scores.js"></script>
 <script>
 const D = window.DEMO;
 const el = id => document.getElementById(id);
@@ -587,10 +563,6 @@ el('play').onclick = () => {
   timer = setInterval(tick, 25);
 };
 el('reset').onclick = reset;
-el('jump').onclick = () => {
-  clearInterval(timer); timer = null; el('play').textContent = 'Play';
-  while (t < END && !fired.has('balance')) step();
-};
 
 /* ---------- readout ---------- */
 function buildReadout(){
@@ -672,8 +644,6 @@ function buildPyramid(tallies){
 function buildCoding(){
   el('csub').textContent = `${D.summary.title} · ${D.summary.date} · ${MARKS.length} marks over ${CODING.rubric.total_codes} codes`;
   buildPyramid(tally(MARKS));
-  el('cprov').innerHTML = `<b>Authored, not measured.</b> ${esc(CODING.provenance)}
-    Coder: ${esc(CODING.authored_by)}, ${esc(CODING.authored_on)}.`;
 
   el('dimcards').innerHTML = tally(MARKS).map(d => {
     const meta = CODING.rubric.dimensions[d.dim];
@@ -699,6 +669,72 @@ function buildCoding(){
   el('notcodable').innerHTML = esc(CODING.not_codable);
 }
 
+/* ---------- scores & trend (assessments/, real run only) ---------- */
+const S = window.SCORES;
+const SDIMS = ['trust','conflict','commitment','accountability','results'];
+
+function jtEntry(key, v){
+  const label = key === null ? '' : `<span class="k">${esc(key)}</span>: `;
+  if (v !== null && v !== undefined && typeof v === 'object'){
+    const isArr = Array.isArray(v);
+    const size = isArr ? v.length : Object.keys(v).length;
+    const items = isArr
+      ? v.map((x,i) => jtEntry(String(i), x))
+      : Object.entries(v).map(([k,x]) => jtEntry(k, x));
+    return `<details><summary>${label}<span class="dim">${isArr ? '[' : '{'}${size}${isArr ? ']' : '}'}</span></summary>${items.join('')}</details>`;
+  }
+  const val = typeof v === 'string' ? `<span class="s">"${esc(v)}"</span>`
+    : typeof v === 'number' ? `<span class="n">${v}</span>`
+    : `<span class="b">${v}</span>`;
+  return `<div>${label}${val}</div>`;
+}
+
+function buildScores(){
+  if (!S){ el('scorecards').innerHTML = '<div class="empty">scores.js missing; run demo/build_scores_data.py.</div>'; return; }
+  const cur = S.current, prev = S.prior;
+  el('ssub').textContent = cur
+    ? `${cur.period} scored ${cur.run_date}${prev ? ' · trend vs ' + prev.period : ''}`
+    : '';
+
+  el('scorecards').innerHTML = SDIMS.map(d => {
+    const m = S.moments[d], sig = m.signal;
+    const cd = cur && cur.dimensions ? cur.dimensions[d] : null;
+    const pd = prev && prev.dimensions ? prev.dimensions[d] : null;
+    let head, bar;
+    if (cd){
+      const delta = pd ? +(cd.score - pd.score).toFixed(1) : null;
+      const dir = delta === null ? '' : Math.abs(delta) < .2 ? 'stable' : delta > 0 ? 'improving' : 'declining';
+      const warn = delta !== null && Math.abs(delta) > 1;
+      const arrow = delta === null ? '' : delta > 0 ? '↑' : delta < 0 ? '↓' : '→';
+      head = `${cd.confidence ? `<span class="chip ${esc(cd.confidence)}">${esc(cd.confidence)} confidence</span>` : ''}
+        <span class="trend ${delta > 0 ? 'up' : delta < 0 ? 'down' : ''}">${delta === null ? '' :
+          `${arrow} ${delta > 0 ? '+' : ''}${delta.toFixed(1)} ${esc(dir)}`}
+          ${warn ? '<span class="warn" title="Moved more than 1.0 point. Run-to-run variance of the scorer is unmeasured (open question 3); treat large moves as directional, not exact.">⚠</span>' : ''}</span>`;
+      bar = `<div class="scorebar">
+        <span class="rail"><span class="fill" style="width:${20 * cd.score}%"></span></span>
+        <span class="val">${cd.score.toFixed(1)}<span class="dim">/5</span></span>
+        ${pd ? `<span class="dim" style="font-size:.75rem">${esc(prev.period)}: ${pd.score.toFixed(1)}</span>` : ''}</div>`;
+    } else {
+      head = `<span class="chip">pending</span>
+        <span class="trend" title="Scores appear when a real team-assess run lands in assessments/. They are never invented.">score, confidence &amp; trend await the first scorer run</span>`;
+      bar = `<div class="scorebar pending"><span class="rail"></span><span class="val">—<span class="dim">/5</span></span></div>`;
+    }
+    return `<div class="card scorecard">
+      <div class="scorehead"><span class="cat">${esc(d)}</span>${head}</div>
+      ${bar}
+      <div class="moment">
+        <div class="q">&ldquo;${esc(m.quote)}&rdquo;</div>
+        <div class="at">at ${m.mmss} &middot; ${esc(m.meeting_title)} &middot; ${m.meeting_date} &middot; <code>${esc(m.meeting_id)}.vtt</code></div>
+      </div>
+      <div class="why"><b>Q2 &rarr; Q3.</b> ${esc(sig.q2.evidence)} <b>&rarr;</b> ${esc(sig.q3.evidence)}
+        <span class="dim">(${esc(sig.facet)})</span></div>
+      <details class="drill"><summary>Drill into the JSON</summary>
+        <div class="jt">${jtEntry(d, {snapshot: cd, seeded_signals: S.map.filter(x => x.dimension === d), moment: m})}</div>
+      </details>
+    </div>`;
+  }).join('');
+}
+
 /* ---------- trend: small multiples + meeting-grain bars ---------- */
 function buildTrend(){
   const A = D.assessments;
@@ -721,10 +757,6 @@ function buildTrend(){
       <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${dim} score, ${A[0].period} to ${A[1].period}">${grid}${line}${dots}${ticks}</svg>
     </div>`;
   }).join('');
-  el('trendnote').innerHTML = `<b>Scores are real team-assess runs</b> from
-    <code>team-assess/snapshots/</code>, the tool scoring each quarter's data, not authored numbers:
-    the dataset's authored score sheets were removed on purpose so the scorer has something to
-    discover. Two quarters exist, so each line has two points; every future run extends them.`;
 
   const T = D.timeline.filter(m => m.attendees >= 4);
   const W = 1160, H = 190, L = 46, R = 14, TOP = 26, BOT = 34;
@@ -760,52 +792,6 @@ function buildTrend(){
   </svg>`;
 }
 
-function buildSignalMap(){
-  const GOOD = new Set(['healthy','resolved']);
-  const BAD = new Set(['absent','dysfunction','gap-found-late','suppressed-by-format']);
-  const pol = p => `<td class="pol pol-${GOOD.has(p) ? 'good' : BAD.has(p) ? 'bad' : 'part'}">${esc(p)}</td>`;
-  el('sigmap').innerHTML = `
-    <thead><tr><th>Observable act</th><th>Dimension</th><th>Q2</th><th>Q3</th></tr></thead>
-    <tbody>${D.signal_map.map(s => `<tr title="Q2: ${esc(s.q2_evidence)}\nQ3: ${esc(s.q3_evidence)}">
-      <td>${esc(s.act)}</td>
-      <td><span class="dimtag"><i style="background:${DIMCOLOR[s.dimension[0].toUpperCase()+s.dimension.slice(1)]}"></i>${esc(s.dimension)}</span></td>
-      ${pol(s.q2)}${pol(s.q3)}
-    </tr>`).join('')}</tbody>`;
-}
-
-/* ---------- quarter ---------- */
-function buildQuarter(){
-  const b = D.comparison.before, a = D.comparison.after;
-  const ROWS = [
-    ['Peak dominant talk-time, group meeting', 'peak_dominant_talk_pct', '%', 'down'],
-    ['Dana peak talk-time, group meeting', 'dana_peak_talk_pct', '%', 'down'],
-    ['Naomi average talk-time, group meeting', 'naomi_avg_talk_pct', '%', 'up'],
-    ['Naomi silent-but-present meetings', 'naomi_silent_meetings', '', 'down'],
-    ['Interruptions', 'total_interruptions', '', 'down'],
-    ['License conflict reopened', 'license_conflict_reopens', '', 'down'],
-    ['Regression time to surface, days', 'regression_time_to_surface_days', '', 'down'],
-    ['Hallway dissent events', 'hallway_dissent_events', '', 'down'],
-    ['Changed-mind-in-room events', 'changed_mind_in_room_events', '', 'up'],
-    ['Average psychological safety, 1 to 5', 'avg_psych_safety_1to5', '', 'up'],
-    ['Average conflict health, 1 to 5', 'avg_conflict_health_1to5', '', 'up'],
-  ];
-  el('qsub').textContent = `${D.eras.before}  →  ${D.eras.after}`;
-  el('quarter').innerHTML = `
-    <thead><tr><th>Signal</th><th class="num">Before, Q2</th><th class="num">After, Q3</th><th>Direction</th></tr></thead>
-    <tbody>${ROWS.map(([label, key, unit, want]) => {
-      const bv = b[key], av = a[key];
-      const moved = av === bv ? 'flat' : (av > bv ? 'up' : 'down');
-      const better = moved === 'flat' ? null : moved === want;
-      return `<tr>
-        <td>${esc(label)}</td>
-        <td class="num">${bv}${unit}</td>
-        <td class="num">${av}${unit}</td>
-        <td class="${better === null ? 'dim' : better ? 'good' : 'bad'}">
-          ${moved === 'flat' ? 'no change' : (moved === 'up' ? '↑' : '↓') + (better ? ' better' : ' worse')}</td>
-      </tr>`;
-    }).join('')}</tbody>`;
-}
-
 /* ---------- chrome ---------- */
 document.querySelectorAll('.tab[data-view]').forEach(btn => btn.onclick = () => {
   document.querySelectorAll('.tab[data-view]').forEach(b => b.classList.toggle('on', b === btn));
@@ -819,7 +805,7 @@ el('theme').onclick = () => {
 
 el('mtitle').textContent = D.summary.title;
 el('msub').textContent = `${D.summary.date} · ${D.summary.duration_min} min · ${D.summary.attendee_count} attendees · ${TURNS.length} turns`;
-buildReadout(); buildQuarter(); buildTrend(); buildSignalMap(); buildCoding(); reset();
+buildScores(); buildReadout(); buildTrend(); buildCoding(); reset();
 </script>
 </body>
 </html>
