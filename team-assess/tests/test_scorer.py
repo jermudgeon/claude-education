@@ -116,7 +116,7 @@ def _make_mock_client(response_data: dict):
     mock_message.stop_reason = "tool_use"
 
     mock_client = MagicMock()
-    mock_client.messages.create.return_value = mock_message
+    mock_client.messages.stream.return_value.__enter__.return_value.get_final_message.return_value = mock_message
     return mock_client
 
 
@@ -164,7 +164,7 @@ def test_score_raises_scoring_error_when_no_tool_use():
     mock_message = MagicMock()
     mock_message.content = [mock_content]
     mock_client = MagicMock()
-    mock_client.messages.create.return_value = mock_message
+    mock_client.messages.stream.return_value.__enter__.return_value.get_final_message.return_value = mock_message
     scorer = ClaudeScorer({"model": "claude-sonnet-4-6"}, client=mock_client)
     with pytest.raises(ScoringError):
         scorer.score("content", SAMPLE_RUBRIC, "Q1-2025", ["f.txt"])

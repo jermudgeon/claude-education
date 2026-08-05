@@ -20,6 +20,23 @@ Below are the dimensions and facets to score.
 
 ## Instructions
 
+## CRITICAL: Confidence and evidence discipline
+
+For each facet, you MUST assess whether the artifacts contain direct observable
+signal for that specific facet:
+
+- If artifacts contain NO direct signal for a facet, mark confidence "low" and
+  return an empty evidence list. Do NOT invent a score to fill the slot.
+- If artifacts contain some but sparse signal, mark confidence "medium".
+- If artifacts contain multiple clear observations, mark confidence "high".
+
+Low-confidence facets are EXCLUDED from dimension aggregation. This is
+intentional — it is far better to mark a facet low-confidence than to guess.
+A dimension with no medium/high facets is excluded from overall_health entirely.
+
+Never fabricate evidence quotes. Every quote in the evidence list must be a
+verbatim or near-verbatim excerpt from the artifacts.
+
 Analyze the team artifacts provided by the user and score each facet on a scale of 1 to 5:
 - 1 = severe dysfunction clearly present
 - 3 = mixed signals, some healthy and some dysfunctional behavior
@@ -31,7 +48,7 @@ For each facet provide:
 - evidence: a list of 0-4 direct quotes or specific behavioral observations from the artifacts
 
 Also provide:
-- recommendations: a list of 3-5 specific, actionable recommendations for the team, ordered by priority (most dysfunctional dimension first)
+- recommendations: a list of 3-5 specific, actionable recommendations for the team, ordered by priority (most dysfunctional facets first)
 
 Return ONLY valid JSON matching the schema provided via the tool definition. Do not add commentary outside the JSON."""
 

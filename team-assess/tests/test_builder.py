@@ -74,3 +74,8 @@ def test_user_prompt_contains_team_artifacts_header():
 def test_system_prompt_does_not_contain_artifacts():
     system_prompt, _ = build_scoring_prompt(SAMPLE_RUBRIC, SAMPLE_CONTENT)
     assert "Alice admitted she was blocked" not in system_prompt
+
+
+def test_system_prompt_contains_exclusion_language():
+    system_prompt, _ = build_scoring_prompt(SAMPLE_RUBRIC, SAMPLE_CONTENT)
+    assert "excluded" in system_prompt.lower()

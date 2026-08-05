@@ -1,8 +1,9 @@
 """Assemble the Scores & trend section: real scorer output when it exists, real moments always.
 
-Reads only what the repo publishes. Snapshots are discovered in assessments/snapshot-*.json;
-when none exist (the repo removed authored scores in #19 so that scores only ever come from a
-real team-assess run), the section renders pending score slots rather than invented numbers.
+Reads only what the repo publishes. Snapshots are the real team-assess runs in
+team-assess/snapshots/aurora-*.json (the repo removed authored scores in #19 so that scores
+only ever come from a real run); when none exist, the section renders pending score slots
+rather than invented numbers.
 The dimension-to-signal alignment comes from assessments/five-dysfunctions-signal-map.json.
 Each moment is a verbatim cue pulled from the transcript it happened in, located by a
 distinctive substring; extraction fails loudly if an anchor stops matching, so a regenerated
@@ -19,6 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "simulated-data" / "aurora-skills"
 ASSESS = DATA / "assessments"
+RUNS = ROOT / "team-assess" / "snapshots"
 
 CUE = re.compile(
     r"^(\d\d):(\d\d):(\d\d)\.(\d{3,4}) --> (\d\d):(\d\d):(\d\d)\.(\d{3,4})\s*$\n<v ([^>]+)>(.*)$",
@@ -90,11 +92,19 @@ def period_key(snapshot):
     return int(year), int(quarter.lstrip("Q"))
 
 
+def load_run(path):
+    s = json.loads(path.read_text(encoding="utf-8"))
+    _, quarter, year = s["period"].split("-")
+    return {
+        "period": f"{quarter.upper()}-{year}",
+        "run_date": s.get("run_date"),
+        "overall": s.get("overall_health"),
+        "dimensions": {k: {"score": v["score"]} for k, v in s["dimensions"].items()},
+    }
+
+
 def main():
-    snapshots = sorted(
-        (json.loads(p.read_text(encoding="utf-8")) for p in ASSESS.glob("snapshot-*.json")),
-        key=period_key,
-    )
+    snapshots = sorted((load_run(p) for p in RUNS.glob("aurora-*.json")), key=period_key)
     current = snapshots[-1] if snapshots else None
     prior = snapshots[-2] if len(snapshots) > 1 else None
 
@@ -111,7 +121,7 @@ def main():
 
     blob = {
         "source": {
-            "snapshots_dir": "simulated-data/aurora-skills/assessments/",
+            "snapshots_dir": "team-assess/snapshots/",
             "signal_map": "simulated-data/aurora-skills/assessments/five-dysfunctions-signal-map.json",
             "note": "Scores render only from a real team-assess run; none is invented here.",
         },
