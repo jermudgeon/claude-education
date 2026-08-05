@@ -151,19 +151,20 @@ def timeline():
 
 
 def assessments():
-    """The two team-assess snapshots, trimmed to what the trend chart renders."""
+    """The real team-assess runs over each quarter, trimmed to what the trend chart renders.
+
+    These are tool output (team-assess/snapshots/), not authored numbers: the dataset's
+    authored score sheets were removed on purpose so the scorer has something to discover.
+    """
     out = []
-    for q in ["Q2-2026", "Q3-2026"]:
-        s = json.loads((DATA / "assessments" / f"snapshot-{q}.json").read_text())
+    for q, label in [("q2", "Q2-2026"), ("q3", "Q3-2026")]:
+        s = json.loads((ROOT / "team-assess" / "snapshots" / f"aurora-{q}-2026.json").read_text())
         out.append(
             {
-                "period": s["period"],
+                "period": label,
                 "overall": s["overall_health"],
-                "note": s.get("note", ""),
-                "dimensions": {
-                    k: {"score": v["score"], "confidence": v["confidence"]}
-                    for k, v in s["dimensions"].items()
-                },
+                "run_date": s.get("run_date"),
+                "dimensions": {k: {"score": v["score"]} for k, v in s["dimensions"].items()},
             }
         )
     return out

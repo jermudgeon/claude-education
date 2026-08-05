@@ -713,7 +713,7 @@ function buildTrend(){
     const grid = [1,3,5].map(s => `<line class="gridline" x1="${PAD}" x2="${W-PAD}" y1="${y(s)}" y2="${y(s)}"/>`).join('');
     const line = `<path d="M ${x(0)} ${y(pts[0].score)} L ${x(1)} ${y(pts[1].score)}" stroke="${DIMCOLOR[dim]}" stroke-width="2" fill="none"/>`;
     const dots = pts.map((p, i) => `
-      <circle cx="${x(i)}" cy="${y(p.score)}" r="4" fill="${DIMCOLOR[dim]}"><title>${esc(A[i].period)} ${dim}: ${p.score} (${esc(p.confidence)} confidence)</title></circle>
+      <circle cx="${x(i)}" cy="${y(p.score)}" r="4" fill="${DIMCOLOR[dim]}"><title>${esc(A[i].period)} ${dim}: ${p.score}${p.confidence ? ` (${esc(p.confidence)} confidence)` : ''}</title></circle>
       <text class="pval" x="${x(i)}" y="${y(p.score) - 8}" text-anchor="middle">${p.score}</text>`).join('');
     const ticks = A.map((a, i) => `<text class="ptick" x="${x(i)}" y="${H-6}" text-anchor="middle">${a.period.slice(0,2)}</text>`).join('');
     return `<div class="panel">
@@ -721,9 +721,10 @@ function buildTrend(){
       <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${dim} score, ${A[0].period} to ${A[1].period}">${grid}${line}${dots}${ticks}</svg>
     </div>`;
   }).join('');
-  el('trendnote').innerHTML = `<b>Scores are the dataset's authored snapshots</b> from
-    <code>assessments/</code>: in-world team-assess output, re-pinned to rubric v0.9, shown 1 to 5.
-    Two quarters exist, so each line has two points; every future assessment run extends them.`;
+  el('trendnote').innerHTML = `<b>Scores are real team-assess runs</b> from
+    <code>team-assess/snapshots/</code>, the tool scoring each quarter's data, not authored numbers:
+    the dataset's authored score sheets were removed on purpose so the scorer has something to
+    discover. Two quarters exist, so each line has two points; every future run extends them.`;
 
   const T = D.timeline.filter(m => m.attendees >= 4);
   const W = 1160, H = 190, L = 46, R = 14, TOP = 26, BOT = 34;
