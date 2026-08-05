@@ -97,6 +97,30 @@
       "yesterday": "Named my meeting-silence pattern in retro",
       "today": "Keep contributing in writing, try one thing out loud",
       "blockers": "the meeting format still doesn't fit how I think"
+    },
+    {
+      "date": "2026-04-16",
+      "user": "Greg Olsen",
+      "handle": "greg",
+      "yesterday": "Had a bunch of calls about the exporter",
+      "today": "More calls, scoping it out",
+      "blockers": "none"
+    },
+    {
+      "date": "2026-05-08",
+      "user": "Greg Olsen",
+      "handle": "greg",
+      "yesterday": "Meetings on the exporter, still scoping",
+      "today": "Circle back on the exporter",
+      "blockers": "none"
+    },
+    {
+      "date": "2026-05-22",
+      "user": "Greg Olsen",
+      "handle": "greg",
+      "yesterday": "Been in a lot of syncs this week",
+      "today": "Keep syncing",
+      "blockers": "none"
     }
   ]
 }

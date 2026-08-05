@@ -7,625 +7,565 @@ NOTE Second Reviewer Onboarding & Peer Feedback — 2026-07-24
 <v Tomás Reyes>Okay, let's give it another minute for folks to join, then we'll get going.
 
 2
-00:00:48.900 --> 00:00:54.900
+00:00:54.900 --> 00:01:00.900
 <v Tomás Reyes>Alright, I think we've got most people — I see Marcus, Dana. Let's get started.
 
 3
-00:00:54.900 --> 00:00:57.300
+00:01:00.900 --> 00:01:03.300
 <v Marcus Bell>Can everyone see my screen alright?
 
 4
-00:00:57.300 --> 00:00:58.500
+00:01:03.300 --> 00:01:04.500
 <v Tomás Reyes>Yep, looks good.
 
 5
-00:00:58.500 --> 00:01:08.500
+00:01:04.500 --> 00:01:14.500
 <v Tomás Reyes>Quick agenda: I want to get through the main topic, leave room for questions, and land on clear action items before we drop. Sound good?
 
 6
-00:01:12.700 --> 00:01:27.900
+00:01:19.700 --> 00:01:34.900
 <v Tomás Reyes>Recommendation four: kill the single point of failure and normalize peer feedback. The second security reviewer starts today. Here's the review checklist and the handoff — I am no longer the only person who can approve a skill.
 
 7
-00:01:28.600 --> 00:01:29.400
-<v Dana Whitfield>Fair.
+00:01:35.800 --> 00:01:36.600
+<v Marcus Bell>Got it.
 
 8
-00:01:32.600 --> 00:01:40.200
+00:01:42.800 --> 00:01:50.400
 <v Marcus Bell>And the peer-feedback half: we call things out in the room, peer to peer, instead of escalating to Dana.
 
 9
-00:01:40.200 --> 00:01:46.200
-<v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
+00:01:50.400 --> 00:01:54.400
+<v Tomás Reyes>Good — as long as it's reversible, I'm comfortable moving.
 
 10
-00:01:49.900 --> 00:01:58.700
-<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
+00:01:56.100 --> 00:02:03.700
+<v Dana Whitfield>That matches what I was seeing on my end with the roadmap and keeping the two tracks in sync.
 
 11
-00:01:58.700 --> 00:02:02.300
-<v Marcus Bell>What would it take to de-risk that a little?
+00:02:03.700 --> 00:02:08.500
+<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
 
 12
-00:02:07.100 --> 00:02:09.100
-<v Tomás Reyes>Right, that's what I meant.
+00:02:17.300 --> 00:02:18.100
+<v Tomás Reyes>That's fair.
 
 13
-00:02:09.100 --> 00:02:13.900
-<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
+00:02:21.700 --> 00:02:26.500
+<v Marcus Bell>Is there a risk we're solving a problem we don't have yet?
 
 14
-00:02:18.800 --> 00:02:21.200
-<v Marcus Bell>Good point — let's do that.
+00:02:30.200 --> 00:02:35.800
+<v Tomás Reyes>I don't feel strongly on this one — I'll defer to whoever owns it.
 
 15
-00:02:24.200 --> 00:02:29.000
-<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
+00:02:38.900 --> 00:02:40.500
+<v Dana Whitfield>Makes sense to me.
 
 16
-00:02:31.100 --> 00:02:32.700
-<v Tomás Reyes>Agreed, let's capture it.
+00:02:44.400 --> 00:02:52.400
+<v Marcus Bell>If I think a decision was rushed, I say so to the group, not in a DM to the lead.
 
 17
-00:02:44.400 --> 00:02:49.600
-<v Marcus Bell>Let me play that back to make sure we're all aligned on it.
+00:02:52.400 --> 00:02:59.200
+<v Dana Whitfield>How does this interact with the roadmap and keeping the two tracks in sync, if at all?
 
 18
-00:02:51.800 --> 00:02:53.800
-<v Dana Whitfield>Let's confirm in the channel.
+00:02:59.200 --> 00:03:05.200
+<v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
 
 19
-00:02:57.800 --> 00:03:03.400
-<v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
+00:03:09.300 --> 00:03:11.700
+<v Dana Whitfield>Good point — let's do that.
 
 20
-00:03:06.600 --> 00:03:08.600
-<v Tomás Reyes>Let's confirm in the channel.
+00:03:11.700 --> 00:03:15.700
+<v Dana Whitfield>Can someone capture that in the notes close to verbatim?
 
 21
-00:03:10.400 --> 00:03:12.800
-<v Marcus Bell>Good point — let's do that.
+00:03:24.700 --> 00:03:25.500
+<v Marcus Bell>Yeah, exactly.
 
 22
-00:03:16.200 --> 00:03:21.800
-<v Marcus Bell>I want to make sure I understand the tradeoff before we commit to anything.
+00:03:28.800 --> 00:03:32.800
+<v Dana Whitfield>Can we double-check that against what we agreed last week?
 
 23
-00:03:24.600 --> 00:03:29.400
-<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
+00:03:37.200 --> 00:03:42.000
+<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
 
 24
-00:03:32.200 --> 00:03:33.800
+00:03:44.800 --> 00:03:46.400
 <v Tomás Reyes>Okay, works for me.
 
 25
-00:03:37.000 --> 00:03:41.800
-<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
-
-26
-00:03:46.200 --> 00:03:52.600
-<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
-
-27
-00:03:57.400 --> 00:03:58.200
-<v Tomás Reyes>That's fair.
-
-28
-00:03:58.200 --> 00:04:03.000
-<v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
-
-29
-00:04:09.300 --> 00:04:13.300
-<v Dana Whitfield>Good — as long as it's reversible, I'm comfortable moving.
-
-30
-00:04:13.300 --> 00:04:18.100
-<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
-
-31
-00:04:21.600 --> 00:04:26.400
-<v Marcus Bell>Is there a risk we're solving a problem we don't have yet?
-
-32
-00:04:30.800 --> 00:04:34.400
-<v Marcus Bell>What would it take to de-risk that a little?
-
-33
-00:04:39.000 --> 00:04:45.000
-<v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
-
-34
-00:04:48.200 --> 00:04:56.600
-<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
-
-35
-00:04:56.600 --> 00:05:02.600
-<v Tomás Reyes>Do we actually need a decision on this today, or can it wait a week?
-
-36
-00:05:02.600 --> 00:05:07.800
-<v Tomás Reyes>Let's not rathole on this — can we take the fine detail offline?
-
-37
-00:05:10.300 --> 00:05:12.300
-<v Dana Whitfield>Right, that's what I meant.
-
-38
-00:05:17.400 --> 00:05:20.200
-<v Dana Whitfield>Mm, let me sit with that one.
-
-39
-00:05:26.700 --> 00:05:28.300
-<v Dana Whitfield>Okay, works for me.
-
-40
-00:05:31.400 --> 00:05:36.200
-<v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
-
-41
-00:05:36.200 --> 00:05:41.000
-<v Tomás Reyes>Is there a risk we're solving a problem we don't have yet?
-
-42
-00:05:45.000 --> 00:05:46.600
-<v Marcus Bell>Agreed, let's capture it.
-
-43
-00:05:51.800 --> 00:05:56.600
-<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
-
-44
-00:05:58.100 --> 00:05:58.900
-<v Marcus Bell>That's fair.
-
-45
-00:06:00.800 --> 00:06:02.400
-<v Marcus Bell>Makes sense to me.
-
-46
-00:06:04.700 --> 00:06:09.500
-<v Tomás Reyes>Yeah, that's consistent with what we talked about in the last sync.
-
-47
-00:06:12.800 --> 00:06:14.800
-<v Dana Whitfield>Let's confirm in the channel.
-
-48
-00:06:16.400 --> 00:06:21.200
-<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
-
-49
-00:06:21.200 --> 00:06:26.000
-<v Tomás Reyes>I'd rather over-communicate here — can we write down who's doing what?
-
-50
-00:06:30.800 --> 00:06:34.400
-<v Tomás Reyes>What would it take to de-risk that a little?
-
-51
-00:06:44.400 --> 00:06:46.800
-<v Dana Whitfield>That's fair. I'll withdraw the concern.
-
-52
-00:06:51.500 --> 00:06:53.500
-<v Marcus Bell>Right, that's what I meant.
-
-53
-00:06:53.500 --> 00:06:59.100
-<v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
-
-54
-00:07:07.000 --> 00:07:11.000
-<v Marcus Bell>Can someone capture that in the notes close to verbatim?
-
-55
-00:07:16.000 --> 00:07:21.600
-<v Tomás Reyes>I want to make sure I understand the tradeoff before we commit to anything.
-
-56
-00:07:24.700 --> 00:07:27.100
-<v Dana Whitfield>Good point — let's do that.
-
-57
-00:07:29.500 --> 00:07:34.700
-<v Dana Whitfield>Let me play that back to make sure we're all aligned on it.
-
-58
-00:07:38.200 --> 00:07:43.800
-<v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
-
-59
-00:07:43.800 --> 00:07:48.600
-<v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
-
-60
-00:07:53.300 --> 00:07:55.300
-<v Tomás Reyes>Let's confirm in the channel.
-
-61
-00:08:01.000 --> 00:08:01.800
-<v Tomás Reyes>Yeah, exactly.
-
-62
-00:08:03.400 --> 00:08:06.200
-<v Dana Whitfield>Mm, let me sit with that one.
-
-63
-00:08:08.300 --> 00:08:13.500
-<v Marcus Bell>Let's not rathole on this — can we take the fine detail offline?
-
-64
-00:08:13.500 --> 00:08:18.700
-<v Marcus Bell>Let's not rathole on this — can we take the fine detail offline?
-
-65
-00:08:18.700 --> 00:08:25.100
-<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
-
-66
-00:08:25.100 --> 00:08:30.700
-<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
-
-67
-00:08:34.100 --> 00:08:36.900
-<v Marcus Bell>Mm, let me sit with that one.
-
-68
-00:08:43.100 --> 00:08:49.100
-<v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
-
-69
-00:08:53.300 --> 00:08:55.300
-<v Marcus Bell>Right, that's what I meant.
-
-70
-00:09:02.100 --> 00:09:08.500
-<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
-
-71
-00:09:10.000 --> 00:09:11.600
-<v Dana Whitfield>Agreed, let's capture it.
-
-72
-00:09:11.600 --> 00:09:16.400
-<v Tomás Reyes>Right, and that lines up with the constraint we set at kickoff.
-
-73
-00:09:22.300 --> 00:09:25.100
-<v Dana Whitfield>Mm, let me sit with that one.
-
-74
-00:09:25.100 --> 00:09:30.700
-<v Dana Whitfield>I want to make sure I understand the tradeoff before we commit to anything.
-
-75
-00:09:34.000 --> 00:09:39.600
-<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
-
-76
-00:09:44.000 --> 00:09:49.200
-<v Tomás Reyes>I'm a little worried about the timeline, but I'm not blocking on it.
-
-77
-00:09:50.900 --> 00:09:53.700
-<v Marcus Bell>Mm, let me sit with that one.
-
-78
-00:09:56.600 --> 00:09:59.000
-<v Marcus Bell>Good point — let's do that.
-
-79
-00:10:02.600 --> 00:10:07.400
-<v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
-
-80
-00:10:10.600 --> 00:10:11.400
-<v Tomás Reyes>That's fair.
-
-81
-00:10:16.400 --> 00:10:18.800
-<v Tomás Reyes>Good point — let's do that.
-
-82
-00:10:18.800 --> 00:10:24.400
-<v Tomás Reyes>That matches what I was seeing on my end with the security review pipeline.
-
-83
-00:10:24.400 --> 00:10:29.200
-<v Tomás Reyes>Yeah, that's consistent with what we talked about in the last sync.
-
-84
-00:10:31.800 --> 00:10:37.800
-<v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
-
-85
-00:10:37.800 --> 00:10:45.000
-<v Dana Whitfield>I'll take that one — it's adjacent to the roadmap and keeping the two tracks in sync anyway.
-
-86
-00:10:50.000 --> 00:10:51.600
-<v Marcus Bell>Okay, works for me.
-
-87
-00:11:05.600 --> 00:11:11.600
-<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
-
-88
-00:11:11.600 --> 00:11:20.000
-<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
-
-89
-00:11:20.000 --> 00:11:25.600
-<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
-
-90
-00:11:28.100 --> 00:11:28.900
-<v Dana Whitfield>Yeah, exactly.
-
-91
-00:11:36.100 --> 00:11:37.700
-<v Dana Whitfield>Agreed, let's capture it.
-
-92
-00:11:45.700 --> 00:11:48.100
-<v Tomás Reyes>Good point — let's do that.
-
-93
-00:11:48.100 --> 00:11:52.900
-<v Tomás Reyes>Let me pull up the numbers so we're not going off memory.
-
-94
-00:11:57.700 --> 00:11:59.300
-<v Dana Whitfield>Makes sense to me.
-
-95
-00:12:01.400 --> 00:12:07.400
-<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
-
-96
-00:12:11.000 --> 00:12:13.800
-<v Dana Whitfield>Mm, let me sit with that one.
-
-97
-00:12:19.700 --> 00:12:25.300
-<v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
-
-98
-00:12:27.400 --> 00:12:29.800
-<v Dana Whitfield>Good point — let's do that.
-
-99
-00:12:32.700 --> 00:12:40.700
-<v Marcus Bell>If I think a decision was rushed, I say so to the group, not in a DM to the lead.
-
-100
-00:12:40.700 --> 00:12:45.900
-<v Tomás Reyes>Let's not rathole on this — can we take the fine detail offline?
-
-101
-00:12:50.500 --> 00:12:55.300
-<v Tomás Reyes>I'd rather over-communicate here — can we write down who's doing what?
-
-102
-00:13:00.000 --> 00:13:00.800
-<v Dana Whitfield>Yeah, exactly.
-
-103
-00:13:00.800 --> 00:13:05.600
-<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
-
-104
-00:13:05.600 --> 00:13:10.400
+00:03:46.400 --> 00:03:51.200
 <v Tomás Reyes>How does this interact with the security review pipeline, if at all?
 
-105
-00:13:13.000 --> 00:13:13.800
-<v Marcus Bell>Yeah, exactly.
+26
+00:03:56.500 --> 00:03:59.300
+<v Tomás Reyes>Mm, let me sit with that one.
 
-106
-00:13:13.800 --> 00:13:19.400
-<v Tomás Reyes>I don't feel strongly on this one — I'll defer to whoever owns it.
-
-107
-00:13:23.800 --> 00:13:24.600
-<v Dana Whitfield>Yeah, exactly.
-
-108
-00:13:30.800 --> 00:13:36.400
-<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
-
-109
-00:13:40.100 --> 00:13:42.100
-<v Dana Whitfield>Let's confirm in the channel.
-
-110
-00:13:49.100 --> 00:13:50.700
-<v Tomás Reyes>Agreed, let's capture it.
-
-111
-00:13:57.600 --> 00:14:02.400
-<v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
-
-112
-00:14:08.100 --> 00:14:08.900
-<v Dana Whitfield>Agreed.
-
-113
-00:14:08.900 --> 00:14:13.700
-<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
-
-114
-00:14:13.700 --> 00:14:18.900
-<v Tomás Reyes>Let's not rathole on this — can we take the fine detail offline?
-
-115
-00:14:26.400 --> 00:14:28.400
-<v Tomás Reyes>Let's confirm in the channel.
-
-116
-00:14:28.400 --> 00:14:30.800
-<v Dana Whitfield>That's fair. I'll withdraw the concern.
-
-117
-00:14:33.400 --> 00:14:37.000
-<v Marcus Bell>What would it take to de-risk that a little?
-
-118
-00:14:40.200 --> 00:14:41.000
-<v Tomás Reyes>Yeah, exactly.
-
-119
-00:14:43.300 --> 00:14:48.900
-<v Marcus Bell>I want to make sure I understand the tradeoff before we commit to anything.
-
-120
-00:14:51.500 --> 00:14:53.500
-<v Dana Whitfield>Sure, I can own that.
-
-121
-00:14:56.800 --> 00:15:05.200
-<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
-
-122
-00:15:07.600 --> 00:15:12.800
+27
+00:04:01.700 --> 00:04:06.900
 <v Tomás Reyes>I'll take that one — it's adjacent to the security review pipeline anyway.
 
-123
-00:15:16.700 --> 00:15:21.500
+28
+00:04:09.700 --> 00:04:14.500
+<v Marcus Bell>Is there a risk we're solving a problem we don't have yet?
+
+29
+00:04:17.300 --> 00:04:19.700
+<v Dana Whitfield>Good point — let's do that.
+
+30
+00:04:19.700 --> 00:04:23.700
+<v Tomás Reyes>Can we double-check that against what we agreed last week?
+
+31
+00:04:31.700 --> 00:04:36.500
+<v Marcus Bell>Sorry, can you go back to the point about the review pass?
+
+32
+00:04:40.000 --> 00:04:46.000
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+33
+00:04:46.000 --> 00:04:50.800
 <v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
 
-124
-00:15:25.100 --> 00:15:30.300
-<v Tomás Reyes>Let's not rathole on this — can we take the fine detail offline?
+34
+00:04:57.700 --> 00:05:00.100
+<v Tomás Reyes>Good point — let's do that.
 
-125
-00:15:34.600 --> 00:15:38.600
-<v Dana Whitfield>Good — as long as it's reversible, I'm comfortable moving.
+35
+00:05:00.100 --> 00:05:05.300
+<v Tomás Reyes>I'm a little worried about the timeline, but I'm not blocking on it.
 
-126
-00:15:38.600 --> 00:15:45.400
-<v Tomás Reyes>Just flagging that this touches the security review pipeline, so loop me in when it firms up.
+36
+00:05:07.900 --> 00:05:09.900
+<v Marcus Bell>Right, that's what I meant.
 
-127
-00:15:50.700 --> 00:15:54.700
-<v Tomás Reyes>Can someone capture that in the notes close to verbatim?
+37
+00:05:15.100 --> 00:05:19.900
+<v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
 
-128
-00:15:54.700 --> 00:15:58.300
-<v Dana Whitfield>What would it take to de-risk that a little?
+38
+00:05:19.900 --> 00:05:27.100
+<v Dana Whitfield>I'll take that one — it's adjacent to the roadmap and keeping the two tracks in sync anyway.
 
-129
-00:16:17.900 --> 00:16:27.900
-<v Dana Whitfield>Which I want, for the record. When Marcus flagged in the roadmap review that I'd decided too fast, that was the system working, not insubordination.
-
-130
-00:16:38.800 --> 00:16:44.400
-<v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
-
-131
-00:16:47.800 --> 00:16:57.800
-<v Tomás Reyes>Bus factor on review is two now. That's the accountability recommendation — the structural half is done, the cultural half is a habit we keep.
-
-132
-00:16:57.800 --> 00:17:04.600
-<v Dana Whitfield>How does this interact with the roadmap and keeping the two tracks in sync, if at all?
-
-133
-00:17:06.100 --> 00:17:10.900
-<v Dana Whitfield>Sorry, can you go back to the point about the review pass?
-
-134
-00:17:12.700 --> 00:17:15.500
+39
+00:05:30.800 --> 00:05:33.600
 <v Marcus Bell>Mm, let me sit with that one.
 
-135
-00:17:19.400 --> 00:17:21.000
-<v Marcus Bell>Okay, works for me.
+40
+00:05:33.600 --> 00:05:36.000
+<v Dana Whitfield>That's fair. I'll withdraw the concern.
 
-136
-00:17:24.600 --> 00:17:28.600
-<v Marcus Bell>Can we double-check that against what we agreed last week?
+41
+00:05:42.000 --> 00:05:48.000
+<v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
 
-137
-00:17:28.600 --> 00:17:35.000
-<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
+42
+00:05:48.000 --> 00:05:52.800
+<v Tomás Reyes>Is there a risk we're solving a problem we don't have yet?
 
-138
-00:17:39.600 --> 00:17:40.400
-<v Dana Whitfield>That's fair.
+43
+00:05:57.200 --> 00:05:59.200
+<v Marcus Bell>Let's confirm in the channel.
 
-139
-00:17:43.400 --> 00:17:49.000
-<v Marcus Bell>Okay, I think I follow. So the plan is basically what you just described.
+44
+00:06:06.300 --> 00:06:08.700
+<v Tomás Reyes>Good point — let's do that.
 
-140
-00:17:49.000 --> 00:17:53.000
-<v Marcus Bell>Can we double-check that against what we agreed last week?
+45
+00:06:11.000 --> 00:06:16.600
+<v Dana Whitfield>Okay, I think I follow. So the plan is basically what you just described.
 
-141
-00:17:57.500 --> 00:17:59.500
-<v Tomás Reyes>Right, that's what I meant.
+46
+00:06:22.400 --> 00:06:28.000
+<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
 
-142
-00:18:02.200 --> 00:18:06.200
-<v Marcus Bell>Can someone capture that in the notes close to verbatim?
+47
+00:06:32.000 --> 00:06:32.800
+<v Marcus Bell>That's fair.
 
-143
-00:18:08.200 --> 00:18:13.800
+48
+00:06:35.300 --> 00:06:40.900
 <v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
 
-144
-00:18:17.200 --> 00:18:19.200
+49
+00:06:42.700 --> 00:06:45.100
+<v Dana Whitfield>That's fair. I'll withdraw the concern.
+
+50
+00:06:45.100 --> 00:06:49.900
+<v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
+
+51
+00:06:53.100 --> 00:06:54.700
+<v Tomás Reyes>Agreed, let's capture it.
+
+52
+00:06:54.700 --> 00:06:57.100
+<v Tomás Reyes>That's fair. I'll withdraw the concern.
+
+53
+00:07:03.900 --> 00:07:09.900
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+54
+00:07:16.900 --> 00:07:18.900
+<v Marcus Bell>Let's confirm in the channel.
+
+55
+00:07:20.900 --> 00:07:22.500
+<v Marcus Bell>Makes sense to me.
+
+56
+00:07:24.400 --> 00:07:28.400
+<v Marcus Bell>Good — as long as it's reversible, I'm comfortable moving.
+
+57
+00:07:31.500 --> 00:07:34.300
+<v Dana Whitfield>Mm, let me sit with that one.
+
+58
+00:07:37.500 --> 00:07:43.100
+<v Dana Whitfield>I want to make sure I understand the tradeoff before we commit to anything.
+
+59
+00:07:47.400 --> 00:07:52.200
+<v Marcus Bell>Sorry, can you go back to the point about the review pass?
+
+60
+00:07:53.800 --> 00:07:54.600
+<v Dana Whitfield>Yeah.
+
+61
+00:07:54.600 --> 00:07:59.400
+<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
+
+62
+00:08:01.600 --> 00:08:07.200
+<v Marcus Bell>Okay, I think I follow. So the plan is basically what you just described.
+
+63
+00:08:10.400 --> 00:08:12.400
+<v Tomás Reyes>Let's confirm in the channel.
+
+64
+00:08:12.400 --> 00:08:20.800
+<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
+
+65
+00:08:23.100 --> 00:08:25.100
+<v Dana Whitfield>Right, that's what I meant.
+
+66
+00:08:38.100 --> 00:08:48.100
+<v Dana Whitfield>Which I want, for the record. When Marcus flagged in the roadmap review that I'd decided too fast, that was the system working, not insubordination.
+
+67
+00:08:49.200 --> 00:08:54.400
+<v Tomás Reyes>Let me play that back to make sure we're all aligned on it.
+
+68
+00:08:55.900 --> 00:08:57.500
+<v Dana Whitfield>Makes sense to me.
+
+69
+00:08:59.700 --> 00:09:00.500
+<v Marcus Bell>Right.
+
+70
+00:09:10.300 --> 00:09:15.100
+<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
+
+71
+00:09:20.000 --> 00:09:30.000
+<v Tomás Reyes>Bus factor on review is two now. That's the accountability recommendation — the structural half is done, the cultural half is a habit we keep.
+
+72
+00:09:30.500 --> 00:09:34.100
+<v Tomás Reyes>What would it take to de-risk that a little?
+
+73
+00:09:37.300 --> 00:09:42.500
+<v Tomás Reyes>I'm a little worried about the timeline, but I'm not blocking on it.
+
+74
+00:09:45.000 --> 00:09:47.000
+<v Dana Whitfield>Right, that's what I meant.
+
+75
+00:09:47.000 --> 00:09:52.600
+<v Marcus Bell>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+76
+00:09:52.600 --> 00:09:58.600
+<v Dana Whitfield>Do we actually need a decision on this today, or can it wait a week?
+
+77
+00:10:00.900 --> 00:10:01.700
+<v Marcus Bell>That's fair.
+
+78
+00:10:09.100 --> 00:10:14.700
+<v Marcus Bell>Okay, I think I follow. So the plan is basically what you just described.
+
+79
+00:10:18.400 --> 00:10:23.200
+<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
+
+80
+00:10:27.300 --> 00:10:33.700
+<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
+
+81
+00:10:38.200 --> 00:10:39.000
+<v Tomás Reyes>That's fair.
+
+82
+00:10:40.600 --> 00:10:42.600
 <v Dana Whitfield>Sure, I can own that.
 
-145
-00:18:26.500 --> 00:18:27.300
-<v Marcus Bell>That tracks.
+83
+00:10:42.600 --> 00:10:47.800
+<v Marcus Bell>I'm a little worried about the timeline, but I'm not blocking on it.
 
-146
-00:18:27.300 --> 00:18:32.100
-<v Dana Whitfield>Sorry, can you go back to the point about the review pass?
+84
+00:10:52.200 --> 00:10:53.800
+<v Tomás Reyes>Agreed, let's capture it.
 
-147
-00:18:34.600 --> 00:18:35.400
+85
+00:11:00.200 --> 00:11:05.000
+<v Tomás Reyes>How does this interact with the security review pipeline, if at all?
+
+86
+00:11:07.000 --> 00:11:13.000
+<v Dana Whitfield>Do we actually need a decision on this today, or can it wait a week?
+
+87
+00:11:15.500 --> 00:11:16.300
+<v Dana Whitfield>Yep.
+
+88
+00:11:16.300 --> 00:11:21.100
+<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
+
+89
+00:11:22.900 --> 00:11:23.700
 <v Marcus Bell>Yeah, exactly.
 
-148
-00:18:44.800 --> 00:18:47.600
+90
+00:11:25.300 --> 00:11:28.900
+<v Dana Whitfield>What would it take to de-risk that a little?
+
+91
+00:11:28.900 --> 00:11:34.500
+<v Marcus Bell>Okay, I think I follow. So the plan is basically what you just described.
+
+92
+00:11:41.300 --> 00:11:48.500
+<v Dana Whitfield>I'll take that one — it's adjacent to the roadmap and keeping the two tracks in sync anyway.
+
+93
+00:11:52.700 --> 00:11:54.300
+<v Marcus Bell>Okay, works for me.
+
+94
+00:11:56.400 --> 00:12:02.000
+<v Marcus Bell>Okay, I think I follow. So the plan is basically what you just described.
+
+95
+00:12:06.700 --> 00:12:08.300
+<v Dana Whitfield>Makes sense to me.
+
+96
+00:12:10.400 --> 00:12:16.000
+<v Marcus Bell>Okay, I think I follow. So the plan is basically what you just described.
+
+97
+00:12:24.700 --> 00:12:29.500
+<v Tomás Reyes>How does this interact with the security review pipeline, if at all?
+
+98
+00:12:31.000 --> 00:12:33.000
+<v Dana Whitfield>Let's confirm in the channel.
+
+99
+00:12:33.000 --> 00:12:37.000
+<v Marcus Bell>Can someone capture that in the notes close to verbatim?
+
+100
+00:12:38.500 --> 00:12:40.100
+<v Tomás Reyes>Makes sense to me.
+
+101
+00:12:43.000 --> 00:12:48.600
+<v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
+
+102
+00:12:48.600 --> 00:12:53.400
+<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
+
+103
+00:12:56.100 --> 00:12:56.900
+<v Tomás Reyes>Yeah, exactly.
+
+104
+00:12:56.900 --> 00:13:00.900
+<v Marcus Bell>Good — as long as it's reversible, I'm comfortable moving.
+
+105
+00:13:09.600 --> 00:13:18.400
+<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
+
+106
+00:13:23.100 --> 00:13:25.900
+<v Tomás Reyes>Mm, let me sit with that one.
+
+107
+00:13:34.700 --> 00:13:38.700
+<v Tomás Reyes>Can someone capture that in the notes close to verbatim?
+
+108
+00:13:38.700 --> 00:13:46.300
+<v Dana Whitfield>That matches what I was seeing on my end with the roadmap and keeping the two tracks in sync.
+
+109
+00:13:50.600 --> 00:13:57.400
+<v Dana Whitfield>How does this interact with the roadmap and keeping the two tracks in sync, if at all?
+
+110
+00:13:57.400 --> 00:14:02.600
+<v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
+
+111
+00:14:09.500 --> 00:14:14.300
+<v Marcus Bell>Sorry, can you go back to the point about the review pass?
+
+112
+00:14:17.100 --> 00:14:23.100
+<v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
+
+113
+00:14:24.700 --> 00:14:25.500
+<v Tomás Reyes>That's fair.
+
+114
+00:14:33.200 --> 00:14:34.800
+<v Dana Whitfield>Makes sense to me.
+
+115
+00:14:38.300 --> 00:14:43.900
+<v Tomás Reyes>I want to make sure I understand the tradeoff before we commit to anything.
+
+116
+00:14:43.900 --> 00:14:49.900
+<v Tomás Reyes>Do we actually need a decision on this today, or can it wait a week?
+
+117
+00:14:52.200 --> 00:14:57.800
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+118
+00:15:06.300 --> 00:15:11.100
+<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
+
+119
+00:15:15.000 --> 00:15:20.600
+<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+120
+00:15:23.200 --> 00:15:28.400
+<v Tomás Reyes>I'll take that one — it's adjacent to the security review pipeline anyway.
+
+121
+00:15:28.400 --> 00:15:32.000
+<v Tomás Reyes>What would it take to de-risk that a little?
+
+122
+00:15:37.900 --> 00:15:39.500
+<v Marcus Bell>Agreed, let's capture it.
+
+123
+00:15:43.300 --> 00:15:47.300
+<v Marcus Bell>Can we double-check that against what we agreed last week?
+
+124
+00:15:50.000 --> 00:15:50.800
+<v Dana Whitfield>That's fair.
+
+125
+00:15:50.800 --> 00:15:56.800
+<v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
+
+126
+00:15:56.800 --> 00:15:59.200
+<v Marcus Bell>That's fair. I'll withdraw the concern.
+
+127
+00:16:03.100 --> 00:16:10.300
+<v Marcus Bell>That matches what I was seeing on my end with the backend capability model and the provenance schema.
+
+128
+00:16:13.100 --> 00:16:13.900
+<v Tomás Reyes>That's fair.
+
+129
+00:16:20.000 --> 00:16:21.600
+<v Dana Whitfield>Okay, works for me.
+
+130
+00:16:27.000 --> 00:16:28.600
+<v Tomás Reyes>Okay, works for me.
+
+131
+00:16:28.600 --> 00:16:34.200
+<v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
+
+132
+00:16:36.200 --> 00:16:41.000
+<v Tomás Reyes>Yeah, that's consistent with what we talked about in the last sync.
+
+133
+00:16:53.100 --> 00:16:55.900
 <v Tomás Reyes>Okay — any questions before we wrap?
 
-149
-00:18:50.200 --> 00:18:56.600
-<v Marcus Bell>One thing: how does this affect the the backend capability model and the provenance schema timeline?
+134
+00:17:00.200 --> 00:17:09.000
+<v Marcus Bell>Question before we wrap — does any of this change what I'm doing on the backend capability model and the provenance schema?
 
-150
-00:19:00.100 --> 00:19:06.100
+135
+00:17:12.600 --> 00:17:18.600
 <v Tomás Reyes>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
-151
-00:19:08.000 --> 00:19:12.400
-<v Dana Whitfield>Quick clarifier — who owns the follow-up here, and by when?
+136
+00:17:21.500 --> 00:17:30.300
+<v Dana Whitfield>Should I loop anyone else in on the the roadmap and keeping the two tracks in sync side, or is that covered?
 
-152
-00:19:18.300 --> 00:19:24.300
+137
+00:17:35.900 --> 00:17:41.900
 <v Tomás Reyes>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
-153
-00:19:30.700 --> 00:19:36.300
+138
+00:17:46.700 --> 00:17:52.300
 <v Tomás Reyes>Alright, let me read back the action items so we're aligned before we drop.
 
-154
-00:19:44.200 --> 00:19:51.000
+139
+00:18:02.200 --> 00:18:09.000
 <v Tomás Reyes>Tomás has the follow-up on the security review pipeline — I'll capture the specifics in the notes.
 
-155
-00:19:52.300 --> 00:20:00.700
+140
+00:18:10.200 --> 00:18:18.600
 <v Tomás Reyes>Marcus has the follow-up on the backend capability model and the provenance schema — I'll capture the specifics in the notes.
 
-156
-00:20:04.200 --> 00:20:13.000
+141
+00:18:19.700 --> 00:18:28.500
 <v Tomás Reyes>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
 
-157
-00:20:16.600 --> 00:20:22.200
+142
+00:18:30.700 --> 00:18:36.300
 <v Tomás Reyes>Great. I'll write it all up and drop it in the channel. Thanks everyone.

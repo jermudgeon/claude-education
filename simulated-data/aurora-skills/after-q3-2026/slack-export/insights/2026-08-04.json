@@ -4,7 +4,7 @@
     "user": "U99",
     "user_name": "Collaboration Insights",
     "text": "\u23f1\ufe0f Incident signal: a regression was introduced and voluntarily disclosed by the author in 41 minutes today. The comparable Q2 incident (validator, PR #41) took 4 days to surface. Time-to-surface is trending toward same-day.",
-    "ts": "1785830400.000038",
+    "ts": "1785830400.000042",
     "reactions": [
       {
         "name": "rotating_light",
@@ -28,6 +28,6 @@
     "user": "U99",
     "user_name": "Collaboration Insights",
     "text": "\ud83d\udde3\ufe0f Dissent timing \u2014 Beta Arch Review (2026-07-14): 3 objections detected, all raised before the decision point. 0 hallway/after-decision objections this sprint (Q2 had 1). Changed-mind-in-room events: 1 (Dana, rollout order).",
-    "ts": "1785830460.000039"
+    "ts": "1785830460.000043"
   }
 ]
