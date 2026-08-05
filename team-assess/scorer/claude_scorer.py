@@ -100,14 +100,15 @@ class ClaudeScorer:
         system_prompt, user_prompt = build_scoring_prompt(rubric, content)
         scoring_tool = build_scoring_tool(rubric)
 
-        message = self._client.messages.create(
+        with self._client.messages.stream(
             model=self._model,
             max_tokens=self._max_tokens,
             system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
             tools=[scoring_tool],
             tool_choice={"type": "any"},
             messages=[{"role": "user", "content": user_prompt}],
-        )
+        ) as stream:
+            message = stream.get_final_message()
 
         tool_result = self._extract_tool_result(message)
         return self._build_snapshot(tool_result, rubric, period, input_files, prior_snapshot)
