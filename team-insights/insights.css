@@ -819,3 +819,49 @@ main {
     padding: 24px;
   }
 }
+
+/* On a phone the sticky header and footer would otherwise wrap to three rows
+   each and leave the conversation a slit to live in. */
+@media (max-width: 640px) {
+  .disclaimer {
+    padding: 6px 12px;
+    font-size: 0.72rem;
+  }
+
+  /* The rail scrolls in its own row rather than stacking the whole roster. */
+  .rail {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+  .chip {
+    flex: none;
+  }
+
+  /* A heading beside a fixed-width badge gets squeezed to one word per line. */
+  .cardhead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* The presenter hint is chrome. The buttons are the screen. */
+  .controls .dim {
+    display: none;
+  }
+  .controls {
+    padding: 12px 14px;
+    gap: 8px;
+  }
+
+  /* A button label wraps to three lines if the button is allowed to stretch,
+     so each keeps its natural width and the row wraps instead. */
+  .btn {
+    white-space: nowrap;
+    padding: 11px 16px;
+  }
+}
