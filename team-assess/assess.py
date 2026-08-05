@@ -7,7 +7,6 @@ from ingestion.scanner import scan_directory, READERS
 from rubric.loader import load_rubric
 from scorer.claude_scorer import ClaudeScorer
 from snapshots.store import save_snapshot, load_snapshot, SnapshotNotFoundError
-from trend.diff import compute_diff
 from renderer.markdown import render_markdown
 
 
@@ -40,23 +39,25 @@ def main():
     print(f"Loading rubric: {cfg['rubric']['path']}")
     rubric = load_rubric(cfg["rubric"]["path"])
 
+    # Load prior snapshot for trend embedding if --compare given
+    prior_snapshot = None
+    if args.compare:
+        try:
+            prior_snapshot = load_snapshot(args.compare, snapshots_dir=snapshots_dir)
+        except SnapshotNotFoundError:
+            print(
+                f"Warning: no snapshot found for period '{args.compare}' in {snapshots_dir}, skipping trend.",
+                file=sys.stderr,
+            )
+
     print("Scoring with Claude...")
     scorer = ClaudeScorer(cfg["claude"])
-    snapshot = scorer.score(content, rubric, args.period, input_files)
+    snapshot = scorer.score(content, rubric, args.period, input_files, prior_snapshot=prior_snapshot)
 
     save_snapshot(snapshot, snapshots_dir=snapshots_dir)
     print(f"Snapshot saved to {snapshots_dir}/{args.period}.json")
 
-    trend = None
-    if args.compare:
-        try:
-            prior = load_snapshot(args.compare, snapshots_dir=snapshots_dir)
-            trend = compute_diff(prior, snapshot)
-            print(f"Trend computed vs {args.compare}")
-        except SnapshotNotFoundError:
-            print(f"Warning: no snapshot found for period '{args.compare}', skipping trend.", file=sys.stderr)
-
-    report = render_markdown(snapshot, trend=trend)
+    report = render_markdown(snapshot)
 
     output_dir.mkdir(parents=True, exist_ok=True)
     report_path = output_dir / f"report-{args.period}.md"
