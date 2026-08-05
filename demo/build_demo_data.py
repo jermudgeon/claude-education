@@ -128,6 +128,63 @@ def load_coding(turns):
     return coding
 
 
+def timeline():
+    """One row per meeting across both eras, straight from the metadata summaries."""
+    rows = []
+    for era in ["before-q2-2026", "after-q3-2026"]:
+        for p in sorted((DATA / era / "transcripts" / "meta").glob("*.json")):
+            s = json.loads(p.read_text())["summary"]
+            silent = s["present_but_silent"]
+            rows.append(
+                {
+                    "date": s["date"],
+                    "title": s["title"],
+                    "era": era,
+                    "attendees": s["attendee_count"],
+                    "dominant_pct": s["dominant_pct"],
+                    "dominant_speaker": s["dominant_speaker"],
+                    "interruptions": s["interruptions"],
+                    "silent": len(silent) if isinstance(silent, list) else silent,
+                }
+            )
+    return sorted(rows, key=lambda r: r["date"])
+
+
+def assessments():
+    """The two team-assess snapshots, trimmed to what the trend chart renders."""
+    out = []
+    for q in ["Q2-2026", "Q3-2026"]:
+        s = json.loads((DATA / "assessments" / f"snapshot-{q}.json").read_text())
+        out.append(
+            {
+                "period": s["period"],
+                "overall": s["overall_health"],
+                "note": s.get("note", ""),
+                "dimensions": {
+                    k: {"score": v["score"], "confidence": v["confidence"]}
+                    for k, v in s["dimensions"].items()
+                },
+            }
+        )
+    return out
+
+
+def signal_map():
+    m = json.loads((DATA / "assessments" / "five-dysfunctions-signal-map.json").read_text())
+    return [
+        {
+            "signal": x["signal"],
+            "dimension": x["dimension"],
+            "act": x["observable_act"],
+            "q2": x["q2"]["polarity"],
+            "q3": x["q3"]["polarity"],
+            "q2_evidence": x["q2"]["evidence"],
+            "q3_evidence": x["q3"]["evidence"],
+        }
+        for x in m["mappings"]
+    ]
+
+
 def main():
     summary, turns = load_turns(ERA, MEETING)
     comparison = json.loads((DATA / "_comparison" / "before_after.json").read_text())
@@ -148,6 +205,9 @@ def main():
         "elsewhere": elsewhere_counts(ERA),
         "signals": ground_truth.get("signals", ground_truth),
         "coding": load_coding(turns),
+        "timeline": timeline(),
+        "assessments": assessments(),
+        "signal_map": signal_map(),
     }
 
     # Written as a script rather than raw JSON so the page opens straight from
@@ -162,6 +222,7 @@ def main():
     print(f"peak talk      {max(s['talk_pct'] for s in summary['speakers'].values())}%")
     print(f"elsewhere      {len(blob['elsewhere'])} people tallied")
     print(f"coding         {len(blob['coding']['marks'])} marks validated, {len(blob['coding']['uncoded'])} uncoded")
+    print(f"timeline       {len(blob['timeline'])} meetings, {len(blob['signal_map'])} mapped signals, {len(blob['assessments'])} snapshots")
     print(f"wrote          {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")
 
 
