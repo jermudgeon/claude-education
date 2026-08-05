@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team Insights: a guided conversation</title>
+    <meta
+      name="description"
+      content="A demo of a conversation guide. One button, a speaking order, and one question between each speaker until the goal is sharp enough to act on."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:ital,wght@0,400;0,450;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="insights.css" />
+  </head>
+  <body>
+    <p class="disclaimer">
+      <b>Demo.</b> Every name, quote, number, and research finding on this page is
+      <b>invented sample content</b>, not real data. Nothing is recorded and no microphone is used.
+    </p>
+
+    <header class="top">
+      <span class="brand"><s>Claude</s> Team Insights<i>.</i></span>
+      <span class="dim small" id="phase">Ready</span>
+      <span class="spacer"></span>
+      <div class="rail" id="seats" aria-label="Speakers"></div>
+      <p class="recording" id="recording" hidden>
+        <span class="live" aria-hidden="true"></span> Session
+        <span class="clock" id="clock">00:00</span>
+      </p>
+      <button class="chip" id="theme" aria-label="Switch to the light theme">Light</button>
+    </header>
+
+    <main id="main"></main>
+
+    <footer class="controls" id="controls"></footer>
+
+    <div id="overlay"></div>
+
+    <script type="module">
+      import { mount } from "./app.js";
+      mount();
+    </script>
+  </body>
+</html>
