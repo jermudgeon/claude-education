@@ -1,16 +1,19 @@
 import pytest
+from pathlib import Path
 from rubric.loader import load_rubric, RubricError
+
+RUBRIC_PATH = str(Path(__file__).parent.parent / "rubric" / "five-dysfunctions.yaml")
 
 
 def test_load_rubric_returns_five_dimensions():
-    rubric = load_rubric("rubric/five-dysfunctions.yaml")
+    rubric = load_rubric(RUBRIC_PATH)
     assert set(rubric["dimensions"].keys()) == {
         "trust", "conflict", "commitment", "accountability", "results"
     }
 
 
 def test_each_dimension_has_required_fields():
-    rubric = load_rubric("rubric/five-dysfunctions.yaml")
+    rubric = load_rubric(RUBRIC_PATH)
     for key, dim in rubric["dimensions"].items():
         assert "name" in dim, f"dimension {key} missing 'name'"
         assert "order" in dim, f"dimension {key} missing 'order'"
@@ -22,7 +25,7 @@ def test_each_dimension_has_required_fields():
 
 
 def test_dimensions_ordered_1_through_5():
-    rubric = load_rubric("rubric/five-dysfunctions.yaml")
+    rubric = load_rubric(RUBRIC_PATH)
     orders = sorted(dim["order"] for dim in rubric["dimensions"].values())
     assert orders == [1, 2, 3, 4, 5]
 

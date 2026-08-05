@@ -21,6 +21,8 @@ def load_rubric(path: str) -> dict:
 
 
 def _validate_rubric(rubric: dict) -> None:
+    if not rubric or not isinstance(rubric, dict):
+        raise RubricError("Rubric file is empty or not a valid YAML mapping")
     required_fields = ["name", "order", "healthy_signals", "dysfunction_signals", "scoring_guidance"]
     dimensions = rubric.get("dimensions", {})
     if not dimensions:
