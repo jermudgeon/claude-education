@@ -151,20 +151,43 @@ def timeline():
 
 
 def assessments():
-    """The real team-assess runs over each quarter, trimmed to what the trend chart renders.
+    """The real team-assess runs over each quarter, carried whole.
 
     These are tool output (team-assess/snapshots/), not authored numbers: the dataset's
     authored score sheets were removed on purpose so the scorer has something to discover.
+
+    An earlier version trimmed each dimension to {"score": ...}, which is why the analysis
+    view had to borrow authored marks for its evidence. The run already carries its own
+    quotes, facets, confidence and recommendations, so nothing here is dropped.
     """
     out = []
     for q, label in [("q2", "Q2-2026"), ("q3", "Q3-2026")]:
         s = json.loads((ROOT / "team-assess" / "snapshots" / f"aurora-{q}-2026.json").read_text())
+        dims = {}
+        for name, v in s["dimensions"].items():
+            facets = [
+                {
+                    "name": fname,
+                    "score": f["score"],
+                    "confidence": f.get("confidence"),
+                    "evidence": f.get("evidence", []),
+                }
+                for fname, f in (v.get("facets") or {}).items()
+            ]
+            dims[name] = {
+                "score": v["score"],
+                "evidence": v.get("evidence", []),
+                "facets": facets,
+                "trend": v.get("trend"),
+            }
         out.append(
             {
                 "period": label,
                 "overall": s["overall_health"],
+                "overall_trend": s.get("overall_health_trend"),
                 "run_date": s.get("run_date"),
-                "dimensions": {k: {"score": v["score"]} for k, v in s["dimensions"].items()},
+                "recommendations": s.get("recommendations", []),
+                "dimensions": dims,
             }
         )
     return out

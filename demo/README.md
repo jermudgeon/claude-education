@@ -39,14 +39,24 @@ surface, all of it matching `GROUND_TRUTH.md`:
 | Questions are participation | Flags a question-heavy speaker as participating, never as low engagement |
 | Interruption | One seeded interruption, logged and explicitly not scored |
 
-**Analysis** is the rubric consuming the same meeting, with the Lencioni pyramid at the top: five
-layers, Trust at the base, each showing the meeting's marks and cluster-spread confidence, each
-clicking through to its evidence. Below it, 14 authored marks over the 120-code book, grouped by
-dimension in pyramid order, each with its stable code id, verbatim quote, and speaker. It follows the team-assess spec's rules: evidence cites a code id, observations matching
-no code are reported as `uncoded` candidates rather than folded into a score, cluster spread caps
-confidence, and no 1–5 score appears because the scorer that would compute one is not built. The
-view also names what the codebook cannot see: Dana's 66.2% dominance is an aggregate, so it belongs
-to the metric contract, not to any single-utterance code. The two layers are complements.
+**All-time analysis** is the team-assess run, and only the run. Every score, quote, facet, confidence
+and recommendation on the page comes from `team-assess/snapshots/aurora-q{2,3}-2026.json`, the same
+output rendered as prose in `team-assess/output/report-aurora-q3-2026.md`. Nothing on the view is this
+demo's reading of the data.
+
+The Lencioni pyramid carries each layer's score from the latest run and its movement against the
+previous one, with a ⚠ on any move the run itself flagged, because the scorer's run-to-run variance is
+unmeasured and a jump over a point could be variance rather than change. Fill opacity follows the
+score, so a strong layer reads strong. Below it, priority actions in the run's own words, then one card
+per dimension, Trust first, with the verbatim evidence the run cited and each facet's score and
+confidence.
+
+Two things this deliberately does not do. It does not compute a score of its own, and a dimension
+absent from a run says so rather than showing a zero, because absence of measurement is not a result.
+
+The authored behavior-code marks in `marks.json` are **not** used here. They cover one meeting, and
+using them on a page titled all-time made Results read "no signal" while the run scored it 4.4, the
+highest of the five. They belong to the live replay, where a single meeting is the subject.
 
 **Meeting readout** is the per-attendee table on both measurement bases. Content-only reproduces the
 66.2% that `GROUND_TRUTH.md` publishes for this meeting; all-speech is what a live tool actually
