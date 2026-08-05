@@ -81,6 +81,7 @@ class ScoringError(Exception):
 class ClaudeScorer:
     def __init__(self, claude_config: dict, client=None):
         self._model = claude_config.get("model", "claude-sonnet-4-6")
+        self._max_tokens = claude_config.get("max_tokens", 8192)
         if client is not None:
             self._client = client
         else:
@@ -101,7 +102,7 @@ class ClaudeScorer:
 
         message = self._client.messages.create(
             model=self._model,
-            max_tokens=4096,
+            max_tokens=self._max_tokens,
             system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
             tools=[scoring_tool],
             tool_choice={"type": "any"},

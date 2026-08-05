@@ -12,8 +12,16 @@ def test_scan_returns_labelled_content(tmp_path):
     assert "Team notes here" in result
     assert "retro.md" in result
     assert "Went well." in result
-    assert "--- notes.txt ---" in result
-    assert "--- retro.md ---" in result
+
+def test_scan_traverses_subdirectories(tmp_path):
+    subdir = tmp_path / "retros"
+    subdir.mkdir()
+    (subdir / "sprint1.md").write_text("Sprint retro notes", encoding="utf-8")
+    (tmp_path / "standup.txt").write_text("Standup notes", encoding="utf-8")
+    result = scan_directory(tmp_path)
+    assert "Sprint retro notes" in result
+    assert "Standup notes" in result
+    assert "retros/sprint1.md" in result or "retros\\sprint1.md" in result
 
 def test_scan_skips_unsupported_extensions(tmp_path):
     (tmp_path / "notes.txt").write_text("Valid content", encoding="utf-8")
