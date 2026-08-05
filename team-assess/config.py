@@ -1,5 +1,11 @@
-import tomllib
+import copy
+import sys
 from pathlib import Path
+
+if sys.version_info >= (3, 11):
+    import tomllib
+else:
+    import tomli as tomllib
 
 
 DEFAULT_CONFIG = {
@@ -13,7 +19,7 @@ DEFAULT_CONFIG = {
 def load_config(path: str = "config.toml") -> dict:
     config_path = Path(path)
     if not config_path.exists():
-        return DEFAULT_CONFIG
+        return copy.deepcopy(DEFAULT_CONFIG)
     with config_path.open("rb") as f:
         user_config = tomllib.load(f)
     return _merge(DEFAULT_CONFIG, user_config)
