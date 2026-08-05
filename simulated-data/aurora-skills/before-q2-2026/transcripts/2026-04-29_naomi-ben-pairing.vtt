@@ -1,0 +1,571 @@
+WEBVTT
+
+NOTE Pairing — Validator with Naomi & Ben — 2026-04-29
+
+1
+00:00:00.000 --> 00:00:04.000
+<v Naomi Kito>Hey — thanks for grabbing time. How's your week been?
+
+2
+00:00:10.500 --> 00:00:13.300
+<v Ben Larsson>Good, busy. Bit heads-down. Let's dig in.
+
+3
+00:00:15.700 --> 00:00:30.500
+<v Naomi Kito>Okay, let's walk the validator together. The capability check is the load-bearing part — it's what makes the whole allow-list real. If a manifest asks for something not on the list, this function has to reject it.
+
+4
+00:00:31.900 --> 00:00:36.300
+<v Naomi Kito>Every path through here matters. Talk me through what you're seeing.
+
+5
+00:00:36.300 --> 00:00:40.300
+<v Ben Larsson>Good — as long as it's reversible, I'm comfortable moving.
+
+6
+00:00:40.300 --> 00:00:45.900
+<v Ben Larsson>One concern and then I'll drop it: are we sure about the sequencing here?
+
+7
+00:00:48.900 --> 00:00:50.900
+<v Naomi Kito>Let's confirm in the channel.
+
+8
+00:00:54.600 --> 00:00:56.600
+<v Naomi Kito>Let's confirm in the channel.
+
+9
+00:01:03.600 --> 00:01:15.200
+<v Ben Larsson>So the test that's failing — it expects a skill with an undeclared capability to be rejected, but it's passing through. I've been staring at it for an hour.
+
+10
+00:01:15.200 --> 00:01:20.000
+<v Naomi Kito>Sorry, can you go back to the point about the review pass?
+
+11
+00:01:20.000 --> 00:01:24.800
+<v Ben Larsson>Yeah, that's consistent with what we talked about in the last sync.
+
+12
+00:01:28.200 --> 00:01:31.000
+<v Naomi Kito>Mm, let me sit with that one.
+
+13
+00:01:34.500 --> 00:01:36.900
+<v Ben Larsson>Good point — let's do that.
+
+14
+00:01:36.900 --> 00:01:41.700
+<v Naomi Kito>Yeah, that's consistent with what we talked about in the last sync.
+
+15
+00:01:45.400 --> 00:01:47.800
+<v Ben Larsson>That's fair. I'll withdraw the concern.
+
+16
+00:01:49.700 --> 00:01:51.700
+<v Naomi Kito>Right, that's what I meant.
+
+17
+00:01:54.000 --> 00:01:55.600
+<v Ben Larsson>Makes sense to me.
+
+18
+00:01:58.100 --> 00:02:02.900
+<v Naomi Kito>I'd rather over-communicate here — can we write down who's doing what?
+
+19
+00:02:06.300 --> 00:02:07.100
+<v Ben Larsson>Yeah, exactly.
+
+20
+00:02:16.100 --> 00:02:30.100
+<v Naomi Kito>Good, that's the right test to be worried about. Don't rush it. What's the shortcut your brain is offering you right now? Say it out loud, because the shortcut is usually where the bug hides.
+
+21
+00:02:52.900 --> 00:02:55.300
+<v Ben Larsson>That's fair. I'll withdraw the concern.
+
+22
+00:02:55.300 --> 00:03:00.900
+<v Ben Larsson>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+23
+00:03:04.100 --> 00:03:06.500
+<v Naomi Kito>Good point — let's do that.
+
+24
+00:03:11.300 --> 00:03:16.900
+<v Naomi Kito>Okay, I think I follow. So the plan is basically what you just described.
+
+25
+00:03:19.400 --> 00:03:21.800
+<v Ben Larsson>Good point — let's do that.
+
+26
+00:03:25.800 --> 00:03:26.600
+<v Naomi Kito>Yeah, exactly.
+
+27
+00:03:26.600 --> 00:03:31.400
+<v Naomi Kito>Let me pull up the numbers so we're not going off memory.
+
+28
+00:03:34.200 --> 00:03:35.800
+<v Ben Larsson>Makes sense to me.
+
+29
+00:03:41.000 --> 00:03:49.400
+<v Ben Larsson>...Honestly? To just relax the assertion so the test goes green. Make it check a warning instead of a hard reject.
+
+30
+00:03:49.400 --> 00:03:54.200
+<v Ben Larsson>Right, and that lines up with the constraint we set at kickoff.
+
+31
+00:03:57.600 --> 00:04:00.400
+<v Naomi Kito>Mm, let me sit with that one.
+
+32
+00:04:04.200 --> 00:04:10.200
+<v Ben Larsson>Can we make sure that lands as an action item so it doesn't get lost?
+
+33
+00:04:14.200 --> 00:04:15.800
+<v Naomi Kito>Agreed, let's capture it.
+
+34
+00:04:15.800 --> 00:04:20.600
+<v Naomi Kito>Yeah, that's consistent with what we talked about in the last sync.
+
+35
+00:04:23.100 --> 00:04:29.100
+<v Naomi Kito>Do we actually need a decision on this today, or can it wait a week?
+
+36
+00:04:31.800 --> 00:04:34.200
+<v Ben Larsson>Good point — let's do that.
+
+37
+00:04:35.700 --> 00:04:37.300
+<v Ben Larsson>Okay, works for me.
+
+38
+00:04:43.400 --> 00:04:44.200
+<v Naomi Kito>That tracks.
+
+39
+00:04:44.200 --> 00:04:49.800
+<v Naomi Kito>One concern and then I'll drop it: are we sure about the sequencing here?
+
+40
+00:04:53.100 --> 00:04:55.500
+<v Ben Larsson>Good point — let's do that.
+
+41
+00:05:01.700 --> 00:05:04.100
+<v Ben Larsson>That's fair. I'll withdraw the concern.
+
+42
+00:05:04.100 --> 00:05:08.900
+<v Ben Larsson>Right, and that lines up with the constraint we set at kickoff.
+
+43
+00:05:11.300 --> 00:05:12.100
+<v Naomi Kito>That's fair.
+
+44
+00:05:17.000 --> 00:05:19.000
+<v Naomi Kito>Sure, I can own that.
+
+45
+00:05:20.600 --> 00:05:31.800
+<v Naomi Kito>I appreciate you saying that, because that exact move would open a hole. If you relax the check to pass the test, the check no longer checks anything.
+
+46
+00:05:33.100 --> 00:05:43.100
+<v Naomi Kito>The test is failing because the code is wrong, not because the test is wrong. Let's find the real path. Pull up the capability resolver.
+
+47
+00:05:43.100 --> 00:05:48.700
+<v Naomi Kito>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+48
+00:05:50.400 --> 00:05:52.000
+<v Ben Larsson>Agreed, let's capture it.
+
+49
+00:05:55.600 --> 00:06:00.800
+<v Ben Larsson>I'm a little worried about the timeline, but I'm not blocking on it.
+
+50
+00:06:03.100 --> 00:06:03.900
+<v Naomi Kito>That's fair.
+
+51
+00:06:03.900 --> 00:06:07.900
+<v Naomi Kito>Good — as long as it's reversible, I'm comfortable moving.
+
+52
+00:06:09.900 --> 00:06:14.700
+<v Naomi Kito>I'd rather over-communicate here — can we write down who's doing what?
+
+53
+00:06:16.700 --> 00:06:18.700
+<v Ben Larsson>Let's confirm in the channel.
+
+54
+00:06:21.200 --> 00:06:25.200
+<v Naomi Kito>Can we double-check that against what we agreed last week?
+
+55
+00:06:28.600 --> 00:06:29.400
+<v Ben Larsson>Yeah, exactly.
+
+56
+00:06:32.400 --> 00:06:34.400
+<v Ben Larsson>Let's confirm in the channel.
+
+57
+00:06:40.900 --> 00:06:43.300
+<v Naomi Kito>That's fair. I'll withdraw the concern.
+
+58
+00:06:43.300 --> 00:06:48.900
+<v Ben Larsson>Okay, I think I follow. So the plan is basically what you just described.
+
+59
+00:06:50.500 --> 00:06:52.500
+<v Naomi Kito>Sure, I can own that.
+
+60
+00:06:57.700 --> 00:07:00.500
+<v Ben Larsson>Mm, let me sit with that one.
+
+61
+00:07:00.500 --> 00:07:06.100
+<v Naomi Kito>One concern and then I'll drop it: are we sure about the sequencing here?
+
+62
+00:07:08.800 --> 00:07:09.600
+<v Ben Larsson>That's fair.
+
+63
+00:07:11.500 --> 00:07:17.100
+<v Naomi Kito>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+64
+00:07:18.700 --> 00:07:20.300
+<v Ben Larsson>Agreed, let's capture it.
+
+65
+00:07:28.800 --> 00:07:32.800
+<v Ben Larsson>Can you scroll up to the top of that section?
+
+66
+00:07:38.900 --> 00:07:40.500
+<v Naomi Kito>Sure — one sec.
+
+67
+00:07:53.500 --> 00:07:58.700
+<v Ben Larsson>I'm a little worried about the timeline, but I'm not blocking on it.
+
+68
+00:08:01.700 --> 00:08:03.300
+<v Naomi Kito>Agreed, let's capture it.
+
+69
+00:08:03.300 --> 00:08:09.300
+<v Naomi Kito>Do we actually need a decision on this today, or can it wait a week?
+
+70
+00:08:12.100 --> 00:08:13.700
+<v Ben Larsson>Makes sense to me.
+
+71
+00:08:20.400 --> 00:08:24.800
+<v Ben Larsson>Yeah. Okay. That makes sense. Let me actually trace it instead.
+
+72
+00:08:25.800 --> 00:08:31.400
+<v Naomi Kito>I want to make sure I understand the tradeoff before we commit to anything.
+
+73
+00:08:33.400 --> 00:08:35.400
+<v Ben Larsson>Right, that's what I meant.
+
+74
+00:08:38.500 --> 00:08:44.100
+<v Ben Larsson>I want to make sure I understand the tradeoff before we commit to anything.
+
+75
+00:08:47.900 --> 00:08:49.900
+<v Naomi Kito>Sure, I can own that.
+
+76
+00:08:49.900 --> 00:08:55.100
+<v Naomi Kito>Let me play that back to make sure we're all aligned on it.
+
+77
+00:08:56.900 --> 00:08:58.500
+<v Ben Larsson>Agreed, let's capture it.
+
+78
+00:09:05.500 --> 00:09:11.100
+<v Ben Larsson>One concern and then I'll drop it: are we sure about the sequencing here?
+
+79
+00:09:11.100 --> 00:09:15.900
+<v Ben Larsson>Let me pull up the numbers so we're not going off memory.
+
+80
+00:09:19.700 --> 00:09:22.500
+<v Naomi Kito>Mm, let me sit with that one.
+
+81
+00:09:28.000 --> 00:09:30.000
+<v Naomi Kito>Sure, I can own that.
+
+82
+00:09:31.600 --> 00:09:36.800
+<v Naomi Kito>Let me play that back to make sure we're all aligned on it.
+
+83
+00:09:36.800 --> 00:09:42.400
+<v Ben Larsson>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+84
+00:09:44.400 --> 00:09:46.000
+<v Naomi Kito>Okay, works for me.
+
+85
+00:09:50.400 --> 00:09:55.600
+<v Ben Larsson>Let me play that back to make sure we're all aligned on it.
+
+86
+00:09:59.400 --> 00:10:01.000
+<v Naomi Kito>Agreed, let's capture it.
+
+87
+00:10:04.700 --> 00:10:06.700
+<v Ben Larsson>Let's confirm in the channel.
+
+88
+00:10:09.400 --> 00:10:14.600
+<v Ben Larsson>I'm a little worried about the timeline, but I'm not blocking on it.
+
+89
+00:10:14.600 --> 00:10:20.600
+<v Naomi Kito>Can we make sure that lands as an action item so it doesn't get lost?
+
+90
+00:10:20.600 --> 00:10:25.400
+<v Ben Larsson>Yeah, that's consistent with what we talked about in the last sync.
+
+91
+00:10:27.100 --> 00:10:27.900
+<v Naomi Kito>That's fair.
+
+92
+00:10:32.700 --> 00:10:39.900
+<v Naomi Kito>Just flagging that this touches the manifest schema and validator, so loop me in when it firms up.
+
+93
+00:10:42.600 --> 00:10:43.400
+<v Ben Larsson>Yeah, exactly.
+
+94
+00:10:47.100 --> 00:10:49.100
+<v Ben Larsson>Right, that's what I meant.
+
+95
+00:10:49.100 --> 00:10:54.300
+<v Naomi Kito>Let's not rathole on this — can we take the fine detail offline?
+
+96
+00:10:56.800 --> 00:10:59.200
+<v Ben Larsson>Good point — let's do that.
+
+97
+00:11:05.100 --> 00:11:08.700
+<v Ben Larsson>What would it take to de-risk that a little?
+
+98
+00:11:11.200 --> 00:11:14.000
+<v Naomi Kito>Mm, let me sit with that one.
+
+99
+00:11:21.200 --> 00:11:23.600
+<v Naomi Kito>Good point — let's do that.
+
+100
+00:11:26.200 --> 00:11:31.400
+<v Ben Larsson>I'm a little worried about the timeline, but I'm not blocking on it.
+
+101
+00:11:34.700 --> 00:11:37.500
+<v Naomi Kito>Mm, let me sit with that one.
+
+102
+00:11:41.300 --> 00:11:47.300
+<v Ben Larsson>Do we actually need a decision on this today, or can it wait a week?
+
+103
+00:11:47.300 --> 00:11:51.300
+<v Ben Larsson>Can we double-check that against what we agreed last week?
+
+104
+00:11:53.800 --> 00:11:55.800
+<v Naomi Kito>Right, that's what I meant.
+
+105
+00:12:01.500 --> 00:12:03.500
+<v Naomi Kito>Sure, I can own that.
+
+106
+00:12:03.500 --> 00:12:08.300
+<v Ben Larsson>Right, and that lines up with the constraint we set at kickoff.
+
+107
+00:12:11.000 --> 00:12:12.600
+<v Naomi Kito>Makes sense to me.
+
+108
+00:12:17.900 --> 00:12:21.900
+<v Naomi Kito>Can we double-check that against what we agreed last week?
+
+109
+00:12:24.600 --> 00:12:25.400
+<v Ben Larsson>Yeah, exactly.
+
+110
+00:12:28.200 --> 00:12:32.200
+<v Ben Larsson>Can we double-check that against what we agreed last week?
+
+111
+00:12:35.400 --> 00:12:41.000
+<v Naomi Kito>Okay, I think I follow. So the plan is basically what you just described.
+
+112
+00:12:41.000 --> 00:12:47.000
+<v Naomi Kito>That matches what I was seeing on my end with the manifest schema and validator.
+
+113
+00:12:50.500 --> 00:12:56.100
+<v Ben Larsson>I want to make sure I understand the tradeoff before we commit to anything.
+
+114
+00:12:59.200 --> 00:13:01.200
+<v Naomi Kito>Let's confirm in the channel.
+
+115
+00:13:03.400 --> 00:13:05.400
+<v Ben Larsson>Right, that's what I meant.
+
+116
+00:13:12.000 --> 00:13:14.000
+<v Ben Larsson>Let's confirm in the channel.
+
+117
+00:13:16.400 --> 00:13:17.200
+<v Naomi Kito>Yeah, exactly.
+
+118
+00:13:17.200 --> 00:13:25.200
+<v Ben Larsson>Just flagging that this touches the label renderer and the validator tests, so loop me in when it firms up.
+
+119
+00:13:28.100 --> 00:13:32.900
+<v Ben Larsson>Is there a risk we're solving a problem we don't have yet?
+
+120
+00:13:35.200 --> 00:13:40.400
+<v Ben Larsson>Let's not rathole on this — can we take the fine detail offline?
+
+121
+00:13:43.400 --> 00:13:46.200
+<v Naomi Kito>Mm, let me sit with that one.
+
+122
+00:13:48.700 --> 00:13:54.300
+<v Ben Larsson>One concern and then I'll drop it: are we sure about the sequencing here?
+
+123
+00:13:57.500 --> 00:13:58.300
+<v Naomi Kito>That's fair.
+
+124
+00:14:00.500 --> 00:14:02.900
+<v Naomi Kito>Good point — let's do that.
+
+125
+00:14:06.300 --> 00:14:09.900
+<v Naomi Kito>What would it take to de-risk that a little?
+
+126
+00:14:12.900 --> 00:14:13.700
+<v Ben Larsson>That's fair.
+
+127
+00:14:17.400 --> 00:14:19.000
+<v Naomi Kito>Okay, works for me.
+
+128
+00:14:25.300 --> 00:14:29.300
+<v Naomi Kito>Can you scroll up to the top of that section?
+
+129
+00:14:29.300 --> 00:14:34.500
+<v Ben Larsson>Let's not rathole on this — can we take the fine detail offline?
+
+130
+00:14:36.700 --> 00:14:39.100
+<v Naomi Kito>Good point — let's do that.
+
+131
+00:14:48.900 --> 00:14:50.500
+<v Ben Larsson>Sure — one sec.
+
+132
+00:14:53.200 --> 00:15:05.200
+<v Naomi Kito>Right. And Ben — when you're not sure about something this central, ping me before you push. There's no version of that where I think less of you. The opposite.
+
+133
+00:15:05.200 --> 00:15:10.000
+<v Naomi Kito>Sorry, can you go back to the point about the review pass?
+
+134
+00:15:10.000 --> 00:15:14.800
+<v Naomi Kito>Right, and that lines up with the constraint we set at kickoff.
+
+135
+00:15:17.400 --> 00:15:19.000
+<v Ben Larsson>Makes sense to me.
+
+136
+00:15:26.300 --> 00:15:27.900
+<v Ben Larsson>Makes sense to me.
+
+137
+00:15:31.000 --> 00:15:37.000
+<v Ben Larsson>How does this interact with the label renderer and the validator tests, if at all?
+
+138
+00:15:39.800 --> 00:15:42.600
+<v Naomi Kito>Mm, let me sit with that one.
+
+139
+00:15:42.600 --> 00:15:47.400
+<v Naomi Kito>Right, and that lines up with the constraint we set at kickoff.
+
+140
+00:15:49.200 --> 00:15:51.200
+<v Ben Larsson>Right, that's what I meant.
+
+141
+00:15:57.000 --> 00:15:57.800
+<v Ben Larsson>Okay.
+
+142
+00:16:09.800 --> 00:16:16.200
+<v Naomi Kito>Good talk. I'll jot down what we landed on. Let's pick it back up next time.

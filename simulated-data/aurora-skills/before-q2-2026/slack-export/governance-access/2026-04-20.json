@@ -1,0 +1,41 @@
+[
+  {
+    "type": "message",
+    "user": "U07",
+    "user_name": "Sarah Kowalski",
+    "text": "Framing for the TK working session tomorrow: an MIT or Apache license covers *code*. It does not cover place names, subsistence locations, or traditional knowledge. Being open source is not the same as having consent from a community. I want us to design the governance layer before the first such contribution arrives, not after.",
+    "ts": "1776679200.000021",
+    "thread_ts": "1776679200.000021",
+    "reply_count": 2,
+    "reactions": [
+      {
+        "name": "100",
+        "users": [
+          "U08",
+          "U09",
+          "U10",
+          "U11"
+        ],
+        "count": 4
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U12",
+    "user_name": "Mark Dupont",
+    "text": "I hear it, but I'll push back as the lawyer in the room: a bespoke license is a maintenance and adoption tax. Every non-standard term is a reason a contributor walks. I want to see the specific harm before we invent a new instrument.",
+    "ts": "1776680280.000022",
+    "thread_ts": "1776679200.000021",
+    "parent_user_id": "U07"
+  },
+  {
+    "type": "message",
+    "user": "U08",
+    "user_name": "James Ahkivgak",
+    "text": "Mark, the harm is the point I raised on day one. If a subsistence hunting location ends up in a public repo under MIT, the license *permits* anyone to redistribute it. Who do the people in that place call?",
+    "ts": "1776681300.000023",
+    "thread_ts": "1776679200.000021",
+    "parent_user_id": "U07"
+  }
+]

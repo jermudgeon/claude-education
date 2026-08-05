@@ -1,0 +1,171 @@
+[
+  {
+    "id": "U01",
+    "name": "dana",
+    "real_name": "Dana Whitfield",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Dana Whitfield",
+      "display_name": "dana",
+      "title": "Tech lead / acting PM",
+      "team": "platform"
+    }
+  },
+  {
+    "id": "U02",
+    "name": "marcus",
+    "real_name": "Marcus Bell",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Marcus Bell",
+      "display_name": "marcus",
+      "title": "Senior backend eng",
+      "team": "platform"
+    }
+  },
+  {
+    "id": "U03",
+    "name": "priya",
+    "real_name": "Priya Nair",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Priya Nair",
+      "display_name": "priya",
+      "title": "Frontend eng",
+      "team": "platform"
+    }
+  },
+  {
+    "id": "U04",
+    "name": "tomas",
+    "real_name": "Tom\u00e1s Reyes",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Tom\u00e1s Reyes",
+      "display_name": "tomas",
+      "title": "DevOps / security eng",
+      "team": "platform"
+    }
+  },
+  {
+    "id": "U05",
+    "name": "naomi",
+    "real_name": "Naomi Kito",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Naomi Kito",
+      "display_name": "naomi",
+      "title": "Backend eng",
+      "team": "platform"
+    }
+  },
+  {
+    "id": "U06",
+    "name": "ben",
+    "real_name": "Ben Larsson",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Ben Larsson",
+      "display_name": "ben",
+      "title": "Junior dev",
+      "team": "platform"
+    }
+  },
+  {
+    "id": "U07",
+    "name": "sarah",
+    "real_name": "Sarah Kowalski",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Sarah Kowalski",
+      "display_name": "sarah",
+      "title": "Governance lead (PhD)",
+      "team": "governance"
+    }
+  },
+  {
+    "id": "U08",
+    "name": "james",
+    "real_name": "James Ahkivgak",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "James Ahkivgak",
+      "display_name": "james",
+      "title": "Community liaison / TK",
+      "team": "governance"
+    }
+  },
+  {
+    "id": "U09",
+    "name": "rachel",
+    "real_name": "Rachel Green",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Rachel Green",
+      "display_name": "rachel",
+      "title": "Access & credits PM",
+      "team": "governance"
+    }
+  },
+  {
+    "id": "U10",
+    "name": "kevin",
+    "real_name": "Kevin Osei",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Kevin Osei",
+      "display_name": "kevin",
+      "title": "Partnerships",
+      "team": "governance"
+    }
+  },
+  {
+    "id": "U11",
+    "name": "lily",
+    "real_name": "Lily Chen",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Lily Chen",
+      "display_name": "lily",
+      "title": "Data eng",
+      "team": "governance"
+    }
+  },
+  {
+    "id": "U12",
+    "name": "mark",
+    "real_name": "Mark Dupont",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Mark Dupont",
+      "display_name": "mark",
+      "title": "Legal / licensing",
+      "team": "governance"
+    }
+  },
+  {
+    "id": "U99",
+    "name": "insights-bot",
+    "real_name": "Collaboration Insights",
+    "deleted": false,
+    "is_bot": true,
+    "profile": {
+      "real_name": "Collaboration Insights",
+      "display_name": "insights-bot",
+      "title": "Insights agent",
+      "team": "tool"
+    }
+  }
+]

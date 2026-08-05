@@ -1,0 +1,54 @@
+{
+  "id": "retro-q3-2026-09-15",
+  "title": "Q3 Retro \u2014 With the Insights Tool",
+  "date": "2026-09-15",
+  "era": "after",
+  "columns": {
+    "went_well": [
+      {
+        "author": "dana",
+        "text": "My talk-time dropped from ~66% to under 40% once the tool started nudging me.",
+        "votes": 8
+      },
+      {
+        "author": "naomi",
+        "text": "Round-robin + pre-reads: I actually speak in meetings now. Contribution is visible.",
+        "votes": 9
+      },
+      {
+        "author": "ben",
+        "text": "Caught a regression and announced it the same hour. No 4-day silence.",
+        "votes": 8
+      },
+      {
+        "author": "marcus",
+        "text": "Dissent lands in the room before decisions now \u2014 the tool shows the timing.",
+        "votes": 7
+      }
+    ],
+    "went_poorly": [
+      {
+        "author": "james",
+        "text": "The tool over-flagged one quiet week as 'low engagement' \u2014 we tuned the threshold.",
+        "votes": 4
+      },
+      {
+        "author": "mark",
+        "text": "I still default to async first; working on it, but better than the hallway.",
+        "votes": 3
+      }
+    ],
+    "try_next": [
+      {
+        "author": "sarah",
+        "text": "Roll the insights tool out to the two partner districts' teams.",
+        "votes": 6
+      },
+      {
+        "author": "dana",
+        "text": "Publish the before/after so other Alaska teams can use it.",
+        "votes": 7
+      }
+    ]
+  }
+}

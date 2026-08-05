@@ -1,0 +1,539 @@
+WEBVTT
+
+NOTE 1:1 — Dana & Ben — 2026-06-16
+
+1
+00:00:00.000 --> 00:00:04.000
+<v Dana Whitfield>Hey — thanks for grabbing time. How's your week been?
+
+2
+00:00:09.400 --> 00:00:12.200
+<v Ben Larsson>Good, busy. Bit heads-down. Let's dig in.
+
+3
+00:00:16.700 --> 00:00:21.900
+<v Dana Whitfield>I wanted to do this after the incident. How are you doing, honestly?
+
+4
+00:00:25.300 --> 00:00:30.100
+<v Ben Larsson>Better. The retro helped. It stopped feeling like the mistake defined me.
+
+5
+00:00:30.100 --> 00:00:32.500
+<v Ben Larsson>That's fair. I'll withdraw the concern.
+
+6
+00:00:34.600 --> 00:00:36.600
+<v Dana Whitfield>Let's confirm in the channel.
+
+7
+00:00:38.200 --> 00:00:43.000
+<v Dana Whitfield>Yeah, that's consistent with what we talked about in the last sync.
+
+8
+00:00:45.900 --> 00:00:48.300
+<v Ben Larsson>Good point — let's do that.
+
+9
+00:00:51.000 --> 00:00:55.800
+<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
+
+10
+00:00:55.800 --> 00:01:01.800
+<v Dana Whitfield>Do we actually need a decision on this today, or can it wait a week?
+
+11
+00:01:03.300 --> 00:01:04.100
+<v Ben Larsson>Yeah, exactly.
+
+12
+00:01:09.600 --> 00:01:12.400
+<v Ben Larsson>Mm, let me sit with that one.
+
+13
+00:01:12.400 --> 00:01:17.200
+<v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
+
+14
+00:01:19.800 --> 00:01:21.400
+<v Ben Larsson>Agreed, let's capture it.
+
+15
+00:01:24.100 --> 00:01:30.100
+<v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
+
+16
+00:01:30.100 --> 00:01:35.700
+<v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
+
+17
+00:01:39.100 --> 00:01:46.700
+<v Dana Whitfield>That matches what I was seeing on my end with the roadmap and keeping the two tracks in sync.
+
+18
+00:01:48.500 --> 00:01:50.100
+<v Ben Larsson>Agreed, let's capture it.
+
+19
+00:01:53.200 --> 00:01:53.1000
+<v Ben Larsson>Yeah, exactly.
+
+20
+00:02:00.400 --> 00:02:01.200
+<v Ben Larsson>Yeah, exactly.
+
+21
+00:02:04.100 --> 00:02:07.700
+<v Ben Larsson>What would it take to de-risk that a little?
+
+22
+00:02:09.1000 --> 00:02:11.600
+<v Dana Whitfield>Makes sense to me.
+
+23
+00:02:17.900 --> 00:02:25.500
+<v Dana Whitfield>That matches what I was seeing on my end with the roadmap and keeping the two tracks in sync.
+
+24
+00:02:28.900 --> 00:02:31.300
+<v Ben Larsson>Good point — let's do that.
+
+25
+00:02:34.700 --> 00:02:40.700
+<v Ben Larsson>Do we actually need a decision on this today, or can it wait a week?
+
+26
+00:02:43.800 --> 00:02:45.400
+<v Dana Whitfield>Okay, works for me.
+
+27
+00:02:47.300 --> 00:02:52.900
+<v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
+
+28
+00:02:55.800 --> 00:02:57.800
+<v Ben Larsson>Let's confirm in the channel.
+
+29
+00:03:02.300 --> 00:03:07.900
+<v Dana Whitfield>Sorry, can you say that last part again? You cut out for a second.
+
+30
+00:03:15.400 --> 00:03:20.200
+<v Ben Larsson>Yeah, that's consistent with what we talked about in the last sync.
+
+31
+00:03:22.600 --> 00:03:24.600
+<v Dana Whitfield>Right, that's what I meant.
+
+32
+00:03:27.900 --> 00:03:29.500
+<v Ben Larsson>Sure — one sec.
+
+33
+00:03:33.200 --> 00:03:37.1000
+<v Ben Larsson>Is there a risk we're solving a problem we don't have yet?
+
+34
+00:03:40.400 --> 00:03:41.200
+<v Dana Whitfield>Yeah, exactly.
+
+35
+00:03:44.700 --> 00:03:59.100
+<v Dana Whitfield>Good. I want to ask you to do something that'll feel uncomfortable. In the next design review, I want you to defend a technical choice out loud, and I want Marcus to push on it hard.
+
+36
+00:03:59.100 --> 00:04:04.700
+<v Ben Larsson>I want to make sure I understand the tradeoff before we commit to anything.
+
+37
+00:04:08.200 --> 00:04:10.200
+<v Dana Whitfield>Let's confirm in the channel.
+
+38
+00:04:14.400 --> 00:04:23.200
+<v Dana Whitfield>Not to trip you — because the ability to defend a choice is the thing that turns a junior into a senior.
+
+39
+00:04:24.200 --> 00:04:29.800
+<v Dana Whitfield>I want to make sure I understand the tradeoff before we commit to anything.
+
+40
+00:04:33.400 --> 00:04:35.400
+<v Ben Larsson>Right, that's what I meant.
+
+41
+00:04:38.500 --> 00:04:43.300
+<v Ben Larsson>Just so I've got it written down, can you repeat the number?
+
+42
+00:04:52.900 --> 00:04:56.900
+<v Dana Whitfield>Can we double-check that against what we agreed last week?
+
+43
+00:05:00.100 --> 00:05:02.500
+<v Ben Larsson>Good point — let's do that.
+
+44
+00:05:06.300 --> 00:05:07.900
+<v Dana Whitfield>Sure — one sec.
+
+45
+00:05:07.900 --> 00:05:15.900
+<v Ben Larsson>Just flagging that this touches the label renderer and the validator tests, so loop me in when it firms up.
+
+46
+00:05:18.400 --> 00:05:20.400
+<v Dana Whitfield>Right, that's what I meant.
+
+47
+00:05:20.400 --> 00:05:25.200
+<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
+
+48
+00:05:29.000 --> 00:05:31.000
+<v Ben Larsson>Sure, I can own that.
+
+49
+00:05:31.000 --> 00:05:34.600
+<v Dana Whitfield>What would it take to de-risk that a little?
+
+50
+00:05:36.400 --> 00:05:37.200
+<v Ben Larsson>Yeah, exactly.
+
+51
+00:05:42.600 --> 00:05:49.000
+<v Ben Larsson>I'll take that one — it's adjacent to the label renderer and the validator tests anyway.
+
+52
+00:05:49.000 --> 00:05:55.000
+<v Ben Larsson>Do we actually need a decision on this today, or can it wait a week?
+
+53
+00:05:57.700 --> 00:05:59.300
+<v Dana Whitfield>Makes sense to me.
+
+54
+00:06:04.700 --> 00:06:09.500
+<v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
+
+55
+00:06:11.300 --> 00:06:14.100
+<v Ben Larsson>Mm, let me sit with that one.
+
+56
+00:06:16.600 --> 00:06:18.600
+<v Dana Whitfield>Sure, I can own that.
+
+57
+00:06:22.200 --> 00:06:27.800
+<v Ben Larsson>Okay, I think I follow. So the plan is basically what you just described.
+
+58
+00:06:30.900 --> 00:06:31.700
+<v Dana Whitfield>Yeah, exactly.
+
+59
+00:06:40.900 --> 00:06:45.700
+<v Ben Larsson>Right, and that lines up with the constraint we set at kickoff.
+
+60
+00:06:49.200 --> 00:06:50.000
+<v Dana Whitfield>Yeah, exactly.
+
+61
+00:06:50.000 --> 00:06:55.600
+<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+62
+00:06:59.300 --> 00:07:01.300
+<v Ben Larsson>Sure, I can own that.
+
+63
+00:07:01.300 --> 00:07:06.900
+<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+64
+00:07:10.800 --> 00:07:12.400
+<v Ben Larsson>Makes sense to me.
+
+65
+00:07:20.000 --> 00:07:24.800
+<v Ben Larsson>Sorry, can you go back to the point about the review pass?
+
+66
+00:07:26.600 --> 00:07:29.400
+<v Dana Whitfield>Mm, let me sit with that one.
+
+67
+00:07:36.400 --> 00:07:44.000
+<v Ben Larsson>That's the part that scared me with the validator. I couldn't defend the shortcut, so I hid it instead.
+
+68
+00:08:02.000 --> 00:08:10.800
+<v Dana Whitfield>Right. And here's the reframe I want you to keep: the failures are the interesting things. A green build teaches nobody anything.
+
+69
+00:08:11.500 --> 00:08:17.500
+<v Ben Larsson>How does this interact with the label renderer and the validator tests, if at all?
+
+70
+00:08:19.800 --> 00:08:21.400
+<v Dana Whitfield>Okay, works for me.
+
+71
+00:08:23.200 --> 00:08:36.400
+<v Dana Whitfield>The validator incident taught the whole team more about how we work than a month of clean sprints. If you're not failing sometimes, you're not near the edge of what you can do.
+
+72
+00:08:37.500 --> 00:08:41.500
+<v Ben Larsson>Can you scroll up to the top of that section?
+
+73
+00:08:41.500 --> 00:08:45.100
+<v Ben Larsson>What would it take to de-risk that a little?
+
+74
+00:08:45.100 --> 00:08:48.700
+<v Ben Larsson>What would it take to de-risk that a little?
+
+75
+00:08:51.300 --> 00:08:52.900
+<v Dana Whitfield>Okay, works for me.
+
+76
+00:08:58.200 --> 00:08:59.800
+<v Dana Whitfield>Makes sense to me.
+
+77
+00:08:59.800 --> 00:09:03.400
+<v Ben Larsson>What would it take to de-risk that a little?
+
+78
+00:09:05.000 --> 00:09:07.800
+<v Dana Whitfield>Mm, let me sit with that one.
+
+79
+00:09:12.800 --> 00:09:16.400
+<v Dana Whitfield>What would it take to de-risk that a little?
+
+80
+00:09:19.000 --> 00:09:25.800
+<v Ben Larsson>That matches what I was seeing on my end with the label renderer and the validator tests.
+
+81
+00:09:29.500 --> 00:09:31.500
+<v Dana Whitfield>Right, that's what I meant.
+
+82
+00:09:34.100 --> 00:09:36.100
+<v Ben Larsson>Right, that's what I meant.
+
+83
+00:09:43.400 --> 00:09:45.000
+<v Dana Whitfield>Sure — one sec.
+
+84
+00:09:45.000 --> 00:09:48.600
+<v Dana Whitfield>What would it take to de-risk that a little?
+
+85
+00:09:52.100 --> 00:09:57.300
+<v Ben Larsson>I'm a little worried about the timeline, but I'm not blocking on it.
+
+86
+00:10:01.000 --> 00:10:04.600
+<v Ben Larsson>What would it take to de-risk that a little?
+
+87
+00:10:07.100 --> 00:10:07.900
+<v Dana Whitfield>That's fair.
+
+88
+00:10:10.000 --> 00:10:11.600
+<v Dana Whitfield>Okay, works for me.
+
+89
+00:10:15.400 --> 00:10:17.000
+<v Ben Larsson>Makes sense to me.
+
+90
+00:10:17.000 --> 00:10:23.800
+<v Dana Whitfield>How does this interact with the roadmap and keeping the two tracks in sync, if at all?
+
+91
+00:10:27.600 --> 00:10:29.600
+<v Ben Larsson>Sure, I can own that.
+
+92
+00:10:29.600 --> 00:10:34.800
+<v Ben Larsson>I'm a little worried about the timeline, but I'm not blocking on it.
+
+93
+00:10:37.800 --> 00:10:39.400
+<v Dana Whitfield>Makes sense to me.
+
+94
+00:10:41.900 --> 00:10:48.300
+<v Ben Larsson>I'll take that one — it's adjacent to the label renderer and the validator tests anyway.
+
+95
+00:10:50.100 --> 00:10:51.700
+<v Dana Whitfield>Makes sense to me.
+
+96
+00:10:57.100 --> 00:11:04.300
+<v Dana Whitfield>I'll take that one — it's adjacent to the roadmap and keeping the two tracks in sync anyway.
+
+97
+00:11:06.600 --> 00:11:09.000
+<v Ben Larsson>Good point — let's do that.
+
+98
+00:11:22.500 --> 00:11:28.500
+<v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
+
+99
+00:11:31.700 --> 00:11:34.500
+<v Ben Larsson>Mm, let me sit with that one.
+
+100
+00:11:36.600 --> 00:11:41.800
+<v Ben Larsson>Let me play that back to make sure we're all aligned on it.
+
+101
+00:11:43.600 --> 00:11:45.200
+<v Dana Whitfield>Makes sense to me.
+
+102
+00:11:46.700 --> 00:11:50.700
+<v Ben Larsson>I can try that. Defending it out loud, I mean.
+
+103
+00:11:51.500 --> 00:11:57.100
+<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+104
+00:11:57.100 --> 00:12:02.300
+<v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
+
+105
+00:12:05.200 --> 00:12:06.000
+<v Ben Larsson>Yeah, exactly.
+
+106
+00:12:09.200 --> 00:12:11.200
+<v Ben Larsson>Let's confirm in the channel.
+
+107
+00:12:15.200 --> 00:12:20.400
+<v Dana Whitfield>Let me play that back to make sure we're all aligned on it.
+
+108
+00:12:21.900 --> 00:12:26.700
+<v Ben Larsson>Is there a risk we're solving a problem we don't have yet?
+
+109
+00:12:29.800 --> 00:12:31.400
+<v Dana Whitfield>Agreed, let's capture it.
+
+110
+00:12:32.900 --> 00:12:38.900
+<v Ben Larsson>How does this interact with the label renderer and the validator tests, if at all?
+
+111
+00:12:41.300 --> 00:12:43.700
+<v Dana Whitfield>Good point — let's do that.
+
+112
+00:12:46.800 --> 00:12:54.000
+<v Dana Whitfield>I'll take that one — it's adjacent to the roadmap and keeping the two tracks in sync anyway.
+
+113
+00:12:57.700 --> 00:13:00.100
+<v Ben Larsson>Good point — let's do that.
+
+114
+00:13:02.900 --> 00:13:07.700
+<v Ben Larsson>Is there a risk we're solving a problem we don't have yet?
+
+115
+00:13:07.700 --> 00:13:12.500
+<v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
+
+116
+00:13:14.400 --> 00:13:16.000
+<v Ben Larsson>Makes sense to me.
+
+117
+00:13:22.300 --> 00:13:24.700
+<v Dana Whitfield>Good point — let's do that.
+
+118
+00:13:26.800 --> 00:13:29.200
+<v Dana Whitfield>That's fair. I'll withdraw the concern.
+
+119
+00:13:31.500 --> 00:13:32.300
+<v Ben Larsson>Yeah, exactly.
+
+120
+00:13:32.300 --> 00:13:37.100
+<v Dana Whitfield>Sorry, can you go back to the point about the review pass?
+
+121
+00:13:40.400 --> 00:13:42.000
+<v Ben Larsson>Okay, works for me.
+
+122
+00:13:46.600 --> 00:13:48.200
+<v Ben Larsson>Makes sense to me.
+
+123
+00:13:51.800 --> 00:13:57.400
+<v Dana Whitfield>Sorry, can you say that last part again? You cut out for a second.
+
+124
+00:13:57.400 --> 00:14:02.200
+<v Dana Whitfield>Sorry, can you go back to the point about the review pass?
+
+125
+00:14:03.900 --> 00:14:05.500
+<v Ben Larsson>Okay, works for me.
+
+126
+00:14:07.900 --> 00:14:12.700
+<v Dana Whitfield>Yeah, that's consistent with what we talked about in the last sync.
+
+127
+00:14:14.200 --> 00:14:16.200
+<v Ben Larsson>Right, that's what I meant.
+
+128
+00:14:26.700 --> 00:14:31.500
+<v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
+
+129
+00:14:34.300 --> 00:14:36.300
+<v Ben Larsson>Sure, I can own that.
+
+130
+00:14:39.400 --> 00:14:41.000
+<v Ben Larsson>Sure — one sec.
+
+131
+00:14:41.000 --> 00:14:48.600
+<v Dana Whitfield>That matches what I was seeing on my end with the roadmap and keeping the two tracks in sync.
+
+132
+00:14:50.400 --> 00:14:52.400
+<v Ben Larsson>Let's confirm in the channel.
+
+133
+00:14:58.100 --> 00:15:06.500
+<v Dana Whitfield>That's all I'm asking. And if Marcus changes your mind, say so in the room. That's a win, not a loss.
+
+134
+00:15:13.600 --> 00:15:20.000
+<v Dana Whitfield>Good talk. I'll jot down what we landed on. Let's pick it back up next time.

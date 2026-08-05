@@ -1,0 +1,20 @@
+[
+  {
+    "type": "message",
+    "user": "U99",
+    "user_name": "Collaboration Insights",
+    "text": "\ud83d\udcca Weekly readout \u2014 Q3 Kickoff (2026-07-07). Talk-time: top speaker ~35% (Dana), down from 56% at the Q2 kickoff. Round-robin held: every attendee took \u22651 turn \u2014 including Naomi, who was silent-but-present in 3 comparable Q2 meetings.",
+    "ts": "1784188800.000035",
+    "reactions": [
+      {
+        "name": "chart_with_upwards_trend",
+        "users": [
+          "U01",
+          "U07",
+          "U05"
+        ],
+        "count": 3
+      }
+    ]
+  }
+]

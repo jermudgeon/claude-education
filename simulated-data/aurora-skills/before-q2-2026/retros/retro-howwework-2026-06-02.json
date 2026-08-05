@@ -1,0 +1,49 @@
+{
+  "id": "retro-howwework-2026-06-02",
+  "title": "Retro \u2014 How We Work Together",
+  "date": "2026-06-02",
+  "era": "before",
+  "columns": {
+    "went_well": [
+      {
+        "author": "marcus",
+        "text": "Arch review: I dissented BEFORE the decision and it actually changed.",
+        "votes": 7
+      },
+      {
+        "author": "james",
+        "text": "On the 19th I changed my mind out loud and the round moved.",
+        "votes": 6
+      }
+    ],
+    "went_poorly": [
+      {
+        "author": "mark",
+        "text": "I lodged my license objection in the channel after the meeting (the hallway).",
+        "votes": 5
+      },
+      {
+        "author": "james",
+        "text": "The license question has reopened 3 times.",
+        "votes": 6
+      },
+      {
+        "author": "naomi",
+        "text": "I say everything in chat, nothing in meetings \u2014 invisible if you only count the room.",
+        "votes": 8
+      }
+    ],
+    "try_next": [
+      {
+        "author": "dana",
+        "text": "Build the collaboration-insights tool; measure talk-time, Q:A, dissent timing, changed-minds, reopened conflicts.",
+        "votes": 9
+      },
+      {
+        "author": "james",
+        "text": "Whatever we measure, questions must count as participation.",
+        "votes": 8
+      }
+    ]
+  }
+}

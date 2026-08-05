@@ -1,0 +1,40 @@
+[
+  {
+    "type": "message",
+    "user": "U10",
+    "user_name": "Kevin Osei",
+    "text": "Thought while walking home: the schools that most need Alaska-specific skills are exactly the ones with no API credits to build them. What if part of Aurora is a broker \u2014 match teachers who need something built with people who have credits to spare? Claude for Teachers is free for verified K-12 folks, and Campus / for Good both hand out credits.",
+    "ts": "1775744400.000004",
+    "thread_ts": "1775744400.000004",
+    "reply_count": 2,
+    "reactions": [
+      {
+        "name": "bulb",
+        "users": [
+          "U09",
+          "U07",
+          "U01"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U09",
+    "user_name": "Rachel Green",
+    "text": "This is the thing. Filing it so we don't lose it. I want to own this.",
+    "ts": "1775745660.000005",
+    "thread_ts": "1775744400.000004",
+    "parent_user_id": "U10"
+  },
+  {
+    "type": "message",
+    "user": "U01",
+    "user_name": "Dana Whitfield",
+    "text": "Good but let's not scope-creep the platform. Park it for Team 2.",
+    "ts": "1775746920.000006",
+    "thread_ts": "1775744400.000004",
+    "parent_user_id": "U10"
+  }
+]

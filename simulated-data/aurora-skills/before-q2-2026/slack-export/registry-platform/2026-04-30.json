@@ -1,0 +1,20 @@
+[
+  {
+    "type": "message",
+    "user": "U06",
+    "user_name": "Ben Larsson",
+    "text": "pushed a small fix to the manifest validator, nothing major",
+    "ts": "1777571520.000017",
+    "thread_ts": "1777571520.000017",
+    "reply_count": 2,
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U01"
+        ],
+        "count": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "id": "retro-sprint2-2026-05-05",
+  "title": "Sprint 2 Retro (post-incident)",
+  "date": "2026-05-05",
+  "era": "before",
+  "columns": {
+    "went_well": [
+      {
+        "author": "naomi",
+        "text": "The smoke test caught the regression. The system worked.",
+        "votes": 5
+      },
+      {
+        "author": "marcus",
+        "text": "Once Ben spoke up we fixed it in an hour.",
+        "votes": 6
+      }
+    ],
+    "went_poorly": [
+      {
+        "author": "ben",
+        "text": "It took me 4 days to admit the validator fix broke something.",
+        "votes": 7
+      },
+      {
+        "author": "sarah",
+        "text": "Dana talks ~80% of the time in meetings; hard to disagree.",
+        "votes": 6
+      },
+      {
+        "author": "tomas",
+        "text": "I'm a single point of failure on security review.",
+        "votes": 4
+      }
+    ],
+    "try_next": [
+      {
+        "author": "sarah",
+        "text": "Blameless incident notes; celebrate pulling the andon cord early.",
+        "votes": 6
+      },
+      {
+        "author": "dana",
+        "text": "Measure whether people actually feel safe \u2014 build a tool?",
+        "votes": 5
+      }
+    ]
+  }
+}

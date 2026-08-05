@@ -1,0 +1,20 @@
+[
+  {
+    "type": "message",
+    "user": "U03",
+    "user_name": "Priya Nair",
+    "text": "Install flow demo is ready for sprint review. It's rough but it works end to end.",
+    "ts": "1778598000.000020",
+    "reactions": [
+      {
+        "name": "rocket",
+        "users": [
+          "U01",
+          "U02",
+          "U05"
+        ],
+        "count": 3
+      }
+    ]
+  }
+]

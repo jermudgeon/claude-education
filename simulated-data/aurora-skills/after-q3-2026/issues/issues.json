@@ -1,0 +1,181 @@
+{
+  "team": "Aurora Skills",
+  "era": "Q3 2026 \u2014 after the insights tool",
+  "issues": [
+    {
+      "id": "AUR-5",
+      "title": "Security review pipeline",
+      "assignee": {
+        "handle": "tomas",
+        "name": "Tom\u00e1s Reyes",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P0",
+      "created": "2026-04-20",
+      "completed": "2026-07-10",
+      "labels": [
+        "security"
+      ],
+      "description": "Second reviewer onboarded \u2014 Tom\u00e1s no longer a SPOF (AUR-16)."
+    },
+    {
+      "id": "AUR-8",
+      "title": "CARE + Local Contexts labels design",
+      "assignee": {
+        "handle": "sarah",
+        "name": "Sarah Kowalski",
+        "team": "governance"
+      },
+      "status": "done",
+      "priority": "P0",
+      "created": "2026-04-21",
+      "completed": "2026-06-23",
+      "labels": [
+        "governance",
+        "tk"
+      ],
+      "description": "Ratified 2026-06-23 (ADR-0003) with snapshot mitigation."
+    },
+    {
+      "id": "AUR-9",
+      "title": "Access needs-board + builder pool",
+      "assignee": {
+        "handle": "rachel",
+        "name": "Rachel Green",
+        "team": "governance"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-04-28",
+      "completed": "2026-07-18",
+      "labels": [
+        "access"
+      ],
+      "description": "Launched with 2 pilot districts."
+    },
+    {
+      "id": "AUR-10",
+      "title": "Community advisory process",
+      "assignee": {
+        "handle": "james",
+        "name": "James Ahkivgak",
+        "team": "governance"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-05-01",
+      "completed": "2026-07-01",
+      "labels": [
+        "tk",
+        "community"
+      ],
+      "description": "Recurring advisory cadence established."
+    },
+    {
+      "id": "AUR-11",
+      "title": "Collaboration-insights tool (prototype)",
+      "assignee": {
+        "handle": "dana",
+        "name": "Dana Whitfield",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-06-02",
+      "completed": "2026-07-24",
+      "labels": [
+        "insights",
+        "meta"
+      ],
+      "description": "Shipped. Timer subagent (PR #92), metrics (PR #101). Live in #insights."
+    },
+    {
+      "id": "AUR-13",
+      "title": "Round-robin facilitation + async pre-reads",
+      "assignee": {
+        "handle": "sarah",
+        "name": "Sarah Kowalski",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-07-06",
+      "completed": "2026-07-30",
+      "labels": [
+        "insights",
+        "process"
+      ],
+      "description": "Format change from the insights tool. PR #108. Aimed at Naomi's meeting-silence pattern."
+    },
+    {
+      "id": "AUR-14",
+      "title": "#insights channel readouts",
+      "assignee": {
+        "handle": "dana",
+        "name": "Dana Whitfield",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P2",
+      "created": "2026-07-15",
+      "completed": "2026-08-01",
+      "labels": [
+        "insights"
+      ],
+      "description": "Periodic automated readouts of talk-time, dissent timing, people-matching."
+    },
+    {
+      "id": "AUR-15",
+      "title": "Registry beta with 3 districts",
+      "assignee": {
+        "handle": "dana",
+        "name": "Dana Whitfield",
+        "team": "platform"
+      },
+      "status": "in_progress",
+      "priority": "P0",
+      "created": "2026-07-01",
+      "completed": null,
+      "labels": [
+        "platform"
+      ],
+      "description": "Beta rollout per Q3 roadmap."
+    },
+    {
+      "id": "AUR-16",
+      "title": "Onboard second security reviewer",
+      "assignee": {
+        "handle": "tomas",
+        "name": "Tom\u00e1s Reyes",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-06-25",
+      "completed": "2026-07-10",
+      "labels": [
+        "security"
+      ],
+      "description": "Bus factor now 2."
+    },
+    {
+      "id": "AUR-17",
+      "title": "Label snapshot + annual-review automation",
+      "assignee": {
+        "handle": "mark",
+        "name": "Mark Dupont",
+        "team": "governance"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-06-24",
+      "completed": "2026-07-12",
+      "labels": [
+        "governance",
+        "tk"
+      ],
+      "description": "Implements the ADR-0003 mitigation: snapshot Local Contexts defs, annual review reminder."
+    }
+  ]
+}

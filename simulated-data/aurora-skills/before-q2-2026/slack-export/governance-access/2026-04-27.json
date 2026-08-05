@@ -1,0 +1,19 @@
+[
+  {
+    "type": "message",
+    "user": "U09",
+    "user_name": "Rachel Green",
+    "text": "Access & credits program design doc is up for tomorrow. Core: a broker that matches teachers-who-need with builders-who-have-credits, plus a fallback pool from Claude for Good. Kevin's original napkin idea from #general, made real.",
+    "ts": "1777298400.000026",
+    "reactions": [
+      {
+        "name": "heart",
+        "users": [
+          "U10",
+          "U07"
+        ],
+        "count": 2
+      }
+    ]
+  }
+]

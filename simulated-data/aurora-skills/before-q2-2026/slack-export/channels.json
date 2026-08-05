@@ -1,0 +1,112 @@
+[
+  {
+    "id": "C100",
+    "name": "general",
+    "created": 1775433600,
+    "is_archived": false,
+    "members": [
+      "U01",
+      "U02",
+      "U03",
+      "U04",
+      "U05",
+      "U06",
+      "U07",
+      "U08",
+      "U09",
+      "U10",
+      "U11",
+      "U12"
+    ],
+    "purpose": {
+      "value": "Cross-team announcements & logistics"
+    },
+    "topic": {
+      "value": "Cross-team announcements & logistics"
+    }
+  },
+  {
+    "id": "C200",
+    "name": "registry-platform",
+    "created": 1775433600,
+    "is_archived": false,
+    "members": [
+      "U01",
+      "U02",
+      "U03",
+      "U04",
+      "U05",
+      "U06",
+      "U07"
+    ],
+    "purpose": {
+      "value": "Team 1 \u2014 registry & platform build"
+    },
+    "topic": {
+      "value": "Team 1 \u2014 registry & platform build"
+    }
+  },
+  {
+    "id": "C300",
+    "name": "governance-access",
+    "created": 1775433600,
+    "is_archived": false,
+    "members": [
+      "U07",
+      "U08",
+      "U09",
+      "U10",
+      "U11",
+      "U12",
+      "U01"
+    ],
+    "purpose": {
+      "value": "Team 2 \u2014 TK governance & access program"
+    },
+    "topic": {
+      "value": "Team 2 \u2014 TK governance & access program"
+    }
+  },
+  {
+    "id": "C400",
+    "name": "tk-governance-review",
+    "created": 1775433600,
+    "is_archived": false,
+    "members": [
+      "U01",
+      "U02",
+      "U07",
+      "U08",
+      "U09",
+      "U10",
+      "U11",
+      "U12"
+    ],
+    "purpose": {
+      "value": "Cross-team review of TK / licensing decisions"
+    },
+    "topic": {
+      "value": "Cross-team review of TK / licensing decisions"
+    }
+  },
+  {
+    "id": "C500",
+    "name": "incidents",
+    "created": 1775433600,
+    "is_archived": false,
+    "members": [
+      "U01",
+      "U02",
+      "U04",
+      "U05",
+      "U06",
+      "U07"
+    ],
+    "purpose": {
+      "value": "Security & reliability incidents"
+    },
+    "topic": {
+      "value": "Security & reliability incidents"
+    }
+  }
+]

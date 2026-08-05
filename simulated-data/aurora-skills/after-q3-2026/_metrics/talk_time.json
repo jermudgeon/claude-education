@@ -1,0 +1,458 @@
+{
+  "2026-07-07_q3-kickoff": {
+    "id": "2026-07-07_q3-kickoff",
+    "title": "Q3 Kickoff \u2014 Round-Robin",
+    "date": "2026-07-07",
+    "duration_s": 1588.6,
+    "duration_min": 26.5,
+    "speech_s": 889.6,
+    "content_speech_s": 82.0,
+    "silence_ratio": 0.44,
+    "attendee_count": 7,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 28.8,
+        "talk_pct": 35.1,
+        "turns": 3,
+        "questions": 1,
+        "assertions": 4,
+        "q_to_a": 0.25
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 14.0,
+        "talk_pct": 17.1,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 10.8,
+        "talk_pct": 13.2,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 6.0,
+        "talk_pct": 7.3,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 5.6,
+        "talk_pct": 6.8,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 1,
+        "q_to_a": 0.0
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 8.8,
+        "talk_pct": 10.7,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 8.0,
+        "talk_pct": 9.8,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Dana Whitfield",
+    "dominant_pct": 35.1,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-07-14_beta-arch-review": {
+    "id": "2026-07-14_beta-arch-review",
+    "title": "Beta Rollout Architecture Review",
+    "date": "2026-07-14",
+    "duration_s": 1710.5,
+    "duration_min": 28.5,
+    "speech_s": 950.8,
+    "content_speech_s": 105.2,
+    "silence_ratio": 0.44,
+    "attendee_count": 6,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 26.8,
+        "talk_pct": 25.5,
+        "turns": 4,
+        "questions": 1,
+        "assertions": 5,
+        "q_to_a": 0.2
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 20.8,
+        "talk_pct": 19.8,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 19.6,
+        "talk_pct": 18.6,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 14.8,
+        "talk_pct": 14.1,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 12.4,
+        "talk_pct": 11.8,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 10.8,
+        "talk_pct": 10.3,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Dana Whitfield",
+    "dominant_pct": 25.5,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-08-04_minor-incident-retro": {
+    "id": "2026-08-04_minor-incident-retro",
+    "title": "Minor Incident Retro",
+    "date": "2026-08-04",
+    "duration_s": 1195.5,
+    "duration_min": 19.9,
+    "speech_s": 629.2,
+    "content_speech_s": 60.8,
+    "silence_ratio": 0.47,
+    "attendee_count": 5,
+    "speakers": {
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 24.4,
+        "talk_pct": 40.1,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 13.2,
+        "talk_pct": 21.7,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 6.8,
+        "talk_pct": 11.2,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 9.6,
+        "talk_pct": 15.8,
+        "turns": 1,
+        "questions": 1,
+        "assertions": 2,
+        "q_to_a": 0.5
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 6.8,
+        "talk_pct": 11.2,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Ben Larsson",
+    "dominant_pct": 40.1,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-08-18_insights-readout-review": {
+    "id": "2026-08-18_insights-readout-review",
+    "title": "Insights Tool \u2014 Readout Review",
+    "date": "2026-08-18",
+    "duration_s": 1099.0,
+    "duration_min": 18.3,
+    "speech_s": 593.6,
+    "content_speech_s": 68.0,
+    "silence_ratio": 0.46,
+    "attendee_count": 5,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 18.0,
+        "talk_pct": 26.5,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 16.4,
+        "talk_pct": 24.1,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 12.8,
+        "talk_pct": 18.8,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 10.0,
+        "talk_pct": 14.7,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 10.8,
+        "talk_pct": 15.9,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Dana Whitfield",
+    "dominant_pct": 26.5,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-09-01_dana-ben-1-1-q3": {
+    "id": "2026-09-01_dana-ben-1-1-q3",
+    "title": "1:1 \u2014 Dana & Ben (Q3)",
+    "date": "2026-09-01",
+    "duration_s": 970.5,
+    "duration_min": 16.2,
+    "speech_s": 540.4,
+    "content_speech_s": 46.8,
+    "silence_ratio": 0.44,
+    "attendee_count": 2,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 26.0,
+        "talk_pct": 55.6,
+        "turns": 3,
+        "questions": 1,
+        "assertions": 7,
+        "q_to_a": 0.14
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 20.8,
+        "talk_pct": 44.4,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Dana Whitfield",
+    "dominant_pct": 55.6,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-09-08_marcus-lily-sync-q3": {
+    "id": "2026-09-08_marcus-lily-sync-q3",
+    "title": "Caching Sync \u2014 Marcus & Lily (Q3)",
+    "date": "2026-09-08",
+    "duration_s": 966.7,
+    "duration_min": 16.1,
+    "speech_s": 537.2,
+    "content_speech_s": 39.6,
+    "silence_ratio": 0.44,
+    "attendee_count": 2,
+    "speakers": {
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 18.4,
+        "talk_pct": 46.5,
+        "turns": 2,
+        "questions": 1,
+        "assertions": 4,
+        "q_to_a": 0.25
+      },
+      "lily": {
+        "name": "Lily Chen",
+        "attended": true,
+        "talk_s": 21.2,
+        "talk_pct": 53.5,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 6,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Lily Chen",
+    "dominant_pct": 53.5,
+    "present_but_silent": [],
+    "era": "after"
+  },
+  "2026-09-15_q3-retro": {
+    "id": "2026-09-15_q3-retro",
+    "title": "Q3 Retro \u2014 With the Insights Tool",
+    "date": "2026-09-15",
+    "duration_s": 1108.9,
+    "duration_min": 18.5,
+    "speech_s": 618.8,
+    "content_speech_s": 64.0,
+    "silence_ratio": 0.44,
+    "attendee_count": 6,
+    "speakers": {
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 15.6,
+        "talk_pct": 24.4,
+        "turns": 2,
+        "questions": 1,
+        "assertions": 4,
+        "q_to_a": 0.25
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 9.2,
+        "talk_pct": 14.4,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 11.6,
+        "talk_pct": 18.1,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 7.6,
+        "talk_pct": 11.9,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 9.6,
+        "talk_pct": 15.0,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 10.4,
+        "talk_pct": 16.2,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 4,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Sarah Kowalski",
+    "dominant_pct": 24.4,
+    "present_but_silent": [],
+    "era": "after"
+  }
+}

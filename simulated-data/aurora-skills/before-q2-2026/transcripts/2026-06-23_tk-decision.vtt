@@ -1,0 +1,523 @@
+WEBVTT
+
+NOTE TK Governance — Ratify the Decision — 2026-06-23
+
+1
+00:00:00.000 --> 00:00:05.600
+<v Sarah Kowalski>Okay, let's give it another minute for folks to join, then we'll get going.
+
+2
+00:00:55.300 --> 00:01:03.300
+<v Sarah Kowalski>Alright, I think we've got most people — I see Dana, Marcus, James, Rachel, Kevin, Lily, Mark. Let's get started.
+
+3
+00:01:03.300 --> 00:01:05.700
+<v Mark Dupont>Can everyone see my screen alright?
+
+4
+00:01:05.700 --> 00:01:06.900
+<v Sarah Kowalski>Yep, looks good.
+
+5
+00:01:06.900 --> 00:01:16.900
+<v Sarah Kowalski>Quick agenda: I want to get through the main topic, leave room for questions, and land on clear action items before we drop. Sound good?
+
+6
+00:01:22.200 --> 00:01:32.600
+<v Sarah Kowalski>We're here to ratify the ADR from the 19th: standard permissive license for code, Local Contexts labels plus community notice for TK skills, community review routing.
+
+7
+00:01:34.300 --> 00:01:41.900
+<v Sarah Kowalski>Before we ratify — Mark, you lodged a late objection in the channel. This is the room. Bring it.
+
+8
+00:01:42.400 --> 00:01:43.200
+<v Mark Dupont>Exactly.
+
+9
+00:01:43.200 --> 00:01:48.000
+<v James Ahkivgak>Yeah, that's consistent with what we talked about in the last sync.
+
+10
+00:02:03.600 --> 00:02:17.200
+<v Mark Dupont>Thank you. My objection is the external dependency on Local Contexts. If that project changes or disappears, our governance layer has a hole. That's real and I don't want it decided in a hallway.
+
+11
+00:02:30.100 --> 00:02:45.300
+<v James Ahkivgak>That's the third time this has come back. I want to be honest that reopening a settled question a third time, without new information, is its own problem — it means we suppressed it rather than settled it.
+
+12
+00:02:45.300 --> 00:02:51.300
+<v James Ahkivgak>Do we actually need a decision on this today, or can it wait a week?
+
+13
+00:02:54.700 --> 00:02:55.500
+<v Sarah Kowalski>That's fair.
+
+14
+00:03:00.400 --> 00:03:06.800
+<v James Ahkivgak>So let's actually settle it. Mark, is there new information, or is it the same concern?
+
+15
+00:03:06.800 --> 00:03:10.800
+<v James Ahkivgak>Can someone capture that in the notes close to verbatim?
+
+16
+00:03:12.300 --> 00:03:17.500
+<v James Ahkivgak>Let's not rathole on this — can we take the fine detail offline?
+
+17
+00:03:21.400 --> 00:03:25.400
+<v Mark Dupont>Can someone capture that in the notes close to verbatim?
+
+18
+00:03:27.700 --> 00:03:29.300
+<v Sarah Kowalski>Makes sense to me.
+
+19
+00:03:29.300 --> 00:03:33.300
+<v Mark Dupont>Good — as long as it's reversible, I'm comfortable moving.
+
+20
+00:03:40.800 --> 00:03:46.400
+<v James Ahkivgak>One concern and then I'll drop it: are we sure about the sequencing here?
+
+21
+00:03:48.300 --> 00:03:53.500
+<v Sarah Kowalski>I'm a little worried about the timeline, but I'm not blocking on it.
+
+22
+00:03:58.100 --> 00:03:58.900
+<v Mark Dupont>That tracks.
+
+23
+00:03:58.900 --> 00:04:02.900
+<v Sarah Kowalski>Can we double-check that against what we agreed last week?
+
+24
+00:04:05.400 --> 00:04:07.400
+<v James Ahkivgak>Sure, I can own that.
+
+25
+00:04:10.200 --> 00:04:12.600
+<v James Ahkivgak>That's fair. I'll withdraw the concern.
+
+26
+00:04:14.800 --> 00:04:20.800
+<v James Ahkivgak>I'll take that one — it's adjacent to community review and the advisory process anyway.
+
+27
+00:04:23.000 --> 00:04:25.400
+<v Sarah Kowalski>Good point — let's do that.
+
+28
+00:04:28.300 --> 00:04:32.300
+<v James Ahkivgak>Can we double-check that against what we agreed last week?
+
+29
+00:04:37.300 --> 00:04:39.700
+<v Sarah Kowalski>Good point — let's do that.
+
+30
+00:04:52.300 --> 00:04:57.500
+<v Mark Dupont>It's the same concern, stated in the open this time. I'll grant that.
+
+31
+00:04:57.500 --> 00:05:01.500
+<v Mark Dupont>Can we double-check that against what we agreed last week?
+
+32
+00:05:05.600 --> 00:05:11.600
+<v Sarah Kowalski>Can we make sure that lands as an action item so it doesn't get lost?
+
+33
+00:05:15.700 --> 00:05:20.500
+<v Mark Dupont>Is there a risk we're solving a problem we don't have yet?
+
+34
+00:05:24.800 --> 00:05:26.800
+<v James Ahkivgak>Let's confirm in the channel.
+
+35
+00:05:26.800 --> 00:05:29.200
+<v Mark Dupont>That's fair. I'll withdraw the concern.
+
+36
+00:05:32.100 --> 00:05:34.100
+<v Sarah Kowalski>Let's confirm in the channel.
+
+37
+00:05:42.900 --> 00:05:45.300
+<v Mark Dupont>That's fair. I'll withdraw the concern.
+
+38
+00:05:47.700 --> 00:05:52.900
+<v Mark Dupont>I'm a little worried about the timeline, but I'm not blocking on it.
+
+39
+00:05:54.900 --> 00:05:57.700
+<v James Ahkivgak>Mm, let me sit with that one.
+
+40
+00:06:00.600 --> 00:06:01.400
+<v James Ahkivgak>Yeah, exactly.
+
+41
+00:06:04.500 --> 00:06:09.700
+<v James Ahkivgak>Hang on, let me pull that doc up on my end. One sec.
+
+42
+00:06:09.700 --> 00:06:14.500
+<v Mark Dupont>Is there a risk we're solving a problem we don't have yet?
+
+43
+00:06:17.500 --> 00:06:19.100
+<v James Ahkivgak>Makes sense to me.
+
+44
+00:06:19.100 --> 00:06:24.300
+<v Sarah Kowalski>Let me play that back to make sure we're all aligned on it.
+
+45
+00:06:24.300 --> 00:06:31.100
+<v Mark Dupont>Just flagging that this touches licensing and the ADR, so loop me in when it firms up.
+
+46
+00:06:31.100 --> 00:06:35.900
+<v Mark Dupont>I'd rather over-communicate here — can we write down who's doing what?
+
+47
+00:06:39.900 --> 00:06:45.500
+<v Mark Dupont>One concern and then I'll drop it: are we sure about the sequencing here?
+
+48
+00:06:48.200 --> 00:06:48.1000
+<v James Ahkivgak>Yeah, exactly.
+
+49
+00:06:50.800 --> 00:06:52.800
+<v James Ahkivgak>Let's confirm in the channel.
+
+50
+00:06:52.800 --> 00:06:58.400
+<v Mark Dupont>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+51
+00:06:58.400 --> 00:07:03.1000
+<v Sarah Kowalski>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+52
+00:07:05.600 --> 00:07:07.600
+<v James Ahkivgak>Sure, I can own that.
+
+53
+00:07:11.900 --> 00:07:13.500
+<v James Ahkivgak>Agreed, let's capture it.
+
+54
+00:07:28.300 --> 00:07:29.900
+<v James Ahkivgak>Agreed, let's capture it.
+
+55
+00:07:42.500 --> 00:07:44.100
+<v Mark Dupont>Sure — one sec.
+
+56
+00:07:49.000 --> 00:07:50.200
+<v Sarah Kowalski>Good — next.
+
+57
+00:07:50.200 --> 00:07:55.400
+<v Sarah Kowalski>Then let's decide it for real, with a mitigation instead of a reopening.
+
+58
+00:07:55.400 --> 00:08:00.200
+<v Mark Dupont>Yeah, that's consistent with what we talked about in the last sync.
+
+59
+00:08:02.900 --> 00:08:04.900
+<v James Ahkivgak>Let's confirm in the channel.
+
+60
+00:08:09.300 --> 00:08:24.500
+<v Sarah Kowalski>Proposal: adopt the labels, AND we snapshot the label definitions into our own repo so a dependency change can't silently break us, AND we review the dependency annually. Mark, does the mitigation address the substance of your objection?
+
+61
+00:08:24.500 --> 00:08:28.500
+<v Mark Dupont>Can someone capture that in the notes close to verbatim?
+
+62
+00:08:28.500 --> 00:08:33.700
+<v Sarah Kowalski>I'm a little worried about the timeline, but I'm not blocking on it.
+
+63
+00:08:33.700 --> 00:08:38.500
+<v James Ahkivgak>Yeah, that's consistent with what we talked about in the last sync.
+
+64
+00:08:42.400 --> 00:08:45.200
+<v Mark Dupont>Mm, let me sit with that one.
+
+65
+00:08:54.400 --> 00:08:59.200
+<v Sarah Kowalski>Is there a risk we're solving a problem we don't have yet?
+
+66
+00:09:00.800 --> 00:09:05.1000
+<v Sarah Kowalski>I'm a little worried about the timeline, but I'm not blocking on it.
+
+67
+00:09:10.600 --> 00:09:13.400
+<v Mark Dupont>Mm, let me sit with that one.
+
+68
+00:09:16.300 --> 00:09:21.100
+<v Sarah Kowalski>Sorry, can you go back to the point about the review pass?
+
+69
+00:09:21.100 --> 00:09:27.100
+<v James Ahkivgak>Do we actually need a decision on this today, or can it wait a week?
+
+70
+00:09:31.200 --> 00:09:32.800
+<v Mark Dupont>Makes sense to me.
+
+71
+00:09:32.800 --> 00:09:36.800
+<v Sarah Kowalski>Can we double-check that against what we agreed last week?
+
+72
+00:09:40.800 --> 00:09:42.800
+<v Mark Dupont>Let's confirm in the channel.
+
+73
+00:09:52.600 --> 00:09:54.600
+<v James Ahkivgak>Right, that's what I meant.
+
+74
+00:09:57.600 --> 00:10:00.400
+<v James Ahkivgak>Mm, let me sit with that one.
+
+75
+00:10:04.100 --> 00:10:09.300
+<v Mark Dupont>I'll take that one — it's adjacent to licensing and the ADR anyway.
+
+76
+00:10:09.300 --> 00:10:14.500
+<v James Ahkivgak>Let me play that back to make sure we're all aligned on it.
+
+77
+00:10:14.500 --> 00:10:19.300
+<v Mark Dupont>Sorry, can you go back to the point about the review pass?
+
+78
+00:10:26.500 --> 00:10:28.100
+<v Sarah Kowalski>Agreed, let's capture it.
+
+79
+00:10:33.000 --> 00:10:37.800
+<v Sarah Kowalski>Yeah, that's consistent with what we talked about in the last sync.
+
+80
+00:10:42.500 --> 00:10:44.900
+<v Mark Dupont>Good point — let's do that.
+
+81
+00:10:53.600 --> 00:11:01.600
+<v Mark Dupont>It does. With the snapshot and the annual review, I can commit to this. Genuinely commit, not just stop arguing.
+
+82
+00:11:02.500 --> 00:11:03.300
+<v Sarah Kowalski>Got it.
+
+83
+00:11:03.300 --> 00:11:08.100
+<v Sarah Kowalski>Right, and that lines up with the constraint we set at kickoff.
+
+84
+00:11:09.700 --> 00:11:16.500
+<v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
+
+85
+00:11:19.900 --> 00:11:22.300
+<v James Ahkivgak>Good point — let's do that.
+
+86
+00:11:25.100 --> 00:11:31.100
+<v Sarah Kowalski>Do we actually need a decision on this today, or can it wait a week?
+
+87
+00:11:56.100 --> 00:12:00.900
+<v Sarah Kowalski>Right, and that lines up with the constraint we set at kickoff.
+
+88
+00:12:00.900 --> 00:12:06.100
+<v James Ahkivgak>Let me play that back to make sure we're all aligned on it.
+
+89
+00:12:06.100 --> 00:12:12.100
+<v James Ahkivgak>Do we actually need a decision on this today, or can it wait a week?
+
+90
+00:12:15.200 --> 00:12:17.200
+<v Sarah Kowalski>Right, that's what I meant.
+
+91
+00:12:23.300 --> 00:12:28.100
+<v Sarah Kowalski>How does this interact with the CARE governance framework, if at all?
+
+92
+00:12:32.1000 --> 00:12:34.1000
+<v James Ahkivgak>Let's confirm in the channel.
+
+93
+00:12:37.200 --> 00:12:39.1000
+<v Mark Dupont>Mm, let me sit with that one.
+
+94
+00:12:39.1000 --> 00:12:43.1000
+<v Sarah Kowalski>Good — as long as it's reversible, I'm comfortable moving.
+
+95
+00:12:47.1000 --> 00:12:48.800
+<v James Ahkivgak>That's fair.
+
+96
+00:12:57.100 --> 00:12:58.700
+<v James Ahkivgak>Okay, works for me.
+
+97
+00:12:58.700 --> 00:13:05.500
+<v Mark Dupont>Just flagging that this touches licensing and the ADR, so loop me in when it firms up.
+
+98
+00:13:10.900 --> 00:13:22.100
+<v Sarah Kowalski>Then we ratify, with the mitigation. And we note: this is closed. If it comes back, it needs new information, not the same concern in a new venue.
+
+99
+00:13:22.100 --> 00:13:26.900
+<v Mark Dupont>Is there a risk we're solving a problem we don't have yet?
+
+100
+00:13:26.900 --> 00:13:30.500
+<v James Ahkivgak>What would it take to de-risk that a little?
+
+101
+00:13:36.100 --> 00:13:36.900
+<v Sarah Kowalski>Yeah, exactly.
+
+102
+00:13:39.800 --> 00:13:45.400
+<v James Ahkivgak>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+103
+00:13:49.300 --> 00:13:51.300
+<v Mark Dupont>Sure, I can own that.
+
+104
+00:13:59.600 --> 00:14:05.200
+<v Mark Dupont>Okay, I think I follow. So the plan is basically what you just described.
+
+105
+00:14:05.200 --> 00:14:10.400
+<v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
+
+106
+00:14:11.1000 --> 00:14:14.800
+<v James Ahkivgak>Mm, let me sit with that one.
+
+107
+00:14:19.900 --> 00:14:21.900
+<v Sarah Kowalski>Let's confirm in the channel.
+
+108
+00:14:23.500 --> 00:14:35.900
+<v James Ahkivgak>Agreed. And for the record — that's what settling a conflict looks like versus suppressing it. Everyone said their piece, the objector committed, and we wrote down what would reopen it.
+
+109
+00:14:37.200 --> 00:14:43.1000
+<v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
+
+110
+00:14:48.200 --> 00:14:48.1000
+<v Sarah Kowalski>Right.
+
+111
+00:14:48.1000 --> 00:14:54.200
+<v Sarah Kowalski>I'll take that one — it's adjacent to the CARE governance framework anyway.
+
+112
+00:14:54.200 --> 00:14:59.400
+<v James Ahkivgak>Let's not rathole on this — can we take the fine detail offline?
+
+113
+00:14:59.400 --> 00:15:04.200
+<v Sarah Kowalski>Let me pull up the numbers so we're not going off memory.
+
+114
+00:15:16.300 --> 00:15:18.300
+<v Mark Dupont>Right, that's what I meant.
+
+115
+00:15:18.300 --> 00:15:25.100
+<v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
+
+116
+00:15:25.100 --> 00:15:29.900
+<v Mark Dupont>Is there a risk we're solving a problem we don't have yet?
+
+117
+00:15:33.200 --> 00:15:35.200
+<v Sarah Kowalski>Sure, I can own that.
+
+118
+00:15:41.200 --> 00:15:46.800
+<v James Ahkivgak>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+119
+00:15:53.700 --> 00:15:58.500
+<v Mark Dupont>Sorry, can you go back to the point about the review pass?
+
+120
+00:16:00.700 --> 00:16:04.300
+<v Sarah Kowalski>What would it take to de-risk that a little?
+
+121
+00:16:16.800 --> 00:16:19.600
+<v Sarah Kowalski>Okay — any questions before we wrap?
+
+122
+00:16:23.100 --> 00:16:28.700
+<v James Ahkivgak>One thing: how does this affect the community review and the advisory process timeline?
+
+123
+00:16:32.200 --> 00:16:38.200
+<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+124
+00:16:39.900 --> 00:16:44.700
+<v Mark Dupont>One thing: how does this affect the licensing and the ADR timeline?
+
+125
+00:16:47.200 --> 00:16:53.200
+<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+126
+00:16:58.500 --> 00:17:04.100
+<v Sarah Kowalski>Alright, let me read back the action items so we're aligned before we drop.
+
+127
+00:17:09.500 --> 00:17:16.300
+<v Sarah Kowalski>Sarah has the follow-up on the CARE governance framework — I'll capture the specifics in the notes.
+
+128
+00:17:18.900 --> 00:17:25.700
+<v Sarah Kowalski>Mark has the follow-up on licensing and the ADR — I'll capture the specifics in the notes.
+
+129
+00:17:28.800 --> 00:17:36.400
+<v Sarah Kowalski>James has the follow-up on community review and the advisory process — I'll capture the specifics in the notes.
+
+130
+00:17:37.900 --> 00:17:43.500
+<v Sarah Kowalski>Great. I'll write it all up and drop it in the channel. Thanks everyone.
