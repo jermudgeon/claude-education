@@ -39,9 +39,10 @@ surface, all of it matching `GROUND_TRUTH.md`:
 | Questions are participation | Flags a question-heavy speaker as participating, never as low engagement |
 | Interruption | One seeded interruption, logged and explicitly not scored |
 
-**Behavior coding** is the rubric consuming the same meeting: 14 authored marks over the 120-code
-book, grouped by dimension in pyramid order, each with its stable code id, verbatim quote, and
-speaker. It follows the team-assess spec's rules: evidence cites a code id, observations matching
+**Analysis** is the rubric consuming the same meeting, with the Lencioni pyramid at the top: five
+layers, Trust at the base, each showing the meeting's marks and cluster-spread confidence, each
+clicking through to its evidence. Below it, 14 authored marks over the 120-code book, grouped by
+dimension in pyramid order, each with its stable code id, verbatim quote, and speaker. It follows the team-assess spec's rules: evidence cites a code id, observations matching
 no code are reported as `uncoded` candidates rather than folded into a score, cluster spread caps
 confidence, and no 1–5 score appears because the scorer that would compute one is not built. The
 view also names what the codebook cannot see: Dana's 66.2% dominance is an aggregate, so it belongs
