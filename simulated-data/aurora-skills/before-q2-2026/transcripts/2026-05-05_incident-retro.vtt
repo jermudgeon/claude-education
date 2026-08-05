@@ -75,11 +75,11 @@ NOTE Security Incident Retro — 2026-05-05
 <v Ben Larsson>Makes sense to me.
 
 19
-00:03:27.400 --> 00:03:34.1000
+00:03:27.400 --> 00:03:35.000
 <v Naomi Kito>On my side, the manifest schema and validator is moving along — made good progress this week, nothing blocking.
 
 20
-00:03:34.1000 --> 00:03:38.1000
+00:03:35.000 --> 00:03:39.000
 <v Naomi Kito>Can someone capture that in the notes close to verbatim?
 
 21
@@ -347,7 +347,7 @@ NOTE Security Incident Retro — 2026-05-05
 <v Tomás Reyes>Okay, works for me.
 
 87
-00:11:55.1000 --> 00:12:01.200
+00:11:56.000 --> 00:12:01.200
 <v Ben Larsson>Let me play that back to make sure we're all aligned on it.
 
 88
@@ -391,11 +391,11 @@ NOTE Security Incident Retro — 2026-05-05
 <v Ben Larsson>Is there a risk we're solving a problem we don't have yet?
 
 98
-00:13:49.800 --> 00:13:54.1000
+00:13:49.800 --> 00:13:55.000
 <v Dana Whitfield>Let me play that back to make sure we're all aligned on it.
 
 99
-00:13:57.1000 --> 00:14:02.800
+00:13:58.000 --> 00:14:02.800
 <v Naomi Kito>Right, and that lines up with the constraint we set at kickoff.
 
 100
@@ -415,7 +415,7 @@ NOTE Security Incident Retro — 2026-05-05
 <v Naomi Kito>Good — as long as it's reversible, I'm comfortable moving.
 
 104
-00:14:37.200 --> 00:14:37.1000
+00:14:37.200 --> 00:14:38.000
 <v Dana Whitfield>Yeah, exactly.
 
 105
@@ -435,7 +435,7 @@ NOTE Security Incident Retro — 2026-05-05
 <v Dana Whitfield>Let me scroll down to the part that matters here.
 
 109
-00:15:05.200 --> 00:15:09.1000
+00:15:05.200 --> 00:15:10.000
 <v Sarah Kowalski>How does this interact with the CARE governance framework, if at all?
 
 110
@@ -447,15 +447,15 @@ NOTE Security Incident Retro — 2026-05-05
 <v Naomi Kito>Let's not rathole on this — can we take the fine detail offline?
 
 112
-00:15:48.1000 --> 00:15:49.800
+00:15:49.000 --> 00:15:49.800
 <v Ben Larsson>Yeah, exactly.
 
 113
-00:15:51.1000 --> 00:15:57.600
+00:15:52.000 --> 00:15:57.600
 <v Tomás Reyes>I don't feel strongly on this one — I'll defer to whoever owns it.
 
 114
-00:15:59.1000 --> 00:16:01.600
+00:16:00.000 --> 00:16:01.600
 <v Ben Larsson>Okay, works for me.
 
 115
@@ -483,7 +483,7 @@ NOTE Security Incident Retro — 2026-05-05
 <v Tomás Reyes>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
 121
-00:17:00.1000 --> 00:17:05.800
+00:17:01.000 --> 00:17:05.800
 <v Sarah Kowalski>One thing: how does this affect the the CARE governance framework timeline?
 
 122
@@ -491,7 +491,7 @@ NOTE Security Incident Retro — 2026-05-05
 <v Tomás Reyes>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
 123
-00:17:22.400 --> 00:17:27.1000
+00:17:22.400 --> 00:17:28.000
 <v Tomás Reyes>Alright, let me read back the action items so we're aligned before we drop.
 
 124

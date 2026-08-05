@@ -419,7 +419,7 @@ NOTE Second Reviewer Onboarding & Peer Feedback — 2026-07-24
 <v Tomás Reyes>How does this interact with the security review pipeline, if at all?
 
 105
-00:13:12.1000 --> 00:13:13.800
+00:13:13.000 --> 00:13:13.800
 <v Marcus Bell>Yeah, exactly.
 
 106
@@ -467,11 +467,11 @@ NOTE Second Reviewer Onboarding & Peer Feedback — 2026-07-24
 <v Dana Whitfield>That's fair. I'll withdraw the concern.
 
 117
-00:14:33.400 --> 00:14:36.1000
+00:14:33.400 --> 00:14:37.000
 <v Marcus Bell>What would it take to de-risk that a little?
 
 118
-00:14:40.200 --> 00:14:40.1000
+00:14:40.200 --> 00:14:41.000
 <v Tomás Reyes>Yeah, exactly.
 
 119
@@ -539,7 +539,7 @@ NOTE Second Reviewer Onboarding & Peer Feedback — 2026-07-24
 <v Marcus Bell>Mm, let me sit with that one.
 
 135
-00:17:19.400 --> 00:17:20.1000
+00:17:19.400 --> 00:17:21.000
 <v Marcus Bell>Okay, works for me.
 
 136
@@ -547,7 +547,7 @@ NOTE Second Reviewer Onboarding & Peer Feedback — 2026-07-24
 <v Marcus Bell>Can we double-check that against what we agreed last week?
 
 137
-00:17:28.600 --> 00:17:34.1000
+00:17:28.600 --> 00:17:35.000
 <v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
 
 138
@@ -555,11 +555,11 @@ NOTE Second Reviewer Onboarding & Peer Feedback — 2026-07-24
 <v Dana Whitfield>That's fair.
 
 139
-00:17:43.400 --> 00:17:48.1000
+00:17:43.400 --> 00:17:49.000
 <v Marcus Bell>Okay, I think I follow. So the plan is basically what you just described.
 
 140
-00:17:48.1000 --> 00:17:52.1000
+00:17:49.000 --> 00:17:53.000
 <v Marcus Bell>Can we double-check that against what we agreed last week?
 
 141
@@ -603,7 +603,7 @@ NOTE Second Reviewer Onboarding & Peer Feedback — 2026-07-24
 <v Tomás Reyes>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
 151
-00:19:07.1000 --> 00:19:12.400
+00:19:08.000 --> 00:19:12.400
 <v Dana Whitfield>Quick clarifier — who owns the follow-up here, and by when?
 
 152
@@ -615,7 +615,7 @@ NOTE Second Reviewer Onboarding & Peer Feedback — 2026-07-24
 <v Tomás Reyes>Alright, let me read back the action items so we're aligned before we drop.
 
 154
-00:19:44.200 --> 00:19:50.1000
+00:19:44.200 --> 00:19:51.000
 <v Tomás Reyes>Tomás has the follow-up on the security review pipeline — I'll capture the specifics in the notes.
 
 155
@@ -623,7 +623,7 @@ NOTE Second Reviewer Onboarding & Peer Feedback — 2026-07-24
 <v Tomás Reyes>Marcus has the follow-up on the backend capability model and the provenance schema — I'll capture the specifics in the notes.
 
 156
-00:20:04.200 --> 00:20:12.1000
+00:20:04.200 --> 00:20:13.000
 <v Tomás Reyes>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
 
 157

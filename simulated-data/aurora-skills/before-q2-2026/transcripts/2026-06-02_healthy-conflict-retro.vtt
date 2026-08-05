@@ -319,11 +319,11 @@ NOTE Retro — How We Work Together — 2026-06-02
 <v Sarah Kowalski>That's fair.
 
 80
-00:12:10.200 --> 00:12:10.1000
+00:12:10.200 --> 00:12:11.000
 <v Sarah Kowalski>Makes sense.
 
 81
-00:12:10.1000 --> 00:12:14.1000
+00:12:11.000 --> 00:12:15.000
 <v James Ahkivgak>Can we double-check that against what we agreed last week?
 
 82
@@ -335,7 +335,7 @@ NOTE Retro — How We Work Together — 2026-06-02
 <v James Ahkivgak>Agreed, let's capture it.
 
 84
-00:12:35.1000 --> 00:12:48.800
+00:12:36.000 --> 00:12:48.800
 <v Naomi Kito>Can I name a pattern about me? I don't talk in meetings. I say everything in the channel. That's not shyness exactly, it's that the meeting feels like it's for the confident.
 
 85
@@ -351,11 +351,11 @@ NOTE Retro — How We Work Together — 2026-06-02
 <v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
 
 88
-00:13:17.200 --> 00:13:17.1000
+00:13:17.200 --> 00:13:18.000
 <v Mark Dupont>Okay, yeah.
 
 89
-00:13:17.1000 --> 00:13:23.200
+00:13:18.000 --> 00:13:23.200
 <v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
 
 90
@@ -363,11 +363,11 @@ NOTE Retro — How We Work Together — 2026-06-02
 <v Naomi Kito>Can we double-check that against what we agreed last week?
 
 91
-00:13:47.800 --> 00:13:50.1000
+00:13:47.800 --> 00:13:51.000
 <v Dana Whitfield>Which is the idea I've been sitting on.
 
 92
-00:13:51.600 --> 00:14:05.1000
+00:13:51.600 --> 00:14:06.000
 <v Dana Whitfield>What if we built the thing we keep wishing we had — a tool that watches our own collaboration and tells us this stuff while it's happening, not a month later in a retro. Talk-time balance.
 
 93
@@ -407,7 +407,7 @@ NOTE Retro — How We Work Together — 2026-06-02
 <v Sarah Kowalski>Sure, I can own that.
 
 102
-00:15:36.1000 --> 00:15:37.800
+00:15:37.000 --> 00:15:37.800
 <v Sarah Kowalski>Yeah, exactly.
 
 103
@@ -435,11 +435,11 @@ NOTE Retro — How We Work Together — 2026-06-02
 <v Sarah Kowalski>Right, that's what I meant.
 
 109
-00:16:24.1000 --> 00:16:34.1000
+00:16:25.000 --> 00:16:35.000
 <v Dana Whitfield>Agreed, and that's a design constraint, not a reason not to build it. Let's spec it. I think it's the most interesting thing we've got.
 
 110
-00:16:42.1000 --> 00:16:45.800
+00:16:43.000 --> 00:16:45.800
 <v Sarah Kowalski>Okay — any questions before we wrap?
 
 111
@@ -451,7 +451,7 @@ NOTE Retro — How We Work Together — 2026-06-02
 <v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
 113
-00:17:04.1000 --> 00:17:09.800
+00:17:05.000 --> 00:17:09.800
 <v Mark Dupont>One thing: how does this affect the licensing and the ADR timeline?
 
 114
@@ -475,5 +475,5 @@ NOTE Retro — How We Work Together — 2026-06-02
 <v Sarah Kowalski>James has the follow-up on community review and the advisory process — I'll capture the specifics in the notes.
 
 119
-00:18:07.400 --> 00:18:12.1000
+00:18:07.400 --> 00:18:13.000
 <v Sarah Kowalski>Great. I'll write it all up and drop it in the channel. Thanks everyone.

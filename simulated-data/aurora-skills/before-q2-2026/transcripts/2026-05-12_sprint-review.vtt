@@ -683,11 +683,11 @@ NOTE Sprint Review — Install Flow — 2026-05-12
 <v Tomás Reyes>That matches what I was seeing on my end with the security review pipeline.
 
 171
-00:21:55.400 --> 00:21:56.1000
+00:21:55.400 --> 00:21:57.000
 <v Marcus Bell>Okay, works for me.
 
 172
-00:21:56.1000 --> 00:22:01.800
+00:21:57.000 --> 00:22:01.800
 <v Tomás Reyes>How does this interact with the security review pipeline, if at all?
 
 173
@@ -723,7 +723,7 @@ NOTE Sprint Review — Install Flow — 2026-05-12
 <v Tomás Reyes>Agreed, let's capture it.
 
 181
-00:22:58.400 --> 00:23:03.1000
+00:22:58.400 --> 00:23:04.000
 <v Marcus Bell>Okay, I think I follow. So the plan is basically what you just described.
 
 182
@@ -759,7 +759,7 @@ NOTE Sprint Review — Install Flow — 2026-05-12
 <v Dana Whitfield>Alright, let me read back the action items so we're aligned before we drop.
 
 190
-00:24:26.1000 --> 00:24:35.800
+00:24:27.000 --> 00:24:35.800
 <v Dana Whitfield>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
 
 191
@@ -771,5 +771,5 @@ NOTE Sprint Review — Install Flow — 2026-05-12
 <v Dana Whitfield>Marcus has the follow-up on the backend capability model and the provenance schema — I'll capture the specifics in the notes.
 
 193
-00:25:00.400 --> 00:25:05.1000
+00:25:00.400 --> 00:25:06.000
 <v Dana Whitfield>Great. I'll write it all up and drop it in the channel. Thanks everyone.

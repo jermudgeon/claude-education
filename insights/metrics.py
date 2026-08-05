@@ -9,8 +9,11 @@ with _comparison/before_after.json is therefore a check on the files, not an ech
 that wrote them.
 
 Definitions are PRD 05's and generate.py's, unchanged: the content basis (kind == "content"
-turns only), a group meeting has more than two attendees, and present-but-silent means
-attended with under 3% of content airtime.
+turns only), a group meeting has more than two attendees, a substantial one has five or more,
+and present-but-silent means attended with under 3% of content airtime. Headline dominance is
+taken over substantial meetings; a designated lead running a small working session is expected
+to dominate, so those are reported separately rather than dropped, and dominance by a non-lead
+is the genuine flag at any size. Who led a meeting is a ground fact taken from the sidecar.
 """
 
 import csv
@@ -26,19 +29,21 @@ THRESHOLD_PCT = 40.0
 SILENT_PCT = 3.0
 
 CUE = re.compile(
-    r"^(\d\d):(\d\d):(\d\d\.\d\d\d) --> (\d\d):(\d\d):(\d\d\.\d\d\d)\s*$\n<v ([^>]+)>(.*)$",
+    r"^(\d\d):(\d\d):(\d\d)\.(\d{3,4}) --> (\d\d):(\d\d):(\d\d)\.(\d{3,4})\s*$\n<v ([^>]+)>(.*)$",
     re.MULTILINE,
 )
 
 
-def _seconds(hours, minutes, seconds):
-    return int(hours) * 3600 + int(minutes) * 60 + float(seconds)
+def _seconds(hours, minutes, seconds, millis):
+    """Milliseconds as an integer over 1000, so a malformed 4-digit field like .1000
+    (the generator's old carry bug) still lands on the correct second."""
+    return int(hours) * 3600 + int(minutes) * 60 + int(seconds) + int(millis) / 1000
 
 
 def parse_vtt(path):
     """Return (start_s, end_s, speaker, text) per cue, in file order."""
     return [
-        (_seconds(m[1], m[2], m[3]), _seconds(m[4], m[5], m[6]), m[7], m[8].strip())
+        (_seconds(*m.group(1, 2, 3, 4)), _seconds(*m.group(5, 6, 7, 8)), m[9], m[10].strip())
         for m in CUE.finditer(path.read_text(encoding="utf-8"))
     ]
 
@@ -104,14 +109,45 @@ def _mean(values):
 
 def rollup(era):
     """An era's comparison signals, shaped to match _comparison/before_after.json."""
-    per_meeting = [measure(summary, turns) for summary, turns, _ in meetings(era)]
+    per_meeting = []
+    for summary, turns, _ in meetings(era):
+        m = measure(summary, turns)
+        m["dominant_name"] = m["names"][m["dominant"]]
+        m["led_by"] = summary.get("led_by")
+        m["dominant_is_lead"] = summary.get("dominant_is_lead", True)
+        m["dominance_expected"] = summary.get("dominance_expected", False)
+        per_meeting.append(m)
     group = [m for m in per_meeting if m["attendee_count"] > 2]
+    big = [m for m in group if m["attendee_count"] >= 5]
     naomi_attended = [m for m in group if m["attended"].get("naomi")]
     safety, conflict = survey_means(era)
     return {
         "group_meetings": len(group),
-        "peak_dominant_talk_pct": max((m["dominant_pct"] for m in group), default=None),
-        "avg_dominant_talk_pct": _mean([m["dominant_pct"] for m in group]),
+        "substantial_group_meetings": len(big),
+        "peak_dominant_talk_pct": max((m["dominant_pct"] for m in big), default=None),
+        "avg_dominant_talk_pct": _mean([m["dominant_pct"] for m in big]),
+        "peak_dominant_any_group": max((m["dominant_pct"] for m in group), default=None),
+        "small_led_dominance": [
+            {
+                "meeting": m["id"],
+                "dominant": m["dominant_name"],
+                "pct": m["dominant_pct"],
+                "led_by": m["led_by"],
+                "expected": m["dominance_expected"],
+            }
+            for m in group
+            if m["attendee_count"] < 5 and m["dominant_pct"] >= 40
+        ],
+        "unexpected_dominance": [
+            {
+                "meeting": m["id"],
+                "dominant": m["dominant_name"],
+                "pct": m["dominant_pct"],
+                "led_by": m["led_by"],
+            }
+            for m in group
+            if m["dominant_pct"] >= 45 and not m["dominant_is_lead"]
+        ],
         "dana_peak_talk_pct": max(
             (m["talk_pct"]["dana"] for m in group if "dana" in m["talk_pct"]), default=None
         ),

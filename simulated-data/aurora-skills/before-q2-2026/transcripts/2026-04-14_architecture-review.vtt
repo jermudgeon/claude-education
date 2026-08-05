@@ -399,7 +399,7 @@ NOTE Registry Architecture Review — 2026-04-14
 <v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
 
 100
-00:13:47.200 --> 00:13:47.1000
+00:13:47.200 --> 00:13:48.000
 <v Tomás Reyes>That's fair.
 
 101
@@ -587,7 +587,7 @@ NOTE Registry Architecture Review — 2026-04-14
 <v Dana Whitfield>Mm, let me sit with that one.
 
 147
-00:19:38.1000 --> 00:19:44.1000
+00:19:39.000 --> 00:19:45.000
 <v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
 
 148
@@ -615,19 +615,19 @@ NOTE Registry Architecture Review — 2026-04-14
 <v Tomás Reyes>I don't feel strongly on this one — I'll defer to whoever owns it.
 
 154
-00:20:34.1000 --> 00:20:40.200
+00:20:35.000 --> 00:20:40.200
 <v Marcus Bell>I'm a little worried about the timeline, but I'm not blocking on it.
 
 155
-00:20:43.1000 --> 00:20:46.800
+00:20:44.000 --> 00:20:46.800
 <v Dana Whitfield>Mm, let me sit with that one.
 
 156
-00:20:49.600 --> 00:20:59.1000
+00:20:49.600 --> 00:21:00.000
 <v Priya Nair>From the front end it's actually cleaner too — I can show a skill's data sources as named badges instead of a raw URL nobody understands.
 
 157
-00:21:00.800 --> 00:21:05.1000
+00:21:00.800 --> 00:21:06.000
 <v Tomás Reyes>Hang on, let me pull that doc up on my end. One sec.
 
 158
@@ -655,7 +655,7 @@ NOTE Registry Architecture Review — 2026-04-14
 <v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
 
 164
-00:21:57.200 --> 00:21:59.1000
+00:21:57.200 --> 00:22:00.000
 <v Naomi Kito>Mm, let me sit with that one.
 
 165
@@ -667,7 +667,7 @@ NOTE Registry Architecture Review — 2026-04-14
 <v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
 
 167
-00:22:18.400 --> 00:22:19.1000
+00:22:18.400 --> 00:22:20.000
 <v Naomi Kito>Agreed, let's capture it.
 
 168
@@ -723,7 +723,7 @@ NOTE Registry Architecture Review — 2026-04-14
 <v Priya Nair>Is there a risk we're solving a problem we don't have yet?
 
 181
-00:24:01.1000 --> 00:24:04.800
+00:24:02.000 --> 00:24:04.800
 <v Tomás Reyes>Mm, let me sit with that one.
 
 182
@@ -755,7 +755,7 @@ NOTE Registry Architecture Review — 2026-04-14
 <v Dana Whitfield>Makes sense.
 
 189
-00:24:52.200 --> 00:24:56.1000
+00:24:52.200 --> 00:24:57.000
 <v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
 
 190
@@ -799,7 +799,7 @@ NOTE Registry Architecture Review — 2026-04-14
 <v Tomás Reyes>That's fair.
 
 200
-00:25:48.600 --> 00:25:58.1000
+00:25:48.600 --> 00:25:59.000
 <v Dana Whitfield>Decision recorded: capabilities are an allow-list, no arbitrary egress, vetted first-party data sources. Naomi, that changes your schema — egress comes off the capability list. Naomi?
 
 201
@@ -847,7 +847,7 @@ NOTE Registry Architecture Review — 2026-04-14
 <v Priya Nair>Let's confirm in the channel.
 
 212
-00:27:17.1000 --> 00:27:18.800
+00:27:18.000 --> 00:27:18.800
 <v Dana Whitfield>Okay.
 
 213
@@ -891,5 +891,5 @@ NOTE Registry Architecture Review — 2026-04-14
 <v Dana Whitfield>Tomás has the follow-up on the security review pipeline — I'll capture the specifics in the notes.
 
 223
-00:29:11.400 --> 00:29:16.1000
+00:29:11.400 --> 00:29:17.000
 <v Dana Whitfield>Great. I'll write it all up and drop it in the channel. Thanks everyone.
