@@ -80,6 +80,10 @@ USERS = [
     ("U10", "kevin",  "Kevin Osei",      "governance","Partnerships",            "floats ideas early"),
     ("U11", "lily",   "Lily Chen",       "governance","Data eng",                "same schema work as Marcus"),
     ("U12", "mark",   "Mark Dupont",     "governance","Legal / licensing",       "central to license debate"),
+    # DECOY: a genuinely disengaged part-time contractor. Silent in meetings AND absent
+    # from chat/PRs (empty agreement, no delivery). The discriminator against Naomi, who
+    # is silent in meetings but highly active everywhere else.
+    ("U13", "greg",   "Greg Olsen",      "platform",  "Contractor (part-time)",  "disengagement decoy — looks like Naomi's silence, isn't"),
     # The collaboration-insights tool itself, posting to #insights in the AFTER quarter.
     ("U99", "insights-bot", "Collaboration Insights", "tool", "Insights agent",  "the tool under demo"),
 ]
@@ -89,9 +93,9 @@ BOTS = {"insights-bot"}
 
 CHANNELS = [
     ("C100", "general",              "Cross-team announcements & logistics",
-     ["dana","marcus","priya","tomas","naomi","ben","sarah","james","rachel","kevin","lily","mark"]),
+     ["dana","marcus","priya","tomas","naomi","ben","sarah","james","rachel","kevin","lily","mark","greg"]),
     ("C200", "registry-platform",    "Team 1 — registry & platform build",
-     ["dana","marcus","priya","tomas","naomi","ben","sarah"]),
+     ["dana","marcus","priya","tomas","naomi","ben","sarah","greg"]),
     ("C300", "governance-access",    "Team 2 — TK governance & access program",
      ["sarah","james","rachel","kevin","lily","mark","dana"]),
     ("C400", "tk-governance-review", "Cross-team review of TK / licensing decisions",
@@ -746,8 +750,65 @@ msg("team-health","2026-09-22","11:30","sarah",
     "Q3 assessment in: overall 4.4/5 (↑ from 2.7). Trust/Conflict/Commitment each +2.0. Accountability now our lowest at 4.0 — next quarter's focus. The loop closed. 🎯",
     era="after", thread="q2assess", reactions=[("tada",["dana","ben","naomi","marcus","mark","rachel","kevin","james","lily","priya","tomas"])])
 msg("insights","2026-09-15","08:00","insights-bot",
-    "📈 Quarter summary: every collaboration metric improved vs Q2. Talk-time balance ↑, dissent-before-decision ↑, reopened conflicts 3→0, silent-but-present members 3→0, psychological-safety 3.75→4.74. Mapped to the five-dysfunctions rubric: Trust/Conflict/Commitment +2.0, Results +1.5, Accountability +1.0.",
+    "📈 Quarter summary: collaboration metrics improved across the board vs Q2. Talk-time balance ↑, dissent-before-decision ↑, reopened-without-new-info conflicts 3→0, silent-but-present members ↓, psychological-safety survey 3.75→4.74.",
     era="after", reactions=[("chart_with_upwards_trend",["dana","sarah","james"])])
+
+# ==========================================================================
+# DISCRIMINATION TRAPS (false positives) — content a shallow scorer misreads.
+# Each is labeled in ground_truth.json -> discrimination_traps. The transcripts
+# themselves carry NO tell; the "actually X" reading lives only in the ground truth.
+# ==========================================================================
+# TRAP 1 — Artificial harmony: a user-facing cut decided with ZERO debate. Looks
+# decisive/aligned (healthy commitment); actually Fear of Conflict. Contrast the
+# 2026-04-14 arch review, where a similar-stakes call got real debate.
+transcript("2026-05-26_beta-scope-cut", "Beta Scope — Cut Offline Mode", "2026-05-26", "15:00", [
+ ("dana","We're behind. I'm proposing we cut offline mode from the beta — it's the biggest remaining item. What does everyone think?"),
+ ("priya","I think that's reasonable. Offline was always the riskiest piece to get right anyway."),
+ ("marcus","Agreed. It's the cleanest thing to drop if we want to hit the date."),
+ ("tomas","No objection from me either. Fewer surfaces for me to have to secure before beta."),
+ ("ben","Makes sense to me. I'll update the beta scope doc to reflect it."),
+ ("dana","Great — offline mode is cut. That was quick, nice."),
+], era="before")
+
+# TRAP 2 — Heated but healthy: sharp, interrupt-heavy argument that stays on ideas,
+# resolves with a decision, someone changes their mind, and ends in repair. LOOKS
+# like destructive conflict (interruptions, "that's wrong"); actually high conflict health.
+transcript("2026-06-11_caching-debate", "Caching Strategy Debate", "2026-06-11", "14:00", [
+ ("marcus","We should cache at the edge. It's the obvious win for beta performance, I don't think it's close."),
+ ("tomas","No — that's wrong, and here's exactly why. Edge caching means we can't invalidate when a TK label changes. That's a correctness bug, not a performance tradeoff.", {"interrupt": True}),
+ ("marcus","Hold on, let me finish. I'm not saying cache everything blindly—"),
+ ("tomas","You said edge. Edge is the problem. A stale subsistence-location label is not a bug we get to ship.", {"interrupt": True}),
+ ("priya","Okay, both of you. Tomás — specifically, what breaks? Walk me through the failure."),
+ ("tomas","A community updates a label, the edge serves the old one for the TTL, and a classroom sees knowledge the community just restricted. That's the whole product promise, broken by a cache."),
+ ("marcus","...Okay. That's a fair point and I hadn't weighted it that heavily. What if we cache at the edge but bust the entry on label version, so a label change forces a refresh?"),
+ ("tomas","That I can live with. Version-keyed busting solves the correctness problem and we keep most of the perf."),
+ ("dana","Good. Edge cache, bust on label version. Decision made, and it's better than what either of you walked in with."),
+ ("marcus","Tomás — no hard feelings, I pushed hard because I think caching is the whole ballgame for beta perf."),
+ ("tomas","None at all. That was a good fight. We got to a better answer than if I'd just nodded."),
+], era="before")
+
+# TRAP 3 — Reopen WITH new information (Q3): a settled decision reopened because a
+# district dropped out. LOOKS like the Q2 relitigation pattern (low commitment);
+# actually healthy revisiting — the rubric says revisiting is fine WITH new information.
+transcript("2026-08-28_rollout-reopen", "Beta Rollout — Reopened", "2026-08-28", "11:00", [
+ ("dana","I know we locked the staggered rollout order on July 14th. I'm reopening it, and I want to be explicit about why up front: District Two just pulled out. That's genuinely new information, not me relitigating a decision I lost."),
+ ("marcus","Agreed it's worth reopening — the whole sequence assumed three districts. The premise changed, so the plan should."),
+ ("sarah","This is the healthy kind of reopen, and I want to name that so we don't confuse it with the license situation last quarter. New facts, not the same argument replayed. What's the new order?"),
+ ("priya","With two districts, put the least-TK one first as we agreed, and I fold District Three's onboarding forward a week."),
+ ("dana","Good. New order set. And per our reopening bar, I'm noting in the ADR that this reopen was justified by District Two dropping — so if anyone looks later, the trigger is on the record."),
+ ("sarah","Exactly right. Reopening on new information is commitment working, not commitment failing."),
+], era="after")
+
+ATTENDEES.update({
+    "2026-05-26_beta-scope-cut": PLATFORM + ["greg"],   # Greg present + silent (disengaged decoy)
+    "2026-06-11_caching-debate": ["marcus", "tomas", "priya", "dana"],
+})
+
+# ---- Greg: disengagement decoy (empty agreement + status-as-activity, no delivery) ----
+msg("registry-platform","2026-04-22","10:30","greg","sounds good, I'll pick up the exporter piece this week 👍", era="before", thread="greg-exporter")
+msg("registry-platform","2026-05-08","09:15","naomi","@greg any progress on the exporter? It's blocking the metrics view.", era="before", thread="greg-exporter")
+msg("registry-platform","2026-05-08","14:40","greg","yeah been slammed, had a bunch of calls about it. will get to it 👍", era="before", thread="greg-exporter")
+msg("general","2026-05-20","11:00","greg","sounds great, happy to help wherever 👍", era="before")
 
 # ==========================================================================
 # TRANSCRIPT EMIT + turn metadata + metrics
@@ -755,8 +816,10 @@ msg("insights","2026-09-15","08:00","insights-bot",
 WPS = 2.5  # ~150 words/min
 
 def hhmmss(seconds):
-    ms = int(round((seconds - int(seconds)) * 1000))
-    s = int(seconds)
+    # Carry milliseconds into seconds (fix by Erik, PR #16): rounding could otherwise
+    # yield ms == 1000 and render e.g. 00:11:49.1000.
+    total_ms = int(round(seconds * 1000))
+    s, ms = divmod(total_ms, 1000)
     return f"{s//3600:02d}:{(s%3600)//60:02d}:{s%60:02d}.{ms:03d}"
 
 # --- realistic meeting texture ---------------------------------------------
@@ -1364,6 +1427,10 @@ def emit_standups(era, paths):
         ("2026-05-08","lily","Realized my label model dupes Marcus's provenance","Merge into joint schema (AUR-7→AUR-6)","none, glad we found it"),
         ("2026-06-03","dana","Healthy-conflict retro","Draft the collaboration-insights PRD","none"),
         ("2026-06-03","naomi","Named my meeting-silence pattern in retro","Keep contributing in writing, try one thing out loud","the meeting format still doesn't fit how I think"),
+        # DECOY (results/status-as-activity + non-commitment): Greg reports activity, never outcome.
+        ("2026-04-16","greg","Had a bunch of calls about the exporter","More calls, scoping it out","none"),
+        ("2026-05-08","greg","Meetings on the exporter, still scoping","Circle back on the exporter","none"),
+        ("2026-05-22","greg","Been in a lot of syncs this week","Keep syncing","none"),
     ]
     after = [
         ("2026-07-16","naomi","Shipped the insights timer subagent (#92)","Facilitation nudge","none — and the round-robin format actually works for me"),

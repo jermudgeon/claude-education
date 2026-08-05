@@ -1,40 +1,33 @@
-# Assessments — the Q2 → feedback → Q3 loop
+# Assessments — the Q2 → feedback → Q3 loop (scoring is external)
 
-These are the in-world outputs of the `team-assess` tool (Five Dysfunctions rubric) run against
-each quarter. They are what makes the dataset a **closed loop**, not just a before/after:
+**This dataset does not score anything.** The `team-assess` tool and the team running it produce
+the scored assessments (dimension scores, confidence, overall health, trend). What lives here is
+the **data-side** of the loop: the seeded signals, their mapping to the rubric, and the qualitative
+recommendations the Q3 content was authored to answer.
 
 ```
-Q2 data ──assess──▶ report-Q2-2026  ──the team acts on the recommendations──▶ Q3 data
-                                                                                 │
-Q3 data ──assess──▶ report-Q3-2026 ◀─────────────────────────────────────────── ┘
-   (trend vs Q2 shows the recommendations worked)
+Q2 data ──(team-assess: someone else scores)──▶ recommendations
+                                                     │
+                                        the team enacts them in Q3
+                                                     │
+Q3 data ──(team-assess scores again)──▶ improvement on the targeted dimensions
 ```
 
 | File | What it is |
 |---|---|
-| `report-Q2-2026.md` | Human-readable Q2 assessment. Its **Priority Actions** are the feedback the team enacts in Q3. |
-| `snapshot-Q2-2026.json` | Machine-readable Q2 snapshot (tool schema). |
-| `report-Q3-2026.md` | Q3 assessment with trend vs Q2 — the validation. |
-| `snapshot-Q3-2026.json` | Machine-readable Q3 snapshot + `trend_vs` block. |
+| `q2-anticipated-recommendations.md` | The qualitative recommendations the Q2 dysfunctions should surface, and the Q3 artifacts that answer each. **No scores.** |
+| `five-dysfunctions-signal-map.json` | Every seeded signal → rubric v0.9 dimension + observable facet + verbatim act, before vs after. Data ground truth, not a score. |
 
-## Status
+## What is and isn't asserted here
 
-- **Scores/confidence are provisional** against rubric **v0.8** and will be re-pinned when the
-  refined rubric lands. The `run_date` / `rubric_version` fields mark this.
-- **Recommendations are stable** — they follow from Q2's fixed dysfunction signals and the five
-  Lencioni dimensions, and are the actual driver of the Q3 content.
+- **Not asserted:** any 1–5 dysfunction score, confidence level, overall health, or trend delta —
+  those are the scorer's output.
+- **Asserted (objective, computed from the data):** talk-time %, question ratios, silent-member
+  counts, interruption counts, reopen counts, and the pulse-survey values. These are inputs/facts,
+  in `../_comparison/before_after.json` and `../<era>/_metrics/`.
 
-## How to reproduce with the real tool
+## Discrimination traps
 
-```
-team-assess --input ../before-q2-2026 --period Q2-2026
-team-assess --input ../after-q3-2026  --period Q3-2026 --compare Q2-2026
-```
-
-The tool's output should approximate these files. Where the transcripts are `.vtt`, the tool needs
-a WebVTT reader (or point it at a text rendering); see the workflow spec.
-
-## Which Q3 artifacts enact each recommendation
-
-See `../ground_truth.json` → `five_dysfunctions_loop` for the exact file+location mapping of every
-Q2 recommendation to the Q3 meetings, PRs, issues, and chat that implement it.
+The dataset deliberately includes **false positives** — content that a shallow scorer misreads.
+See `../ground_truth.json → discrimination_traps` for each trap, what it looks like, what it
+actually is, and where it lives. A good scorer must tell the seeded true signals apart from these.

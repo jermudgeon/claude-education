@@ -16,7 +16,8 @@
       "U09",
       "U10",
       "U11",
-      "U12"
+      "U12",
+      "U13"
     ],
     "purpose": {
       "value": "Cross-team announcements & logistics"
@@ -37,7 +38,8 @@
       "U04",
       "U05",
       "U06",
-      "U07"
+      "U07",
+      "U13"
     ],
     "purpose": {
       "value": "Team 1 \u2014 registry & platform build"

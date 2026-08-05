@@ -4,27 +4,32 @@ A first pass at step 1 of the build order in
 `docs/superpowers/specs/2026-08-04-facilitator-and-scorer-integration.md`: compute PRD 05's metric
 contract over data already in this repo and show it three ways.
 
-**Nothing here is invented.** Every name, quote, duration, and percentage is read from
-`simulated-data/aurora-skills`. The dataset is synthetic, and it says so; this demo adds no data of
-its own.
+**Nothing here is invented, with one labeled exception.** Every name, quote, duration, and
+percentage is read from `simulated-data/aurora-skills`. The dataset is synthetic, and it says so;
+this demo adds no data of its own. The exception is `marks.json`: behavior-code assignments against
+`rubric/obm-behavior-codes.json`, authored by an AI coder reading the transcript. Assignments are
+judgment and are labeled as authored everywhere they surface; the build validates that every mark
+cites a real code id and a quote that appears verbatim in the cited turn, and fails otherwise.
 
 ## Run
 
 ```bash
-python3 demo/build_demo_data.py     # writes demo/data.js (one meeting + the quarter comparison)
-python3 demo/build_coding_data.py   # writes demo/coding.js (the assessments/ analysis + moments)
+python3 demo/build_demo_data.py     # writes demo/data.js
+python3 demo/build_scores_data.py   # writes demo/scores.js (snapshots + moments)
 open demo/index.html                # no server needed
 ```
 
 Both build scripts read only from `simulated-data/aurora-skills` and have no dependencies outside
-the standard library. When a new analysis lands in `assessments/`, rerun `build_coding_data.py`
-and the coding view picks it up.
+the standard library. When a real team-assess run lands its snapshots in `assessments/`, rerun
+`build_scores_data.py` and the Scores & trend cards fill in.
 
 ## The three views
 
-**Live session** replays `2026-06-09_roadmap-review` turn by turn at 60x and runs four rules from
-PRD 05's metric contract as the transcript arrives. Each nudge fires only once the evidence exists,
-and each cites the count that triggered it and the design constraint it respects.
+**Live session** replays `2026-06-09_roadmap-review` turn by turn at a selectable 15x/60x/240x and
+runs four rules from PRD 05's metric contract as the transcript arrives. Each nudge fires only once
+the evidence exists, and each cites the count that triggered it and the design constraint it
+respects. A second rail docks rubric marks as the replay reaches the turns they cite, with a
+running five-dimension tally.
 
 The meeting was picked because it carries the dataset's strongest seeded signals. What the rules
 surface, all of it matching `GROUND_TRUTH.md`:
@@ -36,19 +41,25 @@ surface, all of it matching `GROUND_TRUTH.md`:
 | Questions are participation | Flags a question-heavy speaker as participating, never as low engagement |
 | Interruption | One seeded interruption, logged and explicitly not scored |
 
-**Readout & behavior coding** puts the quarter's analysis and the meeting readout on one page.
+**Analysis** now also holds the meeting readout, so the coding and the metric contract sit on one
+page. It opens with the Lencioni pyramid, then **Scores & trend**: one card per dimension carrying
+score, confidence, and trend slots that fill in from `assessments/snapshot-<period>.json` the moment
+a real scorer run lands, and stay visibly pending until then, never invented. Each card features one
+verbatim moment from a Q3 transcript with its timestamp (Ben disclosing his own regression is why
+vulnerability is up), the Q2 → Q3 contrast for the matching seeded signal, and a drill-down into the
+raw JSON. Moment extraction is anchored to the transcript text and fails loudly if a regeneration
+drops an anchor.
 
-The coding half renders the team-assess output shipped in `assessments/` (the dataset's in-world
-analysis, not a live model run): per dimension, the score, its confidence, and the trend against
-Q2, with a ⚠ on any move over 1.0 points because the scorer's run-to-run variance is unmeasured
-(open question 3). Each card carries **one verbatim moment**: a real cue, with its timestamp and
-transcript, that embodies why the dimension moved (Ben's 41-minute disclosure is why vulnerability
-is up), plus the seeded-signal Q2 → Q3 contrast from `five-dysfunctions-signal-map.json`. Every
-card and the page footer drill down into the raw snapshot JSON. The choice of which moment to
-feature is `build_coding_data.py`'s; the quotes, timestamps, scores, and trend are all read from
-the repo, and extraction fails loudly if a regenerated transcript no longer contains an anchor.
+Below the cards, the rubric consumes the same meeting the live view replays: five
+layers, Trust at the base, each showing the meeting's marks and cluster-spread confidence, each
+clicking through to its evidence. Below it, 14 authored marks over the 120-code book, grouped by
+dimension in pyramid order, each with its stable code id, verbatim quote, and speaker. It follows the team-assess spec's rules: evidence cites a code id, observations matching
+no code are reported as `uncoded` candidates rather than folded into a score, cluster spread caps
+confidence, and no 1–5 score appears because the scorer that would compute one is not built. The
+view also names what the codebook cannot see: Dana's 66.2% dominance is an aggregate, so it belongs
+to the metric contract, not to any single-utterance code. The two layers are complements.
 
-The readout half is the per-attendee table on both measurement bases. Content-only reproduces the
+The **meeting readout**, at the bottom of Analysis, is the per-attendee table on both measurement bases. Content-only reproduces the
 66.2% that `GROUND_TRUTH.md` publishes for this meeting; all-speech is what a live tool actually
 hears. Both cross the 40% threshold, so the nudge fires either way. The dataset sanctions both bases
 (`ground_truth.json` → `metrics_note`); mixing them silently is the thing to avoid.
@@ -62,4 +73,6 @@ table before believing a trend line.
 It does not score anyone, and it has no model call in it. Every number is arithmetic over the
 transcript metadata, which is the point: the metric contract is countable, and the parts that need a
 model can be added on top of a layer that already works. Scoring belongs to team-assess, and per
-PRD 05 it stays team-level.
+PRD 05 it stays team-level. The coding view holds the same line from the other side: marks were
+authored once, offline, and the page only renders them; a live build would replace `marks.json`
+with a model call whose output obeys the same validation.

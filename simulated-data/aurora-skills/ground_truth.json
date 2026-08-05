@@ -9,15 +9,15 @@
     "note": "Each seeded signal is mapped to a v0.9 dimension + observable behavioral facet + verbatim act, with its polarity in each quarter."
   },
   "assessment_loop": {
-    "description": "The dataset is a closed loop: run team-assess on Q2 -> recommendations -> the team enacts them in Q3 -> run team-assess on Q3 -> scores improve traceably.",
-    "q2_feedback": "assessments/report-Q2-2026.md (+ snapshot-Q2-2026.json)",
-    "q3_validation": "assessments/report-Q3-2026.md (+ snapshot-Q3-2026.json, with trend_vs Q2)",
+    "description": "The dataset is a closed loop: team-assess (run by someone else) scores Q2 -> recommendations -> the team enacts them in Q3 -> team-assess scores Q3 -> improvement on the targeted dimensions. THIS DATASET DOES NOT ASSERT SCORES; it provides the seeded dysfunctions and the Q3 content authored to answer the anticipated recommendations.",
+    "scoring": "external — produced by team-assess, not by this dataset",
+    "anticipated_recommendations": "assessments/q2-anticipated-recommendations.md",
     "loop_map": [
-      { "dimension": "trust",          "q2_score": 2.5, "q3_score": 4.5, "recommendation": "Make mistakes safe; blameless notes; celebrate the andon cord", "q3_enactment": ["issues AUR-12", "transcript 2026-07-10_blameless-practice", "PR #115", "#incidents 2026-08-04"] },
-      { "dimension": "conflict",       "q2_score": 2.5, "q3_score": 4.5, "recommendation": "Dissent in the room before decisions; balance airtime", "q3_enactment": ["issues AUR-13", "transcript 2026-07-17_facilitation-format", "transcript 2026-07-14_beta-arch-review"] },
-      { "dimension": "commitment",     "q2_score": 2.5, "q3_score": 4.5, "recommendation": "Close decisions with a written reopening bar", "q3_enactment": ["issues AUR-18", "transcript 2026-08-25_decision-hygiene", "wiki/adr/0003"] },
-      { "dimension": "accountability", "q2_score": 3.0, "q3_score": 4.0, "recommendation": "Horizontal peer feedback; remove single points of failure", "q3_enactment": ["issues AUR-16", "transcript 2026-07-24_reviewer-onboarding"] },
-      { "dimension": "results",        "q2_score": 3.0, "q3_score": 4.5, "recommendation": "Shared outcome over individual optics", "q3_enactment": ["transcript 2026-08-11_outcome-over-optics", "transcript 2026-09-15_q3-retro"] }
+      { "dimension": "trust",          "q2_dysfunction": "Ben conceals a broken check for 4 days (PR #41)", "anticipated_recommendation": "Make mistakes safe; blameless notes; celebrate the andon cord", "q3_enactment": ["issues AUR-12", "transcript 2026-07-10_blameless-practice", "PR #115", "#incidents 2026-08-04"] },
+      { "dimension": "conflict",       "q2_dysfunction": "Dana 56-66% airtime; Mark's hallway objection", "anticipated_recommendation": "Dissent in the room before decisions; balance airtime", "q3_enactment": ["issues AUR-13", "transcript 2026-07-17_facilitation-format", "transcript 2026-07-14_beta-arch-review"] },
+      { "dimension": "commitment",     "q2_dysfunction": "License decision reopened 3x without new info", "anticipated_recommendation": "Close decisions with a written reopening bar", "q3_enactment": ["issues AUR-18", "transcript 2026-08-25_decision-hygiene", "wiki/adr/0003"] },
+      { "dimension": "accountability", "q2_dysfunction": "Tomas a security SPOF; late upward surfacing", "anticipated_recommendation": "Horizontal peer feedback; remove single points of failure", "q3_enactment": ["issues AUR-16", "transcript 2026-07-24_reviewer-onboarding"] },
+      { "dimension": "results",        "q2_dysfunction": "Dana optimizes for fundraiser optics over sequencing", "anticipated_recommendation": "Shared outcome over individual optics", "q3_enactment": ["transcript 2026-08-11_outcome-over-optics", "transcript 2026-09-15_q3-retro"] }
     ]
   },
   "eras": {
@@ -29,6 +29,43 @@
     "before-q2-2026/_metrics/talk_time.json",
     "after-q3-2026/_metrics/talk_time.json"
   ],
+  "discrimination_traps": {
+    "about": "Deliberate FALSE POSITIVES — content a shallow scorer misreads. A good scorer must tell these apart from the seeded true signals. Each transcript/message carries no in-text tell; the 'actually' reading lives only here.",
+    "traps": [
+      {
+        "id": "artificial_harmony",
+        "looks_like": "Healthy — a decision made quickly with full agreement and no friction (efficient, aligned).",
+        "actually": "Fear of Conflict — a user-facing feature (offline mode) is cut with zero debate. No one voices a concern on a consequential call.",
+        "direction": "dysfunction that looks healthy",
+        "location": "before-q2-2026/transcripts/2026-05-26_beta-scope-cut.vtt",
+        "contrast": "2026-04-14_architecture-review, where a similar-stakes decision got real dissent before it was made. A scorer must not reward the frictionless one as strong commitment/conflict health."
+      },
+      {
+        "id": "heated_but_healthy",
+        "looks_like": "Destructive conflict — sharp language ('that's wrong'), interruptions, raised intensity.",
+        "actually": "High conflict health — the argument stays on ideas, someone changes their mind, it resolves in a clear decision, and it ends in explicit repair ('no hard feelings... that was a good fight').",
+        "direction": "healthy that looks like dysfunction",
+        "location": "before-q2-2026/transcripts/2026-06-11_caching-debate.vtt",
+        "note": "Contains 2 of Q2's 4 interruptions — the HEALTHY kind. A scorer keying on raw interruption count or surface tone will misclassify this."
+      },
+      {
+        "id": "reopen_with_new_information",
+        "looks_like": "Lack of Commitment — a settled decision (the July 14 rollout order) is reopened, echoing the Q2 license-reopened-3x pattern.",
+        "actually": "Healthy revisiting — it is reopened because a district dropped out (genuinely new information), stated explicitly, and logged against the reopening bar. The rubric says revisiting with new information is fine.",
+        "direction": "healthy that looks like dysfunction",
+        "location": "after-q3-2026/transcripts/2026-08-28_rollout-reopen.vtt",
+        "contrast": "reopened_conflict_3x (the license question), which reopened WITHOUT new information. The discriminator is 'was there new information?', not 'was it reopened?'."
+      },
+      {
+        "id": "true_disengagement_vs_silent_but_engaged",
+        "looks_like": "Greg Olsen looks like Naomi — silent in meetings.",
+        "actually": "Greg is genuinely disengaged: near-absent from chat and PRs, gives empty agreement ('sounds good, I'll pick it up 👍') that never turns into delivery, and reports activity instead of outcome in standups ('had a bunch of calls, still scoping'). Naomi, by contrast, is the top contributor in chat/PRs.",
+        "direction": "true dysfunction that mimics a known false-positive (Naomi's benign silence)",
+        "location": "Greg: before-q2-2026 present_but_silent in 4 meetings; slack registry-platform thread 'greg-exporter'; standups 2026-04-16/05-08/05-22. Naomi contrast: registry-platform chat + PRs.",
+        "note": "Also carries two sub-traps: 'polite non-commitment' (agreement with no owner/follow-through) and 'status-as-activity' (results-dimension dysfunction)."
+      }
+    ]
+  },
   "signals": [
     {
       "id": "talk_time_dominance",
@@ -65,7 +102,7 @@
         "before-q2-2026/slack-export/registry-platform/*.json (Naomi highly active)",
         "before-q2-2026/standups/standups.json (Naomi substantive)"
       ],
-      "expected_detection": "Detect meeting-silence vs chat-activity mismatch for Naomi; naomi_silent_meetings = 3 in before."
+      "expected_detection": "Detect meeting-silence vs chat-activity mismatch for Naomi; naomi_silent_meetings = 4 in before. NOTE the contrast decoy: Greg Olsen is ALSO silent in meetings but is genuinely disengaged (near-absent from chat/PRs) — a good scorer must tell Naomi (engaged) apart from Greg (disengaged). See discrimination_traps."
     },
     {
       "id": "silent_member_resolved",
@@ -203,13 +240,14 @@
       "id": "interruptions_prosody",
       "category": "interruption-overlap",
       "era": "before",
-      "summary": "Turn-metadata sidecars carry interruption/overlap/latency (the 'intonation/volume as a token' gap from the brief). Two interruptions are seeded in Q2 (Dana cutting others off); zero in Q3 under round-robin.",
-      "healthy_direction": "Fewer interruptions / less airtime-grabbing overlap.",
+      "summary": "Turn-metadata sidecars carry interruption/overlap/latency (the 'intonation/volume as a token' gap from the brief). Q2 has 4 interruptions total, but they are NOT all the same: 2 are Dana cutting others off (dominance) and 2 are Tomás interrupting in a healthy, good-faith debate (2026-06-11_caching-debate). Raw interruption count is therefore a false signal on its own — this is a deliberate discrimination trap.",
+      "healthy_direction": "Fewer AGGRESSIVE interruptions; healthy-debate interruptions are fine.",
       "locations": [
-        "before-q2-2026/transcripts/meta/2026-04-07_kickoff.json (turns[].interrupt)",
-        "before-q2-2026/transcripts/meta/2026-06-09_roadmap-review.json"
+        "before-q2-2026/transcripts/meta/2026-04-07_kickoff.json (Dana, dominance)",
+        "before-q2-2026/transcripts/meta/2026-06-09_roadmap-review.json (Dana, dominance)",
+        "before-q2-2026/transcripts/meta/2026-06-11_caching-debate.json (Tomás, HEALTHY debate — trap)"
       ],
-      "expected_detection": "total_interruptions = 2 before -> 0 after."
+      "expected_detection": "total_interruptions = 4 before -> 0 after, BUT a good scorer distinguishes the 2 dominance interruptions from the 2 healthy-debate ones (see discrimination_traps: heated_but_healthy)."
     },
     {
       "id": "psych_safety_trend",

@@ -1,0 +1,20 @@
+[
+  {
+    "type": "message",
+    "user": "U05",
+    "user_name": "Naomi Kito",
+    "text": "@greg any progress on the exporter? It's blocking the metrics view.",
+    "ts": "1778231700.000036",
+    "thread_ts": "1776853800.000035",
+    "parent_user_id": "U13"
+  },
+  {
+    "type": "message",
+    "user": "U13",
+    "user_name": "Greg Olsen",
+    "text": "yeah been slammed, had a bunch of calls about it. will get to it \ud83d\udc4d",
+    "ts": "1778251200.000037",
+    "thread_ts": "1776853800.000035",
+    "parent_user_id": "U13"
+  }
+]

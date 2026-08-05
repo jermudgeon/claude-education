@@ -1,0 +1,623 @@
+WEBVTT
+
+NOTE Beta Scope — Cut Offline Mode — 2026-05-26
+
+1
+00:00:00.000 --> 00:00:05.600
+<v Dana Whitfield>Okay, let's give it another minute for folks to join, then we'll get going.
+
+2
+00:00:41.600 --> 00:00:49.200
+<v Dana Whitfield>Alright, I think we've got most people — I see Marcus, Priya, Tomás, Naomi, Ben, Greg. Let's get started.
+
+3
+00:00:49.200 --> 00:00:51.600
+<v Priya Nair>Can everyone see my screen alright?
+
+4
+00:00:51.600 --> 00:00:52.800
+<v Dana Whitfield>Yep, looks good.
+
+5
+00:00:52.800 --> 00:01:02.800
+<v Dana Whitfield>Quick agenda: I want to get through the main topic, leave room for questions, and land on clear action items before we drop. Sound good?
+
+6
+00:01:05.800 --> 00:01:14.200
+<v Dana Whitfield>We're behind. I'm proposing we cut offline mode from the beta — it's the biggest remaining item. What does everyone think?
+
+7
+00:01:14.900 --> 00:01:15.700
+<v Tomás Reyes>Makes sense.
+
+8
+00:01:20.600 --> 00:01:26.200
+<v Priya Nair>I think that's reasonable. Offline was always the riskiest piece to get right anyway.
+
+9
+00:01:28.500 --> 00:01:34.100
+<v Marcus Bell>Agreed. It's the cleanest thing to drop if we want to hit the date.
+
+10
+00:01:34.100 --> 00:01:38.900
+<v Tomás Reyes>Is there a risk we're solving a problem we don't have yet?
+
+11
+00:01:38.900 --> 00:01:44.100
+<v Priya Nair>I'm a little worried about the timeline, but I'm not blocking on it.
+
+12
+00:01:47.100 --> 00:01:52.300
+<v Priya Nair>Let's not rathole on this — can we take the fine detail offline?
+
+13
+00:01:52.300 --> 00:01:56.300
+<v Priya Nair>Can we double-check that against what we agreed last week?
+
+14
+00:02:01.000 --> 00:02:03.400
+<v Dana Whitfield>Good point — let's do that.
+
+15
+00:02:03.400 --> 00:02:08.600
+<v Dana Whitfield>Let me play that back to make sure we're all aligned on it.
+
+16
+00:02:17.700 --> 00:02:22.500
+<v Marcus Bell>Let me pull up the numbers so we're not going off memory.
+
+17
+00:02:22.500 --> 00:02:28.100
+<v Priya Nair>Okay, I think I follow. So the plan is basically what you just described.
+
+18
+00:02:32.900 --> 00:02:38.100
+<v Marcus Bell>Let me play that back to make sure we're all aligned on it.
+
+19
+00:02:43.100 --> 00:02:44.700
+<v Tomás Reyes>Okay, works for me.
+
+20
+00:02:50.200 --> 00:02:51.000
+<v Tomás Reyes>Yeah, exactly.
+
+21
+00:02:54.900 --> 00:02:57.300
+<v Ben Larsson>Good point — let's do that.
+
+22
+00:03:00.500 --> 00:03:07.300
+<v Marcus Bell>I'll take that one — it's adjacent to the backend capability model and the provenance schema anyway.
+
+23
+00:03:07.300 --> 00:03:12.900
+<v Dana Whitfield>Okay, I think I follow. So the plan is basically what you just described.
+
+24
+00:03:15.600 --> 00:03:17.600
+<v Ben Larsson>Right, that's what I meant.
+
+25
+00:03:22.600 --> 00:03:26.600
+<v Tomás Reyes>Can we double-check that against what we agreed last week?
+
+26
+00:03:29.800 --> 00:03:35.000
+<v Marcus Bell>I'm a little worried about the timeline, but I'm not blocking on it.
+
+27
+00:03:35.000 --> 00:03:39.000
+<v Marcus Bell>Good — as long as it's reversible, I'm comfortable moving.
+
+28
+00:03:45.600 --> 00:03:48.400
+<v Tomás Reyes>Mm, let me sit with that one.
+
+29
+00:03:54.500 --> 00:04:00.500
+<v Tomás Reyes>Do we actually need a decision on this today, or can it wait a week?
+
+30
+00:04:05.200 --> 00:04:06.800
+<v Priya Nair>Okay, works for me.
+
+31
+00:04:16.000 --> 00:04:21.200
+<v Priya Nair>Let me play that back to make sure we're all aligned on it.
+
+32
+00:04:24.900 --> 00:04:27.300
+<v Dana Whitfield>Good point — let's do that.
+
+33
+00:04:28.800 --> 00:04:34.800
+<v Tomás Reyes>No objection from me either. Fewer surfaces for me to have to secure before beta.
+
+34
+00:04:36.000 --> 00:04:36.800
+<v Ben Larsson>That tracks.
+
+35
+00:04:44.900 --> 00:04:47.300
+<v Dana Whitfield>Let's move to the next item.
+
+36
+00:04:47.300 --> 00:04:53.700
+<v Ben Larsson>Okay, you should see the doc now. Give me a second to find the right section.
+
+37
+00:04:53.700 --> 00:04:58.900
+<v Tomás Reyes>Let's not rathole on this — can we take the fine detail offline?
+
+38
+00:05:15.400 --> 00:05:20.200
+<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
+
+39
+00:05:25.000 --> 00:05:27.400
+<v Priya Nair>Good point — let's do that.
+
+40
+00:05:27.400 --> 00:05:33.000
+<v Priya Nair>One concern and then I'll drop it: are we sure about the sequencing here?
+
+41
+00:05:35.800 --> 00:05:38.200
+<v Dana Whitfield>Good point — let's do that.
+
+42
+00:05:43.800 --> 00:05:47.400
+<v Dana Whitfield>What would it take to de-risk that a little?
+
+43
+00:05:49.000 --> 00:05:54.200
+<v Ben Larsson>Makes sense to me. I'll update the beta scope doc to reflect it.
+
+44
+00:05:54.200 --> 00:06:00.200
+<v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
+
+45
+00:06:04.700 --> 00:06:09.500
+<v Priya Nair>Is there a risk we're solving a problem we don't have yet?
+
+46
+00:06:13.700 --> 00:06:19.300
+<v Marcus Bell>I want to make sure I understand the tradeoff before we commit to anything.
+
+47
+00:06:19.300 --> 00:06:24.500
+<v Priya Nair>I'm a little worried about the timeline, but I'm not blocking on it.
+
+48
+00:06:26.900 --> 00:06:29.700
+<v Tomás Reyes>Mm, let me sit with that one.
+
+49
+00:06:32.700 --> 00:06:33.500
+<v Tomás Reyes>Yeah, exactly.
+
+50
+00:06:35.300 --> 00:06:36.900
+<v Ben Larsson>Agreed, let's capture it.
+
+51
+00:06:40.700 --> 00:06:47.100
+<v Priya Nair>That matches what I was seeing on my end with the browse and install front end.
+
+52
+00:06:47.100 --> 00:06:51.900
+<v Dana Whitfield>Sorry, can you go back to the point about the review pass?
+
+53
+00:06:56.600 --> 00:06:59.400
+<v Marcus Bell>Mm, let me sit with that one.
+
+54
+00:07:07.100 --> 00:07:13.100
+<v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
+
+55
+00:07:14.700 --> 00:07:15.500
+<v Marcus Bell>That's fair.
+
+56
+00:07:17.700 --> 00:07:18.500
+<v Marcus Bell>Yeah, exactly.
+
+57
+00:07:20.800 --> 00:07:26.800
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+58
+00:07:26.800 --> 00:07:32.800
+<v Ben Larsson>How does this interact with the label renderer and the validator tests, if at all?
+
+59
+00:07:34.500 --> 00:07:39.300
+<v Marcus Bell>Is there a risk we're solving a problem we don't have yet?
+
+60
+00:07:43.600 --> 00:07:45.200
+<v Dana Whitfield>Makes sense to me.
+
+61
+00:07:47.300 --> 00:07:48.900
+<v Marcus Bell>Agreed, let's capture it.
+
+62
+00:07:48.900 --> 00:07:53.700
+<v Tomás Reyes>How does this interact with the security review pipeline, if at all?
+
+63
+00:07:55.900 --> 00:07:57.500
+<v Priya Nair>Okay, works for me.
+
+64
+00:07:57.500 --> 00:08:02.300
+<v Dana Whitfield>Sorry, can you go back to the point about the review pass?
+
+65
+00:08:05.900 --> 00:08:07.500
+<v Tomás Reyes>Makes sense to me.
+
+66
+00:08:12.800 --> 00:08:16.800
+<v Dana Whitfield>Can we double-check that against what we agreed last week?
+
+67
+00:08:18.800 --> 00:08:19.600
+<v Priya Nair>That's fair.
+
+68
+00:08:23.100 --> 00:08:27.900
+<v Priya Nair>Let me pull up the numbers so we're not going off memory.
+
+69
+00:08:34.700 --> 00:08:40.700
+<v Ben Larsson>Can we make sure that lands as an action item so it doesn't get lost?
+
+70
+00:08:40.700 --> 00:08:44.700
+<v Ben Larsson>Good — as long as it's reversible, I'm comfortable moving.
+
+71
+00:08:49.100 --> 00:08:51.500
+<v Ben Larsson>That's fair. I'll withdraw the concern.
+
+72
+00:08:56.500 --> 00:09:00.500
+<v Priya Nair>Can we double-check that against what we agreed last week?
+
+73
+00:09:03.700 --> 00:09:05.700
+<v Marcus Bell>Let's confirm in the channel.
+
+74
+00:09:08.200 --> 00:09:13.000
+<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
+
+75
+00:09:17.600 --> 00:09:22.800
+<v Ben Larsson>Let's not rathole on this — can we take the fine detail offline?
+
+76
+00:09:25.900 --> 00:09:29.900
+<v Priya Nair>Can someone capture that in the notes close to verbatim?
+
+77
+00:09:37.400 --> 00:09:42.600
+<v Dana Whitfield>I'm a little worried about the timeline, but I'm not blocking on it.
+
+78
+00:09:46.700 --> 00:09:51.500
+<v Tomás Reyes>Right, and that lines up with the constraint we set at kickoff.
+
+79
+00:09:54.300 --> 00:09:58.300
+<v Ben Larsson>Can someone capture that in the notes close to verbatim?
+
+80
+00:10:02.500 --> 00:10:04.900
+<v Priya Nair>Good point — let's do that.
+
+81
+00:10:08.500 --> 00:10:11.300
+<v Dana Whitfield>Mm, let me sit with that one.
+
+82
+00:10:15.000 --> 00:10:17.400
+<v Priya Nair>That's fair. I'll withdraw the concern.
+
+83
+00:10:19.500 --> 00:10:23.100
+<v Marcus Bell>What would it take to de-risk that a little?
+
+84
+00:10:23.100 --> 00:10:29.900
+<v Dana Whitfield>How does this interact with the roadmap and keeping the two tracks in sync, if at all?
+
+85
+00:10:32.900 --> 00:10:33.700
+<v Ben Larsson>That's fair.
+
+86
+00:10:41.600 --> 00:10:46.400
+<v Marcus Bell>Let me pull up the numbers so we're not going off memory.
+
+87
+00:10:49.300 --> 00:10:51.300
+<v Priya Nair>Let's confirm in the channel.
+
+88
+00:10:53.200 --> 00:10:55.200
+<v Marcus Bell>Sure, I can own that.
+
+89
+00:10:55.200 --> 00:11:00.800
+<v Ben Larsson>I want to make sure I understand the tradeoff before we commit to anything.
+
+90
+00:11:02.600 --> 00:11:04.200
+<v Tomás Reyes>Okay, works for me.
+
+91
+00:11:09.400 --> 00:11:14.200
+<v Tomás Reyes>Is there a risk we're solving a problem we don't have yet?
+
+92
+00:11:17.400 --> 00:11:21.400
+<v Marcus Bell>Can someone capture that in the notes close to verbatim?
+
+93
+00:11:24.100 --> 00:11:26.100
+<v Priya Nair>Right, that's what I meant.
+
+94
+00:11:29.200 --> 00:11:31.200
+<v Marcus Bell>Right, that's what I meant.
+
+95
+00:11:33.400 --> 00:11:38.200
+<v Ben Larsson>Right, and that lines up with the constraint we set at kickoff.
+
+96
+00:11:38.200 --> 00:11:43.000
+<v Ben Larsson>Right, and that lines up with the constraint we set at kickoff.
+
+97
+00:11:47.400 --> 00:11:53.000
+<v Dana Whitfield>I want to make sure I understand the tradeoff before we commit to anything.
+
+98
+00:11:54.800 --> 00:11:56.800
+<v Marcus Bell>Right, that's what I meant.
+
+99
+00:11:59.800 --> 00:12:00.600
+<v Dana Whitfield>That's fair.
+
+100
+00:12:03.300 --> 00:12:08.900
+<v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
+
+101
+00:12:10.500 --> 00:12:12.100
+<v Ben Larsson>Okay, works for me.
+
+102
+00:12:19.600 --> 00:12:20.400
+<v Marcus Bell>Okay, yeah.
+
+103
+00:12:41.500 --> 00:12:46.300
+<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
+
+104
+00:12:49.500 --> 00:12:53.500
+<v Dana Whitfield>Great — offline mode is cut. That was quick, nice.
+
+105
+00:12:53.500 --> 00:12:58.300
+<v Ben Larsson>Right, and that lines up with the constraint we set at kickoff.
+
+106
+00:13:01.500 --> 00:13:06.300
+<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
+
+107
+00:13:06.300 --> 00:13:10.300
+<v Tomás Reyes>Can someone capture that in the notes close to verbatim?
+
+108
+00:13:10.300 --> 00:13:14.300
+<v Marcus Bell>Good — as long as it's reversible, I'm comfortable moving.
+
+109
+00:13:14.300 --> 00:13:19.100
+<v Priya Nair>Is there a risk we're solving a problem we don't have yet?
+
+110
+00:13:23.200 --> 00:13:24.800
+<v Marcus Bell>Okay, works for me.
+
+111
+00:13:31.200 --> 00:13:36.400
+<v Ben Larsson>Let's not rathole on this — can we take the fine detail offline?
+
+112
+00:13:40.900 --> 00:13:46.500
+<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+113
+00:13:46.500 --> 00:13:52.100
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+114
+00:13:58.200 --> 00:14:00.200
+<v Tomás Reyes>Right, that's what I meant.
+
+115
+00:14:00.200 --> 00:14:05.000
+<v Ben Larsson>Right, and that lines up with the constraint we set at kickoff.
+
+116
+00:14:05.000 --> 00:14:10.200
+<v Priya Nair>I'm a little worried about the timeline, but I'm not blocking on it.
+
+117
+00:14:11.900 --> 00:14:14.700
+<v Marcus Bell>Mm, let me sit with that one.
+
+118
+00:14:21.900 --> 00:14:27.500
+<v Dana Whitfield>I want to make sure I understand the tradeoff before we commit to anything.
+
+119
+00:14:30.000 --> 00:14:32.000
+<v Tomás Reyes>Let's confirm in the channel.
+
+120
+00:14:35.500 --> 00:14:37.500
+<v Priya Nair>Right, that's what I meant.
+
+121
+00:14:42.700 --> 00:14:46.300
+<v Marcus Bell>What would it take to de-risk that a little?
+
+122
+00:14:52.700 --> 00:14:55.100
+<v Ben Larsson>That's fair. I'll withdraw the concern.
+
+123
+00:14:57.000 --> 00:14:57.800
+<v Ben Larsson>That's fair.
+
+124
+00:15:01.600 --> 00:15:05.600
+<v Ben Larsson>Good — as long as it's reversible, I'm comfortable moving.
+
+125
+00:15:09.200 --> 00:15:15.600
+<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
+
+126
+00:15:19.700 --> 00:15:22.100
+<v Dana Whitfield>Good point — let's do that.
+
+127
+00:15:25.200 --> 00:15:30.800
+<v Priya Nair>Sorry, can you say that last part again? You cut out for a second.
+
+128
+00:15:30.800 --> 00:15:36.000
+<v Tomás Reyes>I'll take that one — it's adjacent to the security review pipeline anyway.
+
+129
+00:15:36.000 --> 00:15:41.600
+<v Priya Nair>One concern and then I'll drop it: are we sure about the sequencing here?
+
+130
+00:15:41.600 --> 00:15:46.400
+<v Tomás Reyes>How does this interact with the security review pipeline, if at all?
+
+131
+00:15:51.100 --> 00:15:56.700
+<v Ben Larsson>Okay, I think I follow. So the plan is basically what you just described.
+
+132
+00:16:01.100 --> 00:16:06.700
+<v Ben Larsson>Okay, I think I follow. So the plan is basically what you just described.
+
+133
+00:16:11.600 --> 00:16:14.400
+<v Priya Nair>Mm, let me sit with that one.
+
+134
+00:16:16.800 --> 00:16:17.600
+<v Marcus Bell>That's fair.
+
+135
+00:16:26.300 --> 00:16:28.300
+<v Marcus Bell>Right, that's what I meant.
+
+136
+00:16:34.200 --> 00:16:40.200
+<v Ben Larsson>Do we actually need a decision on this today, or can it wait a week?
+
+137
+00:16:43.700 --> 00:16:48.500
+<v Ben Larsson>Let me pull up the numbers so we're not going off memory.
+
+138
+00:16:48.500 --> 00:16:52.500
+<v Marcus Bell>Good — as long as it's reversible, I'm comfortable moving.
+
+139
+00:16:56.700 --> 00:17:01.500
+<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
+
+140
+00:17:05.800 --> 00:17:07.400
+<v Tomás Reyes>Agreed, let's capture it.
+
+141
+00:17:14.000 --> 00:17:16.400
+<v Dana Whitfield>Good point — let's do that.
+
+142
+00:17:19.900 --> 00:17:25.500
+<v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
+
+143
+00:17:33.000 --> 00:17:34.600
+<v Dana Whitfield>Sure — one sec.
+
+144
+00:17:50.500 --> 00:17:56.500
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+145
+00:17:58.700 --> 00:17:59.500
+<v Ben Larsson>Yeah, exactly.
+
+146
+00:18:06.900 --> 00:18:09.700
+<v Dana Whitfield>Okay — any questions before we wrap?
+
+147
+00:18:14.500 --> 00:18:23.300
+<v Marcus Bell>Question before we wrap — does any of this change what I'm doing on the backend capability model and the provenance schema?
+
+148
+00:18:25.500 --> 00:18:31.500
+<v Dana Whitfield>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+149
+00:18:33.700 --> 00:18:38.100
+<v Tomás Reyes>Quick clarifier — who owns the follow-up here, and by when?
+
+150
+00:18:40.900 --> 00:18:46.900
+<v Dana Whitfield>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+151
+00:18:51.200 --> 00:18:56.800
+<v Dana Whitfield>Alright, let me read back the action items so we're aligned before we drop.
+
+152
+00:19:06.100 --> 00:19:14.900
+<v Dana Whitfield>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
+
+153
+00:19:18.500 --> 00:19:26.100
+<v Dana Whitfield>Priya has the follow-up on the browse and install front end — I'll capture the specifics in the notes.
+
+154
+00:19:29.700 --> 00:19:38.100
+<v Dana Whitfield>Marcus has the follow-up on the backend capability model and the provenance schema — I'll capture the specifics in the notes.
+
+155
+00:19:41.900 --> 00:19:47.500
+<v Dana Whitfield>Great. I'll write it all up and drop it in the channel. Thanks everyone.

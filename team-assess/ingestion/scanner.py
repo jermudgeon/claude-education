@@ -21,7 +21,7 @@ def scan_directory(directory: Path) -> str:
         raise NotADirectoryError(f"Not a directory: {directory}")
 
     sections = []
-    for file_path in sorted(directory.iterdir()):
+    for file_path in sorted(directory.rglob("*")):
         if not file_path.is_file():
             continue
         reader = READERS.get(file_path.suffix.lower())
@@ -32,6 +32,7 @@ def scan_directory(directory: Path) -> str:
         except Exception as e:
             raise UnsupportedFormatError(f"Failed to read {file_path.name}: {e}") from e
         if content.strip():
-            sections.append(f"--- {file_path.name} ---\n{content}")
+            label = file_path.relative_to(directory)
+            sections.append(f"--- {label} ---\n{content}")
 
     return "\n\n".join(sections)

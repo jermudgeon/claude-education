@@ -1,14 +1,15 @@
-"""Assemble the behavior-coding view: scores, trend, and one verbatim moment per dimension.
+"""Assemble the Scores & trend section: real scorer output when it exists, real moments always.
 
-Reads only what the repo publishes. The scores, confidence, evidence, trend, and
-recommendations come from assessments/snapshot-Q2-2026.json and snapshot-Q3-2026.json, the
-dataset's in-world team-assess output. The dimension-to-signal alignment comes from
-assessments/five-dysfunctions-signal-map.json. Each moment is a verbatim cue pulled from the
-transcript it happened in, located by a distinctive substring; extraction fails loudly if an
-anchor stops matching, so a regenerated dataset can never leave a stale quote on the page.
+Reads only what the repo publishes. Snapshots are discovered in assessments/snapshot-*.json;
+when none exist (the repo removed authored scores in #19 so that scores only ever come from a
+real team-assess run), the section renders pending score slots rather than invented numbers.
+The dimension-to-signal alignment comes from assessments/five-dysfunctions-signal-map.json.
+Each moment is a verbatim cue pulled from the transcript it happened in, located by a
+distinctive substring; extraction fails loudly if an anchor stops matching, so a regenerated
+dataset can never leave a stale quote on the page.
 
-Milliseconds are parsed as an integer over 1000, so the generator's known `.1000` carry bug
-(00:15:17.1000 meaning 918.0s) still lands on the correct second.
+Milliseconds are parsed as an integer over 1000, so a malformed 4-digit field like .1000
+(the generator's old carry bug) still lands on the correct second.
 """
 
 import json
@@ -84,9 +85,19 @@ def find_moment(era, meeting, anchor):
     }
 
 
+def period_key(snapshot):
+    quarter, year = snapshot["period"].split("-")
+    return int(year), int(quarter.lstrip("Q"))
+
+
 def main():
-    q2 = json.loads((ASSESS / "snapshot-Q2-2026.json").read_text(encoding="utf-8"))
-    q3 = json.loads((ASSESS / "snapshot-Q3-2026.json").read_text(encoding="utf-8"))
+    snapshots = sorted(
+        (json.loads(p.read_text(encoding="utf-8")) for p in ASSESS.glob("snapshot-*.json")),
+        key=period_key,
+    )
+    current = snapshots[-1] if snapshots else None
+    prior = snapshots[-2] if len(snapshots) > 1 else None
+
     signal_map = json.loads(
         (ASSESS / "five-dysfunctions-signal-map.json").read_text(encoding="utf-8")
     )
@@ -100,25 +111,24 @@ def main():
 
     blob = {
         "source": {
-            "snapshots": [
-                "simulated-data/aurora-skills/assessments/snapshot-Q2-2026.json",
-                "simulated-data/aurora-skills/assessments/snapshot-Q3-2026.json",
-            ],
+            "snapshots_dir": "simulated-data/aurora-skills/assessments/",
             "signal_map": "simulated-data/aurora-skills/assessments/five-dysfunctions-signal-map.json",
-            "note": q3.get("note", ""),
+            "note": "Scores render only from a real team-assess run; none is invented here.",
         },
-        "q2": q2,
-        "q3": q3,
+        "current": current,
+        "prior": prior,
         "map": signal_map["mappings"],
         "moments": moments,
     }
 
-    out = Path(__file__).parent / "coding.js"
-    out.write_text("window.CODING=" + json.dumps(blob, separators=(",", ":")) + ";\n", encoding="utf-8")
+    out = Path(__file__).parent / "scores.js"
+    out.write_text("window.SCORES=" + json.dumps(blob, separators=(",", ":")) + ";\n", encoding="utf-8")
 
     for dimension in moments:
         m = moments[dimension]
         print(f"{dimension:<15} {m['mmss']} {m['meeting_id']:<34} {m['quote'][:50]}")
+    state = "scores live" if current else "no run yet: score slots render pending"
+    print(f"snapshots      {len(snapshots)} found ({state})")
     print(f"wrote          {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")
 
 

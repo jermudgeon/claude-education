@@ -9,7 +9,7 @@ else:
 
 
 DEFAULT_CONFIG = {
-    "claude": {"model": "claude-sonnet-4-6", "api_key_env": "ANTHROPIC_API_KEY"},
+    "claude": {"model": "claude-opus-4-7", "api_key_env": "ANTHROPIC_API_KEY", "max_tokens": 32000},
     "output": {"format": "markdown"},
     "rubric": {"framework": "five-dysfunctions", "path": "rubric/five-dysfunctions.yaml"},
     "paths": {"snapshots_dir": "snapshots", "output_dir": "output"},

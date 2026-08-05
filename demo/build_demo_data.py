@@ -1,9 +1,15 @@
 """Extract a single meeting plus the quarter comparison into one JSON blob for the demo page.
 
-Reads only from simulated-data/aurora-skills. Computes nothing the dataset does not already
-support: turn timings and text come from the VTT and its metadata sidecar, the quarter
-comparison comes from _comparison/before_after.json, and the elsewhere-contribution counts
-are tallied from the Slack export, standups, and pull requests.
+Reads only from simulated-data/aurora-skills, with one labeled exception. Turn timings and
+text come from the VTT and its metadata sidecar, the quarter comparison comes from
+_comparison/before_after.json, and the elsewhere-contribution counts are tallied from the
+Slack export, standups, and pull requests.
+
+The exception is demo/marks.json: behavior-code assignments against rubric/obm-behavior-codes.json,
+authored by an AI coder reading the transcript. Assignments are judgment, so they are labeled as
+authored everywhere they surface. What this script enforces is fidelity: every mark must cite a
+code id that exists in the rubric and a quote that appears verbatim in the cited turn, or the
+build fails.
 """
 
 import json
@@ -76,6 +82,52 @@ def elsewhere_counts(era):
     return counts
 
 
+def load_coding(turns):
+    """Resolve authored marks against the rubric and the transcript, refusing anything unfaithful."""
+    rubric = json.loads((ROOT / "rubric" / "obm-behavior-codes.json").read_text())
+    codes = {c["id"]: c for c in rubric["codes"]}
+    coding = json.loads((Path(__file__).parent / "marks.json").read_text())
+
+    if coding["meeting"] != MEETING or coding["era"] != ERA:
+        raise SystemExit(f"marks.json targets {coding['meeting']}, build targets {MEETING}")
+
+    for mark in coding["marks"]:
+        code = codes.get(mark["code"])
+        if code is None:
+            raise SystemExit(f"cue {mark['cue']}: code {mark['code']} not in the rubric")
+        turn = turns[mark["cue"] - 1]
+        if mark["quote"] not in turn["text"]:
+            raise SystemExit(f"cue {mark['cue']}: quote not found verbatim in that turn")
+        mark.update(
+            dimension=code["dimension"],
+            cluster=code["cluster"],
+            valence=code["valence"],
+            behavior=code["behavior"],
+            speaker=turn["speaker"],
+            kind=turn["kind"],
+            at_s=turn["start_s"],
+        )
+
+    for item in coding["uncoded"]:
+        turn = turns[item["cue"] - 1]
+        if item["quote"] not in turn["text"]:
+            raise SystemExit(f"uncoded cue {item['cue']}: quote not found verbatim in that turn")
+        item.update(speaker=turn["speaker"], at_s=turn["start_s"])
+
+    coding["rubric"] = {
+        "source": "rubric/obm-behavior-codes.json",
+        "total_codes": rubric["count"],
+        "dimensions": {
+            dim: {
+                "codes": sum(1 for c in rubric["codes"] if c["dimension"] == dim),
+                "clusters": len({c["cluster"] for c in rubric["codes"] if c["dimension"] == dim}),
+            }
+            for dim in ["Trust", "Conflict", "Commitment", "Accountability", "Results"]
+        },
+    }
+    return coding
+
+
 def main():
     summary, turns = load_turns(ERA, MEETING)
     comparison = json.loads((DATA / "_comparison" / "before_after.json").read_text())
@@ -95,6 +147,7 @@ def main():
         "eras": comparison["eras"],
         "elsewhere": elsewhere_counts(ERA),
         "signals": ground_truth.get("signals", ground_truth),
+        "coding": load_coding(turns),
     }
 
     # Written as a script rather than raw JSON so the page opens straight from
@@ -108,6 +161,7 @@ def main():
     print(f"duration       {summary['duration_min']} min")
     print(f"peak talk      {max(s['talk_pct'] for s in summary['speakers'].values())}%")
     print(f"elsewhere      {len(blob['elsewhere'])} people tallied")
+    print(f"coding         {len(blob['coding']['marks'])} marks validated, {len(blob['coding']['uncoded'])} uncoded")
     print(f"wrote          {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")
 
 

@@ -14,6 +14,11 @@ Two teams.
 | Tomás Reyes | `tomas` | DevOps / security eng | Review & security pipeline (PRD 02) |
 | Naomi Kito | `naomi` | Backend eng | Manifest schema, validator |
 | Ben Larsson | `ben` | Junior dev | Label renderer; pairs with Naomi |
+| Greg Olsen | `greg` | Contractor (part-time) | Data exporter (nominally) |
+
+> Note: Greg is a **discrimination decoy** — a genuinely disengaged contributor (silent in
+> meetings, near-absent from chat/PRs, empty agreement, no delivery), planted as the contrast to
+> Naomi's silent-but-engaged pattern. See `ground_truth.json → discrimination_traps`.
 
 ## Team 2 — Governance & Access
 

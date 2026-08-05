@@ -63,6 +63,21 @@ Each signal below has full file+location detail in `ground_truth.json`.
     high.
 12. **Two-person meetings** — multiple 1:1s and pair syncs per quarter, a distinct meeting shape.
 
+## Discrimination traps (false positives)
+
+The dataset is not all clean signals — it plants labeled **false positives** so the test set
+measures *discrimination*, not just recall. Full detail in `ground_truth.json → discrimination_traps`.
+
+| Trap | Looks like | Actually is |
+|---|---|---|
+| **Artificial harmony** (`2026-05-26_beta-scope-cut`) | Healthy, decisive consensus | Fear of Conflict — a user-facing cut with zero debate |
+| **Heated but healthy** (`2026-06-11_caching-debate`) | Destructive conflict (interruptions, heat) | High conflict health — on ideas, resolves, repair, changed mind |
+| **Reopen with new info** (`2026-08-28_rollout-reopen`) | Lack of commitment (relitigation) | Healthy revisiting — a district dropped out (new information) |
+| **Greg Olsen** (disengaged) | Silent like Naomi | Genuinely disengaged — absent from chat/PRs, empty agreement, no delivery |
+
+Note the two interruption *types*: 2 of Q2's 4 interruptions are Dana's dominance; the other 2 are
+Tomás's healthy-debate interruptions. Raw interruption count is itself a trap.
+
 ## Where the non-computed numbers come from
 
 Four comparison signals are **editorial** (not derivable from counts alone) and are set as

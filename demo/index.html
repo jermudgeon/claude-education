@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,9 +35,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .provenance code{font-family:ui-monospace,Menlo,monospace;font-size:.72rem}
 
 header.top{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.brand{font-family:"PT Serif",Georgia,serif;font-size:1.05rem;display:inline-flex;align-items:baseline;gap:.34em}
-.brand s{text-decoration-thickness:.08em;color:rgb(var(--fg)/.42)}
-.brand i{color:var(--aurora);font-style:normal}
+.logo{height:44px;width:auto;border-radius:9px;display:block}
 .tabs{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
 .tab{padding:8px 15px;border-radius:999px;border:1px solid var(--line);font-size:.82rem;color:rgb(var(--fg)/.6);transition:all .2s;min-height:40px}
 .tab.on{border-color:rgba(43,201,58,.5);background:rgba(43,201,58,.10);color:rgb(var(--fg))}
@@ -121,15 +119,58 @@ tr:last-child td{border-bottom:0}
 .good{color:var(--aurora)} .bad{color:var(--sunset)}
 .scroller{overflow-x:auto}
 
+/* speed control */
+.speeds{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.speed{padding:7px 12px;font-size:.75rem;color:rgb(var(--fg)/.55);transition:all .2s;min-height:36px}
+.speed.on{background:rgba(43,201,58,.14);color:var(--aurora);font-weight:600}
+.speed:hover{color:rgb(var(--fg))}
+
+/* behavior coding */
+.dims{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.dimchip{flex:1;min-width:86px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-align:center}
+.dimchip .dn{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--fg)/.5)}
+.dimchip .dc{font-size:.95rem;font-weight:600;font-variant-numeric:tabular-nums;margin-top:2px}
+.dimchip .dc .neg{color:var(--sunset)}
+.dimchip.hit{border-color:rgba(43,201,58,.4)}
+.codes{display:flex;flex-direction:column;gap:9px;max-height:300px;overflow-y:auto}
+.codemark{border:1px solid var(--line);border-left-width:3px;border-radius:10px;padding:10px 12px;animation:rise .4s ease}
+.codemark .cid{font-family:ui-monospace,Menlo,monospace;font-size:.68rem;font-weight:600}
+.codemark .beh{font-size:.8rem;line-height:1.5;margin-top:3px}
+.codemark .cq{font-size:.76rem;color:rgb(var(--fg)/.55);font-style:italic;margin-top:4px;line-height:1.5}
+.codemark .cmeta{font-size:.66rem;color:rgb(var(--fg)/.35);margin-top:5px}
+.codemark.negative{border-left-color:var(--sunset)}
+.codemark.positive{border-left-color:var(--aurora)}
+.kindtag{display:inline-block;padding:1px 7px;border-radius:999px;border:1px solid var(--line);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgb(var(--fg)/.45);margin-left:6px}
+.authored{background:rgba(239,167,18,.09);border:1px solid rgba(239,167,18,.3);border-radius:12px;padding:12px 15px;font-size:.8rem;line-height:1.6;color:rgb(var(--fg)/.75);margin-bottom:16px}
+.authored b{color:var(--harvest)}
+.pyramid{display:flex;justify-content:center}
+.pyramid svg{max-width:620px;width:100%;height:auto}
+.pyramid .layer{cursor:pointer}
+.pyramid .layer path{transition:opacity .2s}
+.pyramid .layer:hover path{opacity:.85}
+.pyramid .lname{font-family:"PT Serif",Georgia,serif;font-weight:700;font-size:15px;fill:rgb(var(--fg))}
+.pyramid .ltally{font-size:11px;fill:rgb(var(--fg)/.62);font-variant-numeric:tabular-nums}
+.dimcard{border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+.dimcard h4{font-family:"PT Serif",Georgia,serif;font-size:.95rem}
+.dimhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:8px}
+.conf{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:999px;border:1px solid var(--line)}
+.conf.low{color:var(--harvest);border-color:rgba(239,167,18,.4)}
+.conf.medium{color:var(--cobalt);border-color:rgba(23,114,221,.4)}
+.conf.high{color:var(--aurora);border-color:rgba(43,201,58,.4)}
+.conf.none{color:rgb(var(--fg)/.35)}
+.dimstats{font-size:.74rem;color:rgb(var(--fg)/.5);margin-bottom:10px}
+.codegrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+@media (max-width:900px){.codegrid{grid-template-columns:1fr}}
+
 .note{font-size:.82rem;line-height:1.65;color:rgb(var(--fg)/.6);margin-top:12px}
 .note b{color:rgb(var(--fg)/.85);font-weight:600}
 .stack{display:flex;flex-direction:column;gap:16px}
 .lead{font-size:.95rem;line-height:1.7;color:rgb(var(--fg)/.72);max-width:70ch;margin-bottom:18px}
 
-/* behavior coding */
-.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:16px;margin-bottom:16px}
-.dim .cat{font-family:"PT Serif",Georgia,serif;font-size:1.08rem;font-weight:700;text-transform:capitalize}
-.dimhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+/* scores & trend (fed by assessments/ when a real scorer run lands) */
+.scorecards{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:16px;margin-bottom:16px}
+.scorecard .cat{font-family:"PT Serif",Georgia,serif;font-size:1.08rem;font-weight:700;text-transform:capitalize}
+.scorehead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
 .chip{font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:rgb(var(--fg)/.5)}
 .chip.high{color:var(--aurora);border-color:rgba(43,201,58,.4)}
 .chip.medium{color:var(--harvest);border-color:rgba(239,167,18,.4)}
@@ -140,13 +181,13 @@ tr:last-child td{border-bottom:0}
 .scorebar .rail{flex:1;height:8px;border-radius:4px;background:rgb(var(--fg)/.08);overflow:hidden}
 .scorebar .fill{display:block;height:100%;background:var(--aurora);border-radius:4px}
 .scorebar .val{font-variant-numeric:tabular-nums;font-size:.92rem;font-weight:600}
+.scorebar.pending .rail{background:repeating-linear-gradient(45deg,rgb(var(--fg)/.06),rgb(var(--fg)/.06) 6px,rgb(var(--fg)/.12) 6px,rgb(var(--fg)/.12) 12px)}
 .moment{border-left:3px solid var(--glacial);padding:2px 0 2px 14px;margin:12px 0}
 .moment .q{font-family:"PT Serif",Georgia,serif;font-size:.97rem;line-height:1.55}
 .moment .at{font-size:.72rem;color:rgb(var(--fg)/.45);margin-top:6px}
 .moment .at code{font-size:.68rem}
 .why{font-size:.8rem;line-height:1.6;color:rgb(var(--fg)/.6);margin:10px 0}
 .why b{color:rgb(var(--fg)/.85);font-weight:600}
-.evlist{font-size:.78rem;line-height:1.6;color:rgb(var(--fg)/.55);padding-left:16px;margin:8px 0}
 details.drill{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}
 details.drill>summary{cursor:pointer;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgb(var(--fg)/.45);list-style:none}
 details.drill>summary::before{content:"▸ "}
@@ -162,25 +203,25 @@ details.drill[open]>summary::before{content:"▾ "}
 .subhead{margin:28px 0 12px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
 .subhead h3{font-size:1.12rem}
 
-@media (max-width:900px){ .grid,.dims{grid-template-columns:1fr} main{padding:16px 14px 32px} }
+@media (max-width:900px){ .grid,.scorecards{grid-template-columns:1fr} main{padding:16px 14px 32px} }
 </style>
 </head>
 <body>
 
 <div class="provenance">
-  <b>Every number and quote on this page is read from the repo</b>, not invented here:
-  <code>simulated-data/aurora-skills</code>, a synthetic dataset whose collaboration signals are documented in <code>GROUND_TRUTH.md</code>,
-  and its in-world analysis in <code>assessments/</code>.
+  <b>Every number on this page is read from the repo</b>, not invented here:
+  <code>simulated-data/aurora-skills</code>, a synthetic dataset whose collaboration signals are documented in <code>GROUND_TRUTH.md</code>.
+  One labeled exception: behavior-code assignments are authored judgment, marked as such where they appear.
 </div>
 
 <header class="top">
-  <span class="brand"><s>Claude</s> Team Insights<i>.</i></span>
+  <img class="logo" src="../claude-impact-lab-logo.png" alt="Claude Code, struck through: Team Insights">
   <span class="dim" style="font-size:.78rem">PRD 05 and PRD 06, running on the repo's own data</span>
   <div class="tabs">
     <button class="tab on" data-view="live">Live session</button>
-    <button class="tab" data-view="readout">Readout &amp; coding</button>
+    <button class="tab" data-view="coding">Analysis</button>
     <button class="tab" data-view="quarter">Quarter over quarter</button>
-    <button class="tab" id="theme">Light</button>
+    <button class="tab" id="theme">Dark</button>
   </div>
 </header>
 
@@ -203,7 +244,12 @@ details.drill[open]>summary::before{content:"▾ "}
       <button class="btn btn-ghost" id="reset">Reset</button>
       <span class="clock" id="clock">00:00 / 29:08</span>
       <span class="track" id="track"><i></i></span>
-      <span class="dim" style="font-size:.75rem">60x</span>
+      <span class="speeds" role="group" aria-label="Replay speed">
+        <button class="speed" data-speed="1">1×</button>
+        <button class="speed" data-speed="15">15×</button>
+        <button class="speed on" data-speed="60">60×</button>
+        <button class="speed" data-speed="240">240×</button>
+      </span>
     </div>
 
     <div class="grid">
@@ -226,34 +272,72 @@ details.drill[open]>summary::before{content:"▾ "}
         </div>
       </div>
 
-      <div class="card">
-        <div class="cardhead"><div><span class="eyebrow">Facilitator</span><h3>Patterns, not verdicts</h3></div>
-          <span class="dim" style="font-size:.72rem" id="nudgecount">0</span></div>
-        <div class="nudges" id="nudges">
-          <div class="empty">Nothing yet. The facilitator stays quiet until the transcript gives it something countable.</div>
+      <div class="stack">
+        <div class="card">
+          <div class="cardhead"><div><span class="eyebrow">Facilitator</span><h3>Patterns, not verdicts</h3></div>
+            <span class="dim" style="font-size:.72rem" id="nudgecount">0</span></div>
+          <div class="nudges" id="nudges">
+            <div class="empty">Nothing yet. The facilitator stays quiet until the transcript gives it something countable.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardhead"><div><span class="eyebrow">Behavior coding · authored</span><h3>Rubric marks as they land</h3></div>
+            <span class="dim" style="font-size:.72rem" id="markcount"></span></div>
+          <div class="dims" id="livedims"></div>
+          <div class="codes" id="livecodes">
+            <div class="empty">Marks dock here when the replay reaches the turn they cite. Assignments are authored judgment against the 120-code rubric; quotes are verbatim.</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- READOUT & CODING -->
-  <section class="view" id="view-readout">
-    <div class="meta"><h2>Readout &amp; behavior coding</h2><span class="sub" id="csub">—</span></div>
-    <p class="lead">
-      The five dimensions below are the team-assess analysis shipped in the repo
-      (<code>assessments/</code>): in-world output on this same dataset, authored as part of its
-      closed loop, not a live model run on this page. Each card carries the score, its confidence,
-      the trend against Q2, one verbatim moment from a Q3 transcript, and a drill-down into the raw
-      snapshot JSON.
-    </p>
-    <div class="dims" id="dims"></div>
-    <div class="card">
-      <div class="cardhead"><div><span class="eyebrow">Output JSON</span><h3>The full snapshots</h3></div>
-        <span class="dim" style="font-size:.72rem">click a row to expand</span></div>
-      <div class="jt" id="snapjson"></div>
+  <!-- CODING / ANALYSIS -->
+  <section class="view" id="view-coding">
+    <div class="meta"><h2>Analysis</h2><span class="sub" id="csub">—</span></div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div class="cardhead"><div><span class="eyebrow">The model</span><h3>Five dysfunctions, one pyramid</h3></div>
+        <span class="dim" style="font-size:.72rem">fix trust first, or everything built on top of it regresses</span></div>
+      <div class="pyramid" id="pyramid"></div>
+      <p class="note" style="text-align:center">Grounded in Lencioni's Five Dysfunctions of a Team. Each layer shows this
+        meeting's marks; a layer built on a weak one inherits the weakness, so read from the bottom up. Click a layer for its evidence.</p>
     </div>
 
-    <div class="subhead"><h3>This meeting</h3><span class="sub" id="rsub">—</span></div>
+    <div class="subhead"><h3>Scores &amp; trend</h3><span class="sub" id="ssub">—</span></div>
+    <p class="lead" id="slead">
+      One card per dimension: score, confidence, and trend fill in from
+      <code>assessments/snapshot-&lt;period&gt;.json</code> the moment a real scorer run lands in the
+      repo; until then they are shown as pending, never invented. The verbatim moment and the
+      quarter contrast on each card are real today, read from the transcripts and the seeded-signal map.
+    </p>
+    <div class="scorecards" id="scorecards"></div>
+
+    <p class="lead">
+      This is the rubric from <code>rubric/obm-behavior-codes.json</code> consuming the same meeting the
+      live view replays: 120 observable behaviors scored across the five team dimensions, applied to the
+      transcript per the team-assess spec. Every dimension is backed by concrete, quotable signals, never
+      a vague AI impression. Marks, not verdicts: no 1–5 score appears here because the scorer that would
+      compute one is not built yet, and inventing one would be exactly the failure the spec guards against.
+    </p>
+    <div class="authored" id="cprov"></div>
+    <div class="codegrid">
+      <div class="stack" id="dimcards"></div>
+      <div class="stack">
+        <div class="card">
+          <div class="cardhead"><div><span class="eyebrow">Uncoded</span><h3>Observations that matched no code</h3></div></div>
+          <div class="codes" id="uncoded"></div>
+          <p class="note" id="unnote"></p>
+        </div>
+        <div class="card">
+          <div class="cardhead"><div><span class="eyebrow">Not codable</span><h3>What the codebook cannot see</h3></div></div>
+          <p class="note" style="margin-top:0" id="notcodable"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subhead"><h3>Meeting readout</h3><span class="sub" id="rsub">—</span></div>
     <p class="lead">
       PRD 05's metric contract, computed for this one meeting. The dataset authors content-only numbers
       as the exact signal and wraps them in procedural texture, so both bases are shown: content-only
@@ -269,9 +353,10 @@ details.drill[open]>summary::before{content:"▾ "}
   <section class="view" id="view-quarter">
     <div class="meta"><h2>Quarter over quarter</h2><span class="sub" id="qsub">—</span></div>
     <p class="lead">
-      The dataset's whole point is the before and after on one team. These are the repo's computed
-      figures from <code>_comparison/before_after.json</code>, which is what a scorer has to reproduce
-      before anyone should believe a trend line.
+      The dataset's whole point is the before and after on one team: every session builds on the last,
+      so the record becomes a growing reference. These are the repo's computed figures from
+      <code>_comparison/before_after.json</code>, which is what a scorer has to reproduce before anyone
+      should believe a trend line.
     </p>
     <div class="card scroller">
       <table id="quarter"></table>
@@ -285,7 +370,7 @@ details.drill[open]>summary::before{content:"▾ "}
 </main>
 
 <script src="data.js"></script>
-<script src="coding.js"></script>
+<script src="scores.js"></script>
 <script>
 const D = window.DEMO;
 const el = id => document.getElementById(id);
@@ -354,13 +439,43 @@ const RULES = [
   }
 ];
 
+/* ---------- behavior coding (authored marks over the rubric) ---------- */
+const CODING = D.coding;
+const DIMS = ['Trust','Conflict','Commitment','Accountability','Results'];
+const MARKS = [...CODING.marks].sort((a,b) => a.at_s - b.at_s);
+const confidence = clusters => clusters === 0 ? 'none' : clusters === 1 ? 'low' : clusters === 2 ? 'medium' : 'high';
+
+function tally(marks){
+  return DIMS.map(dim => {
+    const mine = marks.filter(m => m.dimension === dim);
+    return {
+      dim, marks: mine,
+      pos: mine.filter(m => m.valence === 'positive').length,
+      neg: mine.filter(m => m.valence === 'negative').length,
+      clusters: new Set(mine.map(m => m.cluster)).size
+    };
+  });
+}
+
+function markCard(m){
+  return `<div class="codemark ${m.valence}">
+    <span class="cid">${esc(m.code)}</span>
+    <span class="dim" style="font-size:.68rem"> · ${esc(m.dimension)} · ${esc(m.cluster)}</span>
+    <span class="kindtag">${esc(m.kind)}</span>
+    <div class="beh">${m.valence === 'negative' ? '−' : '+'} ${esc(m.behavior)}</div>
+    <div class="cq">"${esc(m.quote)}" — ${esc(m.speaker)}, ${mmss(m.at_s)}</div>
+    <div class="cmeta">${esc(m.note)}</div>
+  </div>`;
+}
+
 /* ---------- replay state ---------- */
-let idx = 0, t = 0, timer = null, fired = new Set(), nudges = [];
+let idx = 0, t = 0, timer = null, fired = new Set(), nudges = [], docked = 0;
 const talk = {}, qs = {}, as = {};
 
 function reset(){
   clearInterval(timer); timer = null;
-  idx = 0; t = 0; fired = new Set(); nudges = [];
+  idx = 0; t = 0; fired = new Set(); nudges = []; docked = 0;
+  el('livecodes').innerHTML = '<div class="empty">Marks dock here when the replay reaches the turn they cite. Assignments are authored judgment against the 120-code rubric; quotes are verbatim.</div>';
   Object.keys(talk).forEach(k => delete talk[k]);
   Object.keys(qs).forEach(k => delete qs[k]);
   Object.keys(as).forEach(k => delete as[k]);
@@ -442,6 +557,18 @@ function draw(){
       <b>${esc(cap(h))}</b>${spoke ? '' : flagged ? ` silent, ${total} elsewhere` : ' silent'}</span>`;
   }).join('');
 
+  const live = MARKS.slice(0, docked);
+  while (docked < MARKS.length && MARKS[docked].at_s <= t) docked++;
+  if (docked !== live.length){
+    el('livecodes').innerHTML = MARKS.slice(0, docked).map(markCard).reverse().join('');
+  }
+  el('markcount').textContent = docked ? `${docked} of ${MARKS.length}` : '';
+  el('livedims').innerHTML = tally(MARKS.slice(0, docked)).map(d => `
+    <div class="dimchip ${d.marks.length ? 'hit' : ''}">
+      <div class="dn">${d.dim.slice(0,4)}</div>
+      <div class="dc">+${d.pos}${d.neg ? ` <span class="neg">−${d.neg}</span>` : ''}</div>
+    </div>`).join('');
+
   el('nudgecount').textContent = nudges.length ? `${nudges.length} surfaced` : '';
   if (nudges.length){
     el('nudges').innerHTML = nudges.map(n => `
@@ -454,11 +581,21 @@ function draw(){
   }
 }
 
+let speed = 60, carry = 0;
+document.querySelectorAll('.speed').forEach(btn => btn.onclick = () => {
+  speed = +btn.dataset.speed;
+  document.querySelectorAll('.speed').forEach(b => b.classList.toggle('on', b === btn));
+});
+function tick(){
+  carry += speed * 0.025;
+  while (carry >= 1 && t < END){ carry -= 1; step(); }
+}
 el('play').onclick = () => {
   if (timer){ clearInterval(timer); timer = null; el('play').textContent = 'Play'; return; }
   if (t >= END) reset();
   el('play').textContent = 'Pause';
-  timer = setInterval(step, 1000/60);
+  carry = 0;
+  timer = setInterval(tick, 25);
 };
 el('reset').onclick = reset;
 el('jump').onclick = () => {
@@ -512,19 +649,77 @@ function buildReadout(){
     triggers the same nudge. Both are defensible; mixing them silently is not.`;
 }
 
-/* ---------- behavior coding ---------- */
-const C = window.CODING;
-const DIMS = ['trust','conflict','commitment','accountability','results'];
+/* ---------- coding tab ---------- */
+const DIMCOLOR = {Trust:'#13c6b7', Conflict:'#e1460e', Commitment:'#1772dd', Accountability:'#efa712', Results:'#2bc93a'};
 
-function jtEntry(key, v, open){
+function buildPyramid(tallies){
+  const W = 620, LH = 56, INSET = 42;
+  const layers = tallies.map((d, j) => {
+    const bw = W - 2*INSET*j, tw = W - 2*INSET*(j+1);
+    const y = (4-j) * LH, cx = W/2;
+    const conf = confidence(d.clusters);
+    const tallyText = d.marks.length
+      ? `+${d.pos}${d.neg ? ` / −${d.neg}` : ''} · ${conf} confidence`
+      : 'no signal';
+    return `<g class="layer" data-dim="${d.dim}">
+      <path d="M ${cx-bw/2} ${y+LH} L ${cx+bw/2} ${y+LH} L ${cx+tw/2} ${y} L ${cx-tw/2} ${y} Z"
+        fill="${DIMCOLOR[d.dim]}" fill-opacity="${d.marks.length ? .28 : .10}"
+        stroke="${DIMCOLOR[d.dim]}" stroke-opacity=".55" stroke-width="1.5"/>
+      <text class="lname" x="${cx}" y="${y+24}" text-anchor="middle">${d.dim}</text>
+      <text class="ltally" x="${cx}" y="${y+41}" text-anchor="middle">${tallyText}</text>
+    </g>`;
+  });
+  el('pyramid').innerHTML =
+    `<svg viewBox="0 0 ${W} ${5*LH}" role="img" aria-label="Lencioni pyramid: Trust at the base, then Conflict, Commitment, Accountability, Results">${layers.join('')}</svg>`;
+  el('pyramid').querySelectorAll('.layer').forEach(g => g.onclick = () => {
+    const card = document.getElementById('dim-' + g.dataset.dim);
+    if (card) card.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+}
+
+function buildCoding(){
+  el('csub').textContent = `${D.summary.title} · ${D.summary.date} · ${MARKS.length} marks over ${CODING.rubric.total_codes} codes`;
+  buildPyramid(tally(MARKS));
+  el('cprov').innerHTML = `<b>Authored, not measured.</b> ${esc(CODING.provenance)}
+    Coder: ${esc(CODING.authored_by)}, ${esc(CODING.authored_on)}.`;
+
+  el('dimcards').innerHTML = tally(MARKS).map(d => {
+    const meta = CODING.rubric.dimensions[d.dim];
+    const conf = confidence(d.clusters);
+    return `<div class="dimcard" id="dim-${d.dim}">
+      <div class="dimhead"><h4>${d.dim}</h4><span class="conf ${conf}">${conf === 'none' ? 'no signal' : conf + ' confidence'}</span></div>
+      <div class="dimstats">+${d.pos} / −${d.neg} marks · ${d.clusters} of ${meta.clusters} clusters · ${meta.codes} codes available</div>
+      ${d.marks.length
+        ? `<div class="codes" style="max-height:none">${d.marks.map(markCard).join('')}</div>`
+        : `<div class="empty">No mark in this meeting. Per the spec, absence of marks is absence of signal, never a score of zero.</div>`}
+    </div>`;
+  }).join('');
+
+  el('uncoded').innerHTML = CODING.uncoded.map(u => `
+    <div class="codemark" style="border-left-color:var(--harvest)">
+      <span class="cid">no match</span>
+      <div class="cq">"${esc(u.quote)}" — ${esc(u.speaker)}, ${mmss(u.at_s)}</div>
+      <div class="cmeta">${esc(u.note)}</div>
+    </div>`).join('');
+  el('unnote').innerHTML = `<b>This list is the codebook's growth path.</b> Per the spec, an observation
+    that matches no code is never folded silently into a score: it is reported here as a candidate new
+    code. Recurring candidates get promoted, and adding a code never renumbers existing ids.`;
+  el('notcodable').innerHTML = esc(CODING.not_codable);
+}
+
+/* ---------- scores & trend (assessments/, real run only) ---------- */
+const S = window.SCORES;
+const SDIMS = ['trust','conflict','commitment','accountability','results'];
+
+function jtEntry(key, v){
   const label = key === null ? '' : `<span class="k">${esc(key)}</span>: `;
-  if (v !== null && typeof v === 'object'){
+  if (v !== null && v !== undefined && typeof v === 'object'){
     const isArr = Array.isArray(v);
     const size = isArr ? v.length : Object.keys(v).length;
     const items = isArr
       ? v.map((x,i) => jtEntry(String(i), x))
       : Object.entries(v).map(([k,x]) => jtEntry(k, x));
-    return `<details${open ? ' open' : ''}><summary>${label}<span class="dim">${isArr ? '[' : '{'}${size}${isArr ? ']' : '}'}</span></summary>${items.join('')}</details>`;
+    return `<details><summary>${label}<span class="dim">${isArr ? '[' : '{'}${size}${isArr ? ']' : '}'}</span></summary>${items.join('')}</details>`;
   }
   const val = typeof v === 'string' ? `<span class="s">"${esc(v)}"</span>`
     : typeof v === 'number' ? `<span class="n">${v}</span>`
@@ -532,45 +727,50 @@ function jtEntry(key, v, open){
   return `<div>${label}${val}</div>`;
 }
 
-function buildCoding(){
-  if (!C){ el('dims').innerHTML = '<div class="empty">No analysis found. Run demo/build_coding_data.py once assessments/ has snapshots.</div>'; return; }
-  const trend = C.q3.trend_vs || {};
-  el('csub').textContent = `${C.q3.period} scored ${C.q3.run_date} · rubric v${C.q3.rubric_version} · trend vs ${trend.period || C.q2.period} · overall ${C.q3.overall_health}/5 (was ${C.q2.overall_health})`;
+function buildScores(){
+  if (!S){ el('scorecards').innerHTML = '<div class="empty">scores.js missing; run demo/build_scores_data.py.</div>'; return; }
+  const cur = S.current, prev = S.prior;
+  el('ssub').textContent = cur
+    ? `${cur.period} scored ${cur.run_date}${prev ? ' · trend vs ' + prev.period : ''}`
+    : 'no scorer run in the repo yet · the structure is live, the numbers wait for the data';
 
-  el('dims').innerHTML = DIMS.map(d => {
-    const cur = C.q3.dimensions[d], prev = C.q2.dimensions[d];
-    const delta = trend.deltas ? trend.deltas[d] : +(cur.score - prev.score).toFixed(1);
-    const dir = trend.directions ? trend.directions[d] : (Math.abs(delta) < .2 ? 'stable' : delta > 0 ? 'improving' : 'declining');
-    const warn = Math.abs(delta) > 1;
-    const m = C.moments[d];
-    const sig = m.signal;
-    const arrow = delta > 0 ? '↑' : delta < 0 ? '↓' : '→';
-    return `<div class="card dim">
-      <div class="dimhead">
-        <span class="cat">${esc(d)}</span>
-        <span class="chip ${esc(cur.confidence)}">${esc(cur.confidence)} confidence</span>
-        <span class="trend ${delta > 0 ? 'up' : delta < 0 ? 'down' : ''}">${arrow} ${delta > 0 ? '+' : ''}${delta.toFixed(1)} ${esc(dir)}
-          ${warn ? '<span class="warn" title="Moved more than 1.0 point. Run-to-run variance of the scorer is unmeasured (open question 3); treat large moves as directional, not exact.">⚠</span>' : ''}</span>
-      </div>
-      <div class="scorebar">
-        <span class="rail"><span class="fill" style="width:${20 * cur.score}%"></span></span>
-        <span class="val">${cur.score.toFixed(1)}<span class="dim">/5</span></span>
-        <span class="dim" style="font-size:.75rem">Q2: ${prev.score.toFixed(1)}</span>
-      </div>
+  el('scorecards').innerHTML = SDIMS.map(d => {
+    const m = S.moments[d], sig = m.signal;
+    const cd = cur && cur.dimensions ? cur.dimensions[d] : null;
+    const pd = prev && prev.dimensions ? prev.dimensions[d] : null;
+    let head, bar;
+    if (cd){
+      const delta = pd ? +(cd.score - pd.score).toFixed(1) : null;
+      const dir = delta === null ? '' : Math.abs(delta) < .2 ? 'stable' : delta > 0 ? 'improving' : 'declining';
+      const warn = delta !== null && Math.abs(delta) > 1;
+      const arrow = delta === null ? '' : delta > 0 ? '↑' : delta < 0 ? '↓' : '→';
+      head = `<span class="chip ${esc(cd.confidence)}">${esc(cd.confidence)} confidence</span>
+        <span class="trend ${delta > 0 ? 'up' : delta < 0 ? 'down' : ''}">${delta === null ? '' :
+          `${arrow} ${delta > 0 ? '+' : ''}${delta.toFixed(1)} ${esc(dir)}`}
+          ${warn ? '<span class="warn" title="Moved more than 1.0 point. Run-to-run variance of the scorer is unmeasured (open question 3); treat large moves as directional, not exact.">⚠</span>' : ''}</span>`;
+      bar = `<div class="scorebar">
+        <span class="rail"><span class="fill" style="width:${20 * cd.score}%"></span></span>
+        <span class="val">${cd.score.toFixed(1)}<span class="dim">/5</span></span>
+        ${pd ? `<span class="dim" style="font-size:.75rem">${esc(prev.period)}: ${pd.score.toFixed(1)}</span>` : ''}</div>`;
+    } else {
+      head = `<span class="chip">pending</span>
+        <span class="trend" title="Scores appear when a real team-assess run lands in assessments/. They are never invented.">score, confidence &amp; trend await the first scorer run</span>`;
+      bar = `<div class="scorebar pending"><span class="rail"></span><span class="val">—<span class="dim">/5</span></span></div>`;
+    }
+    return `<div class="card scorecard">
+      <div class="scorehead"><span class="cat">${esc(d)}</span>${head}</div>
+      ${bar}
       <div class="moment">
         <div class="q">&ldquo;${esc(m.quote)}&rdquo;</div>
         <div class="at">at ${m.mmss} &middot; ${esc(m.meeting_title)} &middot; ${m.meeting_date} &middot; <code>${esc(m.meeting_id)}.vtt</code></div>
       </div>
-      <div class="why"><b>Why it moved.</b> Q2: ${esc(sig.q2.evidence)} <b>&rarr;</b> Q3: ${esc(sig.q3.evidence)}
+      <div class="why"><b>Q2 &rarr; Q3.</b> ${esc(sig.q2.evidence)} <b>&rarr;</b> ${esc(sig.q3.evidence)}
         <span class="dim">(${esc(sig.facet)})</span></div>
-      <ul class="evlist">${cur.evidence.map(e => `<li>${esc(e)}</li>`).join('')}</ul>
       <details class="drill"><summary>Drill into the JSON</summary>
-        <div class="jt">${jtEntry(d, {snapshot: cur, trend: {delta, direction: dir, vs: trend.period || C.q2.period, warning_over_1pt: warn}, seeded_signals: C.map.filter(x => x.dimension === d), moment: m})}</div>
+        <div class="jt">${jtEntry(d, {snapshot: cd, seeded_signals: S.map.filter(x => x.dimension === d), moment: m})}</div>
       </details>
     </div>`;
   }).join('');
-
-  el('snapjson').innerHTML = jtEntry('snapshot-Q3-2026.json', C.q3) + jtEntry('snapshot-Q2-2026.json', C.q2) + jtEntry('five-dysfunctions-signal-map.json', C.map);
 }
 
 /* ---------- quarter ---------- */
@@ -619,7 +819,7 @@ el('theme').onclick = () => {
 
 el('mtitle').textContent = D.summary.title;
 el('msub').textContent = `${D.summary.date} · ${D.summary.duration_min} min · ${D.summary.attendee_count} attendees · ${TURNS.length} turns`;
-buildCoding(); buildReadout(); buildQuarter(); reset();
+buildScores(); buildReadout(); buildQuarter(); buildCoding(); reset();
 </script>
 </body>
 </html>

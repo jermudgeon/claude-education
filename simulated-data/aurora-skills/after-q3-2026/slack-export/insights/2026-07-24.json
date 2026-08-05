@@ -4,8 +4,8 @@
     "user": "U99",
     "user_name": "Collaboration Insights",
     "text": "\ud83d\udd17 Possible duplicate work: @marcus and @lily are both describing a caching layer in separate threads this week. This resembles the May provenance-schema overlap (AUR-6/AUR-7). Suggest a 15-min sync before either starts building.",
-    "ts": "1784880000.000036",
-    "thread_ts": "1784880000.000036",
+    "ts": "1784880000.000040",
+    "thread_ts": "1784880000.000040",
     "reply_count": 1,
     "reactions": [
       {
@@ -23,8 +23,8 @@
     "user": "U02",
     "user_name": "Marcus Bell",
     "text": "Good catch \u2014 booking it. Last time we found this three weeks late.",
-    "ts": "1784884320.000037",
-    "thread_ts": "1784880000.000036",
+    "ts": "1784884320.000041",
+    "thread_ts": "1784880000.000040",
     "parent_user_id": "U99"
   }
 ]

@@ -7,473 +7,473 @@ NOTE Retro — How We Work Together — 2026-06-02
 <v Sarah Kowalski>Okay, let's give it another minute for folks to join, then we'll get going.
 
 2
-00:01:10.800 --> 00:01:20.400
-<v Sarah Kowalski>Alright, I think we've got most people — I see Dana, Marcus, Priya, Tomás, Naomi, Ben, James, Rachel, Kevin, Lily, Mark. Let's get started.
+00:01:10.800 --> 00:01:20.800
+<v Sarah Kowalski>Alright, I think we've got most people — I see Dana, Marcus, Priya, Tomás, Naomi, Ben, James, Rachel, Kevin, Lily, Mark, Greg. Let's get started.
 
 3
-00:01:20.400 --> 00:01:22.800
+00:01:20.800 --> 00:01:23.200
 <v Mark Dupont>Can everyone see my screen alright?
 
 4
-00:01:22.800 --> 00:01:24.000
+00:01:23.200 --> 00:01:24.400
 <v Sarah Kowalski>Yep, looks good.
 
 5
-00:01:24.000 --> 00:01:34.000
+00:01:24.400 --> 00:01:34.400
 <v Sarah Kowalski>Quick agenda: I want to get through the main topic, leave room for questions, and land on clear action items before we drop. Sound good?
 
 6
-00:01:37.200 --> 00:01:43.600
+00:01:37.600 --> 00:01:44.000
 <v Sarah Kowalski>Before the main topic, let's do a fast round — where's everyone at? Keep it short.
 
 7
-00:01:46.500 --> 00:01:53.700
+00:01:46.900 --> 00:01:54.100
 <v Sarah Kowalski>On my side, the CARE governance framework is moving along — made good progress this week, nothing blocking.
 
 8
-00:01:56.500 --> 00:02:03.300
+00:01:56.900 --> 00:02:03.700
 <v Mark Dupont>Quick status: licensing and the ADR. On track. I might need a review later but nothing urgent.
 
 9
-00:02:10.300 --> 00:02:14.300
+00:02:10.700 --> 00:02:14.700
 <v Marcus Bell>Good — as long as it's reversible, I'm comfortable moving.
 
 10
-00:02:18.600 --> 00:02:26.600
+00:02:19.000 --> 00:02:27.000
 <v James Ahkivgak>On my side, community review and the advisory process is moving along — made good progress this week, nothing blocking.
 
 11
-00:02:26.600 --> 00:02:32.600
+00:02:27.000 --> 00:02:33.000
 <v Mark Dupont>Do we actually need a decision on this today, or can it wait a week?
 
 12
-00:02:36.600 --> 00:02:37.400
+00:02:37.000 --> 00:02:37.800
 <v Naomi Kito>That's fair.
 
 13
-00:02:39.100 --> 00:02:44.300
+00:02:39.500 --> 00:02:44.700
 <v Mark Dupont>Let's not rathole on this — can we take the fine detail offline?
 
 14
-00:02:46.100 --> 00:02:49.700
+00:02:46.500 --> 00:02:50.100
 <v Dana Whitfield>What would it take to de-risk that a little?
 
 15
-00:02:52.500 --> 00:02:54.500
+00:02:52.900 --> 00:02:54.900
 <v Mark Dupont>Right, that's what I meant.
 
 16
-00:02:54.500 --> 00:03:02.100
+00:02:54.900 --> 00:03:02.500
 <v James Ahkivgak>Just flagging that this touches community review and the advisory process, so loop me in when it firms up.
 
 17
-00:03:07.000 --> 00:03:08.600
+00:03:07.400 --> 00:03:09.000
 <v Naomi Kito>Makes sense to me.
 
 18
-00:03:11.400 --> 00:03:16.600
+00:03:11.800 --> 00:03:17.000
 <v Dana Whitfield>Let me play that back to make sure we're all aligned on it.
 
 19
-00:03:16.600 --> 00:03:22.200
+00:03:17.000 --> 00:03:22.600
 <v Naomi Kito>Okay, I think I follow. So the plan is basically what you just described.
 
 20
-00:03:25.000 --> 00:03:30.600
+00:03:25.400 --> 00:03:31.000
 <v James Ahkivgak>One concern and then I'll drop it: are we sure about the sequencing here?
 
 21
-00:03:33.700 --> 00:03:38.900
+00:03:34.100 --> 00:03:39.300
 <v James Ahkivgak>I'm a little worried about the timeline, but I'm not blocking on it.
 
 22
-00:03:42.800 --> 00:03:43.600
+00:03:43.200 --> 00:03:44.000
 <v Mark Dupont>That's fair.
 
 23
-00:03:46.700 --> 00:03:51.500
+00:03:47.100 --> 00:03:51.900
 <v Sarah Kowalski>How does this interact with the CARE governance framework, if at all?
 
 24
-00:03:54.700 --> 00:03:56.700
+00:03:55.100 --> 00:03:57.100
 <v Mark Dupont>Sure, I can own that.
 
 25
-00:04:04.200 --> 00:04:06.200
+00:04:04.600 --> 00:04:06.600
 <v Sarah Kowalski>Sure, I can own that.
 
 26
-00:04:16.000 --> 00:04:21.200
+00:04:16.400 --> 00:04:21.600
 <v Naomi Kito>I'm a little worried about the timeline, but I'm not blocking on it.
 
 27
-00:04:24.000 --> 00:04:28.800
+00:04:24.400 --> 00:04:29.200
 <v Sarah Kowalski>I'd rather over-communicate here — can we write down who's doing what?
 
 28
-00:04:33.400 --> 00:04:34.200
+00:04:33.800 --> 00:04:34.600
 <v Marcus Bell>That's fair.
 
 29
-00:04:37.000 --> 00:04:46.200
+00:04:37.400 --> 00:04:46.600
 <v Dana Whitfield>the roadmap and keeping the two tracks in sync — steady. One open question I'll raise when we get to it, otherwise fine.
 
 30
-00:04:49.100 --> 00:04:57.900
+00:04:49.500 --> 00:04:58.300
 <v Marcus Bell>On my side, the backend capability model and the provenance schema is moving along — made good progress this week, nothing blocking.
 
 31
-00:05:02.500 --> 00:05:10.100
+00:05:02.900 --> 00:05:10.500
 <v Naomi Kito>On my side, the manifest schema and validator is moving along — made good progress this week, nothing blocking.
 
 32
-00:05:10.100 --> 00:05:14.900
+00:05:10.500 --> 00:05:15.300
 <v Sarah Kowalski>I'd rather over-communicate here — can we write down who's doing what?
 
 33
-00:05:16.900 --> 00:05:19.300
+00:05:17.300 --> 00:05:19.700
 <v Marcus Bell>Good point — let's do that.
 
 34
-00:05:19.300 --> 00:05:24.500
+00:05:19.700 --> 00:05:24.900
 <v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
 
 35
-00:05:41.100 --> 00:05:52.300
+00:05:41.500 --> 00:05:52.700
 <v Sarah Kowalski>This retro is different. We're not reviewing what shipped. We're reviewing how we've been working. I'll start with something concrete: the license question has come back three times.
 
 36
-00:05:54.000 --> 00:06:04.000
+00:05:54.400 --> 00:06:04.400
 <v Sarah Kowalski>That can mean two things — either new information each time, which is healthy, or it never actually got decided, which isn't. Which was it?
 
 37
-00:06:04.000 --> 00:06:08.800
+00:06:04.400 --> 00:06:09.200
 <v James Ahkivgak>Right, and that lines up with the constraint we set at kickoff.
 
 38
-00:06:13.500 --> 00:06:15.500
+00:06:13.900 --> 00:06:15.900
 <v Naomi Kito>Let's confirm in the channel.
 
 39
-00:06:17.300 --> 00:06:22.900
+00:06:17.700 --> 00:06:23.300
 <v James Ahkivgak>One concern and then I'll drop it: are we sure about the sequencing here?
 
 40
-00:06:26.500 --> 00:06:28.100
+00:06:26.900 --> 00:06:28.500
 <v Dana Whitfield>Agreed, let's capture it.
 
 41
-00:06:32.300 --> 00:06:33.100
+00:06:32.700 --> 00:06:33.500
 <v Marcus Bell>Right, right.
 
 42
-00:06:33.100 --> 00:06:38.700
+00:06:33.500 --> 00:06:39.100
 <v James Ahkivgak>Okay, I think I follow. So the plan is basically what you just described.
 
 43
-00:06:41.900 --> 00:06:46.700
+00:06:42.300 --> 00:06:47.100
 <v Mark Dupont>Right, and that lines up with the constraint we set at kickoff.
 
 44
-00:06:49.700 --> 00:06:55.700
+00:06:50.100 --> 00:06:56.100
 <v Naomi Kito>That matches what I was seeing on my end with the manifest schema and validator.
 
 45
-00:06:58.700 --> 00:07:02.300
+00:06:59.100 --> 00:07:02.700
 <v Naomi Kito>What would it take to de-risk that a little?
 
 46
-00:07:07.200 --> 00:07:10.000
+00:07:07.600 --> 00:07:10.400
 <v Sarah Kowalski>Mm, let me sit with that one.
 
 47
-00:07:12.800 --> 00:07:18.400
+00:07:13.200 --> 00:07:18.800
 <v Marcus Bell>I don't feel strongly on this one — I'll defer to whoever owns it.
 
 48
-00:07:23.000 --> 00:07:28.200
+00:07:23.400 --> 00:07:28.600
 <v Mark Dupont>Let me play that back to make sure we're all aligned on it.
 
 49
-00:07:31.900 --> 00:07:35.500
+00:07:32.300 --> 00:07:35.900
 <v Dana Whitfield>What would it take to de-risk that a little?
 
 50
-00:07:38.500 --> 00:07:39.300
+00:07:38.900 --> 00:07:39.700
 <v Mark Dupont>That's fair.
 
 51
-00:07:43.200 --> 00:07:45.200
+00:07:43.600 --> 00:07:45.600
 <v Naomi Kito>Right, that's what I meant.
 
 52
-00:07:45.200 --> 00:07:50.800
+00:07:45.600 --> 00:07:51.200
 <v Naomi Kito>One concern and then I'll drop it: are we sure about the sequencing here?
 
 53
-00:07:55.500 --> 00:07:56.300
+00:07:55.900 --> 00:07:56.700
 <v Dana Whitfield>Yeah, exactly.
 
 54
-00:07:59.800 --> 00:08:03.800
+00:08:00.200 --> 00:08:04.200
 <v Sarah Kowalski>Good — as long as it's reversible, I'm comfortable moving.
 
 55
-00:08:06.600 --> 00:08:08.600
+00:08:07.000 --> 00:08:09.000
 <v Dana Whitfield>Sure, I can own that.
 
 56
-00:08:11.100 --> 00:08:15.100
+00:08:11.500 --> 00:08:15.500
 <v Dana Whitfield>Can we double-check that against what we agreed last week?
 
 57
-00:08:29.600 --> 00:08:34.400
+00:08:30.000 --> 00:08:34.800
 <v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
 
 58
-00:08:37.600 --> 00:08:39.200
+00:08:38.000 --> 00:08:39.600
 <v Naomi Kito>Makes sense to me.
 
 59
-00:08:41.800 --> 00:08:52.200
+00:08:42.200 --> 00:08:52.600
 <v Mark Dupont>Partly me. I raised my objection in the channel after the session on the 19th instead of in the room. That's the hallway. I'm naming it.
 
 60
-00:09:10.900 --> 00:09:15.700
+00:09:11.300 --> 00:09:16.100
 <v Dana Whitfield>Sorry, can you go back to the point about the review pass?
 
 61
-00:09:19.700 --> 00:09:32.100
+00:09:20.100 --> 00:09:32.500
 <v James Ahkivgak>And I'd say twice it was new information and once it was relitigating. The tell was whether anyone changed their mind. When I changed mine on the 19th, that round moved.
 
 62
-00:09:33.700 --> 00:09:37.300
+00:09:34.100 --> 00:09:37.700
 <v James Ahkivgak>The rounds where nobody moved were the stuck ones.
 
 63
-00:09:38.100 --> 00:09:38.900
+00:09:38.500 --> 00:09:39.300
 <v Marcus Bell>Agreed.
 
 64
-00:09:41.800 --> 00:09:52.600
+00:09:42.200 --> 00:09:53.000
 <v Dana Whitfield>Here's mine. I went back through our meeting transcripts. In the first three group meetings I was talking somewhere around seventy to eighty percent of the time.
 
 65
-00:09:53.500 --> 00:10:03.500
+00:09:53.900 --> 00:10:03.900
 <v Dana Whitfield>When the lead talks that much, silence stops meaning agreement and starts meaning it isn't safe to disagree. Ben's four-day silence is downstream of that.
 
 66
-00:10:03.500 --> 00:10:10.300
+00:10:03.900 --> 00:10:10.700
 <v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
 
 67
-00:10:13.900 --> 00:10:18.700
+00:10:14.300 --> 00:10:19.100
 <v Mark Dupont>I'd rather over-communicate here — can we write down who's doing what?
 
 68
-00:10:21.700 --> 00:10:22.500
+00:10:22.100 --> 00:10:22.900
 <v Naomi Kito>Makes sense.
 
 69
-00:10:22.500 --> 00:10:29.300
+00:10:22.900 --> 00:10:29.700
 <v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
 
 70
-00:10:29.300 --> 00:10:35.700
+00:10:29.700 --> 00:10:36.100
 <v James Ahkivgak>That matches what I was seeing on my end with community review and the advisory process.
 
 71
-00:10:41.300 --> 00:10:43.700
+00:10:41.700 --> 00:10:44.100
 <v James Ahkivgak>Good point — let's do that.
 
 72
-00:10:45.300 --> 00:10:50.100
+00:10:45.700 --> 00:10:50.500
 <v James Ahkivgak>I'd rather over-communicate here — can we write down who's doing what?
 
 73
-00:10:54.300 --> 00:10:59.900
+00:10:54.700 --> 00:11:00.300
 <v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
 
 74
-00:11:01.700 --> 00:11:03.700
+00:11:02.100 --> 00:11:04.100
 <v James Ahkivgak>Let's confirm in the channel.
 
 75
-00:11:16.000 --> 00:11:17.200
+00:11:16.400 --> 00:11:17.600
 <v Sarah Kowalski>Alright, moving on.
 
 76
-00:11:17.200 --> 00:11:22.000
+00:11:17.600 --> 00:11:22.400
 <v Marcus Bell>Bear with me, I'm going to pull up the schema real quick.
 
 77
-00:11:40.900 --> 00:11:55.300
+00:11:41.300 --> 00:11:55.700
 <v Marcus Bell>The counter-example is the architecture review. Dana proposed open egress, I objected before the decision, and the proposal actually changed in the room. That's the shape we want — dissent arrives before the decision, not after.
 
 78
-00:11:55.300 --> 00:12:00.100
+00:11:55.700 --> 00:12:00.500
 <v Naomi Kito>I'd rather over-communicate here — can we write down who's doing what?
 
 79
-00:12:04.600 --> 00:12:05.400
+00:12:05.000 --> 00:12:05.800
 <v Sarah Kowalski>That's fair.
 
 80
-00:12:10.200 --> 00:12:10.1000
+00:12:10.600 --> 00:12:11.400
 <v Sarah Kowalski>Makes sense.
 
 81
-00:12:10.1000 --> 00:12:14.1000
+00:12:11.400 --> 00:12:15.400
 <v James Ahkivgak>Can we double-check that against what we agreed last week?
 
 82
-00:12:22.300 --> 00:12:28.300
+00:12:22.700 --> 00:12:28.700
 <v Naomi Kito>That matches what I was seeing on my end with the manifest schema and validator.
 
 83
-00:12:32.900 --> 00:12:34.500
+00:12:33.300 --> 00:12:34.900
 <v James Ahkivgak>Agreed, let's capture it.
 
 84
-00:12:35.1000 --> 00:12:48.800
+00:12:36.400 --> 00:12:49.200
 <v Naomi Kito>Can I name a pattern about me? I don't talk in meetings. I say everything in the channel. That's not shyness exactly, it's that the meeting feels like it's for the confident.
 
 85
-00:12:49.500 --> 00:12:54.300
+00:12:49.900 --> 00:12:54.700
 <v Naomi Kito>So my contribution is invisible if you only listen to the room.
 
 86
-00:12:59.100 --> 00:13:09.500
+00:12:59.500 --> 00:13:09.900
 <v Sarah Kowalski>That's a huge one, Naomi, thank you. It means anyone measuring participation by who talks in meetings would score you at zero and be completely wrong.
 
 87
-00:13:10.300 --> 00:13:15.100
+00:13:10.700 --> 00:13:15.500
 <v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
 
 88
-00:13:17.200 --> 00:13:17.1000
+00:13:17.600 --> 00:13:18.400
 <v Mark Dupont>Okay, yeah.
 
 89
-00:13:17.1000 --> 00:13:23.200
+00:13:18.400 --> 00:13:23.600
 <v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
 
 90
-00:13:23.200 --> 00:13:27.200
+00:13:23.600 --> 00:13:27.600
 <v Naomi Kito>Can we double-check that against what we agreed last week?
 
 91
-00:13:47.800 --> 00:13:50.1000
+00:13:48.200 --> 00:13:51.400
 <v Dana Whitfield>Which is the idea I've been sitting on.
 
 92
-00:13:51.600 --> 00:14:05.1000
+00:13:52.000 --> 00:14:06.400
 <v Dana Whitfield>What if we built the thing we keep wishing we had — a tool that watches our own collaboration and tells us this stuff while it's happening, not a month later in a retro. Talk-time balance.
 
 93
-00:14:06.500 --> 00:14:20.900
+00:14:06.900 --> 00:14:21.300
 <v Dana Whitfield>Questions versus assertions. Whether dissent shows up before or after the decision. Whether anyone changed their mind. Whether the same fight reopened a third time. All of that is countable from a transcript and a channel.
 
 94
-00:14:36.500 --> 00:14:42.100
+00:14:36.900 --> 00:14:42.500
 <v Naomi Kito>I'll take that one — it's adjacent to the manifest schema and validator anyway.
 
 95
-00:14:45.500 --> 00:14:46.300
+00:14:45.900 --> 00:14:46.700
 <v James Ahkivgak>That's fair.
 
 96
-00:14:49.600 --> 00:14:55.600
+00:14:50.000 --> 00:14:56.000
 <v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
 
 97
-00:14:57.400 --> 00:15:05.800
+00:14:57.800 --> 00:15:06.200
 <v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
 
 98
-00:15:07.800 --> 00:15:09.800
+00:15:08.200 --> 00:15:10.200
 <v Mark Dupont>Right, that's what I meant.
 
 99
-00:15:11.900 --> 00:15:17.100
+00:15:12.300 --> 00:15:17.500
 <v Sarah Kowalski>Let me play that back to make sure we're all aligned on it.
 
 100
-00:15:20.300 --> 00:15:26.300
+00:15:20.700 --> 00:15:26.700
 <v James Ahkivgak>Do we actually need a decision on this today, or can it wait a week?
 
 101
-00:15:31.200 --> 00:15:33.200
+00:15:31.600 --> 00:15:33.600
 <v Sarah Kowalski>Sure, I can own that.
 
 102
-00:15:36.1000 --> 00:15:37.800
+00:15:37.400 --> 00:15:38.200
 <v Sarah Kowalski>Yeah, exactly.
 
 103
-00:15:40.400 --> 00:15:42.800
+00:15:40.800 --> 00:15:43.200
 <v Sarah Kowalski>Okay, next thing on the agenda.
 
 104
-00:15:42.800 --> 00:15:57.200
+00:15:43.200 --> 00:15:57.600
 <v James Ahkivgak>I like it only if it measures the right things and stays humble. A number that says I'm 'low participation' because I ask questions instead of asserting would be measuring the wrong thing. Questions are participation.
 
 105
-00:15:58.400 --> 00:15:59.200
+00:15:58.800 --> 00:15:59.600
 <v Mark Dupont>Hmm, okay.
 
 106
-00:15:59.200 --> 00:16:04.400
+00:15:59.600 --> 00:16:04.800
 <v Marcus Bell>Let me play that back to make sure we're all aligned on it.
 
 107
-00:16:04.400 --> 00:16:09.200
+00:16:04.800 --> 00:16:09.600
 <v Mark Dupont>I'd rather over-communicate here — can we write down who's doing what?
 
 108
-00:16:13.900 --> 00:16:15.900
+00:16:14.300 --> 00:16:16.300
 <v Sarah Kowalski>Right, that's what I meant.
 
 109
-00:16:24.1000 --> 00:16:34.1000
+00:16:25.400 --> 00:16:35.400
 <v Dana Whitfield>Agreed, and that's a design constraint, not a reason not to build it. Let's spec it. I think it's the most interesting thing we've got.
 
 110
-00:16:42.1000 --> 00:16:45.800
+00:16:43.400 --> 00:16:46.200
 <v Sarah Kowalski>Okay — any questions before we wrap?
 
 111
-00:16:48.700 --> 00:16:55.500
+00:16:49.100 --> 00:16:55.900
 <v Dana Whitfield>One thing: how does this affect the the roadmap and keeping the two tracks in sync timeline?
 
 112
-00:16:57.900 --> 00:17:03.900
+00:16:58.300 --> 00:17:04.300
 <v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
 113
-00:17:04.1000 --> 00:17:09.800
+00:17:05.400 --> 00:17:10.200
 <v Mark Dupont>One thing: how does this affect the licensing and the ADR timeline?
 
 114
-00:17:14.100 --> 00:17:20.100
+00:17:14.500 --> 00:17:20.500
 <v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
 115
-00:17:25.600 --> 00:17:31.200
+00:17:26.000 --> 00:17:31.600
 <v Sarah Kowalski>Alright, let me read back the action items so we're aligned before we drop.
 
 116
-00:17:39.300 --> 00:17:46.100
+00:17:39.700 --> 00:17:46.500
 <v Sarah Kowalski>Sarah has the follow-up on the CARE governance framework — I'll capture the specifics in the notes.
 
 117
-00:17:47.500 --> 00:17:54.300
+00:17:47.900 --> 00:17:54.700
 <v Sarah Kowalski>Mark has the follow-up on licensing and the ADR — I'll capture the specifics in the notes.
 
 118
-00:17:56.100 --> 00:18:03.700
+00:17:56.500 --> 00:18:04.100
 <v Sarah Kowalski>James has the follow-up on community review and the advisory process — I'll capture the specifics in the notes.
 
 119
-00:18:07.400 --> 00:18:12.1000
+00:18:07.800 --> 00:18:13.400
 <v Sarah Kowalski>Great. I'll write it all up and drop it in the channel. Thanks everyone.
