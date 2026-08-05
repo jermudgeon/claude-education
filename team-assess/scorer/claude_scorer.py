@@ -110,13 +110,26 @@ class ClaudeScorer:
         ) as stream:
             message = stream.get_final_message()
 
+        if message.stop_reason == "max_tokens":
+            raise ScoringError(
+                f"Claude hit max_tokens ({self._max_tokens}) mid-response. "
+                f"Response may be truncated. Increase max_tokens in config.toml."
+            )
+
         tool_result = self._extract_tool_result(message)
         return self._build_snapshot(tool_result, rubric, period, input_files, prior_snapshot)
 
     def _extract_tool_result(self, message) -> dict:
         for block in message.content:
             if block.type == "tool_use":
-                return block.input
+                result = block.input
+                if not isinstance(result, dict):
+                    raise ScoringError(f"Tool result is not a dict: {type(result).__name__}")
+                if "dimensions" not in result:
+                    raise ScoringError("Tool result missing required 'dimensions' key")
+                if "recommendations" not in result:
+                    raise ScoringError("Tool result missing required 'recommendations' key")
+                return result
         raise ScoringError("Claude did not return a tool_use response")
 
     def _build_snapshot(
@@ -132,7 +145,10 @@ class ClaudeScorer:
 
         sorted_dims = sorted(rubric["dimensions"].items(), key=lambda x: x[1]["order"])
         for dim_key, dim_def in sorted_dims:
-            raw_dim = tool_result["dimensions"].get(dim_key, {})
+            raw_dim = tool_result["dimensions"].get(dim_key)
+            if raw_dim is None:
+                print(f"Warning: dimension '{dim_key}' missing from Claude response; excluding.", file=sys.stderr)
+                continue
             raw_facets = raw_dim.get("facets", {})
 
             # Build facets dict from rubric-expected keys
@@ -142,7 +158,10 @@ class ClaudeScorer:
 
             for facet in dim_def.get("facets", []):
                 fkey = facet_key(facet["name"])
-                facet_data = raw_facets.get(fkey, {})
+                facet_data = raw_facets.get(fkey)
+                if facet_data is None:
+                    print(f"Warning: facet '{fkey}' missing from Claude response for dimension '{dim_key}'; defaulting to low confidence.", file=sys.stderr)
+                    facet_data = {"score": 1.0, "confidence": "low", "evidence": []}
                 score = facet_data.get("score", 1.0)
                 confidence = facet_data.get("confidence", "low")
                 evidence = facet_data.get("evidence", [])

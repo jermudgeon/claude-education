@@ -1,30 +1,42 @@
 import csv
+import io
 import json
 from pathlib import Path
 
 from pypdf import PdfReader
 
 
+def _read_text_with_fallback(path: Path) -> str:
+    path = Path(path)
+    for encoding in ("utf-8", "cp1252", "latin-1"):
+        try:
+            return path.read_text(encoding=encoding)
+        except UnicodeDecodeError:
+            continue
+    # latin-1 always succeeds, so this shouldn't fire
+    return path.read_text(encoding="latin-1", errors="replace")
+
+
 def read_txt(path: Path) -> str:
-    return Path(path).read_text(encoding="utf-8")
+    return _read_text_with_fallback(path)
 
 
 def read_md(path: Path) -> str:
-    return Path(path).read_text(encoding="utf-8")
+    return _read_text_with_fallback(path)
 
 
 def read_csv(path: Path) -> str:
+    raw = _read_text_with_fallback(path)
     lines = []
-    with open(path, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            lines.append(" | ".join(f"{k}: {v}" for k, v in row.items()))
+    reader = csv.DictReader(io.StringIO(raw))
+    for row in reader:
+        lines.append(" | ".join(f"{k}: {v}" for k, v in row.items()))
     return "\n".join(lines)
 
 
 def read_json(path: Path) -> str:
-    with open(path, encoding="utf-8") as f:
-        data = json.load(f)
+    raw = _read_text_with_fallback(path)
+    data = json.loads(raw)
     return json.dumps(data, indent=2)
 
 

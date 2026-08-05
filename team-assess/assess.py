@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 from config import load_config
-from ingestion.scanner import scan_directory, READERS
+from ingestion.scanner import scan_directory
 from rubric.loader import load_rubric
 from scorer.claude_scorer import ClaudeScorer
 from snapshots.store import save_snapshot, load_snapshot, SnapshotNotFoundError
@@ -26,15 +26,10 @@ def main():
     snapshots_dir = Path(cfg["paths"]["snapshots_dir"])
 
     print(f"Scanning input directory: {args.input}")
-    content = scan_directory(Path(args.input))
+    content, input_files = scan_directory(Path(args.input))
     if not content.strip():
         print("Error: no readable content found in input directory.", file=sys.stderr)
         sys.exit(1)
-
-    input_files = [
-        f.name for f in sorted(Path(args.input).iterdir())
-        if f.is_file() and f.suffix.lower() in READERS
-    ]
 
     print(f"Loading rubric: {cfg['rubric']['path']}")
     rubric = load_rubric(cfg["rubric"]["path"])
