@@ -80,8 +80,8 @@ class ScoringError(Exception):
 
 class ClaudeScorer:
     def __init__(self, claude_config: dict, client=None):
-        self._model = claude_config.get("model", "claude-sonnet-4-6")
-        self._max_tokens = claude_config.get("max_tokens", 8192)
+        self._model = claude_config.get("model", "claude-opus-4-7")
+        self._max_tokens = claude_config.get("max_tokens", 32000)
         if client is not None:
             self._client = client
         else:
@@ -104,11 +104,26 @@ class ClaudeScorer:
             model=self._model,
             max_tokens=self._max_tokens,
             system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
-            tools=[scoring_tool],
+            tools=[{**scoring_tool, "cache_control": {"type": "ephemeral"}}],
             tool_choice={"type": "any"},
             messages=[{"role": "user", "content": user_prompt}],
         ) as stream:
             message = stream.get_final_message()
+
+        if hasattr(message, "usage") and message.usage is not None:
+            try:
+                usage = message.usage
+                cache_read = int(getattr(usage, "cache_read_input_tokens", 0) or 0)
+                cache_created = int(getattr(usage, "cache_creation_input_tokens", 0) or 0)
+                input_tokens = int(getattr(usage, "input_tokens", 0) or 0)
+                output_tokens = int(getattr(usage, "output_tokens", 0) or 0)
+                print(
+                    f"Token usage: input={input_tokens:,} output={output_tokens:,} "
+                    f"cache_read={cache_read:,} cache_created={cache_created:,}",
+                    file=sys.stderr,
+                )
+            except (TypeError, ValueError):
+                pass  # usage object not numeric (e.g. in tests with mocks)
 
         if message.stop_reason == "max_tokens":
             raise ScoringError(
@@ -120,17 +135,19 @@ class ClaudeScorer:
         return self._build_snapshot(tool_result, rubric, period, input_files, prior_snapshot)
 
     def _extract_tool_result(self, message) -> dict:
-        for block in message.content:
-            if block.type == "tool_use":
-                result = block.input
-                if not isinstance(result, dict):
-                    raise ScoringError(f"Tool result is not a dict: {type(result).__name__}")
-                if "dimensions" not in result:
-                    raise ScoringError("Tool result missing required 'dimensions' key")
-                if "recommendations" not in result:
-                    raise ScoringError("Tool result missing required 'recommendations' key")
-                return result
-        raise ScoringError("Claude did not return a tool_use response")
+        tool_blocks = [b for b in message.content if b.type == "tool_use"]
+        if len(tool_blocks) == 0:
+            raise ScoringError("Claude did not return a tool_use response")
+        if len(tool_blocks) > 1:
+            print(f"Warning: expected 1 tool_use block, got {len(tool_blocks)}. Using first.", file=sys.stderr)
+        result = tool_blocks[0].input
+        if not isinstance(result, dict):
+            raise ScoringError(f"Tool result is not a dict: {type(result).__name__}")
+        if "dimensions" not in result:
+            raise ScoringError("Tool result missing required 'dimensions' key")
+        if "recommendations" not in result:
+            raise ScoringError("Tool result missing required 'recommendations' key")
+        return result
 
     def _build_snapshot(
         self,

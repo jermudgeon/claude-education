@@ -1,4 +1,5 @@
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -22,6 +23,12 @@ def main():
     args = parser.parse_args()
 
     cfg = load_config(args.config)
+
+    api_key_env = cfg["claude"]["api_key_env"]
+    if not os.environ.get(api_key_env):
+        print(f"Error: environment variable {api_key_env} is not set. Set it before running (e.g. export {api_key_env}=your-key).", file=sys.stderr)
+        sys.exit(1)
+
     output_dir = Path(args.output or cfg["paths"]["output_dir"])
     snapshots_dir = Path(cfg["paths"]["snapshots_dir"])
 
@@ -30,6 +37,12 @@ def main():
     if not content.strip():
         print("Error: no readable content found in input directory.", file=sys.stderr)
         sys.exit(1)
+
+    content_chars = len(content)
+    approx_tokens = content_chars // 4
+    print(f"Ingested {len(input_files)} files, {content_chars:,} chars (~{approx_tokens:,} tokens)")
+    if approx_tokens > 800_000:
+        print(f"Warning: approx {approx_tokens:,} tokens is close to the 1M context limit.", file=sys.stderr)
 
     print(f"Loading rubric: {cfg['rubric']['path']}")
     rubric = load_rubric(cfg["rubric"]["path"])
@@ -47,7 +60,11 @@ def main():
 
     print("Scoring with Claude...")
     scorer = ClaudeScorer(cfg["claude"])
-    snapshot = scorer.score(content, rubric, args.period, input_files, prior_snapshot=prior_snapshot)
+    try:
+        snapshot = scorer.score(content, rubric, args.period, input_files, prior_snapshot=prior_snapshot)
+    except Exception as e:
+        print(f"Error scoring with Claude: {e}", file=sys.stderr)
+        sys.exit(1)
 
     save_snapshot(snapshot, snapshots_dir=snapshots_dir)
     print(f"Snapshot saved to {snapshots_dir}/{args.period}.json")

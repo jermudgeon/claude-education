@@ -1,6 +1,8 @@
 import pytest
+from pathlib import Path
 from unittest.mock import MagicMock
 from scorer.claude_scorer import ClaudeScorer, ScoringError, build_scoring_tool
+from rubric.loader import load_rubric
 
 # Simplified rubric with 2 facets per dimension to keep mocks manageable
 SAMPLE_RUBRIC = {
@@ -223,3 +225,20 @@ def test_build_scoring_tool_contains_facet_keys():
     )
     assert "vulnerability_psychological_safety" in trust_props
     assert "contractual_trust_reliability_of_character" in trust_props
+
+
+def test_build_scoring_tool_on_real_rubric():
+    rubric_path = str(Path(__file__).parent.parent / "rubric" / "five-dysfunctions.yaml")
+    rubric = load_rubric(rubric_path)
+    tool = build_scoring_tool(rubric)
+    dims_prop = tool["input_schema"]["properties"]["dimensions"]["properties"]
+    assert set(dims_prop.keys()) == {"trust", "conflict", "commitment", "accountability", "results"}
+    # Trust should have 5 facet keys
+    trust_facets = dims_prop["trust"]["properties"]["facets"]["properties"]
+    assert len(trust_facets) == 5
+    # No duplicate facet keys anywhere
+    all_facet_keys = []
+    for dim_key, dim_prop in dims_prop.items():
+        all_facet_keys.extend(dim_prop["properties"]["facets"]["properties"].keys())
+    assert len(all_facet_keys) == len(set(all_facet_keys)), "Duplicate facet keys detected"
+    assert len(all_facet_keys) == 27
