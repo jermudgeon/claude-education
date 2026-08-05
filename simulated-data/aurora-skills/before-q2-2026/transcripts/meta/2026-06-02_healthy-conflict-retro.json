@@ -134,6 +134,9 @@
     "interruptions": 0,
     "dominant_speaker": "Dana Whitfield",
     "dominant_pct": 37.6,
+    "led_by": "Sarah Kowalski",
+    "dominant_is_lead": false,
+    "dominance_expected": false,
     "present_but_silent": [
       "Priya Nair",
       "Tom\u00e1s Reyes",

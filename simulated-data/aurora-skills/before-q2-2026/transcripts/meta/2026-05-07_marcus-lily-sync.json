@@ -34,6 +34,9 @@
     "interruptions": 0,
     "dominant_speaker": "Lily Chen",
     "dominant_pct": 51.4,
+    "led_by": "Marcus Bell",
+    "dominant_is_lead": false,
+    "dominance_expected": false,
     "present_but_silent": [],
     "era": "before"
   },

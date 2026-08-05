@@ -1,0 +1,30 @@
+[
+  {
+    "type": "message",
+    "user": "U07",
+    "user_name": "Sarah Kowalski",
+    "text": "Q3 assessment in: overall 4.4/5 (\u2191 from 2.7). Trust/Conflict/Commitment each +2.0. Accountability now our lowest at 4.0 \u2014 next quarter's focus. The loop closed. \ud83c\udfaf",
+    "ts": "1790076600.000054",
+    "thread_ts": "1782909000.000048",
+    "parent_user_id": "U07",
+    "reactions": [
+      {
+        "name": "tada",
+        "users": [
+          "U01",
+          "U06",
+          "U05",
+          "U02",
+          "U12",
+          "U09",
+          "U10",
+          "U08",
+          "U11",
+          "U03",
+          "U04"
+        ],
+        "count": 11
+      }
+    ]
+  }
+]

@@ -74,6 +74,9 @@
     "interruptions": 0,
     "dominant_speaker": "Sarah Kowalski",
     "dominant_pct": 24.4,
+    "led_by": "Sarah Kowalski",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
     "present_but_silent": [],
     "era": "after"
   },

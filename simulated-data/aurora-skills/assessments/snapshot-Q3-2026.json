@@ -1,0 +1,80 @@
+{
+  "period": "Q3-2026",
+  "run_date": "2026-09-30",
+  "framework": "five-dysfunctions",
+  "rubric_version": "0.9",
+  "rubric_source": "team-assess/rubric/five-dysfunctions.yaml",
+  "note": "In-world team-assess output on the Q3 (after) data. Validates that the team enacted the Q2 assessment's recommendations. Re-pinned to rubric v0.9 (observable OBM facets); scale/dimensions unchanged so scores carry over. Per-signal facet mapping in ../assessments/five-dysfunctions-signal-map.json.",
+  "input_source": "after-q3-2026/",
+  "input_files": [
+    "transcripts/*.vtt",
+    "slack-export/ (incl. #insights bot readouts)",
+    "git/pull_requests.json",
+    "issues/issues.json",
+    "standups/standups.json",
+    "retros/*.json",
+    "surveys/pulse.csv"
+  ],
+  "dimensions": {
+    "trust": {
+      "score": 4.5,
+      "confidence": "high",
+      "evidence": [
+        "Ben discloses a self-introduced regression in 41 minutes (#incidents 2026-08-04) instead of hiding it; minor-incident retro confirms same-day surfacing vs 4 days in Q2.",
+        "Blameless incident notes are standard (AUR-12); pulling the andon cord early is celebrated.",
+        "Pulse psychological-safety sustained high (avg 4.74 vs 3.75 in Q2).",
+        "Enacts Q2 recommendation #1 (Trust)."
+      ]
+    },
+    "conflict": {
+      "score": 4.5,
+      "confidence": "high",
+      "evidence": [
+        "Round-robin + facilitation nudges (AUR-13): peak airtime drops to ~40%, Dana to ~35%; Naomi's group airtime rises from ~6% to ~19%.",
+        "Dissent lands before decisions (beta arch review 2026-07-14): 'the objection came before the decision, not after it in the channel.' Zero hallway objections in Q3.",
+        "Enacts Q2 recommendation #2 (Conflict)."
+      ]
+    },
+    "commitment": {
+      "score": 4.5,
+      "confidence": "high",
+      "evidence": [
+        "ADR-0003 closed with a written reopening bar; Mark: 'With the snapshot and the annual review, I can commit to this. Genuinely commit, not just stop arguing.'",
+        "The licensing question does not reopen in Q3 (#insights 2026-08-18: 'settled, not suppressed').",
+        "Enacts Q2 recommendation #3 (Commitment)."
+      ]
+    },
+    "accountability": {
+      "score": 4.0,
+      "confidence": "medium",
+      "evidence": [
+        "Second security reviewer onboarded (AUR-16); Tomás no longer a single point of failure.",
+        "Peer feedback is horizontal and prompt: Marcus flags Dana's rushed sequencing in the room ('a decision made fast without much room for the objection') and Dana adjusts.",
+        "Enacts Q2 recommendation #4 (Accountability). Now the lowest dimension — see Q3 recommendations."
+      ]
+    },
+    "results": {
+      "score": 4.5,
+      "confidence": "medium",
+      "evidence": [
+        "Dana defers to the better sequencing over optics (beta arch review): 'you all just changed my mind... Staggered, least-TK-first.'",
+        "The team decides to publish the before/after so other Alaska teams benefit — shared outcome over individual credit.",
+        "Enacts Q2 recommendation #5 (Results)."
+      ]
+    }
+  },
+  "overall_health": 4.4,
+  "trend_vs": {
+    "period": "Q2-2026",
+    "deltas": { "trust": 2.0, "conflict": 2.0, "commitment": 2.0, "accountability": 1.0, "results": 1.5 },
+    "directions": { "trust": "improving", "conflict": "improving", "commitment": "improving", "accountability": "improving", "results": "improving" },
+    "warning_flags": ["trust (+2.0)", "conflict (+2.0)", "commitment (+2.0)", "results (+1.5)"],
+    "overall_delta": 1.7,
+    "interpretation": "All five dimensions improved. The largest gains are exactly the three lowest Q2 dimensions the recommendations targeted (trust, conflict, commitment). The Q2 -> feedback -> Q3 loop is closed and traceable."
+  },
+  "recommendations": [
+    "[Accountability] Now the lowest dimension (4.0). Keep peer feedback horizontal as the beta scales; ensure the new second reviewer shares the accountability load rather than recreating a single point of failure.",
+    "[Results] Sustain the shift from optics to shared outcome as Q4 fundraiser pressure returns.",
+    "[Maintain] The trust/conflict/commitment gains are new and fragile — protect them by keeping the round-robin format and the blameless norm during the higher-pressure beta rollout."
+  ]
+}
