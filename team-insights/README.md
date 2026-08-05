@@ -74,13 +74,15 @@ Conversation logic lives in `session.js` as pure functions that take a session a
 
 ## Accessibility and safety notes
 
-The handoff overlay is a real dialog: it takes focus, closes on Escape, and returns focus to the control that opened it. Tap targets clear 44px, focus is always visible, and `prefers-reduced-motion` turns off every animation. The notes field is the only user input and the only trust boundary, so its escaping has its own test file.
+The handoff overlay is a real dialog: it takes focus, closes on Escape, and returns focus to the control that opened it. Tap targets clear 44px at every width tested, focus is always visible, and `prefers-reduced-motion` turns off every animation. The notes field is the only user input and the only trust boundary, so its escaping has its own test file.
+
+Below 640px the sticky header and footer would each wrap to three rows and leave the conversation a slit to live in, so the speaker rail scrolls horizontally in one row, card headings drop their badge to a second line rather than being squeezed to one word per line, and the presenter hint gives up its space to the buttons.
 
 One external request exists: the Google Fonts stylesheet. Everything else is local.
 
 ## Known gaps
 
 - The conversation is invented, while `demo/` reads the Aurora Skills dataset. Porting the roster, the meeting, and the evidence rail onto that dataset is the next change worth making.
-- The 375px layout has not been verified on a real narrow viewport. The stylesheet stacks to one column at 860px and uses fluid type, but treat small screens as untested.
+- A phone is not the target. The layout is verified to hold at 375px and 320px, but the app is built for one shared display a room reads from six feet away, so a phone gets a working screen rather than a considered one.
 - Research does not start a second run while one is in flight, so clicking through handoffs quickly docks fewer findings than a real conversation would.
 - PRD 06's open design tension is not solved here. Slowing a group down while staying useful, and knowing when the facilitator is confidently wrong, are unanswered. This demo shows the shape of the intervention, not a measurement of whether the intervention read the room correctly.
