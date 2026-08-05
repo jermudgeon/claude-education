@@ -1,0 +1,106 @@
+{
+  "meeting": "2026-06-09_roadmap-review",
+  "era": "before-q2-2026",
+  "authored_by": "Claude (Opus), reading the transcript against rubric/obm-behavior-codes.json",
+  "authored_on": "2026-08-04",
+  "provenance": "The quotes are verbatim from the VTT and validated at build time. The code assignments are judgment, not data: they were authored by an AI coder reading the transcript, and they are labeled as such wherever they appear. build_demo_data.py rejects any mark whose code id does not exist in the rubric or whose quote does not appear in the cited turn.",
+  "marks": [
+    {
+      "cue": 73,
+      "code": "COM-01-P1",
+      "quote": "Q3: registry goes to beta with three partner districts",
+      "note": "The whole quarter's deliverable list, stated explicitly with owners implied per item."
+    },
+    {
+      "cue": 101,
+      "code": "COM-02-P1",
+      "quote": "The registry beta has to come first because everything else demos on top of it, then the reviewer, then the needs board, then labels, then insights.",
+      "note": "A full sequence with a stated rationale for the ordering."
+    },
+    {
+      "cue": 124,
+      "code": "CON-01-P1",
+      "quote": "The needs board doesn't actually depend on the registry beta. I could ship it earlier and it'd de-risk the access story for the fundraiser.",
+      "note": "Disagreement voiced in the same meeting the sequence was proposed, not in the hallway afterward."
+    },
+    {
+      "cue": 124,
+      "code": "CON-02-P1",
+      "quote": "The needs board doesn't actually depend on the registry beta.",
+      "note": "An observable dependency fact stated first; the conclusion (ship earlier) drawn from it second."
+    },
+    {
+      "cue": 125,
+      "code": "CON-04-N1",
+      "quote": "Maybe, but I'd rather keep the demo coherent. Let's hold the sequence.",
+      "note": "The turn metadata flags this as an interruption: it starts 1.5s before Rachel's turn ends."
+    },
+    {
+      "cue": 152,
+      "code": "ACC-01-P2",
+      "quote": "I'll flag the same thing I flagged in the retro — that was a decision made fast without much room for the objection.",
+      "note": "A peer naming the lead's pattern, to the lead, in the room."
+    },
+    {
+      "cue": 152,
+      "code": "CON-02-P1",
+      "quote": "Rachel just gave you new information and the sequence didn't move.",
+      "note": "Observation stated as fact before any conclusion; no motive attributed."
+    },
+    {
+      "cue": 169,
+      "code": "TRU-01-P1",
+      "quote": "I'm doing the thing again, aren't I.",
+      "note": "Unprompted admission of the named pattern, mid-meeting, by the most senior person in the room."
+    },
+    {
+      "cue": 169,
+      "code": "ACC-05-P3",
+      "quote": "Rachel, if the needs board is independent, pull it forward.",
+      "note": "Accepts the correction without counter-argument and states the change: the sequence moves."
+    },
+    {
+      "cue": 188,
+      "code": "ACC-04-P1",
+      "quote": "You caught it in the same meeting though. That's the improvement.",
+      "note": "Specific positive feedback delivered seconds after the behavior it names."
+    },
+    {
+      "cue": 194,
+      "code": "COM-01-P3",
+      "quote": "I'll take that one — it's adjacent to the access needs-board and credits broker anyway.",
+      "note": "Ownership named in the room, so the action item does not float."
+    },
+    {
+      "cue": 216,
+      "code": "COM-01-P6",
+      "quote": "Quick clarifier — who owns the follow-up here, and by when?",
+      "note": "The ownership decision existed only by implication until this asked for it out loud."
+    },
+    {
+      "cue": 220,
+      "code": "COM-01-P4",
+      "quote": "Alright, let me read back the action items so we're aligned before we drop.",
+      "note": "Decisions restated at close to confirm shared understanding."
+    },
+    {
+      "cue": 221,
+      "code": "ACC-02-N1",
+      "quote": "I'll capture the specifics in the notes.",
+      "note": "Follow-ups assigned with owners but no stated outcome, standard, or date; the 'done' criteria are deferred to notes that this meeting never sees."
+    }
+  ],
+  "uncoded": [
+    {
+      "cue": 50,
+      "quote": "One concern and then I'll drop it: are we sure about the sequencing here?",
+      "note": "Recurs four times in this meeting across three speakers: a concern raised while pre-committing to abandon it. Matches no code in the book. Candidate new code for CONFLICT / Surfacing Disagreement, negative valence, per the spec's uncoded-observation rule."
+    },
+    {
+      "cue": 100,
+      "quote": "That's the plan. I've thought through the sequencing and I think it's right.",
+      "note": "A decision presented as settled before reactions are invited. Reads as commitment-suppressing, but no code in the book names it. Second candidate."
+    }
+  ],
+  "not_codable": "Dana holding 66.2% of content speech is this meeting's loudest signal and no single utterance codes for it. Dominance is an aggregate: it belongs to PRD 05's metric contract, which is the other half of this page. The codebook and the metric contract are complements, not rivals."
+}
