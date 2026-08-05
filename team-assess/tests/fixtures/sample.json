@@ -1,0 +1,4 @@
+[
+  {"type": "feedback", "author": "Alice", "text": "I should have flagged this blocker sooner"},
+  {"type": "feedback", "author": "Bob", "text": "We need to stop revisiting closed decisions"}
+]
