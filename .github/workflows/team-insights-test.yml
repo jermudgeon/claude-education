@@ -1,0 +1,39 @@
+name: team-insights test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "team-insights/**"
+      - ".github/workflows/team-insights-test.yml"
+  pull_request:
+    paths:
+      - "team-insights/**"
+      - ".github/workflows/team-insights-test.yml"
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: team-insights
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@bf7454d06d71f1098171f2acdf0cd4708d7b5920 # v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: 22
+
+      - name: Install from the lockfile, with no lifecycle scripts
+        run: npm ci --ignore-scripts
+
+      - run: npm test
