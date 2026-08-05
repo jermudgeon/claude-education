@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live tab in the IdeaFlow design system</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Tokens verbatim from IdeaFlow_Developer_Spec.pdf section 3.1 */
+:root{
+  --navy:#1A2340; --navy-light:#2E3A5C; --navy-tint:#EEF1F8;
+  --amber:#F5A623; --amber-hover:#E0961A; --amber-tint:#FFF8EC;
+  --gray-bg:#F4F5F7; --white:#FFFFFF; --red-dot:#E5484D;
+  --text-primary:#111827; --text-secondary:#6B7280; --border:#E5E7EB;
+  --hairline:#D1D5DB; --meta:#9CA3AF; --row-hover:#F9FAFB; --challenge-bg:#F8F9FC;
+  --label:#374151;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:Inter,system-ui,sans-serif;font-size:14px;font-weight:400;
+  color:var(--text-primary);background:var(--gray-bg);
+  -webkit-font-smoothing:antialiased;display:flex;flex-direction:column;
+}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,textarea{font:inherit;color:inherit}
+
+/* provenance strip, not in the spec: this page mixes read and authored content */
+.prov{
+  background:var(--amber-tint);border-bottom:1px solid #F0D9A8;
+  padding:7px 24px;font-size:11px;line-height:1.5;color:#7A5A12;text-align:center;
+}
+.prov b{font-weight:600}
+
+/* 4.2 Top Navigation Bar: 64px, navy, padding 0 24px */
+.nav{
+  height:64px;flex:none;background:var(--navy);display:flex;align-items:center;
+  gap:14px;padding:0 24px;
+}
+.logo{display:flex;align-items:center;gap:8px}
+.logo svg{width:20px;height:20px;color:var(--amber)}
+.logo .word{font-size:18px;font-weight:700;color:var(--white);white-space:nowrap}
+.logo .word s{opacity:.55;text-decoration-thickness:1.5px}
+.nav input{
+  height:36px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+  border-radius:8px;color:var(--white);font-size:14px;padding:0 12px;
+}
+.nav input::placeholder{color:rgba(255,255,255,.5)}
+.nav input:focus{outline:none;border-color:rgba(245,166,35,.8);box-shadow:0 0 0 3px rgba(245,166,35,.18)}
+#projName{width:220px} #projGoal{width:360px}
+.nav .spacer{flex:1}
+.avatar{
+  width:36px;height:36px;border-radius:50%;background:var(--amber);color:var(--navy);
+  font-size:14px;font-weight:700;display:grid;place-items:center;flex:none;
+}
+
+/* 3.4 Button variants, all 40px tall, radius 8px, 14px 600 */
+.btn{height:40px;padding:0 16px;border-radius:8px;font-size:14px;font-weight:600;
+  display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.btn svg{width:14px;height:14px}
+.btn-amber{background:var(--amber);color:var(--navy)}
+.btn-amber:hover{background:var(--amber-hover)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--navy-light)}
+.btn-onavy{background:var(--white);color:var(--navy);border:1px solid var(--navy)}
+.btn-onavy:hover{background:var(--gray-bg)}
+.btn-oamber{background:var(--white);color:var(--navy);border:1px solid var(--amber)}
+.btn-oamber:hover{background:var(--amber-tint)}
+.btn:disabled{opacity:.5;cursor:default}
+
+.shell{flex:1;display:flex;min-height:0}
+
+/* 4.3 Left panel: 300px, white, 20px padding, 1px right border */
+.panel{
+  width:300px;flex:none;background:var(--white);border-right:1px solid var(--border);
+  padding:20px;overflow-y:auto;
+}
+.panel h2{font-size:13px;font-weight:600;color:var(--navy);letter-spacing:.05em;text-transform:uppercase}
+.panel .sub{font-size:12px;color:var(--text-secondary);margin-top:3px}
+.field{margin-top:14px}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--label);margin-bottom:5px}
+.field input,.field textarea{
+  width:100%;border:1px solid var(--border);border-radius:8px;padding:9px 11px;font-size:14px;background:var(--white);
+}
+.field input{height:36px}
+.field textarea{height:120px;resize:vertical;line-height:1.5}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(245,166,35,.15)}
+.counter{font-size:11px;color:var(--meta);text-align:right;margin-top:4px}
+.panel .btn-amber{width:100%;justify-content:center;margin-top:10px}
+.divider{height:1px;background:var(--border);margin:16px 0}
+
+.member{
+  display:flex;align-items:flex-start;gap:11px;padding:10px;border-radius:8px;cursor:pointer;
+  width:100%;text-align:left;
+}
+.member:hover{background:var(--row-hover)}
+.member:hover .chev{color:var(--amber)}
+.member .ava{width:36px;height:36px;border-radius:50%;color:var(--white);font-size:12px;font-weight:700;display:grid;place-items:center;flex:none}
+.member .body{flex:1;min-width:0}
+.member .name{font-size:14px;font-weight:600;color:var(--text-primary)}
+.member .exp{
+  font-size:12px;color:var(--text-secondary);line-height:1.45;margin-top:2px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.chev{color:var(--meta);flex:none;margin-top:10px}
+.chev svg{width:12px;height:12px;display:block}
+
+/* 4.5 Center column: dashed timeline with numbered circles */
+.column{flex:1;min-width:0;background:var(--gray-bg);padding:24px;overflow-y:auto}
+.flow{max-width:1140px;margin:0 auto;border-left:4px dashed var(--border);padding-left:34px;position:relative}
+.step{position:relative;margin-bottom:16px}
+.num{
+  position:absolute;left:-52px;top:0;width:28px;height:28px;border-radius:50%;
+  display:grid;place-items:center;font-size:13px;font-weight:700;
+  background:var(--navy);color:var(--white);
+}
+.step.done .num{background:var(--border);color:var(--meta)}
+.card{background:var(--white);border-radius:12px;padding:20px 24px;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.step.done .card{opacity:.6;box-shadow:0 1px 4px rgba(0,0,0,.06);background:var(--row-hover)}
+.card.ai{border-left:4px solid var(--navy)}
+.steplabel{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--meta);font-weight:600}
+.card h3{font-size:15px;font-weight:600;margin-top:4px}
+
+.block{background:var(--navy-tint);border-radius:8px;padding:12px 16px;margin-top:12px}
+.block .lab{font-size:12px;font-weight:600;color:var(--navy)}
+.block .body{font-size:14px;color:var(--text-primary);line-height:1.6;margin-top:4px}
+.thin{height:1px;background:var(--hairline);margin:14px 0}
+.clar .lab{font-size:13px;font-style:italic;color:var(--text-secondary)}
+.clar .body{font-size:14px;font-style:italic;color:var(--label);line-height:1.6;margin-top:4px}
+
+.ask textarea{width:100%;height:100px;resize:none;border:1px solid var(--border);border-radius:8px;padding:11px;font-size:14px;line-height:1.6;margin-top:10px}
+.ask textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(245,166,35,.15)}
+.submit{display:flex;justify-content:flex-end;margin-top:12px}
+
+.checkrow{display:flex;align-items:flex-start;gap:11px;margin-top:12px}
+.check{width:24px;height:24px;border:2px solid var(--hairline);border-radius:4px;background:var(--white);flex:none;display:grid;place-items:center}
+.check.on{background:var(--amber);border-color:var(--amber)}
+.check svg{width:14px;height:14px;color:var(--white);display:none}
+.check.on svg{display:block}
+.checkrow .lab{font-size:14px;font-weight:500;line-height:1.5}
+.orsep{text-align:center;font-size:12px;color:var(--meta);margin:12px 0}
+.refine textarea{width:100%;height:80px;resize:vertical;border:1px solid var(--border);border-radius:8px;padding:11px;font-size:14px;line-height:1.6}
+.actions{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+.reddot{width:10px;height:10px;border-radius:50%;background:var(--red-dot);flex:none}
+.pulse{animation:ping 1.4s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(229,72,77,.6)}70%{box-shadow:0 0 0 8px rgba(229,72,77,0)}100%{box-shadow:0 0 0 0 rgba(229,72,77,0)}}
+.transcript{background:var(--gray-bg);border-radius:8px;padding:12px 14px;margin-top:12px}
+.transcript .lab{font-size:12px;font-weight:700}
+.transcript .txt{font-size:13px;font-style:italic;color:var(--label);line-height:1.6;margin-top:5px}
+.hint{font-size:11px;font-style:italic;color:var(--meta);margin-top:8px}
+
+.collab{background:var(--amber-tint);border-left:4px solid var(--amber);border-radius:8px;padding:12px 16px;margin-top:12px}
+.collab .lab{font-size:12px;font-weight:600;color:var(--amber)}
+.collab .who{display:flex;align-items:center;gap:11px;margin-top:9px}
+.collab .nm{font-size:14px;font-weight:700}
+.collab .why{font-size:13px;color:var(--text-secondary);line-height:1.5;margin-top:6px}
+
+/* 4.6 Step 5 collaboration thread */
+.seclabel{display:flex;align-items:center;gap:12px;margin:22px 0 14px}
+.seclabel span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--meta);font-weight:600;display:flex;align-items:center;gap:7px}
+.seclabel:before,.seclabel:after{content:"";flex:1;height:1px;background:var(--border)}
+.msg{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:11px;display:flex;gap:11px}
+.msg .ava{width:36px;height:36px;border-radius:50%;color:var(--white);font-size:12px;font-weight:700;display:grid;place-items:center;flex:none}
+.msg .head{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.msg .nm{font-size:14px;font-weight:700}
+.msg .role{font-size:12px;color:var(--text-secondary)}
+.msg .ts{font-size:11px;color:var(--meta);margin-left:auto;font-variant-numeric:tabular-nums}
+.msg .txt{font-size:14px;line-height:1.6;margin-top:5px}
+.msg .wave{display:flex;align-items:flex-end;gap:2px;height:22px;margin:8px 0 4px}
+.msg .wave i{width:3px;background:var(--hairline);border-radius:2px}
+.msg .tx{font-size:13px;font-style:italic;color:var(--text-secondary);line-height:1.6}
+.challenge{background:var(--challenge-bg);border-left:4px solid var(--navy);border-radius:8px;padding:12px 16px;margin-bottom:11px}
+.challenge .lab{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);font-weight:600;display:flex;align-items:center;gap:7px}
+.challenge .lab svg{width:14px;height:14px}
+.challenge .q{font-size:14px;color:var(--navy);font-style:italic;line-height:1.6;margin-top:6px}
+
+/* pinned input bar */
+.pinned{
+  position:sticky;bottom:0;background:var(--white);border-top:1px solid var(--border);
+  padding:12px 16px;display:flex;align-items:center;gap:12px;margin:0 -24px -24px;
+}
+.mic{width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--white);display:grid;place-items:center;flex:none}
+.mic.rec{background:var(--red-dot)}
+.mic svg{width:16px;height:16px}
+.pinned input{flex:1;height:40px;border:1px solid var(--border);border-radius:8px;padding:0 12px;font-size:14px}
+.pinned input:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(245,166,35,.15)}
+.pinned .btn-amber{width:72px;justify-content:center}
+
+@media (max-width:900px){
+  .shell{flex-direction:column}
+  .panel{width:100%;border-right:0;border-bottom:1px solid var(--border)}
+  .nav{height:auto;padding:10px 14px;flex-wrap:wrap}
+  #projName,#projGoal{width:100%}
+  .column{padding:16px}
+  .flow{padding-left:26px}
+  .num{left:-42px}
+  .pinned{margin:0 -16px -16px}
+}
+</style>
+</head>
+<body>
+
+<p class="prov">
+  <b>Design study.</b> Layout, palette, type and component sizes are the IdeaFlow developer spec applied to the live tab.
+  Speakers, quotes, timings and talk shares are read from <b>simulated-data/aurora-skills</b>. The restatements,
+  clarifying questions, challenge questions and the collaborator reason are <b>authored for this study</b>: no such model
+  output exists in the dataset. Icons are inline SVG rather than the spec's Font Awesome CDN, so the page opens offline.
+</p>
+
+<header class="nav">
+  <span class="logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/>
+    </svg>
+    <span class="word"><s>Claude</s> Team Insights</span>
+  </span>
+  <input id="projName" maxlength="120" placeholder="Name your project…">
+  <input id="projGoal" maxlength="1000" placeholder="Project overview… (1000 chars)">
+  <button class="btn btn-amber" style="width:120px;justify-content:center" id="save">Save Project</button>
+  <span class="spacer"></span>
+  <span class="avatar" title="Account">EW</span>
+</header>
+
+<div class="shell">
+  <aside class="panel">
+    <h2>Team members</h2>
+    <p class="sub">Add collaborators and their expertise</p>
+
+    <div class="field">
+      <label for="mname">Name</label>
+      <input id="mname" maxlength="80" placeholder="Enter full name…">
+    </div>
+    <div class="field">
+      <label for="mexp">Expertise</label>
+      <textarea id="mexp" maxlength="5000" placeholder="Paste or type this person's background, skills, and knowledge…"></textarea>
+      <div class="counter" id="expcount">0 / 5000</div>
+    </div>
+    <button class="btn btn-amber">Save Member</button>
+
+    <div class="divider"></div>
+    <div id="members"></div>
+  </aside>
+
+  <main class="column">
+    <div class="flow" id="flow"></div>
+  </main>
+</div>
+
+<script src="data.js"></script>
+<script>
+/* Real content comes from window.DEMO. Anything a model would have produced is
+   marked AUTHORED below and labeled on the page, because the dataset has no
+   facilitator output in it. */
+const D = window.DEMO;
+const el = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const mmss = s => `${String(Math.floor(s/60)).padStart(2,'0')}:${String(Math.floor(s%60)).padStart(2,'0')}`;
+
+/* 4.3: avatar colour from a name hash over six preset shades */
+const SHADES = ['#1A2340','#F5A623','#0F766E','#6D28D9','#B45309','#1D4ED8'];
+const shade = name => SHADES[[...name].reduce((a,c) => a + c.charCodeAt(0), 0) % SHADES.length];
+const initials = name => name.split(/\s+/).slice(0,2).map(w => w[0]).join('').toUpperCase();
+
+/* Speakers in first-speech order, with real counts from the transcript. */
+function roster(){
+  const seen = new Map();
+  D.turns.forEach(t => {
+    const r = seen.get(t.speaker) || {name:t.speaker, turns:0, words:0, questions:0, first:t.start_s};
+    r.turns++; r.words += t.words || 0; r.questions += t.questions || 0;
+    seen.set(t.speaker, r);
+  });
+  const words = [...seen.values()].reduce((a,r) => a + r.words, 0);
+  return [...seen.values()]
+    .sort((a,b) => a.first - b.first)
+    .map(r => ({...r, share: words ? (100 * r.words / words) : 0}));
+}
+
+const PEOPLE = roster();
+
+el('members').innerHTML = PEOPLE.map(p => `
+  <button class="member">
+    <span class="ava" style="background:${shade(p.name)}">${esc(initials(p.name))}</span>
+    <span class="body">
+      <span class="name">${esc(p.name)}</span>
+      <span class="exp">${p.turns} turns, ${p.words} words, ${p.share.toFixed(1)}% of words spoken${p.questions ? `, ${p.questions} questions asked` : ''}</span>
+    </span>
+    <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></span>
+  </button>`).join('');
+
+el('mexp').addEventListener('input', e => el('expcount').textContent = `${e.target.value.length} / 5000`);
+
+/* The dominant speaker and the loudest turn, both computed. */
+const TOP = PEOPLE.slice().sort((a,b) => b.share - a.share)[0];
+const QUIET = PEOPLE.slice().sort((a,b) => a.share - b.share)[0];
+const CONTENT = D.turns.filter(t => t.kind !== 'texture');
+
+/* AUTHORED: a facilitator's output has no source in the dataset. */
+const ASK = 'We keep slipping the beta date. What do we actually need to decide today so the Q3 roadmap stops moving?';
+const RESTATE = 'You want one decision today that stops the beta date from slipping again, not a status update on why it slipped.';
+const CLARIFY = 'Are you trying to fix the date, or to fix whatever keeps making the date wrong?';
+const RESTATE2 = `You want to name the one constraint that keeps moving the beta date, and leave with an owner for it.`;
+const CLARIFY2 = 'Who has to say no for that constraint to actually change?';
+const CHALLENGES = [
+  'Nobody has disagreed with the scope cut yet. Is that agreement, or is it the room deferring to the loudest voice?',
+  `${QUIET.name} has ${QUIET.share.toFixed(1)}% of the words so far. What does the plan look like from where they are sitting?`
+];
+const WHY = `Highest share of the room's words in this meeting at ${TOP.share.toFixed(1)}%, and the only person to speak in every phase of it.`;
+
+/* One turn per speaker rather than the first three turns. Taken in order, the
+   first three content turns in this meeting are all the same person, which is a
+   true fact about it and a useless demonstration of a thread. */
+const talkers = (() => {
+  const seen = new Set(), out = [];
+  for (const t of CONTENT) {
+    if (seen.has(t.speaker)) continue;
+    seen.add(t.speaker);
+    out.push(t);
+    if (out.length === 3) break;
+  }
+  return out;
+})();
+
+el('flow').innerHTML = `
+  <div class="step done">
+    <span class="num">1</span>
+    <div class="card ask">
+      <span class="steplabel">Step 1 — ask</span>
+      <h3>Ask your question</h3>
+      <textarea maxlength="2000" readonly>${esc(ASK)}</textarea>
+      <div class="counter">${ASK.length} / 2000</div>
+      <div class="submit"><button class="btn btn-amber" style="width:100px;justify-content:center" disabled>Ask &rarr;</button></div>
+    </div>
+  </div>
+
+  <div class="step done">
+    <span class="num">2</span>
+    <div class="card ai">
+      <span class="steplabel">Step 2 — ai response</span>
+      <div class="block"><span class="lab">Idea says:</span><div class="body">${esc(RESTATE)}</div></div>
+      <div class="thin"></div>
+      <div class="clar"><span class="lab">To make sure I understand:</span><div class="body">${esc(CLARIFY)}</div></div>
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="num">3</span>
+    <div class="card">
+      <span class="steplabel">Step 3 — confirm or refine</span>
+      <div class="checkrow">
+        <span class="check" id="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span>
+        <span class="lab">Yes, this captures what I'm looking for — proceed</span>
+      </div>
+      <div class="orsep">— or —</div>
+      <div class="refine">
+        <textarea maxlength="2000" placeholder="Rephrase your question, add details, or clarify what you meant…"></textarea>
+        <div class="actions">
+          <button class="btn btn-onavy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.5l-8.5 8.5a5 5 0 0 1-7-7l9-9a3.5 3.5 0 0 1 5 5l-9 9a2 2 0 0 1-3-3l8-8"/></svg>
+            Attach Document
+          </button>
+          <button class="btn btn-navy" id="rec"><span class="reddot"></span>Record</button>
+          <button class="btn btn-oamber" id="stop" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zM19 11a7 7 0 0 1-14 0M12 18v4"/></svg>
+            Stop Recording <span class="reddot" id="stopdot" style="display:none"></span>
+          </button>
+        </div>
+        <div class="transcript" id="tx" hidden>
+          <span class="lab">Transcript:</span>
+          <div class="txt" id="txt"></div>
+        </div>
+        <p class="hint">Audio will be transcribed and added to the project knowledge base</p>
+        <div class="submit"><button class="btn btn-amber">Update &amp; Re-Ask &rarr;</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="num">4</span>
+    <div class="card ai">
+      <span class="steplabel">Step 4 — updated response</span>
+      <div class="block"><span class="lab">Updated understanding:</span><div class="body">${esc(RESTATE2)}</div></div>
+      <div class="thin"></div>
+      <div class="clar"><span class="lab">To make sure I understand:</span><div class="body">${esc(CLARIFY2)}</div></div>
+      <div class="collab">
+        <span class="lab">Suggested Collaborator:</span>
+        <div class="who">
+          <span class="ava" style="width:36px;height:36px;border-radius:50%;background:${shade(TOP.name)};color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center">${esc(initials(TOP.name))}</span>
+          <span class="nm">${esc(TOP.name)}</span>
+        </div>
+        <div class="why">${esc(WHY)}</div>
+        <div class="submit" style="justify-content:flex-start;margin-top:10px">
+          <button class="btn btn-amber">Add ${esc(TOP.name.split(' ')[0])} to Conversation &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <span class="num">5</span>
+    <div class="card" style="box-shadow:0 4px 16px rgba(0,0,0,.12)">
+      <span class="steplabel">Step 5 — collaboration</span>
+      <div class="seclabel"><span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:13px;height:13px"><path d="M16 21v-2a4 4 0 0 0-8 0v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.9"/></svg>
+        Collaboration
+      </span></div>
+
+      ${talkers.map((t, i) => `
+        <div class="msg">
+          <span class="ava" style="background:${shade(t.speaker)}">${esc(initials(t.speaker))}</span>
+          <span class="body" style="flex:1;min-width:0">
+            <span class="head">
+              <span class="nm">${esc(t.speaker)}</span>
+              <span class="role">${t.questions ? 'asked a question' : 'made a point'}</span>
+              <span class="ts">${mmss(t.start_s)}</span>
+            </span>
+            <div class="txt">${esc(t.text)}</div>
+          </span>
+        </div>
+        ${i === 0 ? `<div class="challenge">
+          <span class="lab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+            Challenge
+          </span>
+          <div class="q">${esc(CHALLENGES[0])}</div>
+        </div>` : ''}`).join('')}
+
+      <div class="msg">
+        <span class="ava" style="background:${shade(QUIET.name)}">${esc(initials(QUIET.name))}</span>
+        <span class="body" style="flex:1;min-width:0">
+          <span class="head">
+            <span class="nm">${esc(QUIET.name)}</span>
+            <span class="role">audio recorded</span>
+            <span class="ts">${mmss(CONTENT[CONTENT.length - 1].start_s)}</span>
+          </span>
+          <div class="wave">${Array.from({length:34}, (_,i) => `<i style="height:${4 + ((i*7)%9) * 2}px"></i>`).join('')}</div>
+          <div class="tx">${esc(CONTENT[CONTENT.length - 1].text)}</div>
+        </span>
+      </div>
+
+      <div class="challenge">
+        <span class="lab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+          Challenge
+        </span>
+        <div class="q">${esc(CHALLENGES[1])}</div>
+      </div>
+
+      <div class="pinned">
+        <button class="mic" id="mic" aria-label="Record">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zM19 11a7 7 0 0 1-14 0M12 18v4"/></svg>
+        </button>
+        <input placeholder="Add your response or new info…" aria-label="Add your response">
+        <button class="btn btn-amber">Send</button>
+      </div>
+    </div>
+  </div>`;
+
+/* Enough behaviour to show the states the spec defines, nothing more. */
+el('check').addEventListener('click', () => el('check').classList.toggle('on'));
+
+el('rec').addEventListener('click', () => {
+  el('rec').disabled = true;
+  el('stop').disabled = false;
+  el('stopdot').style.display = '';
+  el('stopdot').classList.add('pulse');
+});
+el('stop').addEventListener('click', () => {
+  el('rec').disabled = false;
+  el('stop').disabled = true;
+  el('stopdot').style.display = 'none';
+  el('tx').hidden = false;
+  el('txt').textContent = CONTENT[1] ? CONTENT[1].text : '';
+});
+el('mic').addEventListener('click', () => el('mic').classList.toggle('rec'));
+el('save').addEventListener('click', () => {
+  el('save').textContent = '✓ Saved';
+  setTimeout(() => el('save').textContent = 'Save Project', 1600);
+});
+
+el('projName').value = D.summary.title;
+el('projGoal').value = `${D.summary.date} · ${D.summary.attendee_count} attendees · ${D.summary.duration_min} min · dominant speaker ${TOP.name} at ${TOP.share.toFixed(1)}% of words`;
+</script>
+</body>
+</html>
