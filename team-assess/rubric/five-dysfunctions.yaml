@@ -1,6 +1,20 @@
 framework: five-dysfunctions
-version: "0.8"
-description: "Lencioni's Five Dysfunctions of a Team"
+version: "0.9"
+description: >
+  Lencioni's Five Dysfunctions of a Team, with each dimension expanded into
+  observable behavioral facets drawn from the OBM Behavior Coding Reference.
+  Dimension keys, ordering, and the 1-5 scale are unchanged from v0.8; the
+  signal lists are now stated as observable acts rather than dispositions.
+
+sources:
+  - name: "The Five Dysfunctions of a Team (Lencioni)"
+    contributes: "Dimension set, pyramid ordering, and the 1-5 scoring scale."
+  - name: "OBM Behavior Coding Reference — 120 Reliable Entries"
+    path: "docs/superpowers/specs/OBM_Behavior_Taxonomy_Coding_Reference.md"
+    contributes: >
+      Per-dimension behavioral facets and the observable + / - indicators.
+      All 120 entries are carried into the facets below; healthy_signals and
+      dysfunction_signals are verbatim subsets of those facet entries.
 
 dimensions:
   trust:
@@ -9,25 +23,70 @@ dimensions:
     description: >
       Team members are unwilling to be vulnerable with one another.
       Without trust, no other healthy team behavior is possible.
+    facets:
+      - name: "Vulnerability & Psychological Safety"
+        healthy:
+          - Admits a mistake, error, or gap in their own knowledge unprompted
+          - Asks a clarifying question that risks appearing uninformed
+          - Explicitly asks a named person for help or additional resources
+          - Proposes an unproven or half-formed idea and labels it as such
+          - Responds to another's admitted mistake with a question or offer of help rather than criticism
+          - Names their own fallibility to invite challenge ("I may well be wrong here — push back on me")
+        dysfunction:
+          - Attributes negative intent to a teammate without evidence ("he did that deliberately")
+      - name: "Contractual Trust — Reliability of Character"
+        healthy:
+          - States a commitment with a specific owner and a specific date
+          - Reports back on a previously made commitment without being asked
+          - Renegotiates a commitment they cannot meet, before the deadline rather than after
+          - Delegates a task together with the authority and resources needed to do it
+          - Declines a request explicitly rather than accepting it and letting it lapse
+      - name: "Communication Trust — Disclosure"
+        healthy:
+          - Shares information relevant to another's work without being asked for it
+          - Gives direct, specific feedback to a person's face rather than about them
+          - Receives feedback without defending, and asks a follow-up question about it
+          - States explicitly what they do not know or the limits of their information
+      - name: "Competence Trust — Capability"
+        healthy:
+          - Asks a specific named person for their expert judgment in their domain
+          - Visibly defers to another's expertise on that person's own subject
+          - Seeks input from those affected before making a decision that changes their work
+        dysfunction:
+          - Requests granular status or approval on work that has already been delegated (micromanagement)
+          - Makes a decision affecting a person's work without consulting or informing them
+      - name: "Humility & Status Behavior"
+        healthy:
+          - Attributes a success to a specific teammate by name
+          - Corrects a public misattribution of credit in someone else's favor
+        dysfunction:
+          - Redirects a discussion toward their own accomplishments or standing
+          - Summarizes team work without naming its contributors
     healthy_signals:
-      - "Admitting mistakes, weaknesses, or gaps in knowledge"
-      - "Asking teammates for help without defensiveness"
-      - "Giving colleagues benefit of the doubt"
-      - "Taking risks and showing vulnerability in group settings"
-      - "Acknowledging uncertainty or areas of personal limitation"
+      - Admits a mistake, error, or gap in their own knowledge unprompted
+      - Explicitly asks a named person for help or additional resources
+      - States a commitment with a specific owner and a specific date
+      - Reports back on a previously made commitment without being asked
+      - Shares information relevant to another's work without being asked for it
+      - Gives direct, specific feedback to a person's face rather than about them
+      - Visibly defers to another's expertise on that person's own subject
+      - Attributes a success to a specific teammate by name
     dysfunction_signals:
-      - "Concealing mistakes or covering up failures"
-      - "Reluctance to ask for help; struggling alone"
-      - "Jumping to negative conclusions about colleagues' motives"
-      - "Defensive or guarded communication patterns"
-      - "Avoiding or dreading one-on-ones and feedback conversations"
+      - Attributes negative intent to a teammate without evidence ("he did that deliberately")
+      - Requests granular status or approval on work that has already been delegated (micromanagement)
+      - Makes a decision affecting a person's work without consulting or informing them
+      - Redirects a discussion toward their own accomplishments or standing
+      - Summarizes team work without naming its contributors
     scoring_guidance: |
       Score 1-2: Clear guardedness, blame-orientation, or cover-up behavior present.
-        Members do not admit mistakes. Asking for help is rare or absent.
+        Members do not admit mistakes. Asking for help is rare or absent. Dysfunction
+        markers appear in most facets; healthy behavior is absent or confined to one facet.
       Score 3: Mixed signals — some vulnerability present but also visible guardedness.
-        Trust exists in pockets but is not team-wide.
-      Score 4-5: Team openly admits mistakes, asks for help freely, gives benefit
-        of the doubt as default. Vulnerability is normalized.
+        Healthy behavior is concentrated in one or two facets (commonly Contractual Trust)
+        while others show only dysfunction markers. Trust exists in pockets, not team-wide.
+      Score 4-5: Team openly admits mistakes, asks for help freely, gives benefit of the
+        doubt as default. Vulnerability is normalized. Healthy behavior is observable
+        across most facets, including Humility and Competence Trust.
 
   conflict:
     name: "Fear of Conflict"
@@ -35,24 +94,73 @@ dimensions:
     description: >
       Team avoids direct, unfiltered debate of ideas. Without healthy conflict,
       commitment suffers because buy-in never forms through genuine debate.
+    facets:
+      - name: "Surfacing Disagreement"
+        healthy:
+          - States disagreement with a proposal in the same meeting where the proposal is made
+          - Names an unspoken concern the group has been circling ("nobody's saying it, but...")
+          - Asks another person directly for their dissenting view ("what's the case against this?")
+          - Explicitly invites disagreement or assigns someone to argue the opposing case
+          - Voices a dissenting opinion against the apparent consensus
+        dysfunction:
+          - Changes the subject or defers to a later date when a contentious topic surfaces
+      - name: "Quality of Debate"
+        healthy:
+          - States observable facts before stating a conclusion drawn from them
+          - Explicitly separates observation from interpretation ("the story I'm telling myself is...")
+          - Asks the other party for their reasoning or how they got to their position
+          - Offers a concrete alternative proposal in response to an objection
+          - Supplies factual information or orientation to settle a factual dispute
+        dysfunction:
+          - Attacks the person rather than the proposal, including labeling ("that's a typical finance answer")
+          - Attributes a motive to the other party in order to discredit their argument
+      - name: "Tension Management & Repair"
+        healthy:
+          - Expresses solidarity or support for a person while disagreeing with their position
+          - Names rising tension explicitly and proposes a process remedy ("let's take five and come back")
+          - Apologizes for a specific act, naming the act
+      - name: "Destructive Conflict — Aggression"
+        dysfunction:
+          - Interrupts or talks over a speaker before they have finished
+          - Reprimands or criticizes a person in front of the group
+          - Makes a demeaning or nasty remark directed at a person
+          - Sends a demeaning or hostile written message (email, chat) about or to a colleague
+      - name: "Destructive Conflict — Withdrawal & Incivility"
+        dysfunction:
+          - Stops contributing to a discussion after being challenged
+      - name: "Resolution & Closure"
+        healthy:
+          - Summarizes the points of disagreement and states what remains unresolved
+          - Proposes an explicit decision rule for resolving the dispute (who decides, by when)
+        dysfunction:
+          - Allows a live disagreement to go unnamed at the close of the meeting
     healthy_signals:
-      - "Direct disagreement expressed openly in meetings"
-      - "Ideas challenged on merit without personal attack"
-      - "Team debates and then reaches clear resolution"
-      - "Minority positions voiced and heard before decisions"
-      - "Conflict is visible and resolved, not suppressed"
+      - States disagreement with a proposal in the same meeting where the proposal is made
+      - Names an unspoken concern the group has been circling ("nobody's saying it, but...")
+      - Asks another person directly for their dissenting view ("what's the case against this?")
+      - States observable facts before stating a conclusion drawn from them
+      - Asks the other party for their reasoning or how they got to their position
+      - Offers a concrete alternative proposal in response to an objection
+      - Expresses solidarity or support for a person while disagreeing with their position
+      - Summarizes the points of disagreement and states what remains unresolved
     dysfunction_signals:
-      - "Meetings end in artificial harmony with no real debate"
-      - "Disagreements surface in side conversations, not the room"
-      - "Personal criticism substitutes for idea debate"
-      - "Issues go unresolved and resurface repeatedly"
-      - "Team avoids sensitive topics; walking on eggshells"
+      - Changes the subject or defers to a later date when a contentious topic surfaces
+      - Attacks the person rather than the proposal, including labeling ("that's a typical finance answer")
+      - Attributes a motive to the other party in order to discredit their argument
+      - Interrupts or talks over a speaker before they have finished
+      - Reprimands or criticizes a person in front of the group
+      - Stops contributing to a discussion after being challenged
+      - Allows a live disagreement to go unnamed at the close of the meeting
     scoring_guidance: |
-      Score 1-2: Conflict is avoided or political. Real disagreements suppressed.
+      Score 1-2: Conflict is avoided or political. Real disagreements suppressed, or the
+        Destructive Conflict facets dominate — aggression and withdrawal in place of debate.
         Decisions made without genuine buy-in debate.
       Score 3: Some debate occurs but often incomplete; important topics sometimes skirted.
-      Score 4-5: Team engages in direct, passionate debate of ideas. Conflict is
-        productive and resolved. Decisions emerge from genuine buy-in.
+        Disagreement surfaces but Resolution & Closure and Tension Management facets show
+        little healthy behavior — arguments start and are never explicitly closed.
+      Score 4-5: Team engages in direct, passionate debate of ideas, with healthy behavior
+        across Surfacing, Quality of Debate, and Resolution facets, and Destructive Conflict
+        markers largely absent. Conflict is productive and resolved.
 
   commitment:
     name: "Lack of Commitment"
@@ -60,24 +168,68 @@ dimensions:
     description: >
       Without having had their say in genuine conflict, team members do not commit
       to decisions — even ones they publicly agree to.
+    facets:
+      - name: "Clarity of Mission, Goals & Roles"
+        healthy:
+          - States the team's objective or deliverable in explicit terms
+          - Asks what the priority order is when two goals conflict
+          - Names who owns a specific piece of work
+          - Restates a decision at the close of a discussion to confirm shared understanding
+          - Identifies the resources and constraints available for the task
+          - Asks for a decision to be stated explicitly when it has only been implied
+        dysfunction:
+          - Closes a meeting with no explicit statement of what was decided
+      - name: "Strategy & Planning"
+        healthy:
+          - Proposes a concrete plan or sequence of steps for achieving a stated goal
+          - Proposes a contingency ("if the vendor slips, we fall back to X")
+          - Assigns a named next step with an owner and a date
+        dysfunction:
+          - Discusses a goal at length without any statement of how it will be achieved
+      - name: "Buy-In & Decision Closure"
+        healthy:
+          - States support for a decision they argued against ("I still disagree, and I'm in")
+          - Asks each participant explicitly whether they can commit to the decision
+          - Sets a deadline for a decision to prevent drift toward consensus-seeking
+          - Commits to a decision made under uncertainty, naming it as reversible if wrong
+        dysfunction:
+          - Proposes an action ("we should do X") that no one takes ownership of
+      - name: "Shared Vision & Meaning"
+        healthy:
+          - Describes a specific picture of a desired future state
+          - Connects a request to a stated value or interest of the person being asked
+          - States why the work matters to them personally
+          - States the organizational or customer consequence of the team's work
+        dysfunction:
+          - Assigns work with no stated rationale or connection to a larger purpose
+      - name: "Discretionary Engagement"
+        healthy:
+          - Raises a problem that sits outside their own area of responsibility
+          - Asks for more responsibility or scope
     healthy_signals:
-      - "Clear decisions made with explicit agreement"
-      - "Follow-through on commitments without reminders"
-      - "Alignment after debate, even when not everyone agreed initially"
-      - "Deadlines and agreements treated as firm"
-      - "Revisiting decisions is rare and requires new information"
+      - States the team's objective or deliverable in explicit terms
+      - Names who owns a specific piece of work
+      - Restates a decision at the close of a discussion to confirm shared understanding
+      - Proposes a concrete plan or sequence of steps for achieving a stated goal
+      - Assigns a named next step with an owner and a date
+      - States support for a decision they argued against ("I still disagree, and I'm in")
+      - Asks each participant explicitly whether they can commit to the decision
+      - States the organizational or customer consequence of the team's work
     dysfunction_signals:
-      - "Decisions relitigated repeatedly without new information"
-      - "Ambiguity about what was actually decided"
-      - "Stated agreement not followed by action"
-      - "Dependencies missed because commitments were not clear"
-      - "Frequent 'I thought we decided X' confusion"
+      - Closes a meeting with no explicit statement of what was decided
+      - Discusses a goal at length without any statement of how it will be achieved
+      - Proposes an action ("we should do X") that no one takes ownership of
+      - Assigns work with no stated rationale or connection to a larger purpose
     scoring_guidance: |
       Score 1-2: Decisions frequently revisited. Ambiguity about commitments is normal.
-        Follow-through is unreliable; stated agreements often not enacted.
-      Score 3: Commitment is inconsistent — clear on some things, fuzzy on others.
-      Score 4-5: Team makes clear decisions and follows through. Alignment is genuine.
-        Revisiting decisions is the exception, not the norm.
+        Follow-through is unreliable; stated agreements often not enacted. Actions are
+        proposed without owners and meetings close without stated decisions.
+      Score 3: Commitment is inconsistent — clear on some things, fuzzy on others. Typically
+        Clarity and Strategy facets show healthy behavior while Buy-In & Decision Closure
+        does not: plans exist, but explicit commitment to them is never asked for.
+      Score 4-5: Team makes clear decisions and follows through, with named owners and dates,
+        explicit buy-in checks, and stated rationale. Healthy behavior appears across most
+        facets including Shared Vision. Revisiting decisions is the exception, not the norm.
 
   accountability:
     name: "Avoidance of Accountability"
@@ -85,25 +237,65 @@ dimensions:
     description: >
       Without commitment, people do not hold peers accountable — they rationalize
       missed expectations as understandable given unclear agreements.
+    facets:
+      - name: "Peer-to-Peer Accountability"
+        healthy:
+          - Names a specific missed commitment directly to the person responsible
+          - Raises a peer's behavior that is hurting the team, to that peer
+          - Asks a peer for a revised commitment after a miss
+          - Verbally backs a colleague who has just raised an accountability issue
+          - Asks the team to hold them personally to a standard they have just set
+      - name: "Expectation Setting (Antecedents)"
+        healthy:
+          - States the standard or criteria for "done" before the work begins
+          - Confirms the other person's understanding of an expectation rather than assuming it
+          - States the consequence attached to meeting or missing a standard, in advance
+        dysfunction:
+          - Assigns work without stating what a good outcome would look like
+      - name: "Performance Monitoring"
+        healthy:
+          - Examines the actual work product rather than accepting a status summary
+          - Asks specific, evidence-seeking follow-up questions about a status claim
+          - Tracks progress against a named milestone in the meeting
+      - name: "Consequences & Feedback Delivery"
+        healthy:
+          - Delivers specific positive feedback promptly after the performance it refers to
+          - Delivers corrective feedback tied to a specific observed act
+          - Explicitly links a consequence to a behavior ("because that shipped on time, the client renewed")
+        dysfunction:
+          - Delivers feedback long after the event, or only at formal review time
+          - Delivers generalized praise or criticism without naming a specific act
+      - name: "Ownership vs. Blame-Shifting"
+        healthy:
+          - States plainly that a miss was theirs, without qualification
+          - Separates diagnosis of a failure from attribution of fault
+          - Accepts corrective feedback without counter-argument, and states what they will change
+        dysfunction:
+          - Responds to an accountability challenge with a counter-accusation
     healthy_signals:
-      - "Team members call out missed commitments directly and promptly"
-      - "Peer feedback given without escalating to management"
-      - "High standards expected of all team members equally"
-      - "Underperformance is addressed rather than worked around"
-      - "Accountability is horizontal, not just top-down"
+      - Names a specific missed commitment directly to the person responsible
+      - Raises a peer's behavior that is hurting the team, to that peer
+      - Verbally backs a colleague who has just raised an accountability issue
+      - States the standard or criteria for "done" before the work begins
+      - Examines the actual work product rather than accepting a status summary
+      - Delivers corrective feedback tied to a specific observed act
+      - States plainly that a miss was theirs, without qualification
+      - Accepts corrective feedback without counter-argument, and states what they will change
     dysfunction_signals:
-      - "Poor performance or missed commitments tolerated without comment"
-      - "Issues escalated to manager rather than addressed peer-to-peer"
-      - "Resentment builds silently instead of being raised directly"
-      - "Standards applied inconsistently across team members"
-      - "People work around underperformers rather than addressing it"
+      - Assigns work without stating what a good outcome would look like
+      - Delivers feedback long after the event, or only at formal review time
+      - Delivers generalized praise or criticism without naming a specific act
+      - Responds to an accountability challenge with a counter-accusation
     scoring_guidance: |
       Score 1-2: Accountability is absent or management-dependent. Peer feedback rare.
-        Underperformance goes unaddressed; team works around problems.
-      Score 3: Some peer accountability exists but inconsistently. Some issues surfaced,
-        others silently tolerated.
-      Score 4-5: Team holds each other accountable directly and promptly. Standards
-        are high and applied equally. Feedback is normal, not an event.
+        Underperformance goes unaddressed; team works around problems. Expectations are
+        assigned without a definition of done, and feedback arrives late or not at all.
+      Score 3: Some peer accountability exists but inconsistently. Commonly Expectation
+        Setting and Performance Monitoring show healthy behavior while Peer-to-Peer
+        Accountability does not — misses are visible but raised only upward, not sideways.
+      Score 4-5: Team holds each other accountable directly and promptly, with standards set
+        in advance, work product actually examined, and feedback tied to specific acts.
+        Ownership behavior outweighs blame-shifting. Feedback is normal, not an event.
 
   results:
     name: "Inattention to Results"
@@ -111,21 +303,75 @@ dimensions:
     description: >
       Without accountability, team members prioritize personal status, ego, or
       departmental concerns over collective team outcomes.
+    facets:
+      - name: "Collective Goal Focus vs. Individual Status"
+        healthy:
+          - Subordinates their own function's or unit's interest to a stated team outcome
+          - Refers to a shared metric or scoreboard when arguing a position
+          - Redirects a discussion from individual contribution back to collective outcome
+        dysfunction:
+          - Argues a position on the basis of their own status, headcount, budget, or visibility
+      - name: "Dependability & Delivery"
+        healthy:
+          - Delivers a committed item on the stated date and reports it
+          - Flags a slip early, with a revised date
+          - Takes care of shared resources, tools, or documentation without being asked
+        dysfunction:
+          - Misses a committed date without prior notice
+      - name: "Coordination & Backup Behavior"
+        healthy:
+          - Notices a teammate is overloaded and offers or takes specific work from them
+          - Helps a new member get oriented
+          - States what they need from whom and by when, to synchronize a handoff
+          - Gives advance notice to people whose work will be affected by a change they are making
+          - Monitors tools, resources, or external conditions and reports an emerging risk
+        dysfunction:
+          - Completes their own task while a dependent teammate visibly fails
+      - name: "Progress Monitoring & Adaptation"
+        healthy:
+          - Reports actual progress against plan, including bad news
+          - Proposes a change of approach when monitoring shows the plan is failing
+        dysfunction:
+          - Reports status in terms of activity rather than outcome ("we've had a lot of meetings on it")
+      - name: "Recognition & Collective Motivation"
+        healthy:
+          - Publicly recognizes a specific individual's contribution to a result
+          - Marks a team milestone or accomplishment explicitly
+          - Expresses confidence in the team's capability to achieve the goal
+          - Names and defuses frustration or stress in the group
+        dysfunction:
+          - Passes over a completed result with no acknowledgment
+      - name: "Continuous Improvement & Learning from Failure"
+        healthy:
+          - Proposes a change to an existing process or way of working
+          - Frames a failure as information and states what was learned from it
+          - Runs or participates in a retrospective that produces a named, owned change
+          - Takes a considered risk on an unproven approach and says so
+        dysfunction:
+          - Treats a failure solely as a fault to be assigned
     healthy_signals:
-      - "Decisions explicitly weighed against team goals"
-      - "Individual recognition deferred to team achievement"
-      - "Cross-functional help offered without being asked"
-      - "Team outcome treated as the primary success metric"
-      - "Members celebrate team wins, not just personal milestones"
+      - Subordinates their own function's or unit's interest to a stated team outcome
+      - Refers to a shared metric or scoreboard when arguing a position
+      - Flags a slip early, with a revised date
+      - Notices a teammate is overloaded and offers or takes specific work from them
+      - Gives advance notice to people whose work will be affected by a change they are making
+      - Reports actual progress against plan, including bad news
+      - Publicly recognizes a specific individual's contribution to a result
+      - Frames a failure as information and states what was learned from it
     dysfunction_signals:
-      - "Decisions optimized for individual or departmental benefit"
-      - "Team goal discussions crowded out by status and visibility concerns"
-      - "Reluctance to help other sub-teams or functions"
-      - "Personal metrics prioritized over shared outcomes"
-      - "Team wins attributed to individuals rather than collective effort"
+      - Argues a position on the basis of their own status, headcount, budget, or visibility
+      - Misses a committed date without prior notice
+      - Completes their own task while a dependent teammate visibly fails
+      - Reports status in terms of activity rather than outcome ("we've had a lot of meetings on it")
+      - Passes over a completed result with no acknowledgment
+      - Treats a failure solely as a fault to be assigned
     scoring_guidance: |
       Score 1-2: Individual or departmental interests dominate. Team outcome is nominal.
-        Recognition, credit, and decisions skew heavily toward personal benefit.
-      Score 3: Team outcomes matter but compete visibly with individual interests.
-      Score 4-5: Team success is the clear primary metric. Members actively support
-        each other and defer personal recognition to collective achievement.
+        Recognition, credit, and decisions skew heavily toward personal benefit. Status is
+        reported as activity, dates slip without notice, and failures are treated as faults.
+      Score 3: Team outcomes matter but compete visibly with individual interests. Commonly
+        Dependability and Progress Monitoring show healthy behavior while Coordination &
+        Backup and Recognition do not — people deliver their own piece and little more.
+      Score 4-5: Team success is the clear primary metric, argued from shared metrics.
+        Members back each other up, flag risks early, report bad news, recognize specific
+        contributions, and convert failures into named process changes.

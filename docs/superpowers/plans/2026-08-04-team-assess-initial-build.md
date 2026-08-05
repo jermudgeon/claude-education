@@ -791,11 +791,28 @@ Healthy signals:
 
 Dysfunction signals:
   - {dysfunctional}
-
+{_format_facets(dim.get("facets"))}
 Scoring guidance:
 {dim['scoring_guidance']}""")
     return "\n\n".join(parts)
+
+
+def _format_facets(facets: list | None) -> str:
+    """Emit the rubric's observable behavioral facets (v0.9+). Empty string if absent."""
+    if not facets:
+        return ""
+    blocks = ["\nBehavioral facets (observable acts, + healthy / - dysfunctional):"]
+    for facet in facets:
+        lines = [f"  {facet['name']}:"]
+        lines += [f"    + {b}" for b in facet.get("healthy") or []]
+        lines += [f"    - {b}" for b in facet.get("dysfunction") or []]
+        blocks.append("\n".join(lines))
+    return "\n".join(blocks) + "\n"
 ```
+
+Note: the rubric's `healthy_signals` / `dysfunction_signals` are a verbatim subset of the facet
+entries, so the two sections above intentionally overlap — the rollup is the short list the model
+scores against, the facets give it the full observable vocabulary for evidence extraction.
 
 - [ ] **Step 4: Run tests — verify they pass**
 
