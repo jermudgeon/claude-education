@@ -12,6 +12,8 @@ def test_scan_returns_labelled_content(tmp_path):
     assert "Team notes here" in result
     assert "retro.md" in result
     assert "Went well." in result
+    assert "--- notes.txt ---" in result
+    assert "--- retro.md ---" in result
 
 def test_scan_skips_unsupported_extensions(tmp_path):
     (tmp_path / "notes.txt").write_text("Valid content", encoding="utf-8")
@@ -27,3 +29,11 @@ def test_scan_empty_directory_returns_empty_string(tmp_path):
 def test_scan_raises_for_nonexistent_directory():
     with pytest.raises(NotADirectoryError):
         scan_directory(Path("/nonexistent/path"))
+
+def test_scan_returns_files_in_alphabetical_order(tmp_path):
+    (tmp_path / "zebra.txt").write_text("Zebra content", encoding="utf-8")
+    (tmp_path / "alpha.txt").write_text("Alpha content", encoding="utf-8")
+    result = scan_directory(tmp_path)
+    alpha_pos = result.index("alpha.txt")
+    zebra_pos = result.index("zebra.txt")
+    assert alpha_pos < zebra_pos

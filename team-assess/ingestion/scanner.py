@@ -27,7 +27,10 @@ def scan_directory(directory: Path) -> str:
         reader = READERS.get(file_path.suffix.lower())
         if reader is None:
             continue
-        content = reader(file_path)
+        try:
+            content = reader(file_path)
+        except Exception as e:
+            raise UnsupportedFormatError(f"Failed to read {file_path.name}: {e}") from e
         if content.strip():
             sections.append(f"--- {file_path.name} ---\n{content}")
 
