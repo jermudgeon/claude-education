@@ -1,0 +1,131 @@
+framework: five-dysfunctions
+version: "0.8"
+description: "Lencioni's Five Dysfunctions of a Team"
+
+dimensions:
+  trust:
+    name: "Absence of Trust"
+    order: 1
+    description: >
+      Team members are unwilling to be vulnerable with one another.
+      Without trust, no other healthy team behavior is possible.
+    healthy_signals:
+      - "Admitting mistakes, weaknesses, or gaps in knowledge"
+      - "Asking teammates for help without defensiveness"
+      - "Giving colleagues benefit of the doubt"
+      - "Taking risks and showing vulnerability in group settings"
+      - "Acknowledging uncertainty or areas of personal limitation"
+    dysfunction_signals:
+      - "Concealing mistakes or covering up failures"
+      - "Reluctance to ask for help; struggling alone"
+      - "Jumping to negative conclusions about colleagues' motives"
+      - "Defensive or guarded communication patterns"
+      - "Avoiding or dreading one-on-ones and feedback conversations"
+    scoring_guidance: |
+      Score 1-2: Clear guardedness, blame-orientation, or cover-up behavior present.
+        Members do not admit mistakes. Asking for help is rare or absent.
+      Score 3: Mixed signals — some vulnerability present but also visible guardedness.
+        Trust exists in pockets but is not team-wide.
+      Score 4-5: Team openly admits mistakes, asks for help freely, gives benefit
+        of the doubt as default. Vulnerability is normalized.
+
+  conflict:
+    name: "Fear of Conflict"
+    order: 2
+    description: >
+      Team avoids direct, unfiltered debate of ideas. Without healthy conflict,
+      commitment suffers because buy-in never forms through genuine debate.
+    healthy_signals:
+      - "Direct disagreement expressed openly in meetings"
+      - "Ideas challenged on merit without personal attack"
+      - "Team debates and then reaches clear resolution"
+      - "Minority positions voiced and heard before decisions"
+      - "Conflict is visible and resolved, not suppressed"
+    dysfunction_signals:
+      - "Meetings end in artificial harmony with no real debate"
+      - "Disagreements surface in side conversations, not the room"
+      - "Personal criticism substitutes for idea debate"
+      - "Issues go unresolved and resurface repeatedly"
+      - "Team avoids sensitive topics; walking on eggshells"
+    scoring_guidance: |
+      Score 1-2: Conflict is avoided or political. Real disagreements suppressed.
+        Decisions made without genuine buy-in debate.
+      Score 3: Some debate occurs but often incomplete; important topics sometimes skirted.
+      Score 4-5: Team engages in direct, passionate debate of ideas. Conflict is
+        productive and resolved. Decisions emerge from genuine buy-in.
+
+  commitment:
+    name: "Lack of Commitment"
+    order: 3
+    description: >
+      Without having had their say in genuine conflict, team members do not commit
+      to decisions — even ones they publicly agree to.
+    healthy_signals:
+      - "Clear decisions made with explicit agreement"
+      - "Follow-through on commitments without reminders"
+      - "Alignment after debate, even when not everyone agreed initially"
+      - "Deadlines and agreements treated as firm"
+      - "Revisiting decisions is rare and requires new information"
+    dysfunction_signals:
+      - "Decisions relitigated repeatedly without new information"
+      - "Ambiguity about what was actually decided"
+      - "Stated agreement not followed by action"
+      - "Dependencies missed because commitments were not clear"
+      - "Frequent 'I thought we decided X' confusion"
+    scoring_guidance: |
+      Score 1-2: Decisions frequently revisited. Ambiguity about commitments is normal.
+        Follow-through is unreliable; stated agreements often not enacted.
+      Score 3: Commitment is inconsistent — clear on some things, fuzzy on others.
+      Score 4-5: Team makes clear decisions and follows through. Alignment is genuine.
+        Revisiting decisions is the exception, not the norm.
+
+  accountability:
+    name: "Avoidance of Accountability"
+    order: 4
+    description: >
+      Without commitment, people do not hold peers accountable — they rationalize
+      missed expectations as understandable given unclear agreements.
+    healthy_signals:
+      - "Team members call out missed commitments directly and promptly"
+      - "Peer feedback given without escalating to management"
+      - "High standards expected of all team members equally"
+      - "Underperformance is addressed rather than worked around"
+      - "Accountability is horizontal, not just top-down"
+    dysfunction_signals:
+      - "Poor performance or missed commitments tolerated without comment"
+      - "Issues escalated to manager rather than addressed peer-to-peer"
+      - "Resentment builds silently instead of being raised directly"
+      - "Standards applied inconsistently across team members"
+      - "People work around underperformers rather than addressing it"
+    scoring_guidance: |
+      Score 1-2: Accountability is absent or management-dependent. Peer feedback rare.
+        Underperformance goes unaddressed; team works around problems.
+      Score 3: Some peer accountability exists but inconsistently. Some issues surfaced,
+        others silently tolerated.
+      Score 4-5: Team holds each other accountable directly and promptly. Standards
+        are high and applied equally. Feedback is normal, not an event.
+
+  results:
+    name: "Inattention to Results"
+    order: 5
+    description: >
+      Without accountability, team members prioritize personal status, ego, or
+      departmental concerns over collective team outcomes.
+    healthy_signals:
+      - "Decisions explicitly weighed against team goals"
+      - "Individual recognition deferred to team achievement"
+      - "Cross-functional help offered without being asked"
+      - "Team outcome treated as the primary success metric"
+      - "Members celebrate team wins, not just personal milestones"
+    dysfunction_signals:
+      - "Decisions optimized for individual or departmental benefit"
+      - "Team goal discussions crowded out by status and visibility concerns"
+      - "Reluctance to help other sub-teams or functions"
+      - "Personal metrics prioritized over shared outcomes"
+      - "Team wins attributed to individuals rather than collective effort"
+    scoring_guidance: |
+      Score 1-2: Individual or departmental interests dominate. Team outcome is nominal.
+        Recognition, credit, and decisions skew heavily toward personal benefit.
+      Score 3: Team outcomes matter but compete visibly with individual interests.
+      Score 4-5: Team success is the clear primary metric. Members actively support
+        each other and defer personal recognition to collective achievement.
