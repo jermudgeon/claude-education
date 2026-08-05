@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Collaboration insights: demo on the Aurora Skills dataset</title>
+<title>Team Insights: the metric contract on the Aurora Skills dataset</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:ital,wght@0,400;0,450;0,600;0,700&display=swap" rel="stylesheet">
@@ -35,7 +35,8 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .provenance code{font-family:ui-monospace,Menlo,monospace;font-size:.72rem}
 
 header.top{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.brand{font-family:"PT Serif",Georgia,serif;font-size:1.05rem}
+.brand{font-family:"PT Serif",Georgia,serif;font-size:1.05rem;display:inline-flex;align-items:baseline;gap:.34em}
+.brand s{text-decoration-thickness:.08em;color:rgb(var(--fg)/.42)}
 .brand i{color:var(--aurora);font-style:normal}
 .tabs{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
 .tab{padding:8px 15px;border-radius:999px;border:1px solid var(--line);font-size:.82rem;color:rgb(var(--fg)/.6);transition:all .2s;min-height:40px}
@@ -136,7 +137,7 @@ tr:last-child td{border-bottom:0}
 </div>
 
 <header class="top">
-  <span class="brand">collaboration insights<i>.</i></span>
+  <span class="brand"><s>Claude</s> Team Insights<i>.</i></span>
   <span class="dim" style="font-size:.78rem">PRD 05 and PRD 06, running on the repo's own data</span>
   <div class="tabs">
     <button class="tab on" data-view="live">Live session</button>

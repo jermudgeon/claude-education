@@ -1,4 +1,4 @@
-# Demo: the metric contract running on the Aurora Skills dataset
+# ~~Claude~~ Team Insights: the metric contract on the Aurora Skills dataset
 
 A first pass at step 1 of the build order in
 `docs/superpowers/specs/2026-08-04-facilitator-and-scorer-integration.md`: compute PRD 05's metric

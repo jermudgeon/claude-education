@@ -99,7 +99,9 @@ Ship the trend feature after both, not before. This is the single most important
 
 ## Naming
 
-The three layers currently have no shared product name. Candidates are in the pull request description; the working names in this document are the PRD numbers deliberately, so nothing has to be renamed twice.
+The product is **~~Claude~~ Team Insights**, and the wordmark strikes through "Claude". The strike-through is the argument: the tool is not the thing in the room doing the work, the team is. It reads as a name and as a non-goal at the same time, which is the same position PRD 05 takes when it calls itself a team mirror rather than a manager's dashboard.
+
+The three layers keep their PRD numbers inside these documents. They are implementation layers, not products, and naming them separately would invite the boundary confusion this note exists to remove.
 
 ## Build order
 
