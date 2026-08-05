@@ -7,549 +7,609 @@ NOTE Blameless Practice Working Session — 2026-07-10
 <v Tomás Reyes>Okay, let's give it another minute for folks to join, then we'll get going.
 
 2
-00:01:14.700 --> 00:01:21.100
+00:00:56.800 --> 00:01:03.200
 <v Tomás Reyes>Alright, I think we've got most people — I see Sarah, Ben, Marcus. Let's get started.
 
 3
-00:01:21.100 --> 00:01:23.500
+00:01:03.200 --> 00:01:05.600
 <v Sarah Kowalski>Can everyone see my screen alright?
 
 4
-00:01:23.500 --> 00:01:24.700
+00:01:05.600 --> 00:01:06.800
 <v Tomás Reyes>Yep, looks good.
 
 5
-00:01:24.700 --> 00:01:34.700
+00:01:06.800 --> 00:01:16.800
 <v Tomás Reyes>Quick agenda: I want to get through the main topic, leave room for questions, and land on clear action items before we drop. Sound good?
 
 6
-00:01:38.100 --> 00:01:51.300
+00:01:21.700 --> 00:01:34.900
 <v Tomás Reyes>Recommendation one from the assessment: make surfacing mistakes safe. Here's the blameless incident-note template. Every incident gets one, no names attached to blame, the whole focus is the system that let it happen.
 
 7
-00:01:52.500 --> 00:01:58.100
-<v Sarah Kowalski>Sorry, can you say that last part again? You cut out for a second.
+00:01:35.700 --> 00:01:36.500
+<v Marcus Bell>Exactly.
 
 8
-00:02:01.200 --> 00:02:02.800
-<v Tomás Reyes>Sure — one sec.
-
-9
-00:02:07.200 --> 00:02:12.400
-<v Tomás Reyes>Let's not rathole on this — can we take the fine detail offline?
-
-10
-00:02:14.000 --> 00:02:18.800
-<v Sarah Kowalski>Is there a risk we're solving a problem we don't have yet?
-
-11
-00:02:21.300 --> 00:02:22.900
-<v Ben Larsson>Okay, works for me.
-
-12
-00:02:25.400 --> 00:02:38.600
+00:01:48.600 --> 00:02:01.800
 <v Sarah Kowalski>And we explicitly celebrate pulling the cord early. Ben, you're the example of what we want now — the thing we're changing is the four-day delay, not the fact that a bug happened.
 
-13
-00:02:38.600 --> 00:02:43.400
-<v Ben Larsson>Is there a risk we're solving a problem we don't have yet?
-
-14
-00:02:45.800 --> 00:02:47.400
-<v Marcus Bell>Okay, works for me.
-
-15
-00:02:50.700 --> 00:02:55.500
-<v Sarah Kowalski>Let me pull up the numbers so we're not going off memory.
-
-16
-00:02:59.200 --> 00:03:04.800
-<v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
-
-17
-00:03:04.800 --> 00:03:09.600
-<v Tomás Reyes>Yeah, that's consistent with what we talked about in the last sync.
-
-18
-00:03:11.800 --> 00:03:12.600
-<v Sarah Kowalski>Yeah, exactly.
-
-19
-00:03:16.400 --> 00:03:18.800
-<v Sarah Kowalski>That's fair. I'll withdraw the concern.
-
-20
-00:03:23.700 --> 00:03:24.500
-<v Tomás Reyes>Yeah, exactly.
-
-21
-00:03:26.700 --> 00:03:28.700
-<v Ben Larsson>Let's confirm in the channel.
-
-22
-00:03:31.600 --> 00:03:36.800
-<v Marcus Bell>Hang on, let me pull that doc up on my end. One sec.
-
-23
-00:03:44.800 --> 00:03:46.400
-<v Sarah Kowalski>Sure — one sec.
-
-24
-00:03:51.600 --> 00:03:57.200
-<v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
-
-25
-00:03:57.200 --> 00:04:04.000
-<v Marcus Bell>I'll take that one — it's adjacent to the backend capability model and the provenance schema anyway.
-
-26
-00:04:05.700 --> 00:04:07.700
-<v Ben Larsson>Sure, I can own that.
-
-27
-00:04:10.500 --> 00:04:16.900
-<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
-
-28
-00:04:16.900 --> 00:04:22.100
-<v Sarah Kowalski>I'll take that one — it's adjacent to the CARE governance framework anyway.
-
-29
-00:04:26.900 --> 00:04:31.700
-<v Tomás Reyes>Let me pull up the numbers so we're not going off memory.
-
-30
-00:04:35.600 --> 00:04:37.200
-<v Marcus Bell>Agreed, let's capture it.
-
-31
-00:04:40.000 --> 00:04:45.600
-<v Tomás Reyes>I want to make sure I understand the tradeoff before we commit to anything.
-
-32
-00:04:47.800 --> 00:04:49.800
-<v Marcus Bell>Right, that's what I meant.
-
-33
-00:04:53.000 --> 00:04:57.000
-<v Ben Larsson>Good — as long as it's reversible, I'm comfortable moving.
-
-34
-00:04:59.400 --> 00:05:05.000
-<v Sarah Kowalski>I don't feel strongly on this one — I'll defer to whoever owns it.
-
-35
-00:05:05.000 --> 00:05:07.400
-<v Ben Larsson>That's fair. I'll withdraw the concern.
-
-36
-00:05:09.000 --> 00:05:14.600
-<v Sarah Kowalski>That matches what I was seeing on my end with the CARE governance framework.
-
-37
-00:05:17.900 --> 00:05:19.900
-<v Tomás Reyes>Sure, I can own that.
-
-38
-00:05:21.600 --> 00:05:23.200
-<v Tomás Reyes>Okay, works for me.
-
-39
-00:05:30.000 --> 00:05:32.400
-<v Tomás Reyes>Good point — let's do that.
-
-40
-00:05:32.400 --> 00:05:37.200
-<v Ben Larsson>Yeah, that's consistent with what we talked about in the last sync.
-
-41
-00:05:39.000 --> 00:05:40.600
-<v Sarah Kowalski>Makes sense to me.
-
-42
-00:05:48.500 --> 00:05:50.900
-<v Ben Larsson>Good point — let's do that.
-
-43
-00:05:59.100 --> 00:06:03.100
-<v Tomás Reyes>Good — as long as it's reversible, I'm comfortable moving.
-
-44
-00:06:05.800 --> 00:06:06.600
-<v Ben Larsson>Yeah, exactly.
-
-45
-00:06:08.800 --> 00:06:19.600
-<v Ben Larsson>Honestly the retro already shifted it for me. I don't think I'd sit on something now. It stopped feeling like a mistake meant I didn't belong here.
-
-46
-00:06:20.600 --> 00:06:25.800
-<v Marcus Bell>Let's not rathole on this — can we take the fine detail offline?
-
-47
-00:06:30.500 --> 00:06:35.300
-<v Tomás Reyes>Sorry, can you go back to the point about the review pass?
-
-48
-00:06:39.200 --> 00:06:44.000
-<v Ben Larsson>Yeah, that's consistent with what we talked about in the last sync.
-
-49
-00:06:48.000 --> 00:06:48.800
-<v Sarah Kowalski>That's fair.
-
-50
-00:06:52.100 --> 00:06:56.100
-<v Ben Larsson>Good — as long as it's reversible, I'm comfortable moving.
-
-51
-00:06:58.900 --> 00:07:00.500
-<v Sarah Kowalski>Makes sense to me.
-
-52
-00:07:00.500 --> 00:07:05.700
-<v Tomás Reyes>Let me play that back to make sure we're all aligned on it.
-
-53
-00:07:10.900 --> 00:07:16.100
-<v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
-
-54
-00:07:18.300 --> 00:07:23.500
-<v Marcus Bell>Let me play that back to make sure we're all aligned on it.
-
-55
-00:07:23.500 --> 00:07:27.500
-<v Ben Larsson>Can we double-check that against what we agreed last week?
-
-56
-00:07:33.900 --> 00:07:34.700
-<v Tomás Reyes>That's fair.
-
-57
-00:07:38.600 --> 00:07:39.400
-<v Tomás Reyes>That tracks.
-
-58
-00:07:39.400 --> 00:07:45.800
-<v Ben Larsson>I'll take that one — it's adjacent to the label renderer and the validator tests anyway.
-
-59
-00:07:47.900 --> 00:07:53.500
-<v Sarah Kowalski>Okay, I think I follow. So the plan is basically what you just described.
-
-60
-00:07:57.600 --> 00:08:01.600
-<v Tomás Reyes>Good — as long as it's reversible, I'm comfortable moving.
-
-61
-00:08:06.100 --> 00:08:08.900
-<v Marcus Bell>Mm, let me sit with that one.
-
-62
-00:08:17.100 --> 00:08:27.100
-<v Marcus Bell>Let's put the norm in ways-of-working so it outlives whoever's in the room today. A practice that lives in someone's head dies when they leave.
-
-63
-00:08:27.600 --> 00:08:31.200
-<v Tomás Reyes>What would it take to de-risk that a little?
-
-64
-00:08:33.700 --> 00:08:40.100
-<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
-
-65
-00:08:41.900 --> 00:08:47.500
-<v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
-
-66
-00:08:47.500 --> 00:08:55.900
-<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
-
-67
-00:09:02.700 --> 00:09:04.300
-<v Tomás Reyes>Agreed, let's capture it.
-
-68
-00:09:06.200 --> 00:09:11.800
-<v Sarah Kowalski>That matches what I was seeing on my end with the CARE governance framework.
-
-69
-00:09:11.800 --> 00:09:17.000
-<v Tomás Reyes>I'm a little worried about the timeline, but I'm not blocking on it.
-
-70
-00:09:21.300 --> 00:09:23.700
-<v Marcus Bell>Good point — let's do that.
-
-71
-00:09:23.700 --> 00:09:28.900
-<v Tomás Reyes>Let me play that back to make sure we're all aligned on it.
-
-72
-00:09:34.700 --> 00:09:40.300
-<v Sarah Kowalski>I don't feel strongly on this one — I'll defer to whoever owns it.
-
-73
-00:09:48.500 --> 00:09:49.300
-<v Ben Larsson>Exactly.
-
-74
-00:09:49.300 --> 00:09:54.100
-<v Sarah Kowalski>Is there a risk we're solving a problem we don't have yet?
-
-75
-00:09:54.100 --> 00:09:59.300
-<v Marcus Bell>I'm a little worried about the timeline, but I'm not blocking on it.
-
-76
-00:10:06.500 --> 00:10:11.700
-<v Sarah Kowalski>I'll take that one — it's adjacent to the CARE governance framework anyway.
-
-77
-00:10:11.700 --> 00:10:15.300
-<v Tomás Reyes>What would it take to de-risk that a little?
-
-78
-00:10:23.800 --> 00:10:25.400
-<v Marcus Bell>Okay, works for me.
-
-79
-00:10:27.700 --> 00:10:29.700
-<v Tomás Reyes>Sure, I can own that.
-
-80
-00:10:29.700 --> 00:10:34.900
-<v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
-
-81
-00:10:38.400 --> 00:10:40.000
-<v Tomás Reyes>Makes sense to me.
-
-82
-00:10:40.000 --> 00:10:44.800
-<v Marcus Bell>Is there a risk we're solving a problem we don't have yet?
-
-83
-00:10:48.700 --> 00:10:55.500
+9
+00:02:01.800 --> 00:02:08.600
 <v Ben Larsson>That matches what I was seeing on my end with the label renderer and the validator tests.
 
-84
-00:10:55.500 --> 00:11:02.700
-<v Marcus Bell>That matches what I was seeing on my end with the backend capability model and the provenance schema.
+10
+00:02:12.200 --> 00:02:14.200
+<v Marcus Bell>Let's confirm in the channel.
 
-85
-00:11:04.200 --> 00:11:06.200
-<v Tomás Reyes>Let's confirm in the channel.
+11
+00:02:14.200 --> 00:02:19.000
+<v Sarah Kowalski>I'd rather over-communicate here — can we write down who's doing what?
 
-86
-00:11:13.200 --> 00:11:19.200
-<v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
+12
+00:02:26.400 --> 00:02:31.600
+<v Tomás Reyes>I'll take that one — it's adjacent to the security review pipeline anyway.
 
-87
-00:11:29.700 --> 00:11:32.100
-<v Tomás Reyes>Okay, next thing on the agenda.
-
-88
-00:11:32.100 --> 00:11:38.900
-<v Tomás Reyes>Just flagging that this touches the security review pipeline, so loop me in when it firms up.
-
-89
-00:11:43.200 --> 00:11:44.800
-<v Marcus Bell>Okay, works for me.
-
-90
-00:11:46.900 --> 00:11:51.700
-<v Ben Larsson>Let me pull up the numbers so we're not going off memory.
-
-91
-00:11:51.700 --> 00:11:55.700
-<v Tomás Reyes>Can we double-check that against what we agreed last week?
-
-92
-00:11:57.700 --> 00:11:58.500
+13
+00:02:33.700 --> 00:02:34.500
 <v Sarah Kowalski>That's fair.
 
-93
-00:12:06.400 --> 00:12:08.400
-<v Tomás Reyes>Let's confirm in the channel.
+14
+00:02:40.000 --> 00:02:43.600
+<v Ben Larsson>What would it take to de-risk that a little?
 
-94
-00:12:08.400 --> 00:12:14.400
+15
+00:02:43.600 --> 00:02:47.600
+<v Ben Larsson>Can we double-check that against what we agreed last week?
+
+16
+00:02:51.100 --> 00:02:55.100
+<v Sarah Kowalski>Can someone capture that in the notes close to verbatim?
+
+17
+00:03:01.500 --> 00:03:02.300
+<v Tomás Reyes>Yeah, exactly.
+
+18
+00:03:04.900 --> 00:03:09.700
+<v Tomás Reyes>I'd rather over-communicate here — can we write down who's doing what?
+
+19
+00:03:09.700 --> 00:03:15.300
+<v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
+
+20
+00:03:21.400 --> 00:03:27.400
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+21
+00:03:30.300 --> 00:03:36.300
 <v Sarah Kowalski>Do we actually need a decision on this today, or can it wait a week?
 
-95
-00:12:17.900 --> 00:12:20.700
-<v Ben Larsson>Mm, let me sit with that one.
+22
+00:03:38.500 --> 00:03:42.500
+<v Marcus Bell>Can we double-check that against what we agreed last week?
 
-96
-00:12:26.500 --> 00:12:31.300
-<v Sarah Kowalski>Is there a risk we're solving a problem we don't have yet?
+23
+00:03:46.900 --> 00:03:52.100
+<v Tomás Reyes>I'll take that one — it's adjacent to the security review pipeline anyway.
 
-97
-00:12:31.300 --> 00:12:38.100
-<v Tomás Reyes>Just flagging that this touches the security review pipeline, so loop me in when it firms up.
+24
+00:03:52.100 --> 00:03:56.900
+<v Tomás Reyes>Let me pull up the numbers so we're not going off memory.
 
-98
-00:12:43.900 --> 00:12:44.700
-<v Ben Larsson>Yeah, exactly.
+25
+00:04:05.000 --> 00:04:07.000
+<v Sarah Kowalski>Sure, I can own that.
 
-99
-00:12:44.700 --> 00:12:48.700
+26
+00:04:10.300 --> 00:04:11.100
+<v Ben Larsson>That's fair.
+
+27
+00:04:11.100 --> 00:04:16.300
+<v Ben Larsson>Let me play that back to make sure we're all aligned on it.
+
+28
+00:04:20.000 --> 00:04:24.000
 <v Tomás Reyes>Can someone capture that in the notes close to verbatim?
 
-100
-00:12:48.700 --> 00:12:54.700
-<v Tomás Reyes>Can we make sure that lands as an action item so it doesn't get lost?
+29
+00:04:25.800 --> 00:04:31.000
+<v Tomás Reyes>I'll take that one — it's adjacent to the security review pipeline anyway.
 
-101
-00:13:02.000 --> 00:13:08.800
-<v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
+30
+00:04:33.800 --> 00:04:36.200
+<v Sarah Kowalski>Good point — let's do that.
 
-102
-00:13:12.200 --> 00:13:14.200
-<v Tomás Reyes>Sure, I can own that.
+31
+00:04:37.900 --> 00:04:44.700
+<v Ben Larsson>That matches what I was seeing on my end with the label renderer and the validator tests.
 
-103
-00:13:14.200 --> 00:13:19.800
-<v Ben Larsson>I want to make sure I understand the tradeoff before we commit to anything.
+32
+00:04:49.500 --> 00:04:52.300
+<v Marcus Bell>Mm, let me sit with that one.
 
-104
-00:13:24.700 --> 00:13:28.300
-<v Tomás Reyes>What would it take to de-risk that a little?
+33
+00:04:55.400 --> 00:04:58.200
+<v Ben Larsson>Mm, let me sit with that one.
 
-105
-00:13:31.300 --> 00:13:32.900
-<v Marcus Bell>Okay, works for me.
+34
+00:04:58.200 --> 00:05:05.000
+<v Ben Larsson>That matches what I was seeing on my end with the label renderer and the validator tests.
 
-106
-00:13:38.300 --> 00:13:43.100
-<v Sarah Kowalski>How does this interact with the CARE governance framework, if at all?
+35
+00:05:09.200 --> 00:05:14.000
+<v Marcus Bell>Let me pull up the numbers so we're not going off memory.
 
-107
-00:13:43.100 --> 00:13:47.900
+36
+00:05:17.000 --> 00:05:21.800
+<v Ben Larsson>Let me pull up the numbers so we're not going off memory.
+
+37
+00:05:25.200 --> 00:05:30.800
+<v Marcus Bell>I want to make sure I understand the tradeoff before we commit to anything.
+
+38
+00:05:36.200 --> 00:05:41.000
 <v Sarah Kowalski>Sorry, can you go back to the point about the review pass?
 
-108
-00:13:55.400 --> 00:13:57.000
-<v Ben Larsson>Okay, works for me.
+39
+00:05:44.200 --> 00:05:47.000
+<v Ben Larsson>Mm, let me sit with that one.
 
-109
-00:14:02.300 --> 00:14:10.300
-<v Sarah Kowalski>Done. Blameless note on every incident, cord-pulls get called out as wins in the retro. That's the trust recommendation, closed.
+40
+00:05:49.500 --> 00:05:52.300
+<v Marcus Bell>Mm, let me sit with that one.
 
-110
-00:14:10.300 --> 00:14:15.100
-<v Tomás Reyes>Yeah, that's consistent with what we talked about in the last sync.
+41
+00:05:52.300 --> 00:05:57.100
+<v Tomás Reyes>I'd rather over-communicate here — can we write down who's doing what?
 
-111
-00:14:15.100 --> 00:14:19.900
-<v Ben Larsson>Sorry, can you go back to the point about the review pass?
+42
+00:05:57.100 --> 00:06:01.900
+<v Ben Larsson>Let me pull up the numbers so we're not going off memory.
 
-112
-00:14:23.400 --> 00:14:24.200
-<v Marcus Bell>That's fair.
+43
+00:06:01.900 --> 00:06:07.100
+<v Tomás Reyes>Let me play that back to make sure we're all aligned on it.
 
-113
-00:14:31.500 --> 00:14:32.300
-<v Marcus Bell>That's fair.
+44
+00:06:13.600 --> 00:06:16.400
+<v Sarah Kowalski>Mm, let me sit with that one.
 
-114
-00:14:32.300 --> 00:14:37.100
-<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
+45
+00:06:18.900 --> 00:06:23.700
+<v Tomás Reyes>How does this interact with the security review pipeline, if at all?
 
-115
-00:14:41.900 --> 00:14:47.500
-<v Ben Larsson>I want to make sure I understand the tradeoff before we commit to anything.
+46
+00:06:25.700 --> 00:06:29.300
+<v Sarah Kowalski>What would it take to de-risk that a little?
 
-116
-00:14:50.900 --> 00:14:51.700
-<v Tomás Reyes>That's fair.
+47
+00:06:33.200 --> 00:06:37.200
+<v Ben Larsson>Can we double-check that against what we agreed last week?
 
-117
-00:14:51.700 --> 00:15:00.100
+48
+00:06:41.700 --> 00:06:43.700
+<v Tomás Reyes>Right, that's what I meant.
+
+49
+00:06:43.700 --> 00:06:52.100
 <v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
 
-118
-00:15:14.000 --> 00:15:19.200
-<v Ben Larsson>I'm a little worried about the timeline, but I'm not blocking on it.
+50
+00:06:57.000 --> 00:06:59.000
+<v Tomás Reyes>Right, that's what I meant.
 
-119
-00:15:19.200 --> 00:15:24.000
-<v Sarah Kowalski>Yeah, that's consistent with what we talked about in the last sync.
+51
+00:07:03.700 --> 00:07:07.700
+<v Marcus Bell>Can we double-check that against what we agreed last week?
 
-120
-00:15:28.800 --> 00:15:34.800
-<v Sarah Kowalski>Do we actually need a decision on this today, or can it wait a week?
+52
+00:07:09.600 --> 00:07:14.400
+<v Sarah Kowalski>Sorry, can you go back to the point about the review pass?
 
-121
-00:15:38.300 --> 00:15:40.300
+53
+00:07:16.300 --> 00:07:22.300
+<v Ben Larsson>Can we make sure that lands as an action item so it doesn't get lost?
+
+54
+00:07:26.400 --> 00:07:28.400
 <v Tomás Reyes>Let's confirm in the channel.
 
+55
+00:07:31.500 --> 00:07:33.500
+<v Sarah Kowalski>Let's confirm in the channel.
+
+56
+00:07:38.800 --> 00:07:43.600
+<v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
+
+57
+00:07:48.300 --> 00:07:54.300
+<v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
+
+58
+00:07:54.300 --> 00:07:59.100
+<v Sarah Kowalski>Sorry, can you go back to the point about the review pass?
+
+59
+00:08:03.200 --> 00:08:04.000
+<v Tomás Reyes>Yeah, exactly.
+
+60
+00:08:09.200 --> 00:08:11.600
+<v Tomás Reyes>Good point — let's do that.
+
+61
+00:08:15.000 --> 00:08:19.800
+<v Tomás Reyes>Sorry, can you go back to the point about the review pass?
+
+62
+00:08:19.800 --> 00:08:25.400
+<v Marcus Bell>I want to make sure I understand the tradeoff before we commit to anything.
+
+63
+00:08:25.400 --> 00:08:27.800
+<v Marcus Bell>That's fair. I'll withdraw the concern.
+
+64
+00:08:31.200 --> 00:08:32.800
+<v Sarah Kowalski>Makes sense to me.
+
+65
+00:08:36.600 --> 00:08:41.400
+<v Sarah Kowalski>Right, and that lines up with the constraint we set at kickoff.
+
+66
+00:08:45.900 --> 00:08:51.100
+<v Ben Larsson>Let's not rathole on this — can we take the fine detail offline?
+
+67
+00:08:56.800 --> 00:09:02.000
+<v Sarah Kowalski>I'm a little worried about the timeline, but I'm not blocking on it.
+
+68
+00:09:04.300 --> 00:09:05.100
+<v Ben Larsson>That's fair.
+
+69
+00:09:07.600 --> 00:09:10.400
+<v Tomás Reyes>Mm, let me sit with that one.
+
+70
+00:09:10.400 --> 00:09:15.200
+<v Marcus Bell>Is there a risk we're solving a problem we don't have yet?
+
+71
+00:09:15.200 --> 00:09:20.000
+<v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
+
+72
+00:09:23.200 --> 00:09:24.000
+<v Tomás Reyes>That's fair.
+
+73
+00:09:25.900 --> 00:09:30.700
+<v Tomás Reyes>Is there a risk we're solving a problem we don't have yet?
+
+74
+00:09:32.400 --> 00:09:34.800
+<v Ben Larsson>Good point — let's do that.
+
+75
+00:09:37.800 --> 00:09:40.200
+<v Marcus Bell>That's fair. I'll withdraw the concern.
+
+76
+00:09:43.000 --> 00:09:45.400
+<v Tomás Reyes>Good point — let's do that.
+
+77
+00:09:52.000 --> 00:09:56.800
+<v Tomás Reyes>Right, and that lines up with the constraint we set at kickoff.
+
+78
+00:10:06.700 --> 00:10:17.500
+<v Ben Larsson>Honestly the retro already shifted it for me. I don't think I'd sit on something now. It stopped feeling like a mistake meant I didn't belong here.
+
+79
+00:10:17.500 --> 00:10:23.500
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+80
+00:10:23.500 --> 00:10:28.700
+<v Marcus Bell>Let's not rathole on this — can we take the fine detail offline?
+
+81
+00:10:30.400 --> 00:10:32.800
+<v Tomás Reyes>That's fair. I'll withdraw the concern.
+
+82
+00:10:36.500 --> 00:10:39.300
+<v Marcus Bell>Mm, let me sit with that one.
+
+83
+00:10:42.200 --> 00:10:47.800
+<v Sarah Kowalski>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+84
+00:10:52.200 --> 00:10:53.800
+<v Marcus Bell>Okay, works for me.
+
+85
+00:11:00.900 --> 00:11:06.900
+<v Ben Larsson>How does this interact with the label renderer and the validator tests, if at all?
+
+86
+00:11:06.900 --> 00:11:12.100
+<v Ben Larsson>Let me play that back to make sure we're all aligned on it.
+
+87
+00:11:12.100 --> 00:11:16.900
+<v Tomás Reyes>Let me pull up the numbers so we're not going off memory.
+
+88
+00:11:24.500 --> 00:11:26.100
+<v Tomás Reyes>Okay, works for me.
+
+89
+00:11:26.100 --> 00:11:31.700
+<v Tomás Reyes>That matches what I was seeing on my end with the security review pipeline.
+
+90
+00:11:34.500 --> 00:11:40.500
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+91
+00:11:40.500 --> 00:11:47.700
+<v Marcus Bell>That matches what I was seeing on my end with the backend capability model and the provenance schema.
+
+92
+00:11:53.200 --> 00:11:56.000
+<v Sarah Kowalski>Mm, let me sit with that one.
+
+93
+00:11:56.000 --> 00:12:02.000
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+94
+00:12:02.000 --> 00:12:06.800
+<v Ben Larsson>Let me pull up the numbers so we're not going off memory.
+
+95
+00:12:09.800 --> 00:12:11.800
+<v Sarah Kowalski>Right, that's what I meant.
+
+96
+00:12:15.500 --> 00:12:19.500
+<v Ben Larsson>Good — as long as it's reversible, I'm comfortable moving.
+
+97
+00:12:26.200 --> 00:12:27.800
+<v Tomás Reyes>Okay, works for me.
+
+98
+00:12:37.100 --> 00:12:39.100
+<v Marcus Bell>Right, that's what I meant.
+
+99
+00:12:42.700 --> 00:12:45.100
+<v Sarah Kowalski>That's fair. I'll withdraw the concern.
+
+100
+00:12:45.100 --> 00:12:51.100
+<v Ben Larsson>Can we make sure that lands as an action item so it doesn't get lost?
+
+101
+00:12:57.800 --> 00:12:58.600
+<v Marcus Bell>That's fair.
+
+102
+00:13:02.600 --> 00:13:08.200
+<v Tomás Reyes>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+103
+00:13:13.200 --> 00:13:15.600
+<v Tomás Reyes>Good point — let's do that.
+
+104
+00:13:15.600 --> 00:13:20.400
+<v Sarah Kowalski>Sorry, can you go back to the point about the review pass?
+
+105
+00:13:23.000 --> 00:13:25.800
+<v Marcus Bell>Mm, let me sit with that one.
+
+106
+00:13:33.100 --> 00:13:33.900
+<v Tomás Reyes>Okay.
+
+107
+00:13:33.900 --> 00:13:39.500
+<v Sarah Kowalski>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+108
+00:13:43.900 --> 00:13:46.300
+<v Ben Larsson>That's fair. I'll withdraw the concern.
+
+109
+00:13:51.200 --> 00:13:52.000
+<v Sarah Kowalski>That's fair.
+
+110
+00:13:54.600 --> 00:13:55.400
+<v Ben Larsson>Yeah, exactly.
+
+111
+00:14:07.300 --> 00:14:12.100
+<v Tomás Reyes>I'd rather over-communicate here — can we write down who's doing what?
+
+112
+00:14:16.100 --> 00:14:18.100
+<v Marcus Bell>Right, that's what I meant.
+
+113
+00:14:20.400 --> 00:14:26.000
+<v Ben Larsson>I want to make sure I understand the tradeoff before we commit to anything.
+
+114
+00:14:28.900 --> 00:14:34.100
+<v Tomás Reyes>I'm a little worried about the timeline, but I'm not blocking on it.
+
+115
+00:14:38.600 --> 00:14:48.600
+<v Marcus Bell>Let's put the norm in ways-of-working so it outlives whoever's in the room today. A practice that lives in someone's head dies when they leave.
+
+116
+00:14:48.600 --> 00:14:53.400
+<v Ben Larsson>Yeah, that's consistent with what we talked about in the last sync.
+
+117
+00:14:53.400 --> 00:14:59.000
+<v Sarah Kowalski>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+118
+00:15:00.800 --> 00:15:02.800
+<v Ben Larsson>Right, that's what I meant.
+
+119
+00:15:06.600 --> 00:15:11.400
+<v Ben Larsson>Yeah, that's consistent with what we talked about in the last sync.
+
+120
+00:15:14.100 --> 00:15:16.900
+<v Tomás Reyes>Mm, let me sit with that one.
+
+121
+00:15:16.900 --> 00:15:22.100
+<v Marcus Bell>Let's not rathole on this — can we take the fine detail offline?
+
 122
-00:15:43.300 --> 00:15:48.100
-<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
+00:15:26.000 --> 00:15:28.000
+<v Sarah Kowalski>Let's confirm in the channel.
 
 123
-00:15:54.800 --> 00:15:55.600
-<v Sarah Kowalski>Yeah, exactly.
+00:15:37.500 --> 00:15:42.300
+<v Ben Larsson>Right, and that lines up with the constraint we set at kickoff.
 
 124
-00:15:55.600 --> 00:16:00.400
-<v Marcus Bell>Sorry, can you go back to the point about the review pass?
+00:15:44.100 --> 00:15:44.900
+<v Sarah Kowalski>That's fair.
 
 125
-00:16:02.600 --> 00:16:04.200
-<v Ben Larsson>Okay, works for me.
+00:15:44.900 --> 00:15:49.700
+<v Sarah Kowalski>Yeah, that's consistent with what we talked about in the last sync.
 
 126
-00:16:08.000 --> 00:16:12.000
-<v Sarah Kowalski>Good — as long as it's reversible, I'm comfortable moving.
+00:15:56.000 --> 00:16:00.800
+<v Tomás Reyes>I'd rather over-communicate here — can we write down who's doing what?
 
 127
-00:16:14.700 --> 00:16:16.700
-<v Marcus Bell>Sure, I can own that.
+00:16:04.000 --> 00:16:04.800
+<v Tomás Reyes>Sure.
 
 128
-00:16:19.100 --> 00:16:27.100
-<v Ben Larsson>Just flagging that this touches the label renderer and the validator tests, so loop me in when it firms up.
+00:16:04.800 --> 00:16:09.600
+<v Tomás Reyes>How does this interact with the security review pipeline, if at all?
 
 129
-00:16:35.900 --> 00:16:38.700
-<v Tomás Reyes>Okay — any questions before we wrap?
+00:16:12.200 --> 00:16:13.000
+<v Sarah Kowalski>Yeah, exactly.
 
 130
-00:16:41.300 --> 00:16:45.700
-<v Marcus Bell>Quick clarifier — who owns the follow-up here, and by when?
+00:16:34.600 --> 00:16:35.800
+<v Tomás Reyes>Good — next.
 
 131
-00:16:51.100 --> 00:16:57.100
-<v Tomás Reyes>Good question — let's confirm the specifics in the channel so we don't rathole here.
+00:16:35.800 --> 00:16:43.800
+<v Sarah Kowalski>Done. Blameless note on every incident, cord-pulls get called out as wins in the retro. That's the trust recommendation, closed.
 
 132
-00:17:00.000 --> 00:17:04.800
-<v Sarah Kowalski>One thing: how does this affect the the CARE governance framework timeline?
+00:16:46.700 --> 00:16:52.700
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
 
 133
-00:17:08.700 --> 00:17:14.700
-<v Tomás Reyes>Good question — let's confirm the specifics in the channel so we don't rathole here.
+00:16:56.500 --> 00:16:58.900
+<v Ben Larsson>Good point — let's do that.
 
 134
-00:17:20.600 --> 00:17:26.200
-<v Tomás Reyes>Alright, let me read back the action items so we're aligned before we drop.
+00:17:02.000 --> 00:17:08.000
+<v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
 
 135
-00:17:36.100 --> 00:17:42.900
-<v Tomás Reyes>Tomás has the follow-up on the security review pipeline — I'll capture the specifics in the notes.
+00:17:10.700 --> 00:17:15.500
+<v Ben Larsson>Sorry, can you go back to the point about the review pass?
 
 136
-00:17:46.100 --> 00:17:52.900
-<v Tomás Reyes>Sarah has the follow-up on the CARE governance framework — I'll capture the specifics in the notes.
+00:17:15.500 --> 00:17:21.500
+<v Sarah Kowalski>Do we actually need a decision on this today, or can it wait a week?
 
 137
-00:17:54.500 --> 00:18:02.500
-<v Tomás Reyes>Ben has the follow-up on the label renderer and the validator tests — I'll capture the specifics in the notes.
+00:17:23.500 --> 00:17:24.300
+<v Ben Larsson>Yeah, exactly.
 
 138
-00:18:06.300 --> 00:18:11.900
+00:17:24.300 --> 00:17:29.900
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+139
+00:17:33.500 --> 00:17:35.500
+<v Ben Larsson>Let's confirm in the channel.
+
+140
+00:17:42.600 --> 00:17:48.600
+<v Sarah Kowalski>Can we make sure that lands as an action item so it doesn't get lost?
+
+141
+00:17:53.300 --> 00:17:56.900
+<v Tomás Reyes>What would it take to de-risk that a little?
+
+142
+00:18:00.400 --> 00:18:01.200
+<v Sarah Kowalski>Yeah, exactly.
+
+143
+00:18:01.200 --> 00:18:05.200
+<v Sarah Kowalski>Can we double-check that against what we agreed last week?
+
+144
+00:18:13.600 --> 00:18:16.400
+<v Tomás Reyes>Okay — any questions before we wrap?
+
+145
+00:18:20.400 --> 00:18:27.600
+<v Sarah Kowalski>Question before we wrap — does any of this change what I'm doing on the CARE governance framework?
+
+146
+00:18:33.200 --> 00:18:39.200
+<v Tomás Reyes>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+147
+00:18:40.300 --> 00:18:48.700
+<v Marcus Bell>Should I loop anyone else in on the the backend capability model and the provenance schema side, or is that covered?
+
+148
+00:18:51.600 --> 00:18:57.600
+<v Tomás Reyes>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+149
+00:19:03.700 --> 00:19:09.300
+<v Tomás Reyes>Alright, let me read back the action items so we're aligned before we drop.
+
+150
+00:19:18.300 --> 00:19:25.100
+<v Tomás Reyes>Tomás has the follow-up on the security review pipeline — I'll capture the specifics in the notes.
+
+151
+00:19:26.500 --> 00:19:33.300
+<v Tomás Reyes>Sarah has the follow-up on the CARE governance framework — I'll capture the specifics in the notes.
+
+152
+00:19:36.700 --> 00:19:44.700
+<v Tomás Reyes>Ben has the follow-up on the label renderer and the validator tests — I'll capture the specifics in the notes.
+
+153
+00:19:47.500 --> 00:19:53.100
 <v Tomás Reyes>Great. I'll write it all up and drop it in the channel. Thanks everyone.

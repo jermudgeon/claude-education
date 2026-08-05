@@ -1,0 +1,595 @@
+WEBVTT
+
+NOTE Beta Rollout — Reopened — 2026-08-28
+
+1
+00:00:00.000 --> 00:00:05.600
+<v Dana Whitfield>Okay, let's give it another minute for folks to join, then we'll get going.
+
+2
+00:00:43.300 --> 00:00:49.700
+<v Dana Whitfield>Alright, I think we've got most people — I see Marcus, Sarah, Priya. Let's get started.
+
+3
+00:00:49.700 --> 00:00:52.100
+<v Marcus Bell>Can everyone see my screen alright?
+
+4
+00:00:52.100 --> 00:00:53.300
+<v Dana Whitfield>Yep, looks good.
+
+5
+00:00:53.300 --> 00:01:03.300
+<v Dana Whitfield>Quick agenda: I want to get through the main topic, leave room for questions, and land on clear action items before we drop. Sound good?
+
+6
+00:01:06.800 --> 00:01:18.400
+<v Dana Whitfield>I know we locked the staggered rollout order on July 14th. I'm reopening it, and I want to be explicit about why up front: District Two just pulled out.
+
+7
+00:01:19.400 --> 00:01:23.800
+<v Dana Whitfield>That's genuinely new information, not me relitigating a decision I lost.
+
+8
+00:01:29.400 --> 00:01:36.600
+<v Marcus Bell>Agreed it's worth reopening — the whole sequence assumed three districts. The premise changed, so the plan should.
+
+9
+00:01:36.600 --> 00:01:43.000
+<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
+
+10
+00:01:47.100 --> 00:01:48.700
+<v Sarah Kowalski>Okay, works for me.
+
+11
+00:01:51.200 --> 00:01:54.800
+<v Sarah Kowalski>What would it take to de-risk that a little?
+
+12
+00:01:57.900 --> 00:01:59.500
+<v Dana Whitfield>Makes sense to me.
+
+13
+00:02:02.100 --> 00:02:07.700
+<v Priya Nair>One concern and then I'll drop it: are we sure about the sequencing here?
+
+14
+00:02:11.100 --> 00:02:15.900
+<v Sarah Kowalski>Right, and that lines up with the constraint we set at kickoff.
+
+15
+00:02:19.000 --> 00:02:19.800
+<v Dana Whitfield>Makes sense.
+
+16
+00:02:36.800 --> 00:02:50.800
+<v Sarah Kowalski>This is the healthy kind of reopen, and I want to name that so we don't confuse it with the license situation last quarter. New facts, not the same argument replayed. What's the new order?
+
+17
+00:02:51.300 --> 00:02:52.100
+<v Marcus Bell>Got it.
+
+18
+00:03:05.300 --> 00:03:13.300
+<v Priya Nair>With two districts, put the least-TK one first as we agreed, and I fold District Three's onboarding forward a week.
+
+19
+00:03:13.300 --> 00:03:20.100
+<v Marcus Bell>I'll take that one — it's adjacent to the backend capability model and the provenance schema anyway.
+
+20
+00:03:20.100 --> 00:03:25.300
+<v Sarah Kowalski>I'm a little worried about the timeline, but I'm not blocking on it.
+
+21
+00:03:28.400 --> 00:03:29.200
+<v Priya Nair>That's fair.
+
+22
+00:03:35.400 --> 00:03:36.200
+<v Sarah Kowalski>That's fair.
+
+23
+00:03:36.200 --> 00:03:40.200
+<v Dana Whitfield>Can we double-check that against what we agreed last week?
+
+24
+00:03:42.100 --> 00:03:42.900
+<v Sarah Kowalski>That's fair.
+
+25
+00:03:46.900 --> 00:03:51.700
+<v Sarah Kowalski>Yeah, that's consistent with what we talked about in the last sync.
+
+26
+00:03:56.600 --> 00:04:01.800
+<v Sarah Kowalski>I'll take that one — it's adjacent to the CARE governance framework anyway.
+
+27
+00:04:09.400 --> 00:04:15.000
+<v Sarah Kowalski>That matches what I was seeing on my end with the CARE governance framework.
+
+28
+00:04:19.700 --> 00:04:21.300
+<v Marcus Bell>Makes sense to me.
+
+29
+00:04:25.200 --> 00:04:30.400
+<v Sarah Kowalski>Let me play that back to make sure we're all aligned on it.
+
+30
+00:04:30.400 --> 00:04:35.200
+<v Priya Nair>Sorry, can you go back to the point about the review pass?
+
+31
+00:04:39.700 --> 00:04:41.300
+<v Sarah Kowalski>Makes sense to me.
+
+32
+00:04:44.200 --> 00:04:49.000
+<v Priya Nair>Right, and that lines up with the constraint we set at kickoff.
+
+33
+00:04:52.900 --> 00:04:57.700
+<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
+
+34
+00:04:57.700 --> 00:05:01.700
+<v Priya Nair>Can we double-check that against what we agreed last week?
+
+35
+00:05:01.700 --> 00:05:08.900
+<v Dana Whitfield>I'll take that one — it's adjacent to the roadmap and keeping the two tracks in sync anyway.
+
+36
+00:05:12.900 --> 00:05:14.500
+<v Sarah Kowalski>Makes sense to me.
+
+37
+00:05:22.800 --> 00:05:24.800
+<v Marcus Bell>Sure, I can own that.
+
+38
+00:05:27.700 --> 00:05:32.900
+<v Priya Nair>I'm a little worried about the timeline, but I'm not blocking on it.
+
+39
+00:05:35.900 --> 00:05:37.900
+<v Sarah Kowalski>Right, that's what I meant.
+
+40
+00:05:40.800 --> 00:05:45.600
+<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
+
+41
+00:05:55.200 --> 00:06:00.000
+<v Priya Nair>Is there a risk we're solving a problem we don't have yet?
+
+42
+00:06:01.600 --> 00:06:06.800
+<v Dana Whitfield>Hang on, let me pull that doc up on my end. One sec.
+
+43
+00:06:06.800 --> 00:06:11.600
+<v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
+
+44
+00:06:13.400 --> 00:06:18.600
+<v Marcus Bell>I'm a little worried about the timeline, but I'm not blocking on it.
+
+45
+00:06:23.200 --> 00:06:25.600
+<v Sarah Kowalski>Good point — let's do that.
+
+46
+00:06:27.400 --> 00:06:32.600
+<v Priya Nair>Let me play that back to make sure we're all aligned on it.
+
+47
+00:06:34.200 --> 00:06:39.400
+<v Sarah Kowalski>Let me play that back to make sure we're all aligned on it.
+
+48
+00:06:39.400 --> 00:06:45.000
+<v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
+
+49
+00:06:47.500 --> 00:06:49.100
+<v Priya Nair>Okay, works for me.
+
+50
+00:06:53.700 --> 00:07:00.500
+<v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
+
+51
+00:07:00.500 --> 00:07:05.300
+<v Sarah Kowalski>Let me pull up the numbers so we're not going off memory.
+
+52
+00:07:05.300 --> 00:07:10.100
+<v Sarah Kowalski>I'd rather over-communicate here — can we write down who's doing what?
+
+53
+00:07:22.800 --> 00:07:27.600
+<v Sarah Kowalski>Yeah, that's consistent with what we talked about in the last sync.
+
+54
+00:07:32.300 --> 00:07:33.900
+<v Marcus Bell>Makes sense to me.
+
+55
+00:07:37.800 --> 00:07:46.600
+<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
+
+56
+00:07:50.100 --> 00:07:52.100
+<v Sarah Kowalski>Right, that's what I meant.
+
+57
+00:07:52.100 --> 00:07:57.700
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+58
+00:08:02.700 --> 00:08:11.100
+<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
+
+59
+00:08:15.600 --> 00:08:17.600
+<v Sarah Kowalski>Let's confirm in the channel.
+
+60
+00:08:17.600 --> 00:08:21.200
+<v Marcus Bell>What would it take to de-risk that a little?
+
+61
+00:08:30.700 --> 00:08:36.300
+<v Priya Nair>How does this interact with the browse and install front end, if at all?
+
+62
+00:08:38.600 --> 00:08:40.600
+<v Dana Whitfield>Sure, I can own that.
+
+63
+00:08:54.000 --> 00:08:55.600
+<v Priya Nair>Sure — one sec.
+
+64
+00:09:06.100 --> 00:09:11.700
+<v Sarah Kowalski>That matches what I was seeing on my end with the CARE governance framework.
+
+65
+00:09:16.300 --> 00:09:19.900
+<v Dana Whitfield>Let me park that and come back to it.
+
+66
+00:09:19.900 --> 00:09:25.100
+<v Dana Whitfield>Let me share my screen so we're all looking at the same thing.
+
+67
+00:09:25.100 --> 00:09:30.700
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+68
+00:09:33.300 --> 00:09:35.300
+<v Sarah Kowalski>Right, that's what I meant.
+
+69
+00:09:35.300 --> 00:09:41.300
+<v Sarah Kowalski>Can we make sure that lands as an action item so it doesn't get lost?
+
+70
+00:09:44.500 --> 00:09:50.100
+<v Priya Nair>One concern and then I'll drop it: are we sure about the sequencing here?
+
+71
+00:09:54.100 --> 00:09:55.700
+<v Sarah Kowalski>Agreed, let's capture it.
+
+72
+00:09:55.700 --> 00:10:01.300
+<v Dana Whitfield>I want to make sure I understand the tradeoff before we commit to anything.
+
+73
+00:10:03.500 --> 00:10:09.500
+<v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
+
+74
+00:10:13.400 --> 00:10:15.000
+<v Marcus Bell>Makes sense to me.
+
+75
+00:10:18.700 --> 00:10:21.100
+<v Priya Nair>That's fair. I'll withdraw the concern.
+
+76
+00:10:24.900 --> 00:10:26.900
+<v Marcus Bell>Let's confirm in the channel.
+
+77
+00:10:34.400 --> 00:10:43.200
+<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
+
+78
+00:10:50.700 --> 00:10:55.500
+<v Priya Nair>Let me pull up the numbers so we're not going off memory.
+
+79
+00:10:58.400 --> 00:11:04.000
+<v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
+
+80
+00:11:08.300 --> 00:11:10.300
+<v Sarah Kowalski>Let's confirm in the channel.
+
+81
+00:11:13.800 --> 00:11:19.400
+<v Sarah Kowalski>I want to make sure I understand the tradeoff before we commit to anything.
+
+82
+00:11:19.400 --> 00:11:24.200
+<v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
+
+83
+00:11:32.500 --> 00:11:33.300
+<v Dana Whitfield>Yeah, exactly.
+
+84
+00:11:36.500 --> 00:11:41.300
+<v Priya Nair>Let me pull up the numbers so we're not going off memory.
+
+85
+00:11:42.800 --> 00:11:45.600
+<v Sarah Kowalski>Mm, let me sit with that one.
+
+86
+00:11:48.000 --> 00:11:52.800
+<v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
+
+87
+00:11:57.500 --> 00:12:00.300
+<v Dana Whitfield>Mm, let me sit with that one.
+
+88
+00:12:03.500 --> 00:12:09.500
+<v Dana Whitfield>Do we actually need a decision on this today, or can it wait a week?
+
+89
+00:12:09.500 --> 00:12:14.700
+<v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
+
+90
+00:12:18.000 --> 00:12:18.800
+<v Priya Nair>That's fair.
+
+91
+00:12:18.800 --> 00:12:23.600
+<v Marcus Bell>Is there a risk we're solving a problem we don't have yet?
+
+92
+00:12:26.900 --> 00:12:29.300
+<v Dana Whitfield>Good point — let's do that.
+
+93
+00:12:32.800 --> 00:12:40.400
+<v Dana Whitfield>That matches what I was seeing on my end with the roadmap and keeping the two tracks in sync.
+
+94
+00:12:43.900 --> 00:12:50.300
+<v Priya Nair>That matches what I was seeing on my end with the browse and install front end.
+
+95
+00:12:51.900 --> 00:12:53.500
+<v Marcus Bell>Agreed, let's capture it.
+
+96
+00:12:53.500 --> 00:12:59.500
+<v Sarah Kowalski>Can we make sure that lands as an action item so it doesn't get lost?
+
+97
+00:13:03.900 --> 00:13:09.900
+<v Priya Nair>I'll take that one — it's adjacent to the browse and install front end anyway.
+
+98
+00:13:11.500 --> 00:13:13.100
+<v Priya Nair>Okay, works for me.
+
+99
+00:13:17.800 --> 00:13:22.600
+<v Priya Nair>Sorry, can you go back to the point about the review pass?
+
+100
+00:13:26.400 --> 00:13:27.200
+<v Sarah Kowalski>That's fair.
+
+101
+00:13:29.700 --> 00:13:30.500
+<v Marcus Bell>Yeah, exactly.
+
+102
+00:13:36.000 --> 00:13:40.000
+<v Priya Nair>Good — as long as it's reversible, I'm comfortable moving.
+
+103
+00:13:42.300 --> 00:13:49.100
+<v Dana Whitfield>How does this interact with the roadmap and keeping the two tracks in sync, if at all?
+
+104
+00:13:53.500 --> 00:13:55.900
+<v Sarah Kowalski>That's fair. I'll withdraw the concern.
+
+105
+00:13:55.900 --> 00:14:01.500
+<v Marcus Bell>Okay, I think I follow. So the plan is basically what you just described.
+
+106
+00:14:04.700 --> 00:14:06.700
+<v Dana Whitfield>Let's confirm in the channel.
+
+107
+00:14:06.700 --> 00:14:13.100
+<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
+
+108
+00:14:15.000 --> 00:14:20.600
+<v Priya Nair>How does this interact with the browse and install front end, if at all?
+
+109
+00:14:20.600 --> 00:14:25.400
+<v Sarah Kowalski>How does this interact with the CARE governance framework, if at all?
+
+110
+00:14:30.900 --> 00:14:32.500
+<v Dana Whitfield>Agreed, let's capture it.
+
+111
+00:14:40.700 --> 00:14:46.700
+<v Priya Nair>Can we make sure that lands as an action item so it doesn't get lost?
+
+112
+00:14:49.200 --> 00:14:54.000
+<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
+
+113
+00:14:57.600 --> 00:14:58.400
+<v Sarah Kowalski>Yeah, exactly.
+
+114
+00:15:06.200 --> 00:15:09.800
+<v Dana Whitfield>What would it take to de-risk that a little?
+
+115
+00:15:12.000 --> 00:15:13.600
+<v Marcus Bell>Okay, works for me.
+
+116
+00:15:33.000 --> 00:15:37.800
+<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
+
+117
+00:15:40.100 --> 00:15:40.900
+<v Priya Nair>Yeah, exactly.
+
+118
+00:15:40.900 --> 00:15:46.900
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+119
+00:15:46.900 --> 00:15:51.700
+<v Sarah Kowalski>Let me pull up the numbers so we're not going off memory.
+
+120
+00:16:00.000 --> 00:16:06.000
+<v Dana Whitfield>Do we actually need a decision on this today, or can it wait a week?
+
+121
+00:16:10.200 --> 00:16:17.800
+<v Priya Nair>Just flagging that this touches the browse and install front end, so loop me in when it firms up.
+
+122
+00:16:22.100 --> 00:16:30.900
+<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
+
+123
+00:16:34.500 --> 00:16:36.900
+<v Sarah Kowalski>Good point — let's do that.
+
+124
+00:16:39.600 --> 00:16:43.600
+<v Dana Whitfield>Good — as long as it's reversible, I'm comfortable moving.
+
+125
+00:16:47.400 --> 00:16:49.000
+<v Priya Nair>Agreed, let's capture it.
+
+126
+00:16:49.000 --> 00:16:57.400
+<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
+
+127
+00:16:59.700 --> 00:17:00.500
+<v Sarah Kowalski>That's fair.
+
+128
+00:17:06.300 --> 00:17:20.300
+<v Dana Whitfield>Good. New order set. And per our reopening bar, I'm noting in the ADR that this reopen was justified by District Two dropping — so if anyone looks later, the trigger is on the record.
+
+129
+00:17:20.300 --> 00:17:27.500
+<v Marcus Bell>That matches what I was seeing on my end with the backend capability model and the provenance schema.
+
+130
+00:17:30.200 --> 00:17:31.800
+<v Sarah Kowalski>Okay, works for me.
+
+131
+00:17:35.500 --> 00:17:39.500
+<v Sarah Kowalski>Can we double-check that against what we agreed last week?
+
+132
+00:17:39.500 --> 00:17:41.900
+<v Sarah Kowalski>That's fair. I'll withdraw the concern.
+
+133
+00:17:46.200 --> 00:17:48.600
+<v Dana Whitfield>Good point — let's do that.
+
+134
+00:17:53.300 --> 00:17:54.100
+<v Sarah Kowalski>Right, right.
+
+135
+00:17:58.600 --> 00:18:03.400
+<v Sarah Kowalski>Exactly right. Reopening on new information is commitment working, not commitment failing.
+
+136
+00:18:04.800 --> 00:18:10.000
+<v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
+
+137
+00:18:10.000 --> 00:18:13.600
+<v Marcus Bell>What would it take to de-risk that a little?
+
+138
+00:18:21.500 --> 00:18:22.300
+<v Priya Nair>Okay, yeah.
+
+139
+00:18:43.700 --> 00:18:46.500
+<v Dana Whitfield>Okay — any questions before we wrap?
+
+140
+00:18:48.900 --> 00:18:57.700
+<v Marcus Bell>Question before we wrap — does any of this change what I'm doing on the backend capability model and the provenance schema?
+
+141
+00:19:00.000 --> 00:19:06.000
+<v Dana Whitfield>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+142
+00:19:07.400 --> 00:19:15.000
+<v Priya Nair>Should I loop anyone else in on the the browse and install front end side, or is that covered?
+
+143
+00:19:17.400 --> 00:19:23.400
+<v Dana Whitfield>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+144
+00:19:30.900 --> 00:19:36.500
+<v Dana Whitfield>Alright, let me read back the action items so we're aligned before we drop.
+
+145
+00:19:48.500 --> 00:19:57.300
+<v Dana Whitfield>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
+
+146
+00:19:58.800 --> 00:20:07.200
+<v Dana Whitfield>Marcus has the follow-up on the backend capability model and the provenance schema — I'll capture the specifics in the notes.
+
+147
+00:20:08.800 --> 00:20:15.600
+<v Dana Whitfield>Sarah has the follow-up on the CARE governance framework — I'll capture the specifics in the notes.
+
+148
+00:20:18.300 --> 00:20:23.900
+<v Dana Whitfield>Great. I'll write it all up and drop it in the channel. Thanks everyone.

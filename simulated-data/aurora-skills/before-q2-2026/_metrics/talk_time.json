@@ -3,12 +3,12 @@
     "id": "2026-04-07_kickoff",
     "title": "Aurora Skills \u2014 Program Kickoff",
     "date": "2026-04-07",
-    "duration_s": 1486.3,
+    "duration_s": 1486.7,
     "duration_min": 24.8,
-    "speech_s": 842.8,
+    "speech_s": 843.2,
     "content_speech_s": 184.0,
     "silence_ratio": 0.43,
-    "attendee_count": 12,
+    "attendee_count": 13,
     "speakers": {
       "dana": {
         "name": "Dana Whitfield",
@@ -129,6 +129,16 @@
         "questions": 0,
         "assertions": 0,
         "q_to_a": null
+      },
+      "greg": {
+        "name": "Greg Olsen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
       }
     },
     "interruptions": 1,
@@ -143,7 +153,8 @@
       "Naomi Kito",
       "Ben Larsson",
       "Lily Chen",
-      "Mark Dupont"
+      "Mark Dupont",
+      "Greg Olsen"
     ],
     "era": "before"
   },
@@ -759,12 +770,12 @@
     "id": "2026-06-02_healthy-conflict-retro",
     "title": "Retro \u2014 How We Work Together",
     "date": "2026-06-02",
-    "duration_s": 1093.0,
+    "duration_s": 1093.4,
     "duration_min": 18.2,
-    "speech_s": 608.4,
+    "speech_s": 608.8,
     "content_speech_s": 167.2,
     "silence_ratio": 0.44,
-    "attendee_count": 12,
+    "attendee_count": 13,
     "speakers": {
       "sarah": {
         "name": "Sarah Kowalski",
@@ -885,6 +896,16 @@
         "questions": 0,
         "assertions": 0,
         "q_to_a": null
+      },
+      "greg": {
+        "name": "Greg Olsen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
       }
     },
     "interruptions": 0,
@@ -899,7 +920,8 @@
       "Ben Larsson",
       "Rachel Green",
       "Kevin Osei",
-      "Lily Chen"
+      "Lily Chen",
+      "Greg Olsen"
     ],
     "era": "before"
   },
@@ -907,12 +929,12 @@
     "id": "2026-06-09_roadmap-review",
     "title": "Q3 Roadmap Review",
     "date": "2026-06-09",
-    "duration_s": 1748.5,
+    "duration_s": 1748.9,
     "duration_min": 29.1,
-    "speech_s": 978.4,
+    "speech_s": 978.8,
     "content_speech_s": 81.6,
     "silence_ratio": 0.44,
-    "attendee_count": 12,
+    "attendee_count": 13,
     "speakers": {
       "dana": {
         "name": "Dana Whitfield",
@@ -1033,6 +1055,16 @@
         "questions": 0,
         "assertions": 0,
         "q_to_a": null
+      },
+      "greg": {
+        "name": "Greg Olsen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
       }
     },
     "interruptions": 1,
@@ -1049,7 +1081,8 @@
       "James Ahkivgak",
       "Kevin Osei",
       "Lily Chen",
-      "Mark Dupont"
+      "Mark Dupont",
+      "Greg Olsen"
     ],
     "era": "before"
   },
@@ -1360,6 +1393,161 @@
     "dominant_speaker": "Sarah Kowalski",
     "dominant_pct": 54.1,
     "led_by": "Dana Whitfield",
+    "dominant_is_lead": false,
+    "dominance_expected": false,
+    "present_but_silent": [],
+    "era": "before"
+  },
+  "2026-05-26_beta-scope-cut": {
+    "id": "2026-05-26_beta-scope-cut",
+    "title": "Beta Scope \u2014 Cut Offline Mode",
+    "date": "2026-05-26",
+    "duration_s": 1187.5,
+    "duration_min": 19.8,
+    "speech_s": 628.4,
+    "content_speech_s": 34.8,
+    "silence_ratio": 0.47,
+    "attendee_count": 7,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 12.4,
+        "talk_pct": 35.6,
+        "turns": 2,
+        "questions": 1,
+        "assertions": 4,
+        "q_to_a": 0.25
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 5.6,
+        "talk_pct": 16.1,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 5.6,
+        "talk_pct": 16.1,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 6.0,
+        "talk_pct": 17.2,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 5.2,
+        "talk_pct": 14.9,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "greg": {
+        "name": "Greg Olsen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Dana Whitfield",
+    "dominant_pct": 35.6,
+    "led_by": "Dana Whitfield",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
+    "present_but_silent": [
+      "Naomi Kito",
+      "Greg Olsen"
+    ],
+    "era": "before"
+  },
+  "2026-06-11_caching-debate": {
+    "id": "2026-06-11_caching-debate",
+    "title": "Caching Strategy Debate",
+    "date": "2026-06-11",
+    "duration_s": 1290.5,
+    "duration_min": 21.5,
+    "speech_s": 680.0,
+    "content_speech_s": 92.0,
+    "silence_ratio": 0.47,
+    "attendee_count": 4,
+    "speakers": {
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 32.4,
+        "talk_pct": 35.2,
+        "turns": 4,
+        "questions": 1,
+        "assertions": 9,
+        "q_to_a": 0.11
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 46.0,
+        "talk_pct": 50.0,
+        "turns": 5,
+        "questions": 0,
+        "assertions": 13,
+        "q_to_a": 0.0
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 5.6,
+        "talk_pct": 6.1,
+        "turns": 1,
+        "questions": 1,
+        "assertions": 2,
+        "q_to_a": 0.5
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 8.0,
+        "talk_pct": 8.7,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 2,
+    "dominant_speaker": "Tom\u00e1s Reyes",
+    "dominant_pct": 50.0,
+    "led_by": "Marcus Bell",
     "dominant_is_lead": false,
     "dominance_expected": false,
     "present_but_silent": [],

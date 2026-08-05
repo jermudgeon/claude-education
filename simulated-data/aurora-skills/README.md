@@ -34,10 +34,11 @@ readouts (`insights-bot`) — the tool's output as data, cross-referencing the b
 
 Top level also has:
 
-- **`assessments/`** — the closed loop. `report-Q2-2026.md` is the team-assess output on Q2 whose
-  **recommendations the team enacts in Q3**; `report-Q3-2026.md` re-measures and shows the trend.
-  `five-dysfunctions-signal-map.json` maps every seeded signal to a rubric **v0.9** dimension +
-  observable facet + verbatim act. See `assessments/README.md`.
+- **`assessments/`** — the data-side of the loop (**scoring is external — done by `team-assess`,
+  not asserted here**). `q2-anticipated-recommendations.md` lists the recommendations the Q2
+  dysfunctions should surface and the Q3 artifacts that answer each; `five-dysfunctions-signal-map.json`
+  maps every seeded signal to a rubric **v0.9** dimension + observable facet + verbatim act. See
+  `assessments/README.md`.
 - **`prds/`** — 6 PRDs (registry, security pipeline, TK governance, access, the insights tool
   itself, and the classroom facilitator).
 - **`wiki/`** — team directory, glossary, ways-of-working, decision log, and `wiki/adr/` (4 ADRs).
@@ -50,10 +51,21 @@ Top level also has:
 
 ## The assessment loop (why this dataset is more than before/after)
 
-Run the rubric on Q2 → it emits recommendations → the team enacts them in Q3 → run the rubric on
-Q3 → scores improve, **traceably**. Overall health 2.7 → 4.4; the biggest gains (trust, conflict,
-commitment, each +2.0) land on exactly the dimensions Q2 flagged. Full mapping in
-`ground_truth.json → assessment_loop`.
+`team-assess` scores Q2 → it emits recommendations → the team enacts them in Q3 → `team-assess`
+scores Q3 → improvement on the targeted dimensions. **This dataset provides the data and the loop
+map, not the scores** — the tool produces those. The Q2 dysfunctions are seeded and located; the Q3
+content is authored to answer each anticipated recommendation, so a correct scorer should rate Q3
+higher than Q2 on exactly the targeted dimensions. Full mapping in `ground_truth.json →
+assessment_loop`.
+
+## Discrimination traps (false positives)
+
+The dataset is not all clean signals. It deliberately plants **false positives** — content a
+shallow scorer misreads (artificial harmony that looks decisive, heated-but-healthy debate that
+looks toxic, a reopened decision that's actually healthy because it had new information, silence
+that's genuine disengagement vs. silence that isn't). Each is labeled in
+`ground_truth.json → discrimination_traps` with what it looks like, what it actually is, and where
+it lives — so the test set measures *discrimination*, not just recall.
 
 ## The cast (both quarters)
 

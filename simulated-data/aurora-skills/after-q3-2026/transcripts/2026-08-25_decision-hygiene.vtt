@@ -7,573 +7,625 @@ NOTE Decision Hygiene Review — 2026-08-25
 <v Sarah Kowalski>Okay, let's give it another minute for folks to join, then we'll get going.
 
 2
-00:01:13.900 --> 00:01:19.900
+00:01:08.900 --> 00:01:14.900
 <v Sarah Kowalski>Alright, I think we've got most people — I see Mark, Dana. Let's get started.
 
 3
-00:01:19.900 --> 00:01:22.300
+00:01:14.900 --> 00:01:17.300
 <v Mark Dupont>Can everyone see my screen alright?
 
 4
-00:01:22.300 --> 00:01:23.500
+00:01:17.300 --> 00:01:18.500
 <v Sarah Kowalski>Yep, looks good.
 
 5
-00:01:23.500 --> 00:01:33.500
+00:01:18.500 --> 00:01:28.500
 <v Sarah Kowalski>Quick agenda: I want to get through the main topic, leave room for questions, and land on clear action items before we drop. Sound good?
 
 6
-00:01:38.600 --> 00:01:52.200
+00:01:33.800 --> 00:01:47.400
 <v Sarah Kowalski>Recommendation three: close decisions with a written reopening bar so settled questions stop being relitigated. The license ADR set the pattern — we snapshotted the mitigation and wrote down exactly what would justify reopening.
 
 7
-00:01:54.000 --> 00:01:59.200
+00:01:48.500 --> 00:01:53.700
 <v Sarah Kowalski>I want that to be standard for every significant decision, not a one-off.
 
 8
-00:02:00.400 --> 00:02:01.200
-<v Dana Whitfield>Hmm, okay.
-
-9
-00:02:01.200 --> 00:02:06.800
-<v Mark Dupont>That matches what I was seeing on my end with licensing and the ADR.
-
-10
-00:02:06.800 --> 00:02:12.800
-<v Mark Dupont>Can we make sure that lands as an action item so it doesn't get lost?
-
-11
-00:02:20.000 --> 00:02:22.800
-<v Dana Whitfield>Mm, let me sit with that one.
-
-12
-00:02:25.800 --> 00:02:30.600
-<v Mark Dupont>I'd rather over-communicate here — can we write down who's doing what?
-
-13
-00:02:30.600 --> 00:02:35.800
-<v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
-
-14
-00:02:37.400 --> 00:02:40.200
-<v Dana Whitfield>Mm, let me sit with that one.
-
-15
-00:02:47.500 --> 00:02:51.500
-<v Sarah Kowalski>Good — as long as it's reversible, I'm comfortable moving.
-
-16
-00:02:55.800 --> 00:02:57.400
-<v Dana Whitfield>Agreed, let's capture it.
-
-17
-00:03:09.500 --> 00:03:15.100
-<v Mark Dupont>I want to make sure I understand the tradeoff before we commit to anything.
-
-18
-00:03:18.700 --> 00:03:24.300
-<v Sarah Kowalski>Okay, I think I follow. So the plan is basically what you just described.
-
-19
-00:03:26.000 --> 00:03:28.400
-<v Dana Whitfield>That's fair. I'll withdraw the concern.
-
-20
-00:03:31.100 --> 00:03:32.700
-<v Mark Dupont>Agreed, let's capture it.
-
-21
-00:03:36.400 --> 00:03:38.400
-<v Dana Whitfield>Let's confirm in the channel.
-
-22
-00:03:40.100 --> 00:03:53.300
+00:01:58.000 --> 00:02:11.200
 <v Mark Dupont>I'll grant it works, and I'm the person who reopened that one three times. The moment the reopening bar was explicit — new information required, not the same concern restated — I stopped.
 
-23
-00:03:53.300 --> 00:03:55.700
-<v Dana Whitfield>That's fair. I'll withdraw the concern.
-
-24
-00:03:58.500 --> 00:04:00.100
-<v Mark Dupont>Agreed, let's capture it.
-
-25
-00:04:00.100 --> 00:04:04.100
-<v Mark Dupont>Can someone capture that in the notes close to verbatim?
-
-26
-00:04:11.800 --> 00:04:16.600
-<v Sarah Kowalski>Right, and that lines up with the constraint we set at kickoff.
-
-27
-00:04:19.900 --> 00:04:25.500
-<v Mark Dupont>Okay, I think I follow. So the plan is basically what you just described.
-
-28
-00:04:30.100 --> 00:04:31.700
-<v Sarah Kowalski>Okay, works for me.
-
-29
-00:04:34.500 --> 00:04:40.100
-<v Mark Dupont>One concern and then I'll drop it: are we sure about the sequencing here?
-
-30
-00:04:42.300 --> 00:04:47.100
-<v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
-
-31
-00:04:51.400 --> 00:04:53.400
-<v Mark Dupont>Right, that's what I meant.
-
-32
-00:04:55.100 --> 00:04:56.700
-<v Dana Whitfield>Agreed, let's capture it.
-
-33
-00:04:59.900 --> 00:05:05.500
-<v Sarah Kowalski>Okay, I think I follow. So the plan is basically what you just described.
-
-34
-00:05:07.200 --> 00:05:12.400
-<v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
-
-35
-00:05:16.800 --> 00:05:18.400
-<v Dana Whitfield>Okay, works for me.
-
-36
-00:05:18.400 --> 00:05:23.200
-<v Dana Whitfield>Yeah, that's consistent with what we talked about in the last sync.
-
-37
-00:05:32.000 --> 00:05:34.800
-<v Mark Dupont>Ambiguity was doing the relitigating, not stubbornness.
-
-38
-00:05:34.800 --> 00:05:39.600
-<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
-
-39
-00:05:39.600 --> 00:05:44.400
-<v Mark Dupont>How does this interact with licensing and the ADR, if at all?
-
-40
-00:05:44.400 --> 00:05:49.600
-<v Dana Whitfield>Let me play that back to make sure we're all aligned on it.
-
-41
-00:05:57.400 --> 00:05:59.800
-<v Sarah Kowalski>Good point — let's do that.
-
-42
-00:06:04.800 --> 00:06:10.000
-<v Mark Dupont>I'm a little worried about the timeline, but I'm not blocking on it.
-
-43
-00:06:10.000 --> 00:06:14.800
-<v Dana Whitfield>Right, and that lines up with the constraint we set at kickoff.
-
-44
-00:06:19.900 --> 00:06:21.900
-<v Sarah Kowalski>Sure, I can own that.
-
-45
-00:06:25.200 --> 00:06:29.200
-<v Mark Dupont>Can someone capture that in the notes close to verbatim?
-
-46
-00:06:34.100 --> 00:06:39.700
-<v Dana Whitfield>Sorry, can you say that last part again? You cut out for a second.
-
-47
-00:06:39.700 --> 00:06:44.900
-<v Sarah Kowalski>I'm a little worried about the timeline, but I'm not blocking on it.
-
-48
-00:06:48.200 --> 00:06:49.800
-<v Mark Dupont>Agreed, let's capture it.
-
-49
-00:06:49.800 --> 00:06:54.600
-<v Sarah Kowalski>Yeah, that's consistent with what we talked about in the last sync.
-
-50
-00:07:01.700 --> 00:07:05.300
-<v Mark Dupont>What would it take to de-risk that a little?
-
-51
-00:07:15.700 --> 00:07:17.300
-<v Mark Dupont>Sure — one sec.
-
-52
-00:07:17.300 --> 00:07:22.900
-<v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
-
-53
-00:07:28.500 --> 00:07:34.100
-<v Mark Dupont>I want to make sure I understand the tradeoff before we commit to anything.
-
-54
-00:07:34.100 --> 00:07:38.900
-<v Dana Whitfield>Sorry, can you go back to the point about the review pass?
-
-55
-00:07:43.800 --> 00:07:49.000
-<v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
-
-56
-00:07:56.300 --> 00:07:58.300
-<v Sarah Kowalski>Let's confirm in the channel.
-
-57
-00:07:58.300 --> 00:08:03.500
-<v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
-
-58
-00:08:06.400 --> 00:08:12.400
-<v Mark Dupont>Do we actually need a decision on this today, or can it wait a week?
-
-59
-00:08:12.400 --> 00:08:16.400
-<v Sarah Kowalski>Can we double-check that against what we agreed last week?
-
-60
-00:08:21.100 --> 00:08:22.700
-<v Mark Dupont>Okay, works for me.
-
-61
-00:08:22.700 --> 00:08:26.700
-<v Sarah Kowalski>Good — as long as it's reversible, I'm comfortable moving.
-
-62
-00:08:26.700 --> 00:08:30.700
-<v Sarah Kowalski>Can we double-check that against what we agreed last week?
-
-63
-00:08:35.400 --> 00:08:40.200
+9
+00:02:12.900 --> 00:02:17.700
 <v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
 
-64
-00:08:44.600 --> 00:08:49.400
-<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
-
-65
-00:08:49.400 --> 00:08:55.400
-<v Dana Whitfield>Do we actually need a decision on this today, or can it wait a week?
-
-66
-00:08:58.100 --> 00:09:00.900
-<v Sarah Kowalski>Mm, let me sit with that one.
-
-67
-00:09:00.900 --> 00:09:04.500
-<v Mark Dupont>What would it take to de-risk that a little?
-
-68
-00:09:09.400 --> 00:09:14.600
-<v Sarah Kowalski>I'll take that one — it's adjacent to the CARE governance framework anyway.
-
-69
-00:09:19.100 --> 00:09:19.900
-<v Dana Whitfield>Yeah, exactly.
-
-70
-00:09:19.900 --> 00:09:25.500
-<v Sarah Kowalski>That matches what I was seeing on my end with the CARE governance framework.
-
-71
-00:09:39.800 --> 00:09:45.000
-<v Dana Whitfield>Let me play that back to make sure we're all aligned on it.
-
-72
-00:09:51.200 --> 00:09:56.800
-<v Sarah Kowalski>One concern and then I'll drop it: are we sure about the sequencing here?
-
-73
-00:10:00.800 --> 00:10:01.600
-<v Mark Dupont>That's fair.
-
-74
-00:10:05.300 --> 00:10:14.100
-<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
-
-75
-00:10:14.100 --> 00:10:18.100
-<v Mark Dupont>Can someone capture that in the notes close to verbatim?
-
-76
-00:10:18.100 --> 00:10:26.900
-<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
-
-77
-00:10:26.900 --> 00:10:31.700
+10
+00:02:21.000 --> 00:02:25.800
 <v Mark Dupont>I'd rather over-communicate here — can we write down who's doing what?
 
-78
-00:10:33.500 --> 00:10:35.100
-<v Dana Whitfield>Agreed, let's capture it.
-
-79
-00:10:42.800 --> 00:10:44.400
-<v Mark Dupont>Okay, works for me.
-
-80
-00:10:46.800 --> 00:10:52.000
-<v Mark Dupont>Let's not rathole on this — can we take the fine detail offline?
-
-81
-00:10:52.000 --> 00:10:56.000
-<v Dana Whitfield>Can we double-check that against what we agreed last week?
-
-82
-00:10:59.200 --> 00:11:01.200
+11
+00:02:28.400 --> 00:02:30.400
 <v Sarah Kowalski>Let's confirm in the channel.
 
-83
-00:11:07.500 --> 00:11:10.300
-<v Dana Whitfield>Mm, let me sit with that one.
+12
+00:02:32.200 --> 00:02:33.800
+<v Mark Dupont>Agreed, let's capture it.
 
-84
-00:11:12.400 --> 00:11:16.000
-<v Sarah Kowalski>What would it take to de-risk that a little?
+13
+00:02:36.700 --> 00:02:41.500
+<v Dana Whitfield>Yeah, that's consistent with what we talked about in the last sync.
 
-85
-00:11:24.000 --> 00:11:28.800
-<v Sarah Kowalski>Yeah, that's consistent with what we talked about in the last sync.
-
-86
-00:11:31.900 --> 00:11:37.100
-<v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
-
-87
-00:11:37.100 --> 00:11:42.700
-<v Mark Dupont>I don't feel strongly on this one — I'll defer to whoever owns it.
-
-88
-00:11:51.200 --> 00:11:53.200
-<v Sarah Kowalski>Let's confirm in the channel.
-
-89
-00:11:58.300 --> 00:12:03.900
-<v Mark Dupont>I want to make sure I understand the tradeoff before we commit to anything.
-
-90
-00:12:07.000 --> 00:12:11.800
-<v Sarah Kowalski>Yeah, that's consistent with what we talked about in the last sync.
-
-91
-00:12:11.800 --> 00:12:17.000
-<v Dana Whitfield>Let me play that back to make sure we're all aligned on it.
-
-92
-00:12:17.000 --> 00:12:21.800
-<v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
-
-93
-00:12:25.500 --> 00:12:27.100
-<v Sarah Kowalski>Makes sense to me.
-
-94
-00:12:35.700 --> 00:12:40.500
-<v Sarah Kowalski>I'd rather over-communicate here — can we write down who's doing what?
-
-95
-00:12:44.900 --> 00:12:45.700
-<v Mark Dupont>Yeah, exactly.
-
-96
-00:12:50.700 --> 00:12:56.300
-<v Mark Dupont>I don't feel strongly on this one — I'll defer to whoever owns it.
-
-97
-00:13:01.300 --> 00:13:06.500
-<v Mark Dupont>Let's not rathole on this — can we take the fine detail offline?
-
-98
-00:13:10.200 --> 00:13:11.000
-<v Dana Whitfield>Yeah, exactly.
-
-99
-00:13:14.900 --> 00:13:16.500
-<v Dana Whitfield>Makes sense to me.
-
-100
-00:13:20.200 --> 00:13:28.200
-<v Dana Whitfield>So every ADR from now on ends with a one-line reopening bar. Cheap to write, saves us the third round.
-
-101
-00:13:28.200 --> 00:13:33.800
-<v Mark Dupont>Okay, I think I follow. So the plan is basically what you just described.
-
-102
-00:13:33.800 --> 00:13:37.800
-<v Dana Whitfield>Good — as long as it's reversible, I'm comfortable moving.
-
-103
-00:13:44.200 --> 00:13:47.000
-<v Sarah Kowalski>Mm, let me sit with that one.
-
-104
-00:13:47.000 --> 00:13:53.000
-<v Mark Dupont>Do we actually need a decision on this today, or can it wait a week?
-
-105
-00:13:55.500 --> 00:13:57.900
-<v Dana Whitfield>Good point — let's do that.
-
-106
-00:14:00.300 --> 00:14:04.300
-<v Sarah Kowalski>Good — as long as it's reversible, I'm comfortable moving.
-
-107
-00:14:04.300 --> 00:14:09.900
-<v Sarah Kowalski>That matches what I was seeing on my end with the CARE governance framework.
-
-108
-00:14:09.900 --> 00:14:15.500
+14
+00:02:41.500 --> 00:02:47.100
 <v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
 
-109
-00:14:24.100 --> 00:14:24.900
-<v Mark Dupont>That's fair.
+15
+00:02:53.300 --> 00:03:02.100
+<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
 
-110
-00:14:26.400 --> 00:14:32.000
+16
+00:03:06.200 --> 00:03:08.600
+<v Mark Dupont>Good point — let's do that.
+
+17
+00:03:12.200 --> 00:03:15.000
+<v Mark Dupont>Ambiguity was doing the relitigating, not stubbornness.
+
+18
+00:03:15.000 --> 00:03:20.600
 <v Sarah Kowalski>I want to make sure I understand the tradeoff before we commit to anything.
 
-111
-00:14:34.200 --> 00:14:39.800
-<v Sarah Kowalski>One concern and then I'll drop it: are we sure about the sequencing here?
+19
+00:03:23.200 --> 00:03:26.000
+<v Mark Dupont>Mm, let me sit with that one.
 
-112
-00:14:43.300 --> 00:14:44.100
+20
+00:03:29.300 --> 00:03:34.100
+<v Sarah Kowalski>I'd rather over-communicate here — can we write down who's doing what?
+
+21
+00:03:34.100 --> 00:03:39.700
+<v Mark Dupont>One concern and then I'll drop it: are we sure about the sequencing here?
+
+22
+00:03:42.200 --> 00:03:47.800
+<v Mark Dupont>I want to make sure I understand the tradeoff before we commit to anything.
+
+23
+00:03:52.200 --> 00:03:56.200
+<v Dana Whitfield>Good — as long as it's reversible, I'm comfortable moving.
+
+24
+00:04:00.000 --> 00:04:06.000
+<v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
+
+25
+00:04:08.900 --> 00:04:10.900
+<v Mark Dupont>Let's confirm in the channel.
+
+26
+00:04:14.000 --> 00:04:18.800
+<v Mark Dupont>How does this interact with licensing and the ADR, if at all?
+
+27
+00:04:23.300 --> 00:04:25.300
+<v Sarah Kowalski>Right, that's what I meant.
+
+28
+00:04:28.700 --> 00:04:34.700
+<v Dana Whitfield>Do we actually need a decision on this today, or can it wait a week?
+
+29
+00:04:39.500 --> 00:04:45.500
+<v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
+
+30
+00:04:48.800 --> 00:04:50.800
+<v Sarah Kowalski>Let's confirm in the channel.
+
+31
+00:04:54.000 --> 00:04:59.600
+<v Dana Whitfield>Okay, I think I follow. So the plan is basically what you just described.
+
+32
+00:05:04.100 --> 00:05:04.900
+<v Sarah Kowalski>That's fair.
+
+33
+00:05:07.900 --> 00:05:11.500
+<v Mark Dupont>What would it take to de-risk that a little?
+
+34
+00:05:11.500 --> 00:05:15.100
+<v Mark Dupont>What would it take to de-risk that a little?
+
+35
+00:05:17.400 --> 00:05:19.400
+<v Dana Whitfield>Sure, I can own that.
+
+36
+00:05:23.500 --> 00:05:24.300
 <v Mark Dupont>Yeah, exactly.
 
-113
-00:14:47.800 --> 00:14:48.600
+37
+00:05:27.800 --> 00:05:30.600
+<v Sarah Kowalski>Mm, let me sit with that one.
+
+38
+00:05:30.600 --> 00:05:35.400
+<v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
+
+39
+00:05:39.900 --> 00:05:40.700
 <v Mark Dupont>That's fair.
 
-114
-00:14:54.500 --> 00:14:56.900
+40
+00:05:48.200 --> 00:05:53.800
+<v Sarah Kowalski>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+41
+00:06:01.100 --> 00:06:07.100
+<v Dana Whitfield>Do we actually need a decision on this today, or can it wait a week?
+
+42
+00:06:09.900 --> 00:06:17.900
+<v Dana Whitfield>So every ADR from now on ends with a one-line reopening bar. Cheap to write, saves us the third round.
+
+43
+00:06:17.900 --> 00:06:21.900
+<v Dana Whitfield>Can we double-check that against what we agreed last week?
+
+44
+00:06:27.200 --> 00:06:33.200
+<v Dana Whitfield>Do we actually need a decision on this today, or can it wait a week?
+
+45
+00:06:33.200 --> 00:06:35.600
 <v Mark Dupont>That's fair. I'll withdraw the concern.
 
-115
-00:15:02.000 --> 00:15:06.800
-<v Sarah Kowalski>Is there a risk we're solving a problem we don't have yet?
+46
+00:06:44.500 --> 00:06:51.300
+<v Dana Whitfield>How does this interact with the roadmap and keeping the two tracks in sync, if at all?
 
-116
-00:15:10.400 --> 00:15:11.200
+47
+00:06:54.000 --> 00:06:54.800
+<v Mark Dupont>Right, right.
+
+48
+00:06:57.800 --> 00:07:02.600
+<v Mark Dupont>Right, and that lines up with the constraint we set at kickoff.
+
+49
+00:07:07.000 --> 00:07:12.600
+<v Dana Whitfield>Okay, I think I follow. So the plan is basically what you just described.
+
+50
+00:07:12.600 --> 00:07:16.600
+<v Mark Dupont>Can we double-check that against what we agreed last week?
+
+51
+00:07:16.600 --> 00:07:21.800
+<v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
+
+52
+00:07:24.200 --> 00:07:26.600
+<v Mark Dupont>That's fair. I'll withdraw the concern.
+
+53
+00:07:32.900 --> 00:07:35.700
+<v Dana Whitfield>Mm, let me sit with that one.
+
+54
+00:07:37.600 --> 00:07:44.800
+<v Dana Whitfield>I'll take that one — it's adjacent to the roadmap and keeping the two tracks in sync anyway.
+
+55
+00:07:49.000 --> 00:07:53.800
+<v Mark Dupont>How does this interact with licensing and the ADR, if at all?
+
+56
+00:07:53.800 --> 00:07:57.800
+<v Dana Whitfield>Can we double-check that against what we agreed last week?
+
+57
+00:08:01.200 --> 00:08:02.800
+<v Sarah Kowalski>Makes sense to me.
+
+58
+00:08:14.700 --> 00:08:20.300
+<v Sarah Kowalski>I want to make sure I understand the tradeoff before we commit to anything.
+
+59
+00:08:24.300 --> 00:08:29.500
+<v Sarah Kowalski>I'm a little worried about the timeline, but I'm not blocking on it.
+
+60
+00:08:34.100 --> 00:08:36.900
+<v Dana Whitfield>Mm, let me sit with that one.
+
+61
+00:08:38.600 --> 00:08:39.400
 <v Mark Dupont>That's fair.
 
+62
+00:08:43.200 --> 00:08:46.800
+<v Mark Dupont>What would it take to de-risk that a little?
+
+63
+00:08:46.800 --> 00:08:51.600
+<v Sarah Kowalski>Let me pull up the numbers so we're not going off memory.
+
+64
+00:08:55.700 --> 00:08:57.700
+<v Mark Dupont>Right, that's what I meant.
+
+65
+00:09:00.100 --> 00:09:04.100
+<v Mark Dupont>Can we double-check that against what we agreed last week?
+
+66
+00:09:04.100 --> 00:09:07.700
+<v Dana Whitfield>What would it take to de-risk that a little?
+
+67
+00:09:07.700 --> 00:09:12.500
+<v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
+
+68
+00:09:17.000 --> 00:09:19.000
+<v Sarah Kowalski>Sure, I can own that.
+
+69
+00:09:24.100 --> 00:09:26.100
+<v Sarah Kowalski>Sure, I can own that.
+
+70
+00:09:27.700 --> 00:09:34.500
+<v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
+
+71
+00:09:39.000 --> 00:09:41.400
+<v Mark Dupont>Good point — let's do that.
+
+72
+00:09:46.700 --> 00:09:51.500
+<v Mark Dupont>Let me pull up the numbers so we're not going off memory.
+
+73
+00:09:51.500 --> 00:09:56.300
+<v Sarah Kowalski>Is there a risk we're solving a problem we don't have yet?
+
+74
+00:09:56.300 --> 00:10:01.100
+<v Mark Dupont>Sorry, can you go back to the point about the review pass?
+
+75
+00:10:03.100 --> 00:10:04.700
+<v Sarah Kowalski>Okay, works for me.
+
+76
+00:10:10.400 --> 00:10:12.400
+<v Dana Whitfield>Let's confirm in the channel.
+
+77
+00:10:17.300 --> 00:10:21.300
+<v Sarah Kowalski>Can someone capture that in the notes close to verbatim?
+
+78
+00:10:27.800 --> 00:10:28.600
+<v Dana Whitfield>Yeah, exactly.
+
+79
+00:10:30.400 --> 00:10:35.200
+<v Mark Dupont>Let me pull up the numbers so we're not going off memory.
+
+80
+00:10:40.100 --> 00:10:45.700
+<v Dana Whitfield>Okay, I think I follow. So the plan is basically what you just described.
+
+81
+00:10:47.800 --> 00:10:48.600
+<v Sarah Kowalski>Yeah, exactly.
+
+82
+00:10:52.500 --> 00:11:00.100
+<v Sarah Kowalski>That's commitment. The measure isn't that we never reopen — it's that we only reopen with genuinely new information.
+
+83
+00:11:00.100 --> 00:11:03.700
+<v Dana Whitfield>What would it take to de-risk that a little?
+
+84
+00:11:08.000 --> 00:11:08.800
+<v Sarah Kowalski>Yeah, exactly.
+
+85
+00:11:11.300 --> 00:11:16.900
+<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+86
+00:11:20.300 --> 00:11:25.100
+<v Mark Dupont>Wait — before you move on, can you go back one slide?
+
+87
+00:11:25.100 --> 00:11:30.300
+<v Mark Dupont>I'll take that one — it's adjacent to licensing and the ADR anyway.
+
+88
+00:11:32.500 --> 00:11:37.300
+<v Mark Dupont>How does this interact with licensing and the ADR, if at all?
+
+89
+00:11:42.100 --> 00:11:42.900
+<v Sarah Kowalski>That's fair.
+
+90
+00:11:52.700 --> 00:11:58.700
+<v Sarah Kowalski>Do we actually need a decision on this today, or can it wait a week?
+
+91
+00:12:03.500 --> 00:12:05.100
+<v Mark Dupont>Okay, works for me.
+
+92
+00:12:05.100 --> 00:12:09.900
+<v Sarah Kowalski>I'd rather over-communicate here — can we write down who's doing what?
+
+93
+00:12:14.800 --> 00:12:19.600
+<v Mark Dupont>I'd rather over-communicate here — can we write down who's doing what?
+
+94
+00:12:19.600 --> 00:12:23.200
+<v Mark Dupont>What would it take to de-risk that a little?
+
+95
+00:12:26.200 --> 00:12:27.800
+<v Sarah Kowalski>Okay, works for me.
+
+96
+00:12:27.800 --> 00:12:32.600
+<v Dana Whitfield>Sorry, can you go back to the point about the review pass?
+
+97
+00:12:36.200 --> 00:12:37.000
+<v Sarah Kowalski>That's fair.
+
+98
+00:12:40.800 --> 00:12:46.000
+<v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
+
+99
+00:12:46.000 --> 00:12:52.000
+<v Sarah Kowalski>Can we make sure that lands as an action item so it doesn't get lost?
+
+100
+00:12:58.600 --> 00:13:03.800
+<v Sarah Kowalski>Let me play that back to make sure we're all aligned on it.
+
+101
+00:13:11.700 --> 00:13:13.300
+<v Sarah Kowalski>Makes sense to me.
+
+102
+00:13:13.300 --> 00:13:18.100
+<v Dana Whitfield>Let me pull up the numbers so we're not going off memory.
+
+103
+00:13:18.100 --> 00:13:23.700
+<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+104
+00:13:26.800 --> 00:13:28.800
+<v Mark Dupont>Right, that's what I meant.
+
+105
+00:13:42.800 --> 00:13:44.400
+<v Sarah Kowalski>Sure — one sec.
+
+106
+00:13:44.400 --> 00:13:49.200
+<v Mark Dupont>Yeah, that's consistent with what we talked about in the last sync.
+
+107
+00:13:52.800 --> 00:13:57.600
+<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
+
+108
+00:13:57.600 --> 00:14:03.200
+<v Sarah Kowalski>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+109
+00:14:03.200 --> 00:14:08.000
+<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
+
+110
+00:14:08.000 --> 00:14:12.800
+<v Sarah Kowalski>Sorry, can you go back to the point about the review pass?
+
+111
+00:14:14.700 --> 00:14:19.500
+<v Sarah Kowalski>Right, and that lines up with the constraint we set at kickoff.
+
+112
+00:14:23.400 --> 00:14:25.800
+<v Sarah Kowalski>That's fair. I'll withdraw the concern.
+
+113
+00:14:29.800 --> 00:14:32.600
+<v Dana Whitfield>Mm, let me sit with that one.
+
+114
+00:14:40.600 --> 00:14:46.200
+<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+115
+00:14:49.600 --> 00:14:55.200
+<v Mark Dupont>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+116
+00:14:59.200 --> 00:15:01.200
+<v Dana Whitfield>Sure, I can own that.
+
 117
-00:15:14.300 --> 00:15:15.100
-<v Sarah Kowalski>Okay.
+00:15:05.000 --> 00:15:07.000
+<v Sarah Kowalski>Sure, I can own that.
 
 118
-00:15:19.300 --> 00:15:24.100
+00:15:07.000 --> 00:15:11.800
 <v Sarah Kowalski>I'd rather over-communicate here — can we write down who's doing what?
 
 119
-00:15:25.900 --> 00:15:27.900
-<v Dana Whitfield>Right, that's what I meant.
+00:15:15.700 --> 00:15:20.900
+<v Mark Dupont>Let's not rathole on this — can we take the fine detail offline?
 
 120
-00:15:30.800 --> 00:15:38.400
-<v Sarah Kowalski>That's commitment. The measure isn't that we never reopen — it's that we only reopen with genuinely new information.
+00:15:29.400 --> 00:15:33.400
+<v Dana Whitfield>Can we double-check that against what we agreed last week?
 
 121
-00:15:39.800 --> 00:15:44.600
-<v Mark Dupont>Just so I've got it written down, can you repeat the number?
+00:15:36.300 --> 00:15:40.300
+<v Dana Whitfield>Can someone capture that in the notes close to verbatim?
 
 122
-00:15:49.900 --> 00:15:51.500
-<v Sarah Kowalski>Sure — one sec.
+00:15:40.300 --> 00:15:45.500
+<v Mark Dupont>I'm a little worried about the timeline, but I'm not blocking on it.
 
 123
-00:15:51.500 --> 00:15:57.100
-<v Mark Dupont>Okay, I think I follow. So the plan is basically what you just described.
+00:15:45.500 --> 00:15:51.100
+<v Mark Dupont>I don't feel strongly on this one — I'll defer to whoever owns it.
 
 124
-00:15:57.100 --> 00:16:02.700
-<v Mark Dupont>That matches what I was seeing on my end with licensing and the ADR.
+00:15:53.700 --> 00:15:59.300
+<v Sarah Kowalski>Okay, I think I follow. So the plan is basically what you just described.
 
 125
-00:16:05.800 --> 00:16:11.000
-<v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
+00:16:02.300 --> 00:16:03.100
+<v Dana Whitfield>That's fair.
 
 126
-00:16:13.800 --> 00:16:16.600
-<v Dana Whitfield>Mm, let me sit with that one.
+00:16:09.800 --> 00:16:15.000
+<v Mark Dupont>Let me play that back to make sure we're all aligned on it.
 
 127
-00:16:16.600 --> 00:16:20.200
-<v Mark Dupont>What would it take to de-risk that a little?
+00:16:18.400 --> 00:16:23.600
+<v Mark Dupont>I'm a little worried about the timeline, but I'm not blocking on it.
 
 128
-00:16:25.100 --> 00:16:29.100
-<v Mark Dupont>Good — as long as it's reversible, I'm comfortable moving.
+00:16:28.100 --> 00:16:28.900
+<v Dana Whitfield>That's fair.
 
 129
-00:16:29.100 --> 00:16:33.900
-<v Mark Dupont>Is there a risk we're solving a problem we don't have yet?
+00:16:30.700 --> 00:16:35.900
+<v Mark Dupont>I'll take that one — it's adjacent to licensing and the ADR anyway.
 
 130
-00:16:40.800 --> 00:16:42.400
-<v Sarah Kowalski>Okay, works for me.
+00:16:37.400 --> 00:16:42.200
+<v Sarah Kowalski>I'd rather over-communicate here — can we write down who's doing what?
 
 131
-00:16:47.800 --> 00:16:53.000
-<v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
+00:16:42.200 --> 00:16:47.800
+<v Mark Dupont>I want to make sure I understand the tradeoff before we commit to anything.
 
 132
-00:16:54.600 --> 00:16:59.400
-<v Dana Whitfield>I'd rather over-communicate here — can we write down who's doing what?
+00:16:55.700 --> 00:16:57.700
+<v Mark Dupont>Let's confirm in the channel.
 
 133
-00:17:02.800 --> 00:17:04.800
-<v Mark Dupont>Sure, I can own that.
+00:17:01.400 --> 00:17:07.000
+<v Sarah Kowalski>Okay, I think I follow. So the plan is basically what you just described.
 
 134
-00:17:10.400 --> 00:17:12.000
-<v Dana Whitfield>Okay, works for me.
+00:17:14.600 --> 00:17:17.000
+<v Mark Dupont>That's fair. I'll withdraw the concern.
 
 135
-00:17:22.800 --> 00:17:25.600
-<v Sarah Kowalski>Okay — any questions before we wrap?
+00:17:19.300 --> 00:17:24.900
+<v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
 
 136
-00:17:29.800 --> 00:17:34.200
-<v Mark Dupont>Quick clarifier — who owns the follow-up here, and by when?
+00:17:24.900 --> 00:17:27.300
+<v Dana Whitfield>That's fair. I'll withdraw the concern.
 
 137
-00:17:37.100 --> 00:17:43.100
-<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+00:17:31.700 --> 00:17:33.700
+<v Mark Dupont>Right, that's what I meant.
 
 138
-00:17:45.900 --> 00:17:52.700
-<v Dana Whitfield>One thing: how does this affect the the roadmap and keeping the two tracks in sync timeline?
+00:17:41.400 --> 00:17:46.200
+<v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
 
 139
-00:17:58.300 --> 00:18:04.300
-<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+00:17:50.300 --> 00:17:52.300
+<v Mark Dupont>Sure, I can own that.
 
 140
-00:18:11.900 --> 00:18:17.500
-<v Sarah Kowalski>Alright, let me read back the action items so we're aligned before we drop.
+00:17:54.600 --> 00:17:56.600
+<v Sarah Kowalski>Let's confirm in the channel.
 
 141
-00:18:25.700 --> 00:18:32.500
-<v Sarah Kowalski>Sarah has the follow-up on the CARE governance framework — I'll capture the specifics in the notes.
+00:17:56.600 --> 00:18:01.400
+<v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
 
 142
-00:18:33.500 --> 00:18:40.300
-<v Sarah Kowalski>Mark has the follow-up on licensing and the ADR — I'll capture the specifics in the notes.
+00:18:03.800 --> 00:18:05.400
+<v Sarah Kowalski>Okay, works for me.
 
 143
-00:18:42.600 --> 00:18:51.400
-<v Sarah Kowalski>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
+00:18:12.600 --> 00:18:13.400
+<v Dana Whitfield>That's fair.
 
 144
-00:18:52.700 --> 00:18:58.300
+00:18:16.000 --> 00:18:21.200
+<v Mark Dupont>I'll take that one — it's adjacent to licensing and the ADR anyway.
+
+145
+00:18:25.800 --> 00:18:31.400
+<v Sarah Kowalski>One concern and then I'll drop it: are we sure about the sequencing here?
+
+146
+00:18:31.400 --> 00:18:40.200
+<v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
+
+147
+00:18:45.600 --> 00:18:47.200
+<v Mark Dupont>Agreed, let's capture it.
+
+148
+00:18:58.500 --> 00:19:01.300
+<v Sarah Kowalski>Okay — any questions before we wrap?
+
+149
+00:19:03.500 --> 00:19:12.700
+<v Dana Whitfield>Question before we wrap — does any of this change what I'm doing on the roadmap and keeping the two tracks in sync?
+
+150
+00:19:15.800 --> 00:19:21.800
+<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+151
+00:19:24.600 --> 00:19:31.800
+<v Mark Dupont>Question before we wrap — does any of this change what I'm doing on licensing and the ADR?
+
+152
+00:19:37.300 --> 00:19:43.300
+<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+153
+00:19:48.500 --> 00:19:54.100
+<v Sarah Kowalski>Alright, let me read back the action items so we're aligned before we drop.
+
+154
+00:20:04.000 --> 00:20:10.800
+<v Sarah Kowalski>Sarah has the follow-up on the CARE governance framework — I'll capture the specifics in the notes.
+
+155
+00:20:12.400 --> 00:20:19.200
+<v Sarah Kowalski>Mark has the follow-up on licensing and the ADR — I'll capture the specifics in the notes.
+
+156
+00:20:20.700 --> 00:20:29.500
+<v Sarah Kowalski>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
+
+157
+00:20:30.800 --> 00:20:36.400
 <v Sarah Kowalski>Great. I'll write it all up and drop it in the channel. Thanks everyone.

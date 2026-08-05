@@ -156,6 +156,19 @@
     }
   },
   {
+    "id": "U13",
+    "name": "greg",
+    "real_name": "Greg Olsen",
+    "deleted": false,
+    "is_bot": false,
+    "profile": {
+      "real_name": "Greg Olsen",
+      "display_name": "greg",
+      "title": "Contractor (part-time)",
+      "team": "platform"
+    }
+  },
+  {
     "id": "U99",
     "name": "insights-bot",
     "real_name": "Collaboration Insights",
