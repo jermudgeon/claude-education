@@ -22,7 +22,7 @@ This is a working surface for **PRD 06, the classroom and group agent facilitato
 ## Run it
 
 ```bash
-cd team-insights
+cd app-demo
 npm start          # serves on http://localhost:4173
 npm test           # 34 tests, no dependencies
 ```
