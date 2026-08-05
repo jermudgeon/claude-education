@@ -118,6 +118,9 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 tr:last-child td{border-bottom:0}
 .good{color:var(--aurora)} .bad{color:var(--sunset)}
 .scroller{overflow-x:auto}
+.recs{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:11px}
+.recs li{font-size:.88rem;line-height:1.6;color:rgb(var(--fg)/.85)}
+.recs li::marker{color:var(--aurora);font-weight:700}
 
 /* speed control */
 .speeds{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
@@ -282,8 +285,10 @@ td.pol{font-size:.78rem;font-weight:600}
       <div class="cardhead"><div><span class="eyebrow">The model</span><h3>Five dysfunctions, one pyramid</h3></div>
         <span class="dim" style="font-size:.72rem">fix trust first, or everything built on top of it regresses</span></div>
       <div class="pyramid" id="pyramid"></div>
-      <p class="note" style="text-align:center">Grounded in Lencioni's Five Dysfunctions of a Team. Each layer shows this
-        meeting's marks; a layer built on a weak one inherits the weakness, so read from the bottom up. Click a layer for its evidence.</p>
+      <p class="note" style="text-align:center">Grounded in Lencioni's Five Dysfunctions of a Team. Each layer carries its
+        score from the latest <code>assessments/</code> run and how far it moved since the previous one, so the fill reads as
+        strength rather than as how much anyone wrote down. A layer built on a weak one inherits the weakness, so read from the
+        bottom up. Click a layer for the evidence the run cited for it.</p>
     </div>
 
     <div class="card" style="margin-bottom:16px">
@@ -319,28 +324,20 @@ td.pol{font-size:.78rem;font-weight:600}
         and Q3's data shows the flips. Hover a row's polarity cells for the verbatim evidence.</p>
     </div>
 
-    <p class="lead">
-      This is the rubric from <code>rubric/obm-behavior-codes.json</code> consuming the same meeting the
-      live view replays: 120 observable behaviors scored across the five team dimensions, applied to the
-      transcript per the team-assess spec. Every dimension is backed by concrete, quotable signals, never
-      a vague AI impression. Marks, not verdicts: no 1–5 score appears here because the scorer that would
-      compute one is not built yet, and inventing one would be exactly the failure the spec guards against.
-    </p>
-    <div class="authored" id="cprov"></div>
-    <div class="codegrid">
-      <div class="stack" id="dimcards"></div>
-      <div class="stack">
-        <div class="card">
-          <div class="cardhead"><div><span class="eyebrow">Uncoded</span><h3>Observations that matched no code</h3></div></div>
-          <div class="codes" id="uncoded"></div>
-          <p class="note" id="unnote"></p>
-        </div>
-        <div class="card">
-          <div class="cardhead"><div><span class="eyebrow">Not codable</span><h3>What the codebook cannot see</h3></div></div>
-          <p class="note" style="margin-top:0" id="notcodable"></p>
-        </div>
-      </div>
+    <div class="card scroller" style="margin-bottom:16px">
+      <div class="cardhead"><div><span class="eyebrow">Priority actions</span><h3>What the run says to do next</h3></div>
+        <span class="dim" style="font-size:.72rem" id="recsub"></span></div>
+      <ol class="recs" id="recs"></ol>
+      <p class="note"><b>The output that earns the analysis.</b> Scores without actions are a scoreboard.
+        These come from the run itself, in its own words, not from a reading of it.</p>
     </div>
+
+    <p class="lead">
+      Every dimension below is the run's own finding: its score, its facets with their confidence, and the
+      verbatim evidence it cited, spanning the whole quarter rather than any single meeting. Nothing on this
+      page is a reading of the data by this demo.
+    </p>
+    <div class="stack" id="dimcards"></div>
   </section>
 
   <!-- READOUT -->
@@ -643,19 +640,62 @@ function buildReadout(){
    (dataviz six-checks: worst adjacent pair deutan ΔE 8.2, direct labels everywhere). */
 const DIMCOLOR = {Trust:'#0fa89a', Conflict:'#e1460e', Commitment:'#1772dd', Accountability:'#e04080', Results:'#22a52f'};
 
+/* The pyramid reads team-assess scores, not the authored marks. A layer's
+   score is the run's, and its movement is against the previous run. The marks
+   are evidence and live in the cards below, labeled as authored. */
+function snapshot(period){
+  return (D.assessments || []).find(a => a.period === period);
+}
+
+/* Trust at the base through Results at the apex, the order the model is read in. */
+const DIMS_ORDER = ['Trust','Conflict','Commitment','Accountability','Results'];
+
+function latestRun(){
+  const runs = D.assessments || [];
+  return runs[runs.length - 1] || null;
+}
+
+/* The run states its own movement in `trend`, including a warning when a jump is
+   large enough that the scorer's unmeasured run-to-run variance could explain it.
+   Recomputing the delta here would silently drop that warning. */
+function layerScore(dim){
+  const run = latestRun();
+  const d = run && run.dimensions ? run.dimensions[dim.toLowerCase()] : null;
+  if (!d) return null;
+  return {
+    score: d.score,
+    period: run.period,
+    delta: d.trend ? d.trend.delta : null,
+    priorPeriod: d.trend ? d.trend.compared_to : null,
+    warning: !!(d.trend && d.trend.warning),
+    evidence: d.evidence || [],
+    facets: d.facets || []
+  };
+}
+
+function periodLabel(ref){
+  return String(ref || '').replace(/^aurora-/, '').replace(/-2026$/, '').toUpperCase();
+}
+
 function buildPyramid(tallies){
   const W = 620, LH = 58, INSET = 36;
   const layers = tallies.map((d, j) => {
     const apex = j === 4;
     const bw = W - 2*INSET*j, tw = apex ? 0 : W - 2*INSET*(j+1);
     const y = (4-j) * LH, cx = W/2;
-    const conf = confidence(d.clusters);
-    const tallyText = d.marks.length
-      ? `+${d.pos}${d.neg ? ` / −${d.neg}` : ''} · ${conf} confidence`
-      : 'no signal';
+    const s = layerScore(d.dim);
+    /* Fill carries the score, so a strong layer reads strong. Previously it
+       carried whether anyone had authored a mark, which made Results look
+       empty at 4.42. */
+    const opacity = s ? (0.10 + 0.05 * Math.max(0, Math.min(5, s.score))).toFixed(3) : 0.10;
+    const tallyText = s
+      ? `${s.score.toFixed(2)} of 5`
+        + (s.delta === null ? '' : ` · ${s.delta > 0 ? '+' : ''}${s.delta.toFixed(2)} vs ${periodLabel(s.priorPeriod)}`)
+        + (s.warning ? ' ⚠' : '')
+      : 'not scored in this run';
     return `<g class="layer" data-dim="${d.dim}">
       <path d="M ${cx-bw/2} ${y+LH} L ${cx+bw/2} ${y+LH} L ${cx+tw/2} ${y} L ${cx-tw/2} ${y} Z"
-        fill="${DIMCOLOR[d.dim]}" fill-opacity="${d.marks.length ? .28 : .10}"
+        fill="${DIMCOLOR[d.dim]}" fill-opacity="${opacity}"
         stroke="${DIMCOLOR[d.dim]}" stroke-opacity=".55" stroke-width="1.5"/>
       <text class="lname" x="${cx}" y="${y + (apex ? 34 : 24)}" text-anchor="middle">${d.dim}</text>
       <text class="ltally" x="${cx}" y="${y + (apex ? 51 : 41)}" text-anchor="middle">${tallyText}</text>
@@ -669,34 +709,48 @@ function buildPyramid(tallies){
   });
 }
 
-function buildCoding(){
-  el('csub').textContent = `${D.summary.title} · ${D.summary.date} · ${MARKS.length} marks over ${CODING.rubric.total_codes} codes`;
-  buildPyramid(tally(MARKS));
-  el('cprov').innerHTML = `<b>Authored, not measured.</b> ${esc(CODING.provenance)}
-    Coder: ${esc(CODING.authored_by)}, ${esc(CODING.authored_on)}.`;
+function facetLabel(name){
+  return String(name).replace(/_/g, ' ');
+}
 
-  el('dimcards').innerHTML = tally(MARKS).map(d => {
-    const meta = CODING.rubric.dimensions[d.dim];
-    const conf = confidence(d.clusters);
-    return `<div class="dimcard" id="dim-${d.dim}">
-      <div class="dimhead"><h4>${d.dim}</h4><span class="conf ${conf}">${conf === 'none' ? 'no signal' : conf + ' confidence'}</span></div>
-      <div class="dimstats">+${d.pos} / −${d.neg} marks · ${d.clusters} of ${meta.clusters} clusters · ${meta.codes} codes available</div>
-      ${d.marks.length
-        ? `<div class="codes" style="max-height:none">${d.marks.map(markCard).join('')}</div>`
-        : `<div class="empty">No mark in this meeting. Per the spec, absence of marks is absence of signal, never a score of zero.</div>`}
+function buildCoding(){
+  const run = latestRun();
+  const ot = run && run.overall_trend;
+  el('csub').textContent = [
+    `${run ? run.period : 'latest'} run, ${run ? run.run_date : ''}`.trim(),
+    run ? `overall ${run.overall.toFixed(2)} of 5` + (ot ? ` (${ot.delta > 0 ? '+' : ''}${ot.delta.toFixed(2)} vs ${periodLabel(ot.compared_to)}, ${ot.direction})` : '') : '',
+    'whole quarter, every source'
+  ].filter(Boolean).join(' · ');
+
+  buildPyramid(DIMS_ORDER.map(dim => ({dim})));
+
+  el('recsub').textContent = run ? `${run.recommendations.length} from the ${run.period} run` : '';
+  el('recs').innerHTML = (run ? run.recommendations : []).map(r => `<li>${esc(r)}</li>`).join('');
+
+  el('dimcards').innerHTML = DIMS_ORDER.map(dim => {
+    const s = layerScore(dim);
+    if (!s) return `<div class="dimcard" id="dim-${dim}">
+      <div class="dimhead"><h4>${dim}</h4><span class="conf none">not scored</span></div>
+      <div class="empty">This dimension is absent from the run, which is absence of measurement, never a score of zero.</div>
+    </div>`;
+    const warn = s.warning
+      ? ` <span class="conf low" title="A move this large is inside the scorer's unmeasured run-to-run variance">⚠ ${s.delta > 0 ? '+' : ''}${s.delta.toFixed(2)}, verify before trusting</span>`
+      : (s.delta === null ? '' : ` <span class="dim" style="font-size:.72rem">${s.delta > 0 ? '+' : ''}${s.delta.toFixed(2)} vs ${periodLabel(s.priorPeriod)}</span>`);
+    return `<div class="dimcard" id="dim-${dim}">
+      <div class="dimhead"><h4>${dim}</h4><span class="conf high">${s.score.toFixed(2)} of 5</span>${warn}</div>
+      <div class="dimstats">${s.facets.length} facets · ${s.evidence.length} cited quotes</div>
+      <div class="codes" style="max-height:none">
+        ${s.evidence.map(q => `<div class="codemark"><div class="cq">${esc(q)}</div></div>`).join('')}
+      </div>
+      <div class="dimstats" style="margin-top:12px">Facets</div>
+      ${s.facets.map(f => `<div class="codemark" style="border-left-color:${DIMCOLOR[dim]}">
+        <span class="cid">${f.score.toFixed(1)} of 5${f.confidence ? ' · ' + esc(f.confidence) + ' confidence' : ''}</span>
+        <div class="cmeta"><b>${esc(facetLabel(f.name))}</b></div>
+        ${f.evidence.slice(0, 2).map(q => `<div class="cq">${esc(q)}</div>`).join('')}
+      </div>`).join('')}
     </div>`;
   }).join('');
 
-  el('uncoded').innerHTML = CODING.uncoded.map(u => `
-    <div class="codemark" style="border-left-color:var(--harvest)">
-      <span class="cid">no match</span>
-      <div class="cq">"${esc(u.quote)}" — ${esc(u.speaker)}, ${mmss(u.at_s)}</div>
-      <div class="cmeta">${esc(u.note)}</div>
-    </div>`).join('');
-  el('unnote').innerHTML = `<b>This list is the codebook's growth path.</b> Per the spec, an observation
-    that matches no code is never folded silently into a score: it is reported here as a candidate new
-    code. Recurring candidates get promoted, and adding a code never renumbers existing ids.`;
-  el('notcodable').innerHTML = esc(CODING.not_codable);
 }
 
 /* ---------- trend: small multiples + meeting-grain bars ---------- */
