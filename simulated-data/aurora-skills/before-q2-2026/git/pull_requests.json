@@ -1,0 +1,110 @@
+{
+  "repo": "aurora-skills/registry",
+  "pull_requests": [
+    {
+      "number": 24,
+      "title": "Manifest schema v0: capability allow-list",
+      "author": "naomi",
+      "created": "2026-04-16",
+      "merged": "2026-04-17",
+      "state": "merged",
+      "base": "main",
+      "head": "schema/manifest-v0",
+      "body": "Capabilities are an allow-list (`fs.read`, `net.egress`, `tk.reference`). Anything not listed is denied. I'd rather over-restrict now and loosen later.",
+      "reviews": [
+        {
+          "reviewer": "marcus",
+          "state": "approved",
+          "body": "Exactly right. The deny-by-default posture is what makes review tractable."
+        }
+      ],
+      "comments": [
+        {
+          "user": "marcus",
+          "body": "Can we drop `net.egress` entirely pending the arch review? I'm going to argue against self-declared egress."
+        },
+        {
+          "user": "naomi",
+          "body": "Good call \u2014 I'll gate it behind the arch decision. Left it in but marked experimental."
+        }
+      ],
+      "era": "before"
+    },
+    {
+      "number": 41,
+      "title": "Fix manifest validator edge case",
+      "author": "ben",
+      "created": "2026-04-30",
+      "merged": "2026-04-30",
+      "state": "merged",
+      "base": "main",
+      "head": "fix/validator-edge",
+      "body": "small fix, nothing major",
+      "reviews": [
+        {
+          "reviewer": "dana",
+          "state": "approved",
+          "body": "lgtm, ship it"
+        }
+      ],
+      "comments": [
+        {
+          "user": "naomi",
+          "body": "(added 2026-05-04) This is the change that disabled the capability check and broke the smoke test. Flagging for the incident retro \u2014 not to pile on Ben, who surfaced it himself.",
+          "line_ref": "validator/capabilities.py:88"
+        }
+      ],
+      "era": "before"
+    },
+    {
+      "number": 63,
+      "title": "Provenance field on skill artifacts",
+      "author": "marcus",
+      "created": "2026-05-08",
+      "merged": "2026-05-15",
+      "state": "merged",
+      "base": "main",
+      "head": "schema/provenance",
+      "body": "Adds `provenance` to the artifact schema: author, source_community, tk_references[]. Co-developed with @lily after we realized platform and governance were building the same field twice. One schema, owned jointly.",
+      "reviews": [
+        {
+          "reviewer": "lily",
+          "state": "approved",
+          "body": "This replaces the parallel field I was building on the governance side. Glad we caught it before both shipped."
+        },
+        {
+          "reviewer": "naomi",
+          "state": "changes_requested",
+          "body": "tk_references[] should reference the Local Contexts label id, not free text, once the ADR lands."
+        },
+        {
+          "reviewer": "marcus",
+          "state": "approved",
+          "body": "Good catch Naomi \u2014 changed my mind on the free-text approach, now it's a typed label reference. Updated."
+        }
+      ],
+      "comments": [],
+      "era": "before"
+    },
+    {
+      "number": 77,
+      "title": "Reviewer console: enforce capability consent at install",
+      "author": "priya",
+      "created": "2026-05-11",
+      "merged": "2026-05-13",
+      "state": "merged",
+      "base": "main",
+      "head": "ui/consent-enforce",
+      "body": "Consent screen now reflects the enforced allow-list. Denied capabilities can't run \u2014 the screen is no longer cosmetic.",
+      "reviews": [
+        {
+          "reviewer": "tomas",
+          "state": "approved",
+          "body": "Added a regression test that fails loudly if the capability check is ever disabled again. Never getting a repeat of #41."
+        }
+      ],
+      "comments": [],
+      "era": "before"
+    }
+  ]
+}

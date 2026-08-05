@@ -1,0 +1,527 @@
+WEBVTT
+
+NOTE Q3 Retro — With the Insights Tool — 2026-09-15
+
+1
+00:00:00.000 --> 00:00:05.600
+<v Sarah Kowalski>Okay, let's give it another minute for folks to join, then we'll get going.
+
+2
+00:00:54.100 --> 00:01:01.300
+<v Sarah Kowalski>Alright, I think we've got most people — I see Dana, Naomi, Ben, Marcus, James. Let's get started.
+
+3
+00:01:01.300 --> 00:01:03.700
+<v Dana Whitfield>Can everyone see my screen alright?
+
+4
+00:01:03.700 --> 00:01:04.900
+<v Sarah Kowalski>Yep, looks good.
+
+5
+00:01:04.900 --> 00:01:14.900
+<v Sarah Kowalski>Quick agenda: I want to get through the main topic, leave room for questions, and land on clear action items before we drop. Sound good?
+
+6
+00:01:19.800 --> 00:01:26.200
+<v Sarah Kowalski>Before the main topic, let's do a fast round — where's everyone at? Keep it short.
+
+7
+00:01:29.900 --> 00:01:36.700
+<v Sarah Kowalski>Quick status: the CARE governance framework. On track. I might need a review later but nothing urgent.
+
+8
+00:01:41.100 --> 00:01:50.300
+<v Dana Whitfield>On my side, the roadmap and keeping the two tracks in sync is moving along — made good progress this week, nothing blocking.
+
+9
+00:01:55.400 --> 00:01:59.400
+<v Marcus Bell>Can we double-check that against what we agreed last week?
+
+10
+00:02:02.200 --> 00:02:08.200
+<v James Ahkivgak>I'll take that one — it's adjacent to community review and the advisory process anyway.
+
+11
+00:02:08.200 --> 00:02:15.000
+<v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
+
+12
+00:02:17.700 --> 00:02:23.700
+<v James Ahkivgak>I'll take that one — it's adjacent to community review and the advisory process anyway.
+
+13
+00:02:27.400 --> 00:02:29.800
+<v Marcus Bell>Good point — let's do that.
+
+14
+00:02:36.100 --> 00:02:36.900
+<v Dana Whitfield>Yeah, exactly.
+
+15
+00:02:40.500 --> 00:02:48.100
+<v Naomi Kito>the manifest schema and validator — steady. One open question I'll raise when we get to it, otherwise fine.
+
+16
+00:02:48.100 --> 00:02:54.100
+<v Naomi Kito>That matches what I was seeing on my end with the manifest schema and validator.
+
+17
+00:02:58.100 --> 00:03:05.300
+<v Naomi Kito>Just flagging that this touches the manifest schema and validator, so loop me in when it firms up.
+
+18
+00:03:07.800 --> 00:03:09.400
+<v Marcus Bell>Okay, works for me.
+
+19
+00:03:11.500 --> 00:03:17.100
+<v Sarah Kowalski>I want to make sure I understand the tradeoff before we commit to anything.
+
+20
+00:03:17.100 --> 00:03:21.100
+<v Sarah Kowalski>Can we double-check that against what we agreed last week?
+
+21
+00:03:23.400 --> 00:03:26.200
+<v James Ahkivgak>Mm, let me sit with that one.
+
+22
+00:03:31.500 --> 00:03:33.500
+<v James Ahkivgak>Right, that's what I meant.
+
+23
+00:03:35.300 --> 00:03:41.700
+<v James Ahkivgak>That matches what I was seeing on my end with community review and the advisory process.
+
+24
+00:03:43.500 --> 00:03:49.500
+<v Dana Whitfield>Do we actually need a decision on this today, or can it wait a week?
+
+25
+00:03:57.400 --> 00:04:04.200
+<v Ben Larsson>That matches what I was seeing on my end with the label renderer and the validator tests.
+
+26
+00:04:08.500 --> 00:04:09.300
+<v Dana Whitfield>That's fair.
+
+27
+00:04:11.000 --> 00:04:21.000
+<v Ben Larsson>I've been heads-down on the label renderer and the validator tests. It's mostly there; I'll have the next piece up in a couple of days.
+
+28
+00:04:24.500 --> 00:04:30.500
+<v James Ahkivgak>Do we actually need a decision on this today, or can it wait a week?
+
+29
+00:04:35.400 --> 00:04:37.400
+<v Sarah Kowalski>Right, that's what I meant.
+
+30
+00:04:40.700 --> 00:04:47.100
+<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
+
+31
+00:04:50.000 --> 00:04:58.800
+<v Marcus Bell>On my side, the backend capability model and the provenance schema is moving along — made good progress this week, nothing blocking.
+
+32
+00:05:03.200 --> 00:05:08.400
+<v Sarah Kowalski>Let me play that back to make sure we're all aligned on it.
+
+33
+00:05:10.300 --> 00:05:15.900
+<v James Ahkivgak>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+34
+00:05:19.100 --> 00:05:21.500
+<v Ben Larsson>Good point — let's do that.
+
+35
+00:05:21.500 --> 00:05:25.500
+<v Dana Whitfield>Good — as long as it's reversible, I'm comfortable moving.
+
+36
+00:05:29.900 --> 00:05:37.900
+<v James Ahkivgak>Not much to report on community review and the advisory process beyond steady progress. I'll flag it if that changes.
+
+37
+00:05:37.900 --> 00:05:43.500
+<v Naomi Kito>One concern and then I'll drop it: are we sure about the sequencing here?
+
+38
+00:05:47.900 --> 00:05:50.700
+<v Sarah Kowalski>Mm, let me sit with that one.
+
+39
+00:05:52.900 --> 00:05:58.500
+<v Naomi Kito>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+40
+00:05:58.500 --> 00:06:04.500
+<v Ben Larsson>Do we actually need a decision on this today, or can it wait a week?
+
+41
+00:06:06.500 --> 00:06:08.500
+<v Marcus Bell>Let's confirm in the channel.
+
+42
+00:06:14.600 --> 00:06:16.200
+<v Marcus Bell>Agreed, let's capture it.
+
+43
+00:06:16.200 --> 00:06:23.800
+<v Dana Whitfield>That matches what I was seeing on my end with the roadmap and keeping the two tracks in sync.
+
+44
+00:06:23.800 --> 00:06:28.1000
+<v Sarah Kowalski>I'm a little worried about the timeline, but I'm not blocking on it.
+
+45
+00:06:31.400 --> 00:06:33.400
+<v Ben Larsson>Let's confirm in the channel.
+
+46
+00:06:35.900 --> 00:06:41.900
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+47
+00:06:46.500 --> 00:06:48.500
+<v Sarah Kowalski>Let's confirm in the channel.
+
+48
+00:06:48.500 --> 00:06:56.900
+<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
+
+49
+00:07:06.1000 --> 00:07:08.1000
+<v Naomi Kito>Sure, I can own that.
+
+50
+00:07:08.1000 --> 00:07:12.1000
+<v Naomi Kito>Can someone capture that in the notes close to verbatim?
+
+51
+00:07:15.700 --> 00:07:17.300
+<v Ben Larsson>Okay, works for me.
+
+52
+00:07:18.1000 --> 00:07:24.1000
+<v Dana Whitfield>Can we make sure that lands as an action item so it doesn't get lost?
+
+53
+00:07:33.600 --> 00:07:38.800
+<v Ben Larsson>Let me play that back to make sure we're all aligned on it.
+
+54
+00:07:43.600 --> 00:07:45.200
+<v Sarah Kowalski>Makes sense to me.
+
+55
+00:07:45.200 --> 00:07:49.1000
+<v James Ahkivgak>Yeah, that's consistent with what we talked about in the last sync.
+
+56
+00:07:53.600 --> 00:07:55.200
+<v Naomi Kito>Okay, works for me.
+
+57
+00:08:00.200 --> 00:08:04.200
+<v Naomi Kito>Good — as long as it's reversible, I'm comfortable moving.
+
+58
+00:08:08.500 --> 00:08:10.100
+<v Dana Whitfield>Okay, works for me.
+
+59
+00:08:11.700 --> 00:08:17.300
+<v Marcus Bell>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+60
+00:08:17.300 --> 00:08:22.100
+<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
+
+61
+00:08:29.700 --> 00:08:35.300
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+62
+00:08:45.600 --> 00:08:52.800
+<v Sarah Kowalski>Q3 retro. Round-robin as always. The numbers are in the tool, but I want the human read. Dana?
+
+63
+00:08:52.800 --> 00:08:59.200
+<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
+
+64
+00:09:01.400 --> 00:09:03.400
+<v Naomi Kito>Let's confirm in the channel.
+
+65
+00:09:16.400 --> 00:09:25.600
+<v Dana Whitfield>My airtime went from about two-thirds to under 40%. The nudges did what I couldn't do by watching myself. That's the honest headline.
+
+66
+00:09:25.600 --> 00:09:31.200
+<v James Ahkivgak>How does this interact with community review and the advisory process, if at all?
+
+67
+00:09:34.300 --> 00:09:35.100
+<v Naomi Kito>That's fair.
+
+68
+00:09:38.500 --> 00:09:39.300
+<v Ben Larsson>Sure.
+
+69
+00:09:39.300 --> 00:09:45.300
+<v James Ahkivgak>Can we make sure that lands as an action item so it doesn't get lost?
+
+70
+00:09:55.800 --> 00:10:07.400
+<v Naomi Kito>I speak in meetings now. Not because I changed, because the format did — pre-reads and round-robin. The silence in Q2 was a design problem, not a me problem.
+
+71
+00:10:09.800 --> 00:10:17.400
+<v Ben Larsson>Same-day on the August regression instead of four days. And I defended a design in review and survived it.
+
+72
+00:10:18.700 --> 00:10:24.700
+<v Naomi Kito>Can we make sure that lands as an action item so it doesn't get lost?
+
+73
+00:10:27.700 --> 00:10:28.500
+<v Dana Whitfield>Mm-hm.
+
+74
+00:10:33.400 --> 00:10:35.800
+<v Sarah Kowalski>Let's move to the next item.
+
+75
+00:10:35.800 --> 00:10:41.000
+<v Marcus Bell>Let me share my screen so we're all looking at the same thing.
+
+76
+00:10:41.000 --> 00:10:46.600
+<v James Ahkivgak>One concern and then I'll drop it: are we sure about the sequencing here?
+
+77
+00:10:46.600 --> 00:10:49.000
+<v Naomi Kito>That's fair. I'll withdraw the concern.
+
+78
+00:10:51.500 --> 00:10:53.500
+<v Ben Larsson>Sure, I can own that.
+
+79
+00:10:59.700 --> 00:11:00.500
+<v Marcus Bell>Yeah, exactly.
+
+80
+00:11:00.500 --> 00:11:06.100
+<v Dana Whitfield>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+81
+00:11:06.100 --> 00:11:10.900
+<v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
+
+82
+00:11:14.900 --> 00:11:17.700
+<v Naomi Kito>Mm, let me sit with that one.
+
+83
+00:11:22.800 --> 00:11:24.400
+<v Ben Larsson>Okay, works for me.
+
+84
+00:11:24.400 --> 00:11:30.000
+<v Ben Larsson>Okay, I think I follow. So the plan is basically what you just described.
+
+85
+00:11:32.100 --> 00:11:33.700
+<v Marcus Bell>Okay, works for me.
+
+86
+00:11:35.900 --> 00:11:41.100
+<v Naomi Kito>How does this interact with the manifest schema and validator, if at all?
+
+87
+00:11:44.000 --> 00:11:45.600
+<v James Ahkivgak>Agreed, let's capture it.
+
+88
+00:11:48.600 --> 00:11:51.000
+<v Naomi Kito>That's fair. I'll withdraw the concern.
+
+89
+00:11:53.000 --> 00:11:55.800
+<v Dana Whitfield>Mm, let me sit with that one.
+
+90
+00:11:57.400 --> 00:12:03.400
+<v Sarah Kowalski>Can we make sure that lands as an action item so it doesn't get lost?
+
+91
+00:12:05.300 --> 00:12:07.300
+<v Naomi Kito>Sure, I can own that.
+
+92
+00:12:09.000 --> 00:12:14.200
+<v Dana Whitfield>I'm a little worried about the timeline, but I'm not blocking on it.
+
+93
+00:12:16.600 --> 00:12:18.600
+<v Ben Larsson>Let's confirm in the channel.
+
+94
+00:12:26.300 --> 00:12:31.100
+<v Marcus Bell>Sorry, can you go back to the point about the review pass?
+
+95
+00:12:32.700 --> 00:12:38.300
+<v James Ahkivgak>One concern and then I'll drop it: are we sure about the sequencing here?
+
+96
+00:12:40.800 --> 00:12:46.400
+<v Sarah Kowalski>I want to make sure I understand the tradeoff before we commit to anything.
+
+97
+00:12:51.200 --> 00:12:52.800
+<v Marcus Bell>Okay, works for me.
+
+98
+00:12:52.800 --> 00:12:58.800
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+99
+00:12:58.800 --> 00:13:03.600
+<v Ben Larsson>Yeah, that's consistent with what we talked about in the last sync.
+
+100
+00:13:07.700 --> 00:13:11.700
+<v Naomi Kito>Can we double-check that against what we agreed last week?
+
+101
+00:13:13.500 --> 00:13:14.300
+<v Marcus Bell>That's fair.
+
+102
+00:13:18.700 --> 00:13:23.900
+<v Naomi Kito>Let me play that back to make sure we're all aligned on it.
+
+103
+00:13:23.900 --> 00:13:27.900
+<v Ben Larsson>Can someone capture that in the notes close to verbatim?
+
+104
+00:13:52.500 --> 00:14:02.100
+<v Marcus Bell>Dissent-before-decision is just how we work now. And the license question never reopened — we actually settled it in June with the snapshot mitigation.
+
+105
+00:14:03.500 --> 00:14:09.500
+<v Naomi Kito>Do we actually need a decision on this today, or can it wait a week?
+
+106
+00:14:11.700 --> 00:14:16.500
+<v James Ahkivgak>Yeah, that's consistent with what we talked about in the last sync.
+
+107
+00:14:19.900 --> 00:14:23.900
+<v Ben Larsson>Can you scroll up to the top of that section?
+
+108
+00:14:23.900 --> 00:14:29.900
+<v Sarah Kowalski>Do we actually need a decision on this today, or can it wait a week?
+
+109
+00:14:31.500 --> 00:14:33.500
+<v Dana Whitfield>Sure, I can own that.
+
+110
+00:14:33.500 --> 00:14:38.300
+<v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
+
+111
+00:14:42.200 --> 00:14:43.800
+<v James Ahkivgak>Okay, works for me.
+
+112
+00:14:48.200 --> 00:14:53.800
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+113
+00:15:03.100 --> 00:15:04.700
+<v Marcus Bell>Sure — one sec.
+
+114
+00:15:07.300 --> 00:15:17.700
+<v James Ahkivgak>My one caution: don't let the tool become the point. It's a mirror. The work is still us choosing to look. But it's a good mirror.
+
+115
+00:15:32.000 --> 00:15:36.000
+<v James Ahkivgak>Can someone capture that in the notes close to verbatim?
+
+116
+00:15:36.000 --> 00:15:41.200
+<v Naomi Kito>I'm a little worried about the timeline, but I'm not blocking on it.
+
+117
+00:15:41.200 --> 00:15:48.000
+<v Ben Larsson>That matches what I was seeing on my end with the label renderer and the validator tests.
+
+118
+00:15:51.900 --> 00:15:53.900
+<v Dana Whitfield>Sure, I can own that.
+
+119
+00:16:04.000 --> 00:16:04.800
+<v Sarah Kowalski>Yeah, exactly.
+
+120
+00:16:06.500 --> 00:16:11.300
+<v James Ahkivgak>Let me pull up the numbers so we're not going off memory.
+
+121
+00:16:15.600 --> 00:16:24.000
+<v Sarah Kowalski>Action: roll it out to the two partner districts' teams, and publish the before/after so other Alaska teams can use it.
+
+122
+00:16:47.100 --> 00:16:49.900
+<v Sarah Kowalski>Okay — any questions before we wrap?
+
+123
+00:16:54.900 --> 00:17:02.900
+<v Ben Larsson>Should I loop anyone else in on the the label renderer and the validator tests side, or is that covered?
+
+124
+00:17:06.000 --> 00:17:12.000
+<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+125
+00:17:13.700 --> 00:17:20.100
+<v Marcus Bell>One thing: how does this affect the the backend capability model and the provenance schema timeline?
+
+126
+00:17:24.800 --> 00:17:30.800
+<v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
+
+127
+00:17:35.900 --> 00:17:41.500
+<v Sarah Kowalski>Alright, let me read back the action items so we're aligned before we drop.
+
+128
+00:17:52.400 --> 00:17:59.200
+<v Sarah Kowalski>Sarah has the follow-up on the CARE governance framework — I'll capture the specifics in the notes.
+
+129
+00:18:01.700 --> 00:18:10.500
+<v Sarah Kowalski>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
+
+130
+00:18:12.300 --> 00:18:19.500
+<v Sarah Kowalski>Naomi has the follow-up on the manifest schema and validator — I'll capture the specifics in the notes.
+
+131
+00:18:23.300 --> 00:18:28.900
+<v Sarah Kowalski>Great. I'll write it all up and drop it in the channel. Thanks everyone.

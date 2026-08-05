@@ -1,0 +1,102 @@
+{
+  "format": "async-standup-bot",
+  "era": "Q2 2026 \u2014 before the insights tool",
+  "entries": [
+    {
+      "date": "2026-04-15",
+      "user": "Naomi Kito",
+      "handle": "naomi",
+      "yesterday": "Manifest schema v0 merged (#24)",
+      "today": "Retrofit egress gate per arch decision",
+      "blockers": "none"
+    },
+    {
+      "date": "2026-04-15",
+      "user": "Ben Larsson",
+      "handle": "ben",
+      "yesterday": "Paired with Naomi on validator tests",
+      "today": "More validator tests",
+      "blockers": "not sure I understand the capability model fully"
+    },
+    {
+      "date": "2026-04-15",
+      "user": "Marcus Bell",
+      "handle": "marcus",
+      "yesterday": "Argued egress at arch review",
+      "today": "Start provenance spike",
+      "blockers": "none"
+    },
+    {
+      "date": "2026-04-15",
+      "user": "Dana Whitfield",
+      "handle": "dana",
+      "yesterday": "Ran arch review",
+      "today": "Milestone tracking",
+      "blockers": "none"
+    },
+    {
+      "date": "2026-05-01",
+      "user": "Ben Larsson",
+      "handle": "ben",
+      "yesterday": "Manifest validator fix",
+      "today": "Smoke test flakiness",
+      "blockers": "the weekend smoke test is red and I'm not sure why"
+    },
+    {
+      "date": "2026-05-01",
+      "user": "Naomi Kito",
+      "handle": "naomi",
+      "yesterday": "Reviewed access schema",
+      "today": "Chase the smoke-test regression",
+      "blockers": "which PR touched the capability check?"
+    },
+    {
+      "date": "2026-05-05",
+      "user": "Ben Larsson",
+      "handle": "ben",
+      "yesterday": "Owned the validator regression in retro",
+      "today": "Fix it properly with Marcus",
+      "blockers": "none \u2014 glad it's out in the open"
+    },
+    {
+      "date": "2026-05-05",
+      "user": "Tom\u00e1s Reyes",
+      "handle": "tomas",
+      "yesterday": "Reproduced the exfil payload; wrote regression test",
+      "today": "Harden review pipeline",
+      "blockers": "need a second reviewer, I'm a SPOF"
+    },
+    {
+      "date": "2026-05-08",
+      "user": "Marcus Bell",
+      "handle": "marcus",
+      "yesterday": "Provenance PR #63 up",
+      "today": "Fold in Lily's label reference",
+      "blockers": "waiting on ADR-0003 for label ids"
+    },
+    {
+      "date": "2026-05-08",
+      "user": "Lily Chen",
+      "handle": "lily",
+      "yesterday": "Realized my label model dupes Marcus's provenance",
+      "today": "Merge into joint schema (AUR-7\u2192AUR-6)",
+      "blockers": "none, glad we found it"
+    },
+    {
+      "date": "2026-06-03",
+      "user": "Dana Whitfield",
+      "handle": "dana",
+      "yesterday": "Healthy-conflict retro",
+      "today": "Draft the collaboration-insights PRD",
+      "blockers": "none"
+    },
+    {
+      "date": "2026-06-03",
+      "user": "Naomi Kito",
+      "handle": "naomi",
+      "yesterday": "Named my meeting-silence pattern in retro",
+      "today": "Keep contributing in writing, try one thing out loud",
+      "blockers": "the meeting format still doesn't fit how I think"
+    }
+  ]
+}

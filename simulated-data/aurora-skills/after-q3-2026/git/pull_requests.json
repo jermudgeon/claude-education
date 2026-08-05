@@ -1,0 +1,75 @@
+{
+  "repo": "aurora-skills/registry",
+  "pull_requests": [
+    {
+      "number": 92,
+      "title": "Collaboration Insights: timer subagent + repo snapshot",
+      "author": "naomi",
+      "created": "2026-07-09",
+      "merged": "2026-07-15",
+      "state": "merged",
+      "base": "main",
+      "head": "insights/timer-subagent",
+      "era": "after",
+      "body": "Implements the sketch from the 2026-06-02 retro: a skill declared in CLAUDE.md runs in a subagent on a ~2-min timer, snapshots the live discussion, pushes it to the repo, and searches for similar prior conversations. See PRD 05.",
+      "reviews": [
+        {
+          "reviewer": "marcus",
+          "state": "changes_requested",
+          "body": "Before we merge: what stops this from becoming surveillance? I want the humility constraint enforced in code, not just documented."
+        },
+        {
+          "reviewer": "naomi",
+          "state": "approved",
+          "body": "Fair \u2014 added a guard: it reports patterns, never ranks individuals, and questions count toward participation. Marcus changed my design for the better here."
+        },
+        {
+          "reviewer": "james",
+          "state": "approved",
+          "body": "The questions-are-participation rule is in the metric now. Approving."
+        }
+      ],
+      "comments": []
+    },
+    {
+      "number": 101,
+      "title": "Insights metrics: talk-time, Q:A ratio, dissent timing",
+      "author": "dana",
+      "created": "2026-07-20",
+      "merged": "2026-07-24",
+      "state": "merged",
+      "base": "main",
+      "head": "insights/metrics",
+      "era": "after",
+      "body": "Computes the metric contract from PRD 05 over transcripts + chat. Dogfooded on our own Q2 data first \u2014 it correctly flags my 66% talk-time in the roadmap review.",
+      "reviews": [
+        {
+          "reviewer": "priya",
+          "state": "approved",
+          "body": "Ran it on Q2. The silent-but-engaged flag catches Naomi exactly right \u2014 silent in meetings, top contributor in chat."
+        }
+      ],
+      "comments": []
+    },
+    {
+      "number": 108,
+      "title": "Round-robin facilitation nudge",
+      "author": "sarah",
+      "created": "2026-07-28",
+      "merged": "2026-07-30",
+      "state": "merged",
+      "base": "main",
+      "head": "insights/facilitation-nudge",
+      "era": "after",
+      "body": "When one speaker passes ~40% airtime, the facilitator gets a private nudge to open the floor. Also supports a round-robin mode + async pre-reads so non-verbal thinkers aren't drowned out. Directly aimed at the pattern Naomi named.",
+      "reviews": [
+        {
+          "reviewer": "naomi",
+          "state": "approved",
+          "body": "I helped design this. The pre-read + round-robin is the first meeting format that fits how I think. Approving happily."
+        }
+      ],
+      "comments": []
+    }
+  ]
+}

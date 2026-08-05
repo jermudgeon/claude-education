@@ -1,0 +1,64 @@
+{
+  "eras": {
+    "before": "Q2 2026 \u2014 before the insights tool",
+    "after": "Q3 2026 \u2014 after the insights tool"
+  },
+  "counts": {
+    "before": {
+      "messages": 34,
+      "channel_days": 17,
+      "meetings": 16,
+      "prs": 4,
+      "issues": 12,
+      "standups": 12,
+      "retros": 2,
+      "survey_rows": 72
+    },
+    "after": {
+      "messages": 13,
+      "channel_days": 9,
+      "meetings": 7,
+      "prs": 3,
+      "issues": 10,
+      "standups": 7,
+      "retros": 1,
+      "survey_rows": 72
+    }
+  },
+  "comparison": {
+    "before": {
+      "group_meetings": 10,
+      "peak_dominant_talk_pct": 66.2,
+      "avg_dominant_talk_pct": 44.5,
+      "dana_peak_talk_pct": 66.2,
+      "dana_avg_talk_pct": 25.2,
+      "naomi_avg_talk_pct": 6.3,
+      "naomi_meetings_attended": 6,
+      "naomi_silent_meetings": 3,
+      "total_interruptions": 2,
+      "avg_psych_safety_1to5": 3.75,
+      "avg_conflict_health_1to5": 3.68,
+      "license_conflict_reopens": 3,
+      "regression_time_to_surface_days": 4,
+      "hallway_dissent_events": 1,
+      "changed_mind_in_room_events": 1
+    },
+    "after": {
+      "group_meetings": 5,
+      "peak_dominant_talk_pct": 40.1,
+      "avg_dominant_talk_pct": 30.3,
+      "dana_peak_talk_pct": 35.1,
+      "dana_avg_talk_pct": 22.5,
+      "naomi_avg_talk_pct": 18.9,
+      "naomi_meetings_attended": 5,
+      "naomi_silent_meetings": 0,
+      "total_interruptions": 0,
+      "avg_psych_safety_1to5": 4.74,
+      "avg_conflict_health_1to5": 4.65,
+      "license_conflict_reopens": 0,
+      "regression_time_to_surface_days": 0,
+      "hallway_dissent_events": 0,
+      "changed_mind_in_room_events": 3
+    }
+  }
+}

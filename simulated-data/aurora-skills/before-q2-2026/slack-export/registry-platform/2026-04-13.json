@@ -1,0 +1,40 @@
+[
+  {
+    "type": "message",
+    "user": "U02",
+    "user_name": "Marcus Bell",
+    "text": "Pre-read for tomorrow's architecture review: I think we should NOT let skills declare arbitrary network egress in their manifest. If a skill can phone home, curation can't promise safety. Want to argue this before we lock the schema.",
+    "ts": "1776075120.000010",
+    "thread_ts": "1776075120.000010",
+    "reply_count": 2,
+    "reactions": [
+      {
+        "name": "eyes",
+        "users": [
+          "U01",
+          "U04",
+          "U03"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U04",
+    "user_name": "Tom\u00e1s Reyes",
+    "text": "Agreed, and it ties to review load. Every egress permission is a thing a human reviewer has to reason about.",
+    "ts": "1776076140.000011",
+    "thread_ts": "1776075120.000010",
+    "parent_user_id": "U02"
+  },
+  {
+    "type": "message",
+    "user": "U05",
+    "user_name": "Naomi Kito",
+    "text": "+1. I can draft a manifest schema that makes egress an explicit, reviewed capability rather than a free-text field.",
+    "ts": "1776080400.000012",
+    "thread_ts": "1776075120.000010",
+    "parent_user_id": "U02"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "type": "message",
+    "user": "U01",
+    "user_name": "Dana Whitfield",
+    "text": "Morning all \u2014 Aurora Skills kicks off today. Two tracks: Registry & Platform (me, Marcus, Priya, Tom\u00e1s, Naomi, Ben) and Governance & Access (Sarah, James, Rachel, Kevin, Lily, Mark). Kickoff at 10.",
+    "ts": "1775466120.000001"
+  },
+  {
+    "type": "message",
+    "user": "U07",
+    "user_name": "Sarah Kowalski",
+    "text": "Excited. I'll bring the CARE principles one-pager to kickoff so we start with shared language.",
+    "ts": "1775466300.000002"
+  },
+  {
+    "type": "message",
+    "user": "U08",
+    "user_name": "James Ahkivgak",
+    "text": "One question before we build anything: whose knowledge is this registry going to hold, and who decided it could? I'd like that on the table day one.",
+    "ts": "1775466660.000003",
+    "reactions": [
+      {
+        "name": "raised_hands",
+        "users": [
+          "U07",
+          "U09",
+          "U10"
+        ],
+        "count": 3
+      }
+    ]
+  }
+]

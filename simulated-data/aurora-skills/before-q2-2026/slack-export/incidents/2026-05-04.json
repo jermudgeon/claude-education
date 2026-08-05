@@ -1,0 +1,71 @@
+[
+  {
+    "type": "message",
+    "user": "U04",
+    "user_name": "Tom\u00e1s Reyes",
+    "text": "\ud83d\udd34 Heads up. Auditing the public skill-share ecosystems we planned to federate with. A Feb 2026 Snyk audit found 36% of published skills carry a security flaw and there were 76 confirmed malicious payloads. I just reproduced one that exfiltrates env vars on install. This is not hypothetical.",
+    "ts": "1777888200.000030",
+    "thread_ts": "1777888200.000030",
+    "reply_count": 4,
+    "reactions": [
+      {
+        "name": "rotating_light",
+        "users": [
+          "U01",
+          "U02",
+          "U07",
+          "U05"
+        ],
+        "count": 4
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U01",
+    "user_name": "Dana Whitfield",
+    "text": "So federating openly is off the table. Curation + a human review pass is the product, not a nice-to-have.",
+    "ts": "1777889700.000031",
+    "thread_ts": "1777888200.000030",
+    "parent_user_id": "U04"
+  },
+  {
+    "type": "message",
+    "user": "U06",
+    "user_name": "Ben Larsson",
+    "text": "I need to say something. That validator fix I pushed on the 30th and called 'nothing major' \u2014 it disabled a capability check to make a test pass. That's the path Naomi flagged. I was embarrassed and hoped I'd quietly fix it. I'm sorry. Here's exactly what it touched: [thread]",
+    "ts": "1777891200.000032",
+    "thread_ts": "1777888200.000030",
+    "parent_user_id": "U04",
+    "reactions": [
+      {
+        "name": "heart",
+        "users": [
+          "U05",
+          "U07",
+          "U02",
+          "U04"
+        ],
+        "count": 4
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U02",
+    "user_name": "Marcus Bell",
+    "text": "Ben \u2014 thank you for pulling the cord. That's the behavior we want, not the bug. Let's fix it together.",
+    "ts": "1777891920.000033",
+    "thread_ts": "1777888200.000030",
+    "parent_user_id": "U04"
+  },
+  {
+    "type": "message",
+    "user": "U07",
+    "user_name": "Sarah Kowalski",
+    "text": "Noting for the retro: the fix took 4 days to surface because it felt unsafe to say. That's the thing to change.",
+    "ts": "1777893000.000034",
+    "thread_ts": "1777888200.000030",
+    "parent_user_id": "U04"
+  }
+]

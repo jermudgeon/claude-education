@@ -1,0 +1,40 @@
+[
+  {
+    "type": "message",
+    "user": "U06",
+    "user_name": "Ben Larsson",
+    "text": "heads up: I introduced a regression in the label renderer this morning. test went red, I'm on it, pairing with the new reviewer. flagging now rather than sitting on it.",
+    "ts": "1785834900.000044",
+    "thread_ts": "1785834900.000044",
+    "reply_count": 2,
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U04",
+          "U05",
+          "U02"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U06",
+    "user_name": "Ben Larsson",
+    "text": "fixed and merged. root cause + blameless note in #incidents.",
+    "ts": "1785837480.000045",
+    "thread_ts": "1785834900.000044",
+    "parent_user_id": "U06"
+  },
+  {
+    "type": "message",
+    "user": "U02",
+    "user_name": "Marcus Bell",
+    "text": "This is the exact situation that took four days in Q2. 40 minutes now. Growth.",
+    "ts": "1785837720.000046",
+    "thread_ts": "1785834900.000044",
+    "parent_user_id": "U06"
+  }
+]

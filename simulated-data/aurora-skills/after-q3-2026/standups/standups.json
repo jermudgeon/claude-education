@@ -1,0 +1,62 @@
+{
+  "format": "async-standup-bot",
+  "era": "Q3 2026 \u2014 after the insights tool",
+  "entries": [
+    {
+      "date": "2026-07-16",
+      "user": "Naomi Kito",
+      "handle": "naomi",
+      "yesterday": "Shipped the insights timer subagent (#92)",
+      "today": "Facilitation nudge",
+      "blockers": "none \u2014 and the round-robin format actually works for me"
+    },
+    {
+      "date": "2026-07-16",
+      "user": "Ben Larsson",
+      "handle": "ben",
+      "yesterday": "Defended my caching approach in review, Marcus pushed hard",
+      "today": "Ship it",
+      "blockers": "none, that felt good instead of scary"
+    },
+    {
+      "date": "2026-07-16",
+      "user": "Dana Whitfield",
+      "handle": "dana",
+      "yesterday": "Insights flagged my talk-time; ran roadmap as round-robin",
+      "today": "Beta rollout",
+      "blockers": "none"
+    },
+    {
+      "date": "2026-08-05",
+      "user": "Tom\u00e1s Reyes",
+      "handle": "tomas",
+      "yesterday": "Onboarded second reviewer",
+      "today": "Beta security pass",
+      "blockers": "none \u2014 no longer a SPOF"
+    },
+    {
+      "date": "2026-08-05",
+      "user": "Naomi Kito",
+      "handle": "naomi",
+      "yesterday": "Spoke up twice in the arch review",
+      "today": "Label snapshot review",
+      "blockers": "none"
+    },
+    {
+      "date": "2026-09-16",
+      "user": "Dana Whitfield",
+      "handle": "dana",
+      "yesterday": "Q3 retro: metrics all improved",
+      "today": "Write up the before/after",
+      "blockers": "none"
+    },
+    {
+      "date": "2026-09-16",
+      "user": "Ben Larsson",
+      "handle": "ben",
+      "yesterday": "Caught and announced a regression same-day",
+      "today": "Pair with the new reviewer",
+      "blockers": "none"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "type": "message",
+    "user": "U02",
+    "user_name": "Marcus Bell",
+    "text": "Hitting a wall on the manifest schema: I need a way to express *provenance* on a skill \u2014 who authored it, what community it draws from, what data it touches. Feels bigger than the platform. Anyone downstream thinking about this?",
+    "ts": "1778072700.000015",
+    "thread_ts": "1778072700.000015",
+    "reply_count": 1,
+    "reactions": [
+      {
+        "name": "thinking_face",
+        "users": [
+          "U03",
+          "U05"
+        ],
+        "count": 2
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U03",
+    "user_name": "Priya Nair",
+    "text": "Sounds like a governance question wearing an engineering hat.",
+    "ts": "1778073720.000016",
+    "thread_ts": "1778072700.000015",
+    "parent_user_id": "U02"
+  }
+]

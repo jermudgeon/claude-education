@@ -1,0 +1,20 @@
+[
+  {
+    "type": "message",
+    "user": "U05",
+    "user_name": "Naomi Kito",
+    "text": "@ben which validation path did that touch? The install smoke test started failing over the weekend.",
+    "ts": "1777882200.000018",
+    "thread_ts": "1777571520.000017",
+    "parent_user_id": "U06"
+  },
+  {
+    "type": "message",
+    "user": "U06",
+    "user_name": "Ben Larsson",
+    "text": "uh. it might be related. i thought i'd caught everything. looking now.",
+    "ts": "1777883460.000019",
+    "thread_ts": "1777571520.000017",
+    "parent_user_id": "U06"
+  }
+]

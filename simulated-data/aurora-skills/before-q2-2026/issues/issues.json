@@ -1,0 +1,216 @@
+{
+  "team": "Aurora Skills",
+  "era": "Q2 2026 \u2014 before the insights tool",
+  "issues": [
+    {
+      "id": "AUR-1",
+      "title": "Design manifest schema",
+      "assignee": {
+        "handle": "naomi",
+        "name": "Naomi Kito",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-04-08",
+      "completed": "2026-04-17",
+      "labels": [
+        "schema"
+      ],
+      "description": "Capability allow-list, deny-by-default. See PR #24."
+    },
+    {
+      "id": "AUR-2",
+      "title": "Decide capability model (egress?)",
+      "assignee": {
+        "handle": "dana",
+        "name": "Dana Whitfield",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P0",
+      "created": "2026-04-10",
+      "completed": "2026-04-14",
+      "labels": [
+        "decision",
+        "arch"
+      ],
+      "description": "Resolved at arch review: no arbitrary egress, vetted first-party sources. See transcript 2026-04-14."
+    },
+    {
+      "id": "AUR-3",
+      "title": "Registry alpha: browse + filter",
+      "assignee": {
+        "handle": "priya",
+        "name": "Priya Nair",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-04-10",
+      "completed": "2026-04-23",
+      "labels": [
+        "frontend"
+      ],
+      "description": "Clickable alpha."
+    },
+    {
+      "id": "AUR-4",
+      "title": "Install flow + consent screen",
+      "assignee": {
+        "handle": "priya",
+        "name": "Priya Nair",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-04-24",
+      "completed": "2026-05-13",
+      "labels": [
+        "frontend"
+      ],
+      "description": "End-to-end install with enforced consent. PR #77."
+    },
+    {
+      "id": "AUR-5",
+      "title": "Security review pipeline",
+      "assignee": {
+        "handle": "tomas",
+        "name": "Tom\u00e1s Reyes",
+        "team": "platform"
+      },
+      "status": "in_progress",
+      "priority": "P0",
+      "created": "2026-04-20",
+      "completed": null,
+      "labels": [
+        "security"
+      ],
+      "description": "Human review pass + automated scan. Escalated after incident 2026-05-04."
+    },
+    {
+      "id": "AUR-6",
+      "title": "Provenance field (joint schema)",
+      "assignee": {
+        "handle": "marcus",
+        "name": "Marcus Bell",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-05-06",
+      "completed": "2026-05-15",
+      "labels": [
+        "schema",
+        "cross-team"
+      ],
+      "description": "Co-owned with Lily (governance). PR #63. Dedup of parallel work."
+    },
+    {
+      "id": "AUR-7",
+      "title": "Data-label provenance model",
+      "assignee": {
+        "handle": "lily",
+        "name": "Lily Chen",
+        "team": "governance"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-05-07",
+      "completed": "2026-05-15",
+      "labels": [
+        "schema",
+        "cross-team"
+      ],
+      "description": "Duplicate of AUR-6 \u2014 discovered mid-flight. Merged into the joint provenance schema."
+    },
+    {
+      "id": "AUR-8",
+      "title": "CARE + Local Contexts labels design",
+      "assignee": {
+        "handle": "sarah",
+        "name": "Sarah Kowalski",
+        "team": "governance"
+      },
+      "status": "in_progress",
+      "priority": "P0",
+      "created": "2026-04-21",
+      "completed": null,
+      "labels": [
+        "governance",
+        "tk"
+      ],
+      "description": "See ADR-0003. Ratified 2026-06-23 with snapshot mitigation."
+    },
+    {
+      "id": "AUR-9",
+      "title": "Access needs-board + builder pool",
+      "assignee": {
+        "handle": "rachel",
+        "name": "Rachel Green",
+        "team": "governance"
+      },
+      "status": "in_progress",
+      "priority": "P1",
+      "created": "2026-04-28",
+      "completed": null,
+      "labels": [
+        "access"
+      ],
+      "description": "Origin: Kevin's idea in #general 2026-04-09. TK-touching needs route to community review."
+    },
+    {
+      "id": "AUR-10",
+      "title": "Community advisory process",
+      "assignee": {
+        "handle": "james",
+        "name": "James Ahkivgak",
+        "team": "governance"
+      },
+      "status": "in_progress",
+      "priority": "P1",
+      "created": "2026-05-01",
+      "completed": null,
+      "labels": [
+        "tk",
+        "community"
+      ],
+      "description": "Advisory meeting held 2026-05-21."
+    },
+    {
+      "id": "AUR-11",
+      "title": "Collaboration-insights tool (prototype)",
+      "assignee": {
+        "handle": "dana",
+        "name": "Dana Whitfield",
+        "team": "platform"
+      },
+      "status": "todo",
+      "priority": "P2",
+      "created": "2026-06-02",
+      "completed": null,
+      "labels": [
+        "insights",
+        "meta"
+      ],
+      "description": "Spec from retro 2026-06-02. Prototype against our own data. See PRD 05."
+    },
+    {
+      "id": "AUR-12",
+      "title": "Blameless incident note template",
+      "assignee": {
+        "handle": "sarah",
+        "name": "Sarah Kowalski",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P2",
+      "created": "2026-05-05",
+      "completed": "2026-05-08",
+      "labels": [
+        "process"
+      ],
+      "description": "Outcome of incident retro."
+    }
+  ]
+}

@@ -1,0 +1,579 @@
+WEBVTT
+
+NOTE Caching Sync — Marcus & Lily (Q3) — 2026-09-08
+
+1
+00:00:00.000 --> 00:00:04.000
+<v Marcus Bell>Hey — thanks for grabbing time. How's your week been?
+
+2
+00:00:12.500 --> 00:00:15.300
+<v Lily Chen>Good, busy. Bit heads-down. Let's dig in.
+
+3
+00:00:20.000 --> 00:00:30.400
+<v Marcus Bell>The insights tool pinged us both — said we were circling the same caching problem again. So I booked this before either of us wrote code.
+
+4
+00:00:37.900 --> 00:00:42.700
+<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
+
+5
+00:00:45.400 --> 00:00:47.000
+<v Lily Chen>Agreed, let's capture it.
+
+6
+00:00:49.600 --> 00:00:56.400
+<v Marcus Bell>I'll take that one — it's adjacent to the backend capability model and the provenance schema anyway.
+
+7
+00:00:59.800 --> 00:01:01.400
+<v Lily Chen>Agreed, let's capture it.
+
+8
+00:01:01.400 --> 00:01:06.200
+<v Lily Chen>Is there a risk we're solving a problem we don't have yet?
+
+9
+00:01:08.500 --> 00:01:14.100
+<v Lily Chen>I want to make sure I understand the tradeoff before we commit to anything.
+
+10
+00:01:17.800 --> 00:01:19.800
+<v Marcus Bell>Sure, I can own that.
+
+11
+00:01:23.500 --> 00:01:25.500
+<v Marcus Bell>Sure, I can own that.
+
+12
+00:01:25.500 --> 00:01:32.700
+<v Marcus Bell>That matches what I was seeing on my end with the backend capability model and the provenance schema.
+
+13
+00:01:36.300 --> 00:01:41.900
+<v Lily Chen>Okay, I think I follow. So the plan is basically what you just described.
+
+14
+00:01:45.200 --> 00:01:47.1000
+<v Marcus Bell>Mm, let me sit with that one.
+
+15
+00:01:51.300 --> 00:01:52.900
+<v Lily Chen>Okay, works for me.
+
+16
+00:01:52.900 --> 00:02:01.300
+<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
+
+17
+00:02:04.900 --> 00:02:07.700
+<v Lily Chen>Mm, let me sit with that one.
+
+18
+00:02:13.600 --> 00:02:19.600
+<v Lily Chen>Do we actually need a decision on this today, or can it wait a week?
+
+19
+00:02:21.900 --> 00:02:22.700
+<v Marcus Bell>That's fair.
+
+20
+00:02:22.700 --> 00:02:28.300
+<v Marcus Bell>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+21
+00:02:30.500 --> 00:02:35.300
+<v Lily Chen>Sorry, can you go back to the point about the review pass?
+
+22
+00:02:37.900 --> 00:02:40.700
+<v Marcus Bell>Mm, let me sit with that one.
+
+23
+00:02:40.700 --> 00:02:47.100
+<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
+
+24
+00:02:50.500 --> 00:02:52.500
+<v Lily Chen>Let's confirm in the channel.
+
+25
+00:02:57.700 --> 00:03:00.100
+<v Lily Chen>Good point — let's do that.
+
+26
+00:03:03.400 --> 00:03:08.200
+<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
+
+27
+00:03:11.100 --> 00:03:16.700
+<v Lily Chen>I want to make sure I understand the tradeoff before we commit to anything.
+
+28
+00:03:18.400 --> 00:03:20.400
+<v Marcus Bell>Right, that's what I meant.
+
+29
+00:03:22.600 --> 00:03:24.200
+<v Lily Chen>Okay, works for me.
+
+30
+00:03:24.200 --> 00:03:27.800
+<v Marcus Bell>What would it take to de-risk that a little?
+
+31
+00:03:30.300 --> 00:03:31.100
+<v Lily Chen>That's fair.
+
+32
+00:03:31.100 --> 00:03:36.700
+<v Marcus Bell>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+33
+00:03:40.000 --> 00:03:41.600
+<v Lily Chen>Makes sense to me.
+
+34
+00:03:51.600 --> 00:03:57.200
+<v Marcus Bell>I don't feel strongly on this one — I'll defer to whoever owns it.
+
+35
+00:04:00.500 --> 00:04:03.300
+<v Lily Chen>Mm, let me sit with that one.
+
+36
+00:04:06.500 --> 00:04:11.700
+<v Lily Chen>Let's not rathole on this — can we take the fine detail offline?
+
+37
+00:04:13.300 --> 00:04:19.700
+<v Marcus Bell>How does this interact with the backend capability model and the provenance schema, if at all?
+
+38
+00:04:22.300 --> 00:04:24.700
+<v Lily Chen>Good point — let's do that.
+
+39
+00:04:28.100 --> 00:04:28.900
+<v Marcus Bell>That's fair.
+
+40
+00:04:34.200 --> 00:04:39.000
+<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
+
+41
+00:04:42.800 --> 00:04:47.600
+<v Lily Chen>Yeah, that's consistent with what we talked about in the last sync.
+
+42
+00:04:51.400 --> 00:04:53.000
+<v Marcus Bell>Okay, works for me.
+
+43
+00:04:55.900 --> 00:04:57.500
+<v Lily Chen>Makes sense to me.
+
+44
+00:05:01.300 --> 00:05:05.300
+<v Lily Chen>Good — as long as it's reversible, I'm comfortable moving.
+
+45
+00:05:08.800 --> 00:05:14.000
+<v Marcus Bell>Let me play that back to make sure we're all aligned on it.
+
+46
+00:05:16.600 --> 00:05:18.200
+<v Lily Chen>Agreed, let's capture it.
+
+47
+00:05:21.500 --> 00:05:23.900
+<v Marcus Bell>That's fair. I'll withdraw the concern.
+
+48
+00:05:26.200 --> 00:05:29.000
+<v Lily Chen>Mm, let me sit with that one.
+
+49
+00:05:32.300 --> 00:05:33.100
+<v Marcus Bell>Yeah, exactly.
+
+50
+00:05:37.100 --> 00:05:47.900
+<v Lily Chen>Right, and that's the difference from May. In May we found the duplication three weeks in, by accident. This time the tool caught it on day one.
+
+51
+00:05:55.600 --> 00:05:59.200
+<v Marcus Bell>What would it take to de-risk that a little?
+
+52
+00:06:01.600 --> 00:06:04.000
+<v Marcus Bell>That's fair. I'll withdraw the concern.
+
+53
+00:06:06.600 --> 00:06:08.600
+<v Lily Chen>Let's confirm in the channel.
+
+54
+00:06:08.600 --> 00:06:13.800
+<v Marcus Bell>I'm a little worried about the timeline, but I'm not blocking on it.
+
+55
+00:06:17.000 --> 00:06:17.800
+<v Lily Chen>Yeah, exactly.
+
+56
+00:06:20.000 --> 00:06:24.800
+<v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
+
+57
+00:06:26.600 --> 00:06:28.200
+<v Lily Chen>Makes sense to me.
+
+58
+00:06:35.300 --> 00:06:40.100
+<v Lily Chen>Right, and that lines up with the constraint we set at kickoff.
+
+59
+00:06:42.600 --> 00:06:44.600
+<v Marcus Bell>Right, that's what I meant.
+
+60
+00:06:48.400 --> 00:06:50.800
+<v Lily Chen>Good point — let's do that.
+
+61
+00:06:50.800 --> 00:06:56.400
+<v Lily Chen>One concern and then I'll drop it: are we sure about the sequencing here?
+
+62
+00:06:59.700 --> 00:07:04.500
+<v Lily Chen>Let me pull up the numbers so we're not going off memory.
+
+63
+00:07:07.400 --> 00:07:09.400
+<v Marcus Bell>Right, that's what I meant.
+
+64
+00:07:09.400 --> 00:07:14.600
+<v Lily Chen>I'm a little worried about the timeline, but I'm not blocking on it.
+
+65
+00:07:16.800 --> 00:07:17.600
+<v Marcus Bell>That's fair.
+
+66
+00:07:22.700 --> 00:07:26.700
+<v Marcus Bell>Can someone capture that in the notes close to verbatim?
+
+67
+00:07:28.500 --> 00:07:31.300
+<v Lily Chen>Mm, let me sit with that one.
+
+68
+00:07:33.300 --> 00:07:34.100
+<v Marcus Bell>That's fair.
+
+69
+00:07:36.400 --> 00:07:41.200
+<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
+
+70
+00:07:44.200 --> 00:07:47.000
+<v Lily Chen>Mm, let me sit with that one.
+
+71
+00:07:52.300 --> 00:08:00.300
+<v Marcus Bell>One cache layer, shared. I'll own the platform side, you own the label-freshness invalidation. Co-author the PR like last time?
+
+72
+00:08:03.500 --> 00:08:13.900
+<v Lily Chen>Yes. This is exactly what I meant when I said we'd save half our duplicated work if someone was watching who's building what. Now something is.
+
+73
+00:08:13.900 --> 00:08:19.900
+<v Lily Chen>Can we make sure that lands as an action item so it doesn't get lost?
+
+74
+00:08:19.900 --> 00:08:25.500
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+75
+00:08:25.500 --> 00:08:31.100
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+76
+00:08:33.000 --> 00:08:35.000
+<v Lily Chen>Let's confirm in the channel.
+
+77
+00:08:37.900 --> 00:08:42.700
+<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
+
+78
+00:08:42.700 --> 00:08:48.300
+<v Marcus Bell>I want to make sure I understand the tradeoff before we commit to anything.
+
+79
+00:08:51.100 --> 00:08:53.900
+<v Lily Chen>Mm, let me sit with that one.
+
+80
+00:08:59.200 --> 00:09:01.200
+<v Lily Chen>Right, that's what I meant.
+
+81
+00:09:02.900 --> 00:09:07.700
+<v Lily Chen>Right, and that lines up with the constraint we set at kickoff.
+
+82
+00:09:09.600 --> 00:09:11.200
+<v Marcus Bell>Okay, works for me.
+
+83
+00:09:17.400 --> 00:09:19.000
+<v Lily Chen>Makes sense to me.
+
+84
+00:09:24.000 --> 00:09:29.200
+<v Lily Chen>Let's not rathole on this — can we take the fine detail offline?
+
+85
+00:09:33.100 --> 00:09:35.100
+<v Marcus Bell>Sure, I can own that.
+
+86
+00:09:35.100 --> 00:09:40.700
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+87
+00:09:42.600 --> 00:09:44.200
+<v Lily Chen>Makes sense to me.
+
+88
+00:09:47.300 --> 00:09:52.100
+<v Marcus Bell>Sorry, can you go back to the point about the review pass?
+
+89
+00:09:53.600 --> 00:09:55.200
+<v Lily Chen>Okay, works for me.
+
+90
+00:10:01.300 --> 00:10:05.300
+<v Marcus Bell>Good — as long as it's reversible, I'm comfortable moving.
+
+91
+00:10:08.300 --> 00:10:10.300
+<v Lily Chen>Let's confirm in the channel.
+
+92
+00:10:12.800 --> 00:10:14.400
+<v Marcus Bell>Agreed, let's capture it.
+
+93
+00:10:16.100 --> 00:10:21.300
+<v Marcus Bell>Let's not rathole on this — can we take the fine detail offline?
+
+94
+00:10:24.700 --> 00:10:27.500
+<v Lily Chen>Mm, let me sit with that one.
+
+95
+00:10:30.500 --> 00:10:31.300
+<v Marcus Bell>Okay, yeah.
+
+96
+00:10:31.300 --> 00:10:36.900
+<v Marcus Bell>One concern and then I'll drop it: are we sure about the sequencing here?
+
+97
+00:10:40.400 --> 00:10:43.200
+<v Lily Chen>Mm, let me sit with that one.
+
+98
+00:10:47.100 --> 00:10:53.100
+<v Lily Chen>Do we actually need a decision on this today, or can it wait a week?
+
+99
+00:10:53.100 --> 00:10:55.500
+<v Lily Chen>That's fair. I'll withdraw the concern.
+
+100
+00:10:55.500 --> 00:11:00.700
+<v Marcus Bell>I'm a little worried about the timeline, but I'm not blocking on it.
+
+101
+00:11:03.300 --> 00:11:04.900
+<v Lily Chen>Makes sense to me.
+
+102
+00:11:04.900 --> 00:11:09.700
+<v Marcus Bell>Let me pull up the numbers so we're not going off memory.
+
+103
+00:11:13.600 --> 00:11:15.600
+<v Lily Chen>Sure, I can own that.
+
+104
+00:11:22.200 --> 00:11:24.200
+<v Marcus Bell>Sure, I can own that.
+
+105
+00:11:28.100 --> 00:11:32.900
+<v Marcus Bell>Right, and that lines up with the constraint we set at kickoff.
+
+106
+00:11:36.500 --> 00:11:38.500
+<v Lily Chen>Sure, I can own that.
+
+107
+00:11:43.300 --> 00:11:44.900
+<v Marcus Bell>Agreed, let's capture it.
+
+108
+00:11:48.400 --> 00:11:54.000
+<v Marcus Bell>Okay, I think I follow. So the plan is basically what you just described.
+
+109
+00:11:54.000 --> 00:12:00.000
+<v Lily Chen>Do we actually need a decision on this today, or can it wait a week?
+
+110
+00:12:02.700 --> 00:12:04.300
+<v Marcus Bell>Makes sense to me.
+
+111
+00:12:11.700 --> 00:12:15.700
+<v Marcus Bell>Can someone capture that in the notes close to verbatim?
+
+112
+00:12:19.200 --> 00:12:27.600
+<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
+
+113
+00:12:31.500 --> 00:12:33.500
+<v Lily Chen>Right, that's what I meant.
+
+114
+00:12:36.100 --> 00:12:38.100
+<v Lily Chen>Sure, I can own that.
+
+115
+00:12:40.000 --> 00:12:42.000
+<v Lily Chen>Let's confirm in the channel.
+
+116
+00:12:42.000 --> 00:12:50.400
+<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
+
+117
+00:12:51.900 --> 00:12:53.500
+<v Lily Chen>Makes sense to me.
+
+118
+00:12:55.300 --> 00:13:01.300
+<v Lily Chen>Can we make sure that lands as an action item so it doesn't get lost?
+
+119
+00:13:04.800 --> 00:13:13.200
+<v Marcus Bell>Just flagging that this touches the backend capability model and the provenance schema, so loop me in when it firms up.
+
+120
+00:13:16.600 --> 00:13:17.400
+<v Lily Chen>Yeah, exactly.
+
+121
+00:13:17.400 --> 00:13:22.200
+<v Marcus Bell>Yeah, that's consistent with what we talked about in the last sync.
+
+122
+00:13:25.600 --> 00:13:28.400
+<v Lily Chen>Mm, let me sit with that one.
+
+123
+00:13:30.400 --> 00:13:34.400
+<v Marcus Bell>Can someone capture that in the notes close to verbatim?
+
+124
+00:13:36.800 --> 00:13:39.600
+<v Lily Chen>Mm, let me sit with that one.
+
+125
+00:13:42.800 --> 00:13:44.800
+<v Marcus Bell>Right, that's what I meant.
+
+126
+00:13:44.800 --> 00:13:49.600
+<v Marcus Bell>Sorry, can you go back to the point about the review pass?
+
+127
+00:14:05.700 --> 00:14:08.100
+<v Lily Chen>Good point — let's do that.
+
+128
+00:14:10.300 --> 00:14:15.100
+<v Marcus Bell>Is there a risk we're solving a problem we don't have yet?
+
+129
+00:14:18.800 --> 00:14:20.800
+<v Lily Chen>Let's confirm in the channel.
+
+130
+00:14:26.800 --> 00:14:31.600
+<v Marcus Bell>I'd rather over-communicate here — can we write down who's doing what?
+
+131
+00:14:31.600 --> 00:14:37.600
+<v Lily Chen>Do we actually need a decision on this today, or can it wait a week?
+
+132
+00:14:40.500 --> 00:14:42.100
+<v Marcus Bell>Agreed, let's capture it.
+
+133
+00:14:45.900 --> 00:14:51.900
+<v Marcus Bell>Can we make sure that lands as an action item so it doesn't get lost?
+
+134
+00:14:55.300 --> 00:15:00.900
+<v Lily Chen>I want to make sure I understand the tradeoff before we commit to anything.
+
+135
+00:15:02.600 --> 00:15:05.400
+<v Marcus Bell>Mm, let me sit with that one.
+
+136
+00:15:08.100 --> 00:15:12.100
+<v Marcus Bell>Can someone capture that in the notes close to verbatim?
+
+137
+00:15:12.100 --> 00:15:17.300
+<v Marcus Bell>Let's not rathole on this — can we take the fine detail offline?
+
+138
+00:15:20.800 --> 00:15:21.600
+<v Lily Chen>Yeah, exactly.
+
+139
+00:15:25.600 --> 00:15:27.600
+<v Lily Chen>Right, that's what I meant.
+
+140
+00:15:30.200 --> 00:15:30.1000
+<v Lily Chen>That's fair.
+
+141
+00:15:38.500 --> 00:15:44.100
+<v Lily Chen>I want to make sure I understand the tradeoff before we commit to anything.
+
+142
+00:15:46.800 --> 00:15:47.600
+<v Marcus Bell>Yeah, exactly.
+
+143
+00:15:50.500 --> 00:15:51.300
+<v Lily Chen>That's fair.
+
+144
+00:16:00.300 --> 00:16:06.700
+<v Marcus Bell>Good talk. I'll jot down what we landed on. Let's pick it back up next time.

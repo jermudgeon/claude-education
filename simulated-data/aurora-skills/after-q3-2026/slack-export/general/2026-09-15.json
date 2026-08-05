@@ -1,0 +1,23 @@
+[
+  {
+    "type": "message",
+    "user": "U07",
+    "user_name": "Sarah Kowalski",
+    "text": "Q3 retro done. Every collaboration metric improved vs Q2. We're going to publish the before/after so other Alaska teams can use it.",
+    "ts": "1789489800.000043",
+    "reactions": [
+      {
+        "name": "tada",
+        "users": [
+          "U01",
+          "U08",
+          "U05",
+          "U02",
+          "U06",
+          "U09"
+        ],
+        "count": 6
+      }
+    ]
+  }
+]

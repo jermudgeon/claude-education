@@ -1,0 +1,16 @@
+[
+  {
+    "type": "message",
+    "user": "U05",
+    "user_name": "Naomi Kito",
+    "text": "Manifest schema v0 is up (PR #24). Capabilities are an allow-list: `fs.read`, `net.egress`, `tk.reference`. Anything not listed is denied. Feedback welcome \u2014 I'd rather over-restrict now.",
+    "ts": "1776331200.000013"
+  },
+  {
+    "type": "message",
+    "user": "U02",
+    "user_name": "Marcus Bell",
+    "text": "This is exactly right. Reviewing now.",
+    "ts": "1776332640.000014"
+  }
+]

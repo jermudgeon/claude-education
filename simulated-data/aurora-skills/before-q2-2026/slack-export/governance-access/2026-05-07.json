@@ -1,0 +1,30 @@
+[
+  {
+    "type": "message",
+    "user": "U11",
+    "user_name": "Lily Chen",
+    "text": "I'm building the data-label model and I keep needing something the platform doesn't give me: provenance on every artifact \u2014 author, source community, what TK it references. Are we duplicating work with the platform team here?",
+    "ts": "1778146800.000024",
+    "thread_ts": "1778146800.000024",
+    "reply_count": 1,
+    "reactions": [
+      {
+        "name": "eyes",
+        "users": [
+          "U07",
+          "U08"
+        ],
+        "count": 2
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U07",
+    "user_name": "Sarah Kowalski",
+    "text": "Almost certainly. This should be one schema, owned jointly. Let's not build it twice.",
+    "ts": "1778148120.000025",
+    "thread_ts": "1778146800.000024",
+    "parent_user_id": "U11"
+  }
+]

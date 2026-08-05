@@ -1,0 +1,20 @@
+[
+  {
+    "type": "message",
+    "user": "U99",
+    "user_name": "Collaboration Insights",
+    "text": "\ud83d\udc65 Participation: Naomi's group-meeting talk-time is up from ~6% (Q2) to ~28% (Q3) following the round-robin + pre-read format change (AUR-13). Reminder to the team: questions count as participation \u2014 James remains top-quartile engagement while asserting least.",
+    "ts": "1788249600.000041",
+    "reactions": [
+      {
+        "name": "raised_hands",
+        "users": [
+          "U05",
+          "U08",
+          "U01"
+        ],
+        "count": 3
+      }
+    ]
+  }
+]

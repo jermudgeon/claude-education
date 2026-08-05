@@ -1,0 +1,1320 @@
+{
+  "2026-04-07_kickoff": {
+    "id": "2026-04-07_kickoff",
+    "title": "Aurora Skills \u2014 Program Kickoff",
+    "date": "2026-04-07",
+    "duration_s": 1486.3,
+    "duration_min": 24.8,
+    "speech_s": 842.8,
+    "content_speech_s": 184.0,
+    "silence_ratio": 0.43,
+    "attendee_count": 12,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 103.6,
+        "talk_pct": 56.3,
+        "turns": 11,
+        "questions": 0,
+        "assertions": 23,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 17.2,
+        "talk_pct": 9.3,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 4,
+        "q_to_a": 0.0
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 33.2,
+        "talk_pct": 18.0,
+        "turns": 3,
+        "questions": 6,
+        "assertions": 1,
+        "q_to_a": 6.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 12.8,
+        "talk_pct": 7.0,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "rachel": {
+        "name": "Rachel Green",
+        "attended": true,
+        "talk_s": 10.4,
+        "talk_pct": 5.7,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "kevin": {
+        "name": "Kevin Osei",
+        "attended": true,
+        "talk_s": 6.8,
+        "talk_pct": 3.7,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "lily": {
+        "name": "Lily Chen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "mark": {
+        "name": "Mark Dupont",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 1,
+    "dominant_speaker": "Dana Whitfield",
+    "dominant_pct": 56.3,
+    "present_but_silent": [
+      "Priya Nair",
+      "Tom\u00e1s Reyes",
+      "Naomi Kito",
+      "Ben Larsson",
+      "Lily Chen",
+      "Mark Dupont"
+    ],
+    "era": "before"
+  },
+  "2026-04-14_architecture-review": {
+    "id": "2026-04-14_architecture-review",
+    "title": "Registry Architecture Review",
+    "date": "2026-04-14",
+    "duration_s": 1757.0,
+    "duration_min": 29.3,
+    "speech_s": 975.6,
+    "content_speech_s": 118.8,
+    "silence_ratio": 0.44,
+    "attendee_count": 6,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 56.0,
+        "talk_pct": 47.1,
+        "turns": 6,
+        "questions": 2,
+        "assertions": 11,
+        "q_to_a": 0.18
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 38.8,
+        "talk_pct": 32.7,
+        "turns": 5,
+        "questions": 0,
+        "assertions": 9,
+        "q_to_a": 0.0
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 11.2,
+        "talk_pct": 9.4,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 4,
+        "q_to_a": 0.0
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 10.4,
+        "talk_pct": 8.8,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 1,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 2.4,
+        "talk_pct": 2.0,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Dana Whitfield",
+    "dominant_pct": 47.1,
+    "present_but_silent": [
+      "Naomi Kito",
+      "Ben Larsson"
+    ],
+    "era": "before"
+  },
+  "2026-04-21_tk-session-1": {
+    "id": "2026-04-21_tk-session-1",
+    "title": "TK Governance Working Session 1",
+    "date": "2026-04-21",
+    "duration_s": 1179.7,
+    "duration_min": 19.7,
+    "speech_s": 673.2,
+    "content_speech_s": 124.4,
+    "silence_ratio": 0.43,
+    "attendee_count": 8,
+    "speakers": {
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 46.8,
+        "talk_pct": 37.6,
+        "turns": 5,
+        "questions": 1,
+        "assertions": 8,
+        "q_to_a": 0.12
+      },
+      "mark": {
+        "name": "Mark Dupont",
+        "attended": true,
+        "talk_s": 40.4,
+        "talk_pct": 32.5,
+        "turns": 5,
+        "questions": 1,
+        "assertions": 11,
+        "q_to_a": 0.09
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 30.4,
+        "talk_pct": 24.4,
+        "turns": 3,
+        "questions": 1,
+        "assertions": 4,
+        "q_to_a": 0.25
+      },
+      "kevin": {
+        "name": "Kevin Osei",
+        "attended": true,
+        "talk_s": 6.8,
+        "talk_pct": 5.5,
+        "turns": 1,
+        "questions": 2,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "rachel": {
+        "name": "Rachel Green",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "lily": {
+        "name": "Lily Chen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Sarah Kowalski",
+    "dominant_pct": 37.6,
+    "present_but_silent": [
+      "Dana Whitfield",
+      "Marcus Bell",
+      "Rachel Green",
+      "Lily Chen"
+    ],
+    "era": "before"
+  },
+  "2026-04-28_access-credits": {
+    "id": "2026-04-28_access-credits",
+    "title": "Access & Credits Program Design",
+    "date": "2026-04-28",
+    "duration_s": 1091.4,
+    "duration_min": 18.2,
+    "speech_s": 606.4,
+    "content_speech_s": 87.2,
+    "silence_ratio": 0.44,
+    "attendee_count": 7,
+    "speakers": {
+      "rachel": {
+        "name": "Rachel Green",
+        "attended": true,
+        "talk_s": 48.0,
+        "talk_pct": 55.0,
+        "turns": 5,
+        "questions": 1,
+        "assertions": 11,
+        "q_to_a": 0.09
+      },
+      "kevin": {
+        "name": "Kevin Osei",
+        "attended": true,
+        "talk_s": 7.6,
+        "talk_pct": 8.7,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 13.6,
+        "talk_pct": 15.6,
+        "turns": 1,
+        "questions": 1,
+        "assertions": 1,
+        "q_to_a": 1.0
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 9.6,
+        "talk_pct": 11.0,
+        "turns": 1,
+        "questions": 1,
+        "assertions": 1,
+        "q_to_a": 1.0
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 8.4,
+        "talk_pct": 9.6,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 1,
+        "q_to_a": 0.0
+      },
+      "lily": {
+        "name": "Lily Chen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "mark": {
+        "name": "Mark Dupont",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Rachel Green",
+    "dominant_pct": 55.0,
+    "present_but_silent": [
+      "Lily Chen",
+      "Mark Dupont"
+    ],
+    "era": "before"
+  },
+  "2026-05-05_incident-retro": {
+    "id": "2026-05-05_incident-retro",
+    "title": "Security Incident Retro",
+    "date": "2026-05-05",
+    "duration_s": 1087.7,
+    "duration_min": 18.1,
+    "speech_s": 616.0,
+    "content_speech_s": 136.8,
+    "silence_ratio": 0.43,
+    "attendee_count": 7,
+    "speakers": {
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 26.0,
+        "talk_pct": 19.0,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 6,
+        "q_to_a": 0.0
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 26.8,
+        "talk_pct": 19.6,
+        "turns": 3,
+        "questions": 1,
+        "assertions": 6,
+        "q_to_a": 0.17
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 16.4,
+        "talk_pct": 12.0,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 35.2,
+        "talk_pct": 25.7,
+        "turns": 3,
+        "questions": 2,
+        "assertions": 7,
+        "q_to_a": 0.29
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 22.4,
+        "talk_pct": 16.4,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 6,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 10.0,
+        "talk_pct": 7.3,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Sarah Kowalski",
+    "dominant_pct": 25.7,
+    "present_but_silent": [
+      "Priya Nair"
+    ],
+    "era": "before"
+  },
+  "2026-05-12_sprint-review": {
+    "id": "2026-05-12_sprint-review",
+    "title": "Sprint Review \u2014 Install Flow",
+    "date": "2026-05-12",
+    "duration_s": 1506.0,
+    "duration_min": 25.1,
+    "speech_s": 836.0,
+    "content_speech_s": 48.4,
+    "silence_ratio": 0.44,
+    "attendee_count": 6,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 9.2,
+        "talk_pct": 19.0,
+        "turns": 3,
+        "questions": 1,
+        "assertions": 5,
+        "q_to_a": 0.2
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 15.2,
+        "talk_pct": 31.4,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 8.0,
+        "talk_pct": 16.5,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 1,
+        "q_to_a": 0.0
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 7.2,
+        "talk_pct": 14.9,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 1,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 8.8,
+        "talk_pct": 18.2,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Priya Nair",
+    "dominant_pct": 31.4,
+    "present_but_silent": [
+      "Ben Larsson"
+    ],
+    "era": "before"
+  },
+  "2026-05-19_tk-session-2": {
+    "id": "2026-05-19_tk-session-2",
+    "title": "TK Governance Working Session 2",
+    "date": "2026-05-19",
+    "duration_s": 1310.7,
+    "duration_min": 21.8,
+    "speech_s": 687.6,
+    "content_speech_s": 96.4,
+    "silence_ratio": 0.48,
+    "attendee_count": 8,
+    "speakers": {
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 31.2,
+        "talk_pct": 32.4,
+        "turns": 5,
+        "questions": 2,
+        "assertions": 6,
+        "q_to_a": 0.33
+      },
+      "mark": {
+        "name": "Mark Dupont",
+        "attended": true,
+        "talk_s": 23.2,
+        "talk_pct": 24.1,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 5,
+        "q_to_a": 0.0
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 42.0,
+        "talk_pct": 43.6,
+        "turns": 4,
+        "questions": 0,
+        "assertions": 8,
+        "q_to_a": 0.0
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "rachel": {
+        "name": "Rachel Green",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "kevin": {
+        "name": "Kevin Osei",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "lily": {
+        "name": "Lily Chen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "James Ahkivgak",
+    "dominant_pct": 43.6,
+    "present_but_silent": [
+      "Dana Whitfield",
+      "Marcus Bell",
+      "Rachel Green",
+      "Kevin Osei",
+      "Lily Chen"
+    ],
+    "era": "before"
+  },
+  "2026-05-21_community-advisory": {
+    "id": "2026-05-21_community-advisory",
+    "title": "Community Advisory Meeting",
+    "date": "2026-05-21",
+    "duration_s": 995.6,
+    "duration_min": 16.6,
+    "speech_s": 555.2,
+    "content_speech_s": 86.0,
+    "silence_ratio": 0.44,
+    "attendee_count": 2,
+    "speakers": {
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 65.2,
+        "talk_pct": 75.8,
+        "turns": 6,
+        "questions": 7,
+        "assertions": 4,
+        "q_to_a": 1.75
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 20.8,
+        "talk_pct": 24.2,
+        "turns": 2,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "James Ahkivgak",
+    "dominant_pct": 75.8,
+    "present_but_silent": [],
+    "era": "before"
+  },
+  "2026-06-02_healthy-conflict-retro": {
+    "id": "2026-06-02_healthy-conflict-retro",
+    "title": "Retro \u2014 How We Work Together",
+    "date": "2026-06-02",
+    "duration_s": 1093.0,
+    "duration_min": 18.2,
+    "speech_s": 608.4,
+    "content_speech_s": 167.2,
+    "silence_ratio": 0.44,
+    "attendee_count": 12,
+    "speakers": {
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 31.6,
+        "talk_pct": 18.9,
+        "turns": 3,
+        "questions": 1,
+        "assertions": 7,
+        "q_to_a": 0.14
+      },
+      "mark": {
+        "name": "Mark Dupont",
+        "attended": true,
+        "talk_s": 10.4,
+        "talk_pct": 6.2,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 4,
+        "q_to_a": 0.0
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 30.4,
+        "talk_pct": 18.2,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 7,
+        "q_to_a": 0.0
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 62.8,
+        "talk_pct": 37.6,
+        "turns": 6,
+        "questions": 0,
+        "assertions": 16,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 14.4,
+        "talk_pct": 8.6,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 3,
+        "q_to_a": 0.0
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 17.6,
+        "talk_pct": 10.5,
+        "turns": 2,
+        "questions": 1,
+        "assertions": 4,
+        "q_to_a": 0.25
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "rachel": {
+        "name": "Rachel Green",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "kevin": {
+        "name": "Kevin Osei",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "lily": {
+        "name": "Lily Chen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Dana Whitfield",
+    "dominant_pct": 37.6,
+    "present_but_silent": [
+      "Priya Nair",
+      "Tom\u00e1s Reyes",
+      "Ben Larsson",
+      "Rachel Green",
+      "Kevin Osei",
+      "Lily Chen"
+    ],
+    "era": "before"
+  },
+  "2026-06-09_roadmap-review": {
+    "id": "2026-06-09_roadmap-review",
+    "title": "Q3 Roadmap Review",
+    "date": "2026-06-09",
+    "duration_s": 1748.5,
+    "duration_min": 29.1,
+    "speech_s": 978.4,
+    "content_speech_s": 81.6,
+    "silence_ratio": 0.44,
+    "attendee_count": 12,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 54.0,
+        "talk_pct": 66.2,
+        "turns": 6,
+        "questions": 1,
+        "assertions": 14,
+        "q_to_a": 0.07
+      },
+      "rachel": {
+        "name": "Rachel Green",
+        "attended": true,
+        "talk_s": 9.6,
+        "talk_pct": 11.8,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 13.6,
+        "talk_pct": 16.7,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 4.4,
+        "talk_pct": 5.4,
+        "turns": 1,
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "priya": {
+        "name": "Priya Nair",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "tomas": {
+        "name": "Tom\u00e1s Reyes",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "kevin": {
+        "name": "Kevin Osei",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "lily": {
+        "name": "Lily Chen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "mark": {
+        "name": "Mark Dupont",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 1,
+    "dominant_speaker": "Dana Whitfield",
+    "dominant_pct": 66.2,
+    "present_but_silent": [
+      "Priya Nair",
+      "Tom\u00e1s Reyes",
+      "Naomi Kito",
+      "Ben Larsson",
+      "James Ahkivgak",
+      "Kevin Osei",
+      "Lily Chen",
+      "Mark Dupont"
+    ],
+    "era": "before"
+  },
+  "2026-06-16_dana-ben-1-1": {
+    "id": "2026-06-16_dana-ben-1-1",
+    "title": "1:1 \u2014 Dana & Ben",
+    "date": "2026-06-16",
+    "duration_s": 920.0,
+    "duration_min": 15.3,
+    "speech_s": 514.8,
+    "content_speech_s": 75.2,
+    "silence_ratio": 0.44,
+    "attendee_count": 2,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 58.8,
+        "talk_pct": 78.2,
+        "turns": 6,
+        "questions": 1,
+        "assertions": 13,
+        "q_to_a": 0.08
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 16.4,
+        "talk_pct": 21.8,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 7,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Dana Whitfield",
+    "dominant_pct": 78.2,
+    "present_but_silent": [],
+    "era": "before"
+  },
+  "2026-06-23_tk-decision": {
+    "id": "2026-06-23_tk-decision",
+    "title": "TK Governance \u2014 Ratify the Decision",
+    "date": "2026-06-23",
+    "duration_s": 1063.5,
+    "duration_min": 17.7,
+    "speech_s": 579.6,
+    "content_speech_s": 110.4,
+    "silence_ratio": 0.46,
+    "attendee_count": 8,
+    "speakers": {
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 49.6,
+        "talk_pct": 44.9,
+        "turns": 5,
+        "questions": 1,
+        "assertions": 9,
+        "q_to_a": 0.11
+      },
+      "mark": {
+        "name": "Mark Dupont",
+        "attended": true,
+        "talk_s": 26.8,
+        "talk_pct": 24.3,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 9,
+        "q_to_a": 0.0
+      },
+      "james": {
+        "name": "James Ahkivgak",
+        "attended": true,
+        "talk_s": 34.0,
+        "talk_pct": 30.8,
+        "turns": 3,
+        "questions": 1,
+        "assertions": 6,
+        "q_to_a": 0.17
+      },
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "rachel": {
+        "name": "Rachel Green",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "kevin": {
+        "name": "Kevin Osei",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "lily": {
+        "name": "Lily Chen",
+        "attended": true,
+        "talk_s": 0.0,
+        "talk_pct": 0.0,
+        "turns": 0,
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Sarah Kowalski",
+    "dominant_pct": 44.9,
+    "present_but_silent": [
+      "Dana Whitfield",
+      "Marcus Bell",
+      "Rachel Green",
+      "Kevin Osei",
+      "Lily Chen"
+    ],
+    "era": "before"
+  },
+  "2026-04-29_naomi-ben-pairing": {
+    "id": "2026-04-29_naomi-ben-pairing",
+    "title": "Pairing \u2014 Validator with Naomi & Ben",
+    "date": "2026-04-29",
+    "duration_s": 976.2,
+    "duration_min": 16.3,
+    "speech_s": 541.2,
+    "content_speech_s": 90.8,
+    "silence_ratio": 0.45,
+    "attendee_count": 2,
+    "speakers": {
+      "naomi": {
+        "name": "Naomi Kito",
+        "attended": true,
+        "talk_s": 66.4,
+        "talk_pct": 73.1,
+        "turns": 6,
+        "questions": 1,
+        "assertions": 17,
+        "q_to_a": 0.06
+      },
+      "ben": {
+        "name": "Ben Larsson",
+        "attended": true,
+        "talk_s": 24.4,
+        "talk_pct": 26.9,
+        "turns": 3,
+        "questions": 1,
+        "assertions": 11,
+        "q_to_a": 0.09
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Naomi Kito",
+    "dominant_pct": 73.1,
+    "present_but_silent": [],
+    "era": "before"
+  },
+  "2026-05-07_marcus-lily-sync": {
+    "id": "2026-05-07_marcus-lily-sync",
+    "title": "Provenance Schema Sync \u2014 Marcus & Lily",
+    "date": "2026-05-07",
+    "duration_s": 905.5,
+    "duration_min": 15.1,
+    "speech_s": 504.0,
+    "content_speech_s": 73.2,
+    "silence_ratio": 0.44,
+    "attendee_count": 2,
+    "speakers": {
+      "marcus": {
+        "name": "Marcus Bell",
+        "attended": true,
+        "talk_s": 35.6,
+        "talk_pct": 48.6,
+        "turns": 3,
+        "questions": 2,
+        "assertions": 8,
+        "q_to_a": 0.25
+      },
+      "lily": {
+        "name": "Lily Chen",
+        "attended": true,
+        "talk_s": 37.6,
+        "talk_pct": 51.4,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 8,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Lily Chen",
+    "dominant_pct": 51.4,
+    "present_but_silent": [],
+    "era": "before"
+  },
+  "2026-05-15_sarah-mark-1-1": {
+    "id": "2026-05-15_sarah-mark-1-1",
+    "title": "1:1 \u2014 Sarah & Mark",
+    "date": "2026-05-15",
+    "duration_s": 983.5,
+    "duration_min": 16.4,
+    "speech_s": 537.2,
+    "content_speech_s": 70.4,
+    "silence_ratio": 0.45,
+    "attendee_count": 2,
+    "speakers": {
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 46.8,
+        "talk_pct": 66.5,
+        "turns": 4,
+        "questions": 1,
+        "assertions": 8,
+        "q_to_a": 0.12
+      },
+      "mark": {
+        "name": "Mark Dupont",
+        "attended": true,
+        "talk_s": 23.6,
+        "talk_pct": 33.5,
+        "turns": 3,
+        "questions": 0,
+        "assertions": 7,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Sarah Kowalski",
+    "dominant_pct": 66.5,
+    "present_but_silent": [],
+    "era": "before"
+  },
+  "2026-05-18_dana-sarah-leads-sync": {
+    "id": "2026-05-18_dana-sarah-leads-sync",
+    "title": "Leads Sync \u2014 Dana & Sarah",
+    "date": "2026-05-18",
+    "duration_s": 916.8,
+    "duration_min": 15.3,
+    "speech_s": 506.8,
+    "content_speech_s": 63.6,
+    "silence_ratio": 0.45,
+    "attendee_count": 2,
+    "speakers": {
+      "dana": {
+        "name": "Dana Whitfield",
+        "attended": true,
+        "talk_s": 29.2,
+        "talk_pct": 45.9,
+        "turns": 4,
+        "questions": 1,
+        "assertions": 7,
+        "q_to_a": 0.14
+      },
+      "sarah": {
+        "name": "Sarah Kowalski",
+        "attended": true,
+        "talk_s": 34.4,
+        "talk_pct": 54.1,
+        "turns": 4,
+        "questions": 0,
+        "assertions": 6,
+        "q_to_a": 0.0
+      }
+    },
+    "interruptions": 0,
+    "dominant_speaker": "Sarah Kowalski",
+    "dominant_pct": 54.1,
+    "present_but_silent": [],
+    "era": "before"
+  }
+}

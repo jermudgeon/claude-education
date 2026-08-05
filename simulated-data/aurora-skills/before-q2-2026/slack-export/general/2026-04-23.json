@@ -1,0 +1,21 @@
+[
+  {
+    "type": "message",
+    "user": "U03",
+    "user_name": "Priya Nair",
+    "text": "Registry alpha is clickable: browse skills, filter by grade band, view a skill's manifest. No install flow yet.",
+    "ts": "1776943800.000007",
+    "reactions": [
+      {
+        "name": "tada",
+        "users": [
+          "U01",
+          "U02",
+          "U07",
+          "U06"
+        ],
+        "count": 4
+      }
+    ]
+  }
+]

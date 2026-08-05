@@ -1,0 +1,29 @@
+[
+  {
+    "type": "message",
+    "user": "U12",
+    "user_name": "Mark Dupont",
+    "text": "Following up async on today's session \u2014 I didn't want to relitigate in the room, but for the record I still don't think we should commit to Local Contexts labels. I think we'll regret the dependency. Noting my dissent here.",
+    "ts": "1779208800.000027",
+    "thread_ts": "1779208800.000027",
+    "reply_count": 2,
+    "reactions": [
+      {
+        "name": "neutral_face",
+        "users": [
+          "U07"
+        ],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U07",
+    "user_name": "Sarah Kowalski",
+    "text": "Mark \u2014 I'd much rather have heard this while we were all in the room. We're about to write it into an ADR. Can you bring the objection *to the group* on the 23rd rather than the channel? Deciding in the hallway is how this reopens forever.",
+    "ts": "1779210300.000028",
+    "thread_ts": "1779208800.000027",
+    "parent_user_id": "U12"
+  }
+]
