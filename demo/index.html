@@ -35,9 +35,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .provenance code{font-family:ui-monospace,Menlo,monospace;font-size:.72rem}
 
 header.top{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.brand{font-family:"PT Serif",Georgia,serif;font-size:1.05rem;display:inline-flex;align-items:baseline;gap:.34em}
-.brand s{text-decoration-thickness:.08em;color:rgb(var(--fg)/.42)}
-.brand i{color:var(--aurora);font-style:normal}
+.logo{height:44px;width:auto;border-radius:9px;display:block}
 .tabs{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
 .tab{padding:8px 15px;border-radius:999px;border:1px solid var(--line);font-size:.82rem;color:rgb(var(--fg)/.6);transition:all .2s;min-height:40px}
 .tab.on{border-color:rgba(43,201,58,.5);background:rgba(43,201,58,.10);color:rgb(var(--fg))}
@@ -174,7 +172,7 @@ tr:last-child td{border-bottom:0}
 </div>
 
 <header class="top">
-  <span class="brand"><s>Claude</s> Team Insights<i>.</i></span>
+  <img class="logo" src="../claude-impact-lab-logo.png" alt="Claude Code, struck through: Team Insights">
   <span class="dim" style="font-size:.78rem">PRD 05 and PRD 06, running on the repo's own data</span>
   <div class="tabs">
     <button class="tab on" data-view="live">Live session</button>
@@ -205,6 +203,7 @@ tr:last-child td{border-bottom:0}
       <span class="clock" id="clock">00:00 / 29:08</span>
       <span class="track" id="track"><i></i></span>
       <span class="speeds" role="group" aria-label="Replay speed">
+        <button class="speed" data-speed="1">1×</button>
         <button class="speed" data-speed="15">15×</button>
         <button class="speed on" data-speed="60">60×</button>
         <button class="speed" data-speed="240">240×</button>
