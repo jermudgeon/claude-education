@@ -4,9 +4,10 @@ WARNING_THRESHOLD = 1.0
 
 def compute_diff(before: dict, after: dict) -> dict:
     dimension_diffs = {}
-    for key in after["dimensions"]:
-        if key not in before["dimensions"]:
-            continue
+    all_keys = set(before["dimensions"]) | set(after["dimensions"])
+    for key in sorted(all_keys):
+        if key not in before["dimensions"] or key not in after["dimensions"]:
+            continue  # skip dimensions not in both snapshots
         delta = after["dimensions"][key]["score"] - before["dimensions"][key]["score"]
         dimension_diffs[key] = {
             "before_score": before["dimensions"][key]["score"],

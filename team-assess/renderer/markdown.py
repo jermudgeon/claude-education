@@ -73,9 +73,10 @@ def _sort_dimensions_by_score(dimensions: dict) -> list:
 
 
 def _score_bar(score: float) -> str:
-    filled = round(score)
+    filled = int(score + 0.5)
     return "█" * filled + "░" * (5 - filled)
 
 
 def _fmt_delta(delta: float) -> str:
+    delta = delta or 0.0  # normalize -0.0 to 0.0
     return f"+{delta:.1f}" if delta >= 0 else f"{delta:.1f}"
