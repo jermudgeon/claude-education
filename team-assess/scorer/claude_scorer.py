@@ -1,14 +1,11 @@
 import os
+import sys
 import re
 from datetime import date
-from prompts.builder import build_scoring_prompt
+from prompts.builder import build_scoring_prompt, facet_key
 
 STABLE_THRESHOLD = 0.2
 WARNING_THRESHOLD = 1.0
-
-
-def _facet_key(name: str) -> str:
-    return re.sub(r'[^a-z0-9]+', '_', name.lower()).strip('_')
 
 
 def _direction(delta: float) -> str:
@@ -30,7 +27,7 @@ def build_scoring_tool(rubric: dict) -> dict:
         facet_properties = {}
         facet_required = []
         for facet in facets:
-            fkey = _facet_key(facet["name"])
+            fkey = facet_key(facet["name"])
             facet_properties[fkey] = {
                 "type": "object",
                 "properties": {
@@ -142,7 +139,7 @@ class ClaudeScorer:
             observable_evidence = []
 
             for facet in dim_def.get("facets", []):
-                fkey = _facet_key(facet["name"])
+                fkey = facet_key(facet["name"])
                 facet_data = raw_facets.get(fkey, {})
                 score = facet_data.get("score", 1.0)
                 confidence = facet_data.get("confidence", "low")
@@ -160,6 +157,9 @@ class ClaudeScorer:
 
             # Option X: if ALL facets are low confidence, exclude dimension entirely
             if not observable_scores:
+                rubric_facets = rubric["dimensions"].get(dim_key, {}).get("facets", [])
+                if not rubric_facets:
+                    print(f"Warning: dimension '{dim_key}' has no facets defined in rubric, excluded.", file=sys.stderr)
                 continue
 
             dim_score = round(sum(observable_scores) / len(observable_scores), 2)

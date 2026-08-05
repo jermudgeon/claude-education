@@ -211,3 +211,10 @@ def test_snapshot_without_facets_renders_cleanly():
     report = render_markdown(snapshot_no_facets)
     assert isinstance(report, str)
     assert "## Facet Detail" not in report
+
+
+def test_report_handles_none_overall_health():
+    snapshot_no_health = {**SNAPSHOT, "overall_health": None}
+    report = render_markdown(snapshot_no_health)
+    assert "N/A" in report
+    assert "None" not in report

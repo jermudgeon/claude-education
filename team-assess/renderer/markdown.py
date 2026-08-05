@@ -18,14 +18,22 @@ def render_markdown(snapshot: dict, trend: dict | None = None) -> str:
     period = snapshot["period"]
 
     health = snapshot["overall_health"]
+    if health is not None:
+        health_str = f"{health}"
+    else:
+        health_str = "N/A (insufficient signal)"
+
     # Check for top-level trend (legacy) first
     if trend:
         delta = trend["overall_health_delta"]
         direction = DIRECTION_ARROWS[trend["overall_direction"]]
         prior = trend["before_period"]
-        health_line = f"Overall Health: {health} / 5  ({direction} {_fmt_delta(delta)} from {prior})"
+        if health is not None:
+            health_line = f"Overall Health: {health_str} / 5  ({direction} {_fmt_delta(delta)} from {prior})"
+        else:
+            health_line = f"Overall Health: {health_str}"
     else:
-        health_line = f"Overall Health: {health} / 5"
+        health_line = f"Overall Health: {health_str} / 5"
 
     lines.append(f"# Team Health Assessment — {period}")
     lines.append(f"{health_line}")

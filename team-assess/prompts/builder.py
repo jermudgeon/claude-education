@@ -40,7 +40,7 @@ Return ONLY valid JSON matching the schema provided via the tool definition. Do 
     return system_prompt, user_prompt
 
 
-def _facet_key(name: str) -> str:
+def facet_key(name: str) -> str:
     return re.sub(r'[^a-z0-9]+', '_', name.lower()).strip('_')
 
 
@@ -58,7 +58,7 @@ def _format_dimensions(dimensions: dict) -> str:
             "Return the facet using the key shown in backticks.\n"
         )
         for facet in dim.get("facets", []):
-            fkey = _facet_key(facet["name"])
+            fkey = facet_key(facet["name"])
             facets_lines.append(f"  `{fkey}`: {facet['name']}")
             if facet.get("healthy"):
                 h_items = "\n      + ".join(facet["healthy"])
