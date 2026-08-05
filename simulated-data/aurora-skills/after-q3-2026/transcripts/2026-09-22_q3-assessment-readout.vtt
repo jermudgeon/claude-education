@@ -379,7 +379,7 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v Dana Whitfield>Sure, I can own that.
 
 95
-00:12:29.1000 --> 00:12:41.600
+00:12:30.000 --> 00:12:41.600
 <v James Ahkivgak>That's not a failure, but it's where to look next — let's keep peer feedback horizontal as the beta scales instead of sliding back to escalating everything to Dana.
 
 96
@@ -395,7 +395,7 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v Mark Dupont>I'm a little worried about the timeline, but I'm not blocking on it.
 
 99
-00:13:07.1000 --> 00:13:12.800
+00:13:08.000 --> 00:13:12.800
 <v Ben Larsson>I'd rather over-communicate here — can we write down who's doing what?
 
 100
@@ -423,11 +423,11 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v Mark Dupont>Agreed, let's capture it.
 
 106
-00:13:48.800 --> 00:13:53.1000
+00:13:48.800 --> 00:13:54.000
 <v Dana Whitfield>Let's not rathole on this — can we take the fine detail offline?
 
 107
-00:13:53.1000 --> 00:13:57.600
+00:13:54.000 --> 00:13:57.600
 <v James Ahkivgak>What would it take to de-risk that a little?
 
 108
@@ -435,7 +435,7 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v James Ahkivgak>Is there a risk we're solving a problem we don't have yet?
 
 109
-00:14:07.200 --> 00:14:11.1000
+00:14:07.200 --> 00:14:12.000
 <v James Ahkivgak>I'd rather over-communicate here — can we write down who's doing what?
 
 110
@@ -475,11 +475,11 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v Mark Dupont>Right, that's what I meant.
 
 119
-00:15:28.200 --> 00:15:30.1000
+00:15:28.200 --> 00:15:31.000
 <v James Ahkivgak>Mm, let me sit with that one.
 
 120
-00:15:30.1000 --> 00:15:35.800
+00:15:31.000 --> 00:15:35.800
 <v James Ahkivgak>Is there a risk we're solving a problem we don't have yet?
 
 121
@@ -503,7 +503,7 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v Mark Dupont>Makes sense to me.
 
 126
-00:16:17.1000 --> 00:16:20.400
+00:16:18.000 --> 00:16:20.400
 <v Mark Dupont>That's fair. I'll withdraw the concern.
 
 127
@@ -515,7 +515,7 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v Ben Larsson>Mm, let me sit with that one.
 
 129
-00:16:35.1000 --> 00:16:41.1000
+00:16:36.000 --> 00:16:42.000
 <v James Ahkivgak>Do we actually need a decision on this today, or can it wait a week?
 
 130
@@ -531,11 +531,11 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
 
 133
-00:17:10.1000 --> 00:17:16.1000
+00:17:11.000 --> 00:17:17.000
 <v Sarah Kowalski>Do we actually need a decision on this today, or can it wait a week?
 
 134
-00:17:16.1000 --> 00:17:24.1000
+00:17:17.000 --> 00:17:25.000
 <v Ben Larsson>Just flagging that this touches the label renderer and the validator tests, so loop me in when it firms up.
 
 135
@@ -543,11 +543,11 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v James Ahkivgak>Sure — one sec.
 
 136
-00:17:30.400 --> 00:17:35.1000
+00:17:30.400 --> 00:17:36.000
 <v Dana Whitfield>I want to make sure I understand the tradeoff before we commit to anything.
 
 137
-00:17:35.1000 --> 00:17:40.800
+00:17:36.000 --> 00:17:40.800
 <v Ben Larsson>Let me pull up the numbers so we're not going off memory.
 
 138
@@ -611,7 +611,7 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v James Ahkivgak>Question before we wrap — does any of this change what I'm doing on community review and the advisory process?
 
 153
-00:19:51.1000 --> 00:19:57.1000
+00:19:52.000 --> 00:19:58.000
 <v Sarah Kowalski>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
 154
@@ -623,7 +623,7 @@ NOTE Q3 Team-Health Assessment Readout — 2026-09-22
 <v Sarah Kowalski>Sarah has the follow-up on the CARE governance framework — I'll capture the specifics in the notes.
 
 156
-00:20:28.200 --> 00:20:36.1000
+00:20:28.200 --> 00:20:37.000
 <v Sarah Kowalski>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
 
 157

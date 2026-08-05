@@ -755,8 +755,8 @@ msg("insights","2026-09-15","08:00","insights-bot",
 WPS = 2.5  # ~150 words/min
 
 def hhmmss(seconds):
-    ms = int(round((seconds - int(seconds)) * 1000))
-    s = int(seconds)
+    total_ms = int(round(seconds * 1000))
+    s, ms = divmod(total_ms, 1000)
     return f"{s//3600:02d}:{(s%3600)//60:02d}:{s%60:02d}.{ms:03d}"
 
 # --- realistic meeting texture ---------------------------------------------

@@ -27,7 +27,7 @@ NOTE Decision Hygiene Review — 2026-08-25
 <v Sarah Kowalski>Recommendation three: close decisions with a written reopening bar so settled questions stop being relitigated. The license ADR set the pattern — we snapshotted the mitigation and wrote down exactly what would justify reopening.
 
 7
-00:01:53.1000 --> 00:01:59.200
+00:01:54.000 --> 00:01:59.200
 <v Sarah Kowalski>I want that to be standard for every significant decision, not a one-off.
 
 8
@@ -75,7 +75,7 @@ NOTE Decision Hygiene Review — 2026-08-25
 <v Sarah Kowalski>Okay, I think I follow. So the plan is basically what you just described.
 
 19
-00:03:25.1000 --> 00:03:28.400
+00:03:26.000 --> 00:03:28.400
 <v Dana Whitfield>That's fair. I'll withdraw the concern.
 
 20
@@ -319,11 +319,11 @@ NOTE Decision Hygiene Review — 2026-08-25
 <v Mark Dupont>Okay, works for me.
 
 80
-00:10:46.800 --> 00:10:51.1000
+00:10:46.800 --> 00:10:52.000
 <v Mark Dupont>Let's not rathole on this — can we take the fine detail offline?
 
 81
-00:10:51.1000 --> 00:10:55.1000
+00:10:52.000 --> 00:10:56.000
 <v Dana Whitfield>Can we double-check that against what we agreed last week?
 
 82
