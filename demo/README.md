@@ -11,12 +11,14 @@ its own.
 ## Run
 
 ```bash
-python3 demo/build_demo_data.py     # writes demo/data.js
+python3 demo/build_demo_data.py     # writes demo/data.js (one meeting + the quarter comparison)
+python3 demo/build_coding_data.py   # writes demo/coding.js (the assessments/ analysis + moments)
 open demo/index.html                # no server needed
 ```
 
-`build_demo_data.py` reads only from `simulated-data/aurora-skills` and has no dependencies outside
-the standard library.
+Both build scripts read only from `simulated-data/aurora-skills` and have no dependencies outside
+the standard library. When a new analysis lands in `assessments/`, rerun `build_coding_data.py`
+and the coding view picks it up.
 
 ## The three views
 
@@ -34,7 +36,19 @@ surface, all of it matching `GROUND_TRUTH.md`:
 | Questions are participation | Flags a question-heavy speaker as participating, never as low engagement |
 | Interruption | One seeded interruption, logged and explicitly not scored |
 
-**Meeting readout** is the per-attendee table on both measurement bases. Content-only reproduces the
+**Readout & behavior coding** puts the quarter's analysis and the meeting readout on one page.
+
+The coding half renders the team-assess output shipped in `assessments/` (the dataset's in-world
+analysis, not a live model run): per dimension, the score, its confidence, and the trend against
+Q2, with a ⚠ on any move over 1.0 points because the scorer's run-to-run variance is unmeasured
+(open question 3). Each card carries **one verbatim moment**: a real cue, with its timestamp and
+transcript, that embodies why the dimension moved (Ben's 41-minute disclosure is why vulnerability
+is up), plus the seeded-signal Q2 → Q3 contrast from `five-dysfunctions-signal-map.json`. Every
+card and the page footer drill down into the raw snapshot JSON. The choice of which moment to
+feature is `build_coding_data.py`'s; the quotes, timestamps, scores, and trend are all read from
+the repo, and extraction fails loudly if a regenerated transcript no longer contains an anchor.
+
+The readout half is the per-attendee table on both measurement bases. Content-only reproduces the
 66.2% that `GROUND_TRUTH.md` publishes for this meeting; all-speech is what a live tool actually
 hears. Both cross the 40% threshold, so the nudge fires either way. The dataset sanctions both bases
 (`ground_truth.json` → `metrics_note`); mixing them silently is the thing to avoid.

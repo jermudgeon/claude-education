@@ -16,7 +16,7 @@ MEETING = "2026-06-09_roadmap-review"
 ERA = "before-q2-2026"
 
 CUE = re.compile(
-    r"^(\d\d:\d\d:\d\d\.\d\d\d) --> (\d\d:\d\d:\d\d\.\d\d\d)\s*$\n<v ([^>]+)>(.*)$",
+    r"^(\d\d:\d\d:\d\d\.\d{3,4}) --> (\d\d:\d\d:\d\d\.\d{3,4})\s*$\n<v ([^>]+)>(.*)$",
     re.MULTILINE,
 )
 

@@ -126,14 +126,51 @@ tr:last-child td{border-bottom:0}
 .stack{display:flex;flex-direction:column;gap:16px}
 .lead{font-size:.95rem;line-height:1.7;color:rgb(var(--fg)/.72);max-width:70ch;margin-bottom:18px}
 
-@media (max-width:900px){ .grid{grid-template-columns:1fr} main{padding:16px 14px 32px} }
+/* behavior coding */
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:16px;margin-bottom:16px}
+.dim .cat{font-family:"PT Serif",Georgia,serif;font-size:1.08rem;font-weight:700;text-transform:capitalize}
+.dimhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.chip{font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:rgb(var(--fg)/.5)}
+.chip.high{color:var(--aurora);border-color:rgba(43,201,58,.4)}
+.chip.medium{color:var(--harvest);border-color:rgba(239,167,18,.4)}
+.trend{margin-left:auto;font-size:.8rem;font-variant-numeric:tabular-nums;color:rgb(var(--fg)/.6)}
+.trend.up{color:var(--aurora)} .trend.down{color:var(--sunset)}
+.trend .warn{color:var(--harvest);cursor:help}
+.scorebar{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.scorebar .rail{flex:1;height:8px;border-radius:4px;background:rgb(var(--fg)/.08);overflow:hidden}
+.scorebar .fill{display:block;height:100%;background:var(--aurora);border-radius:4px}
+.scorebar .val{font-variant-numeric:tabular-nums;font-size:.92rem;font-weight:600}
+.moment{border-left:3px solid var(--glacial);padding:2px 0 2px 14px;margin:12px 0}
+.moment .q{font-family:"PT Serif",Georgia,serif;font-size:.97rem;line-height:1.55}
+.moment .at{font-size:.72rem;color:rgb(var(--fg)/.45);margin-top:6px}
+.moment .at code{font-size:.68rem}
+.why{font-size:.8rem;line-height:1.6;color:rgb(var(--fg)/.6);margin:10px 0}
+.why b{color:rgb(var(--fg)/.85);font-weight:600}
+.evlist{font-size:.78rem;line-height:1.6;color:rgb(var(--fg)/.55);padding-left:16px;margin:8px 0}
+details.drill{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}
+details.drill>summary{cursor:pointer;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgb(var(--fg)/.45);list-style:none}
+details.drill>summary::before{content:"▸ "}
+details.drill[open]>summary::before{content:"▾ "}
+.jt{font-family:ui-monospace,Menlo,monospace;font-size:.74rem;line-height:1.65;overflow-x:auto;margin-top:8px}
+.jt details{padding-left:16px}
+.jt>details{padding-left:0}
+.jt summary{cursor:pointer;list-style:none;white-space:nowrap}
+.jt summary::before{content:"▸ ";color:rgb(var(--fg)/.4)}
+.jt details[open]>summary::before{content:"▾ ";color:rgb(var(--fg)/.4)}
+.jt details>div{padding-left:16px;white-space:nowrap}
+.jt .k{color:var(--cobalt)} .jt .s{color:var(--glacial)} .jt .n{color:var(--harvest)} .jt .b{color:var(--rose)}
+.subhead{margin:28px 0 12px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.subhead h3{font-size:1.12rem}
+
+@media (max-width:900px){ .grid,.dims{grid-template-columns:1fr} main{padding:16px 14px 32px} }
 </style>
 </head>
 <body>
 
 <div class="provenance">
-  <b>Every number on this page is read from the repo</b>, not invented here:
-  <code>simulated-data/aurora-skills</code>, a synthetic dataset whose collaboration signals are documented in <code>GROUND_TRUTH.md</code>.
+  <b>Every number and quote on this page is read from the repo</b>, not invented here:
+  <code>simulated-data/aurora-skills</code>, a synthetic dataset whose collaboration signals are documented in <code>GROUND_TRUTH.md</code>,
+  and its in-world analysis in <code>assessments/</code>.
 </div>
 
 <header class="top">
@@ -141,7 +178,7 @@ tr:last-child td{border-bottom:0}
   <span class="dim" style="font-size:.78rem">PRD 05 and PRD 06, running on the repo's own data</span>
   <div class="tabs">
     <button class="tab on" data-view="live">Live session</button>
-    <button class="tab" data-view="readout">Meeting readout</button>
+    <button class="tab" data-view="readout">Readout &amp; coding</button>
     <button class="tab" data-view="quarter">Quarter over quarter</button>
     <button class="tab" id="theme">Light</button>
   </div>
@@ -199,9 +236,24 @@ tr:last-child td{border-bottom:0}
     </div>
   </section>
 
-  <!-- READOUT -->
+  <!-- READOUT & CODING -->
   <section class="view" id="view-readout">
-    <div class="meta"><h2>Meeting readout</h2><span class="sub" id="rsub">—</span></div>
+    <div class="meta"><h2>Readout &amp; behavior coding</h2><span class="sub" id="csub">—</span></div>
+    <p class="lead">
+      The five dimensions below are the team-assess analysis shipped in the repo
+      (<code>assessments/</code>): in-world output on this same dataset, authored as part of its
+      closed loop, not a live model run on this page. Each card carries the score, its confidence,
+      the trend against Q2, one verbatim moment from a Q3 transcript, and a drill-down into the raw
+      snapshot JSON.
+    </p>
+    <div class="dims" id="dims"></div>
+    <div class="card">
+      <div class="cardhead"><div><span class="eyebrow">Output JSON</span><h3>The full snapshots</h3></div>
+        <span class="dim" style="font-size:.72rem">click a row to expand</span></div>
+      <div class="jt" id="snapjson"></div>
+    </div>
+
+    <div class="subhead"><h3>This meeting</h3><span class="sub" id="rsub">—</span></div>
     <p class="lead">
       PRD 05's metric contract, computed for this one meeting. The dataset authors content-only numbers
       as the exact signal and wraps them in procedural texture, so both bases are shown: content-only
@@ -233,6 +285,7 @@ tr:last-child td{border-bottom:0}
 </main>
 
 <script src="data.js"></script>
+<script src="coding.js"></script>
 <script>
 const D = window.DEMO;
 const el = id => document.getElementById(id);
@@ -459,6 +512,67 @@ function buildReadout(){
     triggers the same nudge. Both are defensible; mixing them silently is not.`;
 }
 
+/* ---------- behavior coding ---------- */
+const C = window.CODING;
+const DIMS = ['trust','conflict','commitment','accountability','results'];
+
+function jtEntry(key, v, open){
+  const label = key === null ? '' : `<span class="k">${esc(key)}</span>: `;
+  if (v !== null && typeof v === 'object'){
+    const isArr = Array.isArray(v);
+    const size = isArr ? v.length : Object.keys(v).length;
+    const items = isArr
+      ? v.map((x,i) => jtEntry(String(i), x))
+      : Object.entries(v).map(([k,x]) => jtEntry(k, x));
+    return `<details${open ? ' open' : ''}><summary>${label}<span class="dim">${isArr ? '[' : '{'}${size}${isArr ? ']' : '}'}</span></summary>${items.join('')}</details>`;
+  }
+  const val = typeof v === 'string' ? `<span class="s">"${esc(v)}"</span>`
+    : typeof v === 'number' ? `<span class="n">${v}</span>`
+    : `<span class="b">${v}</span>`;
+  return `<div>${label}${val}</div>`;
+}
+
+function buildCoding(){
+  if (!C){ el('dims').innerHTML = '<div class="empty">No analysis found. Run demo/build_coding_data.py once assessments/ has snapshots.</div>'; return; }
+  const trend = C.q3.trend_vs || {};
+  el('csub').textContent = `${C.q3.period} scored ${C.q3.run_date} · rubric v${C.q3.rubric_version} · trend vs ${trend.period || C.q2.period} · overall ${C.q3.overall_health}/5 (was ${C.q2.overall_health})`;
+
+  el('dims').innerHTML = DIMS.map(d => {
+    const cur = C.q3.dimensions[d], prev = C.q2.dimensions[d];
+    const delta = trend.deltas ? trend.deltas[d] : +(cur.score - prev.score).toFixed(1);
+    const dir = trend.directions ? trend.directions[d] : (Math.abs(delta) < .2 ? 'stable' : delta > 0 ? 'improving' : 'declining');
+    const warn = Math.abs(delta) > 1;
+    const m = C.moments[d];
+    const sig = m.signal;
+    const arrow = delta > 0 ? '↑' : delta < 0 ? '↓' : '→';
+    return `<div class="card dim">
+      <div class="dimhead">
+        <span class="cat">${esc(d)}</span>
+        <span class="chip ${esc(cur.confidence)}">${esc(cur.confidence)} confidence</span>
+        <span class="trend ${delta > 0 ? 'up' : delta < 0 ? 'down' : ''}">${arrow} ${delta > 0 ? '+' : ''}${delta.toFixed(1)} ${esc(dir)}
+          ${warn ? '<span class="warn" title="Moved more than 1.0 point. Run-to-run variance of the scorer is unmeasured (open question 3); treat large moves as directional, not exact.">⚠</span>' : ''}</span>
+      </div>
+      <div class="scorebar">
+        <span class="rail"><span class="fill" style="width:${20 * cur.score}%"></span></span>
+        <span class="val">${cur.score.toFixed(1)}<span class="dim">/5</span></span>
+        <span class="dim" style="font-size:.75rem">Q2: ${prev.score.toFixed(1)}</span>
+      </div>
+      <div class="moment">
+        <div class="q">&ldquo;${esc(m.quote)}&rdquo;</div>
+        <div class="at">at ${m.mmss} &middot; ${esc(m.meeting_title)} &middot; ${m.meeting_date} &middot; <code>${esc(m.meeting_id)}.vtt</code></div>
+      </div>
+      <div class="why"><b>Why it moved.</b> Q2: ${esc(sig.q2.evidence)} <b>&rarr;</b> Q3: ${esc(sig.q3.evidence)}
+        <span class="dim">(${esc(sig.facet)})</span></div>
+      <ul class="evlist">${cur.evidence.map(e => `<li>${esc(e)}</li>`).join('')}</ul>
+      <details class="drill"><summary>Drill into the JSON</summary>
+        <div class="jt">${jtEntry(d, {snapshot: cur, trend: {delta, direction: dir, vs: trend.period || C.q2.period, warning_over_1pt: warn}, seeded_signals: C.map.filter(x => x.dimension === d), moment: m})}</div>
+      </details>
+    </div>`;
+  }).join('');
+
+  el('snapjson').innerHTML = jtEntry('snapshot-Q3-2026.json', C.q3) + jtEntry('snapshot-Q2-2026.json', C.q2) + jtEntry('five-dysfunctions-signal-map.json', C.map);
+}
+
 /* ---------- quarter ---------- */
 function buildQuarter(){
   const b = D.comparison.before, a = D.comparison.after;
@@ -505,7 +619,7 @@ el('theme').onclick = () => {
 
 el('mtitle').textContent = D.summary.title;
 el('msub').textContent = `${D.summary.date} · ${D.summary.duration_min} min · ${D.summary.attendee_count} attendees · ${TURNS.length} turns`;
-buildReadout(); buildQuarter(); reset();
+buildCoding(); buildReadout(); buildQuarter(); reset();
 </script>
 </body>
 </html>
