@@ -1,6 +1,6 @@
 import pytest
 from pathlib import Path
-from ingestion.readers import read_txt, read_md, read_csv, read_json
+from ingestion.readers import read_txt, read_md, read_csv, read_json, read_pdf
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -28,3 +28,19 @@ def test_read_json_returns_string():
 def test_read_txt_missing_file_raises():
     with pytest.raises(FileNotFoundError):
         read_txt(FIXTURES / "nonexistent.txt")
+
+def test_read_pdf_returns_string(tmp_path):
+    # Create a minimal PDF using pypdf's writer
+    from pypdf import PdfWriter
+    writer = PdfWriter()
+    writer.add_blank_page(width=612, height=792)
+    pdf_path = tmp_path / "test.pdf"
+    with open(pdf_path, "wb") as f:
+        writer.write(f)
+    # Blank PDF returns empty string (no text), not an error
+    result = read_pdf(pdf_path)
+    assert isinstance(result, str)
+
+def test_read_pdf_missing_file_raises():
+    with pytest.raises(FileNotFoundError):
+        read_pdf(FIXTURES / "nonexistent.pdf")
