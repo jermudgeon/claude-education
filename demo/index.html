@@ -143,6 +143,13 @@ tr:last-child td{border-bottom:0}
 .kindtag{display:inline-block;padding:1px 7px;border-radius:999px;border:1px solid var(--line);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgb(var(--fg)/.45);margin-left:6px}
 .authored{background:rgba(239,167,18,.09);border:1px solid rgba(239,167,18,.3);border-radius:12px;padding:12px 15px;font-size:.8rem;line-height:1.6;color:rgb(var(--fg)/.75);margin-bottom:16px}
 .authored b{color:var(--harvest)}
+.pyramid{display:flex;justify-content:center}
+.pyramid svg{max-width:620px;width:100%;height:auto}
+.pyramid .layer{cursor:pointer}
+.pyramid .layer path{transition:opacity .2s}
+.pyramid .layer:hover path{opacity:.85}
+.pyramid .lname{font-family:"PT Serif",Georgia,serif;font-weight:700;font-size:15px;fill:rgb(var(--fg))}
+.pyramid .ltally{font-size:11px;fill:rgb(var(--fg)/.62);font-variant-numeric:tabular-nums}
 .dimcard{border:1px solid var(--line);border-radius:14px;padding:15px 16px}
 .dimcard h4{font-family:"PT Serif",Georgia,serif;font-size:.95rem}
 .dimhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:8px}
@@ -176,7 +183,7 @@ tr:last-child td{border-bottom:0}
   <span class="dim" style="font-size:.78rem">PRD 05 and PRD 06, running on the repo's own data</span>
   <div class="tabs">
     <button class="tab on" data-view="live">Live session</button>
-    <button class="tab" data-view="coding">Behavior coding</button>
+    <button class="tab" data-view="coding">Analysis</button>
     <button class="tab" data-view="readout">Meeting readout</button>
     <button class="tab" data-view="quarter">Quarter over quarter</button>
     <button class="tab" id="theme">Light</button>
@@ -251,15 +258,24 @@ tr:last-child td{border-bottom:0}
     </div>
   </section>
 
-  <!-- CODING -->
+  <!-- CODING / ANALYSIS -->
   <section class="view" id="view-coding">
-    <div class="meta"><h2>Behavior coding</h2><span class="sub" id="csub">—</span></div>
+    <div class="meta"><h2>Analysis</h2><span class="sub" id="csub">—</span></div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div class="cardhead"><div><span class="eyebrow">The model</span><h3>Five dysfunctions, one pyramid</h3></div>
+        <span class="dim" style="font-size:.72rem">fix trust first, or everything built on top of it regresses</span></div>
+      <div class="pyramid" id="pyramid"></div>
+      <p class="note" style="text-align:center">Grounded in Lencioni's Five Dysfunctions of a Team. Each layer shows this
+        meeting's marks; a layer built on a weak one inherits the weakness, so read from the bottom up. Click a layer for its evidence.</p>
+    </div>
+
     <p class="lead">
       This is the rubric from <code>rubric/obm-behavior-codes.json</code> consuming the same meeting the
-      live view replays: 120 observable behaviors across the five Lencioni dimensions, applied to the
-      transcript per the team-assess spec. Marks, not verdicts: no 1–5 score appears here because the
-      scorer that would compute one is not built yet, and inventing one would be exactly the failure the
-      spec guards against.
+      live view replays: 120 observable behaviors scored across the five team dimensions, applied to the
+      transcript per the team-assess spec. Every dimension is backed by concrete, quotable signals, never
+      a vague AI impression. Marks, not verdicts: no 1–5 score appears here because the scorer that would
+      compute one is not built yet, and inventing one would be exactly the failure the spec guards against.
     </p>
     <div class="authored" id="cprov"></div>
     <div class="codegrid">
@@ -296,9 +312,10 @@ tr:last-child td{border-bottom:0}
   <section class="view" id="view-quarter">
     <div class="meta"><h2>Quarter over quarter</h2><span class="sub" id="qsub">—</span></div>
     <p class="lead">
-      The dataset's whole point is the before and after on one team. These are the repo's computed
-      figures from <code>_comparison/before_after.json</code>, which is what a scorer has to reproduce
-      before anyone should believe a trend line.
+      The dataset's whole point is the before and after on one team: every session builds on the last,
+      so the record becomes a growing reference. These are the repo's computed figures from
+      <code>_comparison/before_after.json</code>, which is what a scorer has to reproduce before anyone
+      should believe a trend line.
     </p>
     <div class="card scroller">
       <table id="quarter"></table>
@@ -591,15 +608,43 @@ function buildReadout(){
 }
 
 /* ---------- coding tab ---------- */
+const DIMCOLOR = {Trust:'#13c6b7', Conflict:'#e1460e', Commitment:'#1772dd', Accountability:'#efa712', Results:'#2bc93a'};
+
+function buildPyramid(tallies){
+  const W = 620, LH = 56, INSET = 42;
+  const layers = tallies.map((d, j) => {
+    const bw = W - 2*INSET*j, tw = W - 2*INSET*(j+1);
+    const y = (4-j) * LH, cx = W/2;
+    const conf = confidence(d.clusters);
+    const tallyText = d.marks.length
+      ? `+${d.pos}${d.neg ? ` / −${d.neg}` : ''} · ${conf} confidence`
+      : 'no signal';
+    return `<g class="layer" data-dim="${d.dim}">
+      <path d="M ${cx-bw/2} ${y+LH} L ${cx+bw/2} ${y+LH} L ${cx+tw/2} ${y} L ${cx-tw/2} ${y} Z"
+        fill="${DIMCOLOR[d.dim]}" fill-opacity="${d.marks.length ? .28 : .10}"
+        stroke="${DIMCOLOR[d.dim]}" stroke-opacity=".55" stroke-width="1.5"/>
+      <text class="lname" x="${cx}" y="${y+24}" text-anchor="middle">${d.dim}</text>
+      <text class="ltally" x="${cx}" y="${y+41}" text-anchor="middle">${tallyText}</text>
+    </g>`;
+  });
+  el('pyramid').innerHTML =
+    `<svg viewBox="0 0 ${W} ${5*LH}" role="img" aria-label="Lencioni pyramid: Trust at the base, then Conflict, Commitment, Accountability, Results">${layers.join('')}</svg>`;
+  el('pyramid').querySelectorAll('.layer').forEach(g => g.onclick = () => {
+    const card = document.getElementById('dim-' + g.dataset.dim);
+    if (card) card.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+}
+
 function buildCoding(){
   el('csub').textContent = `${D.summary.title} · ${D.summary.date} · ${MARKS.length} marks over ${CODING.rubric.total_codes} codes`;
+  buildPyramid(tally(MARKS));
   el('cprov').innerHTML = `<b>Authored, not measured.</b> ${esc(CODING.provenance)}
     Coder: ${esc(CODING.authored_by)}, ${esc(CODING.authored_on)}.`;
 
   el('dimcards').innerHTML = tally(MARKS).map(d => {
     const meta = CODING.rubric.dimensions[d.dim];
     const conf = confidence(d.clusters);
-    return `<div class="dimcard">
+    return `<div class="dimcard" id="dim-${d.dim}">
       <div class="dimhead"><h4>${d.dim}</h4><span class="conf ${conf}">${conf === 'none' ? 'no signal' : conf + ' confidence'}</span></div>
       <div class="dimstats">+${d.pos} / −${d.neg} marks · ${d.clusters} of ${meta.clusters} clusters · ${meta.codes} codes available</div>
       ${d.marks.length
