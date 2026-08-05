@@ -1,3 +1,4 @@
+import os
 from datetime import date
 from prompts.builder import build_scoring_prompt
 
@@ -43,7 +44,8 @@ class ClaudeScorer:
             self._client = client
         else:
             import anthropic
-            self._client = anthropic.Anthropic()
+            api_key_env = claude_config.get("api_key_env", "ANTHROPIC_API_KEY")
+            self._client = anthropic.Anthropic(api_key=os.environ.get(api_key_env))
 
     def score(self, content: str, rubric: dict, period: str, input_files: list[str]) -> dict:
         prompt = build_scoring_prompt(rubric, content)

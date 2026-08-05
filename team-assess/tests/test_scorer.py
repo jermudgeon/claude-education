@@ -65,3 +65,14 @@ def test_score_includes_recommendations():
     scorer = ClaudeScorer({"model": "claude-sonnet-4-6"}, client=mock_client)
     snapshot = scorer.score("Some team content", SAMPLE_RUBRIC, "Q1-2025", ["notes.txt"])
     assert len(snapshot["recommendations"]) >= 1
+
+def test_score_raises_scoring_error_when_no_tool_use():
+    mock_content = MagicMock()
+    mock_content.type = "text"  # not tool_use
+    mock_message = MagicMock()
+    mock_message.content = [mock_content]
+    mock_client = MagicMock()
+    mock_client.messages.create.return_value = mock_message
+    scorer = ClaudeScorer({"model": "claude-sonnet-4-6"}, client=mock_client)
+    with pytest.raises(ScoringError):
+        scorer.score("content", SAMPLE_RUBRIC, "Q1-2025", ["f.txt"])
