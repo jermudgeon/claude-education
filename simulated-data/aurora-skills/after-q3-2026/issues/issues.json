@@ -176,6 +176,42 @@
         "tk"
       ],
       "description": "Implements the ADR-0003 mitigation: snapshot Local Contexts defs, annual review reminder."
+    },
+    {
+      "id": "AUR-18",
+      "title": "Written reopening bar standard on ADRs",
+      "assignee": {
+        "handle": "sarah",
+        "name": "Sarah Kowalski",
+        "team": "governance"
+      },
+      "status": "done",
+      "priority": "P2",
+      "created": "2026-08-25",
+      "completed": "2026-08-26",
+      "labels": [
+        "process",
+        "commitment"
+      ],
+      "description": "Q2 assessment rec #3 (Commitment). Every ADR now ends with an explicit reopening bar."
+    },
+    {
+      "id": "AUR-19",
+      "title": "Q2 assessment action tracker",
+      "assignee": {
+        "handle": "sarah",
+        "name": "Sarah Kowalski",
+        "team": "platform"
+      },
+      "status": "done",
+      "priority": "P1",
+      "created": "2026-07-01",
+      "completed": "2026-09-22",
+      "labels": [
+        "process",
+        "meta"
+      ],
+      "description": "Tracks the 5 Q2 team-health recommendations to closure. See assessments/. Loop closed at the Q3 readout."
     }
   ]
 }

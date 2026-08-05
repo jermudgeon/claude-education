@@ -84,6 +84,9 @@
     "interruptions": 0,
     "dominant_speaker": "Rachel Green",
     "dominant_pct": 55.0,
+    "led_by": "Rachel Green",
+    "dominant_is_lead": true,
+    "dominance_expected": false,
     "present_but_silent": [
       "Lily Chen",
       "Mark Dupont"

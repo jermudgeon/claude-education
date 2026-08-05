@@ -47,15 +47,15 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Naomi Kito>I want to make sure I understand the tradeoff before we commit to anything.
 
 12
-00:01:57.000 --> 00:02:01.800
+00:01:56.1000 --> 00:02:01.800
 <v Sarah Kowalski>Let me pull up the numbers so we're not going off memory.
 
 13
-00:02:06.600 --> 00:02:09.000
+00:02:06.600 --> 00:02:08.1000
 <v Naomi Kito>Good point — let's do that.
 
 14
-00:02:09.000 --> 00:02:14.600
+00:02:08.1000 --> 00:02:14.600
 <v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
 
 15
@@ -83,7 +83,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Naomi Kito>Let's not rathole on this — can we take the fine detail offline?
 
 21
-00:03:05.200 --> 00:03:08.000
+00:03:05.200 --> 00:03:07.1000
 <v Ben Larsson>Mm, let me sit with that one.
 
 22
@@ -103,7 +103,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Ben Larsson>Let's confirm in the channel.
 
 26
-00:03:44.000 --> 00:03:52.800
+00:03:43.1000 --> 00:03:52.800
 <v Marcus Bell>the backend capability model and the provenance schema — steady. One open question I'll raise when we get to it, otherwise fine.
 
 27
@@ -291,7 +291,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Naomi Kito>Let me pull up the numbers so we're not going off memory.
 
 73
-00:10:25.000 --> 00:10:25.800
+00:10:24.1000 --> 00:10:25.800
 <v Naomi Kito>Got it.
 
 74
@@ -307,7 +307,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Marcus Bell>I'm a little worried about the timeline, but I'm not blocking on it.
 
 77
-00:10:51.000 --> 00:10:51.800
+00:10:50.1000 --> 00:10:51.800
 <v Priya Nair>Yeah, exactly.
 
 78
@@ -315,7 +315,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Naomi Kito>The provenance schema needs the label ids now that ADR-0003 is ratified. And honestly, I want the pre-read format to stick — I contribute better when I've read ahead and we go around the room.
 
 79
-00:11:26.800 --> 00:11:32.000
+00:11:26.800 --> 00:11:31.1000
 <v Sarah Kowalski>Let's not rathole on this — can we take the fine detail offline?
 
 80
@@ -323,7 +323,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Naomi Kito>Just flagging that this touches the manifest schema and validator, so loop me in when it firms up.
 
 81
-00:11:46.000 --> 00:11:52.800
+00:11:45.1000 --> 00:11:52.800
 <v Sarah Kowalski>Just flagging that this touches the CARE governance framework, so loop me in when it firms up.
 
 82
@@ -347,7 +347,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Sarah Kowalski>Okay, works for me.
 
 87
-00:12:35.000 --> 00:12:40.600
+00:12:34.1000 --> 00:12:40.600
 <v Dana Whitfield>I want to make sure I understand the tradeoff before we commit to anything.
 
 88
@@ -395,11 +395,11 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Dana Whitfield>Just so I've got it written down, can you repeat the number?
 
 99
-00:14:06.200 --> 00:14:11.000
+00:14:06.200 --> 00:14:10.1000
 <v Dana Whitfield>Is there a risk we're solving a problem we don't have yet?
 
 100
-00:14:11.000 --> 00:14:19.000
+00:14:10.1000 --> 00:14:18.1000
 <v Ben Larsson>Just flagging that this touches the label renderer and the validator tests, so loop me in when it firms up.
 
 101
@@ -443,11 +443,11 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Ben Larsson>I want to make sure I understand the tradeoff before we commit to anything.
 
 111
-00:15:31.000 --> 00:15:32.600
+00:15:30.1000 --> 00:15:32.600
 <v Priya Nair>Makes sense to me.
 
 112
-00:15:35.600 --> 00:15:38.000
+00:15:35.600 --> 00:15:37.1000
 <v Marcus Bell>Good point — let's do that.
 
 113
@@ -459,7 +459,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Sarah Kowalski>Right, right.
 
 115
-00:16:14.000 --> 00:16:18.800
+00:16:13.1000 --> 00:16:18.800
 <v Priya Nair>Is there a risk we're solving a problem we don't have yet?
 
 116
@@ -479,7 +479,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Priya Nair>Right, and that lines up with the constraint we set at kickoff.
 
 120
-00:17:00.000 --> 00:17:01.600
+00:16:59.1000 --> 00:17:01.600
 <v Marcus Bell>Makes sense to me.
 
 121
@@ -515,7 +515,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Ben Larsson>Agreed, let's capture it.
 
 129
-00:18:03.000 --> 00:18:07.000
+00:18:02.1000 --> 00:18:06.1000
 <v Marcus Bell>Can we double-check that against what we agreed last week?
 
 130
@@ -527,11 +527,11 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Sarah Kowalski>Let's confirm in the channel.
 
 132
-00:18:23.200 --> 00:18:24.000
+00:18:23.200 --> 00:18:23.1000
 <v Ben Larsson>Got it.
 
 133
-00:18:24.000 --> 00:18:28.800
+00:18:23.1000 --> 00:18:28.800
 <v Naomi Kito>Sorry, can you go back to the point about the review pass?
 
 134
@@ -571,7 +571,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Marcus Bell>Let me pull up the numbers so we're not going off memory.
 
 143
-00:19:27.000 --> 00:19:29.800
+00:19:26.1000 --> 00:19:29.800
 <v Sarah Kowalski>Mm, let me sit with that one.
 
 144
@@ -591,7 +591,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Priya Nair>Sorry, can you go back to the point about the review pass?
 
 148
-00:20:24.000 --> 00:20:25.600
+00:20:23.1000 --> 00:20:25.600
 <v Marcus Bell>Makes sense to me.
 
 149
@@ -599,7 +599,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Marcus Bell>Do we actually need a decision on this today, or can it wait a week?
 
 150
-00:20:39.000 --> 00:20:41.800
+00:20:38.1000 --> 00:20:41.800
 <v Tomás Reyes>Mm, let me sit with that one.
 
 151
@@ -703,7 +703,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Tomás Reyes>Do we actually need a decision on this today, or can it wait a week?
 
 176
-00:24:12.200 --> 00:24:17.000
+00:24:12.200 --> 00:24:16.1000
 <v Naomi Kito>Let me pull up the numbers so we're not going off memory.
 
 177
@@ -719,7 +719,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Dana Whitfield>Just flagging that this touches the roadmap and keeping the two tracks in sync, so loop me in when it firms up.
 
 180
-00:24:51.000 --> 00:24:53.800
+00:24:50.1000 --> 00:24:53.800
 <v Dana Whitfield>Okay — any questions before we wrap?
 
 181
@@ -727,7 +727,7 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Tomás Reyes>One thing: how does this affect the the security review pipeline timeline?
 
 182
-00:25:06.000 --> 00:25:12.000
+00:25:05.1000 --> 00:25:11.1000
 <v Dana Whitfield>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
 183
@@ -755,5 +755,5 @@ NOTE Q3 Kickoff — Round-Robin — 2026-07-07
 <v Dana Whitfield>Marcus has the follow-up on the backend capability model and the provenance schema — I'll capture the specifics in the notes.
 
 189
-00:26:23.000 --> 00:26:28.600
+00:26:22.1000 --> 00:26:28.600
 <v Dana Whitfield>Great. I'll write it all up and drop it in the channel. Thanks everyone.

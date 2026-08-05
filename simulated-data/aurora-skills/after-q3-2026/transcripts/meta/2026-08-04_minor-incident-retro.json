@@ -64,6 +64,9 @@
     "interruptions": 0,
     "dominant_speaker": "Ben Larsson",
     "dominant_pct": 40.1,
+    "led_by": "Sarah Kowalski",
+    "dominant_is_lead": false,
+    "dominance_expected": false,
     "present_but_silent": [],
     "era": "after"
   },

@@ -495,7 +495,7 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Ben Larsson>Okay, works for me.
 
 124
-00:16:55.200 --> 00:17:00.000
+00:16:55.200 --> 00:16:59.1000
 <v Naomi Kito>I'd rather over-communicate here — can we write down who's doing what?
 
 125
@@ -563,7 +563,7 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Naomi Kito>Okay.
 
 141
-00:18:38.800 --> 00:18:46.000
+00:18:38.800 --> 00:18:45.1000
 <v Marcus Bell>That matches what I was seeing on my end with the backend capability model and the provenance schema.
 
 142
@@ -587,7 +587,7 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Priya Nair>Okay, I think I follow. So the plan is basically what you just described.
 
 147
-00:19:29.000 --> 00:19:29.800
+00:19:28.1000 --> 00:19:29.800
 <v Dana Whitfield>Yeah, exactly.
 
 148
@@ -631,11 +631,11 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Marcus Bell>Can you scroll up to the top of that section?
 
 158
-00:20:48.400 --> 00:20:50.000
+00:20:48.400 --> 00:20:49.1000
 <v Ben Larsson>Sure — one sec.
 
 159
-00:20:50.000 --> 00:20:55.600
+00:20:49.1000 --> 00:20:55.600
 <v Naomi Kito>I don't feel strongly on this one — I'll defer to whoever owns it.
 
 160
@@ -663,11 +663,11 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Dana Whitfield>Good — I came in wanting all three at once for the fundraiser optics, and you all just changed my mind in the room. Staggered, least-TK-first, rollback if review latency exceeds two days.
 
 166
-00:22:07.400 --> 00:22:13.000
+00:22:07.400 --> 00:22:12.1000
 <v Dana Whitfield>One concern and then I'll drop it: are we sure about the sequencing here?
 
 167
-00:22:13.000 --> 00:22:17.000
+00:22:12.1000 --> 00:22:16.1000
 <v Tomás Reyes>Can someone capture that in the notes close to verbatim?
 
 168
@@ -695,7 +695,7 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Dana Whitfield>Any last objection before we lock it?
 
 174
-00:22:58.000 --> 00:23:02.000
+00:22:57.1000 --> 00:23:01.1000
 <v Tomás Reyes>Can you scroll up to the top of that section?
 
 175
@@ -711,7 +711,7 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Marcus Bell>Agreed, let's capture it.
 
 178
-00:23:36.400 --> 00:23:40.000
+00:23:36.400 --> 00:23:39.1000
 <v Ben Larsson>What would it take to de-risk that a little?
 
 179
@@ -743,7 +743,7 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Marcus Bell>Good point — let's do that.
 
 186
-00:24:17.000 --> 00:24:22.200
+00:24:16.1000 --> 00:24:22.200
 <v Dana Whitfield>I'm a little worried about the timeline, but I'm not blocking on it.
 
 187
@@ -755,11 +755,11 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Dana Whitfield>Okay, I think I follow. So the plan is basically what you just described.
 
 189
-00:25:02.400 --> 00:25:08.000
+00:25:02.400 --> 00:25:07.1000
 <v Tomás Reyes>Okay, I think I follow. So the plan is basically what you just described.
 
 190
-00:25:13.000 --> 00:25:18.600
+00:25:12.1000 --> 00:25:18.600
 <v Ben Larsson>I want to make sure I understand the tradeoff before we commit to anything.
 
 191
@@ -779,7 +779,7 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Dana Whitfield>Okay, I think I follow. So the plan is basically what you just described.
 
 195
-00:25:46.800 --> 00:25:52.000
+00:25:46.800 --> 00:25:51.1000
 <v Tomás Reyes>I'm a little worried about the timeline, but I'm not blocking on it.
 
 196
@@ -819,15 +819,15 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Dana Whitfield>Okay — any questions before we wrap?
 
 205
-00:27:00.600 --> 00:27:07.000
+00:27:00.600 --> 00:27:06.1000
 <v Marcus Bell>One thing: how does this affect the the backend capability model and the provenance schema timeline?
 
 206
-00:27:10.000 --> 00:27:16.000
+00:27:09.1000 --> 00:27:15.1000
 <v Dana Whitfield>Good question — let's confirm the specifics in the channel so we don't rathole here.
 
 207
-00:27:18.000 --> 00:27:23.200
+00:27:17.1000 --> 00:27:23.200
 <v Naomi Kito>One thing: how does this affect the the manifest schema and validator timeline?
 
 208
@@ -843,7 +843,7 @@ NOTE Beta Rollout Architecture Review — 2026-07-14
 <v Dana Whitfield>Dana has the follow-up on the roadmap and keeping the two tracks in sync — I'll capture the specifics in the notes.
 
 211
-00:28:04.600 --> 00:28:13.000
+00:28:04.600 --> 00:28:12.1000
 <v Dana Whitfield>Marcus has the follow-up on the backend capability model and the provenance schema — I'll capture the specifics in the notes.
 
 212

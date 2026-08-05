@@ -1,0 +1,11 @@
+[
+  {
+    "type": "message",
+    "user": "U01",
+    "user_name": "Dana Whitfield",
+    "text": "Conflict rec: round-robin + async pre-reads rolled out; insights tool nudges me past 40% airtime. \u2705",
+    "ts": "1784365200.000051",
+    "thread_ts": "1782909000.000048",
+    "parent_user_id": "U07"
+  }
+]

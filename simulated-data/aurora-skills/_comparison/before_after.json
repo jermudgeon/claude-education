@@ -15,11 +15,11 @@
       "survey_rows": 72
     },
     "after": {
-      "messages": 13,
-      "channel_days": 9,
-      "meetings": 7,
-      "prs": 3,
-      "issues": 10,
+      "messages": 21,
+      "channel_days": 16,
+      "meetings": 14,
+      "prs": 4,
+      "issues": 12,
       "standups": 7,
       "retros": 1,
       "survey_rows": 72
@@ -28,8 +28,12 @@
   "comparison": {
     "before": {
       "group_meetings": 10,
+      "substantial_group_meetings": 10,
       "peak_dominant_talk_pct": 66.2,
       "avg_dominant_talk_pct": 44.5,
+      "peak_dominant_any_group": 66.2,
+      "small_led_dominance": [],
+      "unexpected_dominance": [],
       "dana_peak_talk_pct": 66.2,
       "dana_avg_talk_pct": 25.2,
       "naomi_avg_talk_pct": 6.3,
@@ -44,13 +48,32 @@
       "changed_mind_in_room_events": 1
     },
     "after": {
-      "group_meetings": 5,
+      "group_meetings": 12,
+      "substantial_group_meetings": 8,
       "peak_dominant_talk_pct": 40.1,
-      "avg_dominant_talk_pct": 30.3,
+      "avg_dominant_talk_pct": 33.1,
+      "peak_dominant_any_group": 52.4,
+      "small_led_dominance": [
+        {
+          "meeting": "2026-07-24_reviewer-onboarding",
+          "dominant": "Tom\u00e1s Reyes",
+          "pct": 49.6,
+          "led_by": "Tom\u00e1s Reyes",
+          "expected": true
+        },
+        {
+          "meeting": "2026-08-25_decision-hygiene",
+          "dominant": "Sarah Kowalski",
+          "pct": 52.4,
+          "led_by": "Sarah Kowalski",
+          "expected": true
+        }
+      ],
+      "unexpected_dominance": [],
       "dana_peak_talk_pct": 35.1,
-      "dana_avg_talk_pct": 22.5,
-      "naomi_avg_talk_pct": 18.9,
-      "naomi_meetings_attended": 5,
+      "dana_avg_talk_pct": 19.4,
+      "naomi_avg_talk_pct": 20.4,
+      "naomi_meetings_attended": 7,
       "naomi_silent_meetings": 0,
       "total_interruptions": 0,
       "avg_psych_safety_1to5": 4.74,

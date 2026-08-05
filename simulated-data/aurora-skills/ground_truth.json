@@ -1,6 +1,25 @@
 {
   "about": "Machine-readable seeded-signal key for the Aurora Skills demo dataset. Each signal names what a collaboration-insights tool should detect, where it lives, and the healthy direction. Numeric truth (talk-time %, survey averages) is computed by generate.py and lives in _comparison/before_after.json and <era>/_metrics/talk_time.json; this file points at it rather than duplicating it.",
   "metrics_note": "Transcript metrics (talk_pct, question ratio, present_but_silent, interruptions) are computed from the authored substantive turns only. Every VTT cue carries a kind of 'content' (authored) or 'texture' (realistic procedural filler — roll call, status round, backchannels, Q&A, wrap-up — added to reach believable meeting length). The <era>/transcripts/meta/*.json sidecars tag each turn's kind so a scorer can reproduce the content-only metrics or measure over the full transcript, as it prefers.",
+  "dominance_nuance_note": "Per-meeting summaries carry led_by, dominant_is_lead, and dominance_expected. A designated lead dominating a small (<5) working session is expected, not a red flag; the headline dominance number is taken over substantial (>=5) meetings, and small led sessions are reported (not dropped) under _comparison small_led_dominance. Dominance by a non-lead is the genuine flag (unexpected_dominance).",
+  "five_dysfunctions": {
+    "rubric": "team-assess/rubric/five-dysfunctions.yaml",
+    "rubric_version": "0.9",
+    "signal_to_facet_map": "assessments/five-dysfunctions-signal-map.json",
+    "note": "Each seeded signal is mapped to a v0.9 dimension + observable behavioral facet + verbatim act, with its polarity in each quarter."
+  },
+  "assessment_loop": {
+    "description": "The dataset is a closed loop: run team-assess on Q2 -> recommendations -> the team enacts them in Q3 -> run team-assess on Q3 -> scores improve traceably.",
+    "q2_feedback": "assessments/report-Q2-2026.md (+ snapshot-Q2-2026.json)",
+    "q3_validation": "assessments/report-Q3-2026.md (+ snapshot-Q3-2026.json, with trend_vs Q2)",
+    "loop_map": [
+      { "dimension": "trust",          "q2_score": 2.5, "q3_score": 4.5, "recommendation": "Make mistakes safe; blameless notes; celebrate the andon cord", "q3_enactment": ["issues AUR-12", "transcript 2026-07-10_blameless-practice", "PR #115", "#incidents 2026-08-04"] },
+      { "dimension": "conflict",       "q2_score": 2.5, "q3_score": 4.5, "recommendation": "Dissent in the room before decisions; balance airtime", "q3_enactment": ["issues AUR-13", "transcript 2026-07-17_facilitation-format", "transcript 2026-07-14_beta-arch-review"] },
+      { "dimension": "commitment",     "q2_score": 2.5, "q3_score": 4.5, "recommendation": "Close decisions with a written reopening bar", "q3_enactment": ["issues AUR-18", "transcript 2026-08-25_decision-hygiene", "wiki/adr/0003"] },
+      { "dimension": "accountability", "q2_score": 3.0, "q3_score": 4.0, "recommendation": "Horizontal peer feedback; remove single points of failure", "q3_enactment": ["issues AUR-16", "transcript 2026-07-24_reviewer-onboarding"] },
+      { "dimension": "results",        "q2_score": 3.0, "q3_score": 4.5, "recommendation": "Shared outcome over individual optics", "q3_enactment": ["transcript 2026-08-11_outcome-over-optics", "transcript 2026-09-15_q3-retro"] }
+    ]
+  },
   "eras": {
     "before": "before-q2-2026 (Q2 2026 — no insights tool; dysfunction present)",
     "after": "after-q3-2026 (Q3 2026 — insights tool live; collaboration improved)"
