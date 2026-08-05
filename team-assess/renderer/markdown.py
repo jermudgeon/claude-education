@@ -13,7 +13,7 @@ DIRECTION_ARROWS = {
 }
 
 
-def render_markdown(snapshot: dict, trend: dict | None = None) -> str:
+def render_markdown(snapshot: dict) -> str:
     lines = []
     period = snapshot["period"]
 
@@ -23,20 +23,12 @@ def render_markdown(snapshot: dict, trend: dict | None = None) -> str:
     else:
         health_str = "N/A (insufficient signal)"
 
-    # Check embedded overall_health_trend first, fall back to legacy top-level trend arg
+    # Check embedded overall_health_trend
     oht = snapshot.get("overall_health_trend")
     if oht:
         delta = oht["delta"]
         direction = DIRECTION_ARROWS[oht["direction"]]
         prior = oht["compared_to"]
-        if health is not None:
-            health_line = f"Overall Health: {health_str} / 5  ({direction} {_fmt_delta(delta)} from {prior})"
-        else:
-            health_line = f"Overall Health: {health_str}"
-    elif trend:
-        delta = trend["overall_health_delta"]
-        direction = DIRECTION_ARROWS[trend["overall_direction"]]
-        prior = trend["before_period"]
         if health is not None:
             health_line = f"Overall Health: {health_str} / 5  ({direction} {_fmt_delta(delta)} from {prior})"
         else:
@@ -57,10 +49,7 @@ def render_markdown(snapshot: dict, trend: dict | None = None) -> str:
         score = dim["score"]
         bar = _score_bar(score)
 
-        # Prefer trend embedded in dimension (new schema), fall back to top-level trend arg
         dim_trend = dim.get("trend")
-        if dim_trend is None and trend and key in trend.get("dimensions", {}):
-            dim_trend = trend["dimensions"][key]
 
         if dim_trend:
             arrow = DIRECTION_ARROWS[dim_trend["direction"]]

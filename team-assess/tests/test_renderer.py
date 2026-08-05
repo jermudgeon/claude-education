@@ -101,20 +101,6 @@ SNAPSHOT_WITH_TREND["dimensions"]["conflict"] = {
     },
 }
 
-# Legacy top-level trend dict (kept for backward-compat test)
-TREND = {
-    "before_period": "Q1-2025",
-    "after_period": "Q2-2025",
-    "overall_health_delta": 0.3,
-    "overall_direction": "improving",
-    "dimensions": {
-        "trust": {"delta": 0.8, "direction": "improving", "warning": False, "before_score": 2.5, "after_score": 3.3},
-        "conflict": {"delta": 0.4, "direction": "improving", "warning": False, "before_score": 2.0, "after_score": 2.4},
-        "commitment": {"delta": 0.0, "direction": "stable", "warning": False, "before_score": 3.0, "after_score": 3.0},
-        "accountability": {"delta": -0.3, "direction": "declining", "warning": False, "before_score": 2.4, "after_score": 2.1},
-        "results": {"delta": 0.6, "direction": "improving", "warning": False, "before_score": 4.1, "after_score": 4.7},
-    },
-}
 
 
 def test_report_contains_period():
@@ -141,17 +127,6 @@ def test_report_contains_recommendations():
 def test_report_contains_evidence():
     report = render_markdown(SNAPSHOT)
     assert "Alice asked for help openly" in report
-
-
-def test_report_with_trend_shows_delta():
-    report = render_markdown(SNAPSHOT, trend=TREND)
-    assert "+0.3" in report or "0.3" in report
-    assert "Q1-2025" in report
-
-
-def test_report_with_trend_shows_direction_arrows():
-    report = render_markdown(SNAPSHOT, trend=TREND)
-    assert "↑" in report or "↓" in report
 
 
 def test_report_without_trend_renders_cleanly():
