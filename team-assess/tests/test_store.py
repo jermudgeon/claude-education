@@ -35,3 +35,12 @@ def test_save_overwrites_existing(tmp_path):
     save_snapshot(updated, snapshots_dir=tmp_path)
     loaded = load_snapshot("Q1-2025", snapshots_dir=tmp_path)
     assert loaded["overall_health"] == 4.0
+
+
+def test_save_snapshot_sanitizes_period_name(tmp_path):
+    dangerous = {**SAMPLE_SNAPSHOT, "period": "../etc/passwd"}
+    save_snapshot(dangerous, snapshots_dir=tmp_path)
+    # File should be inside tmp_path, not escape
+    files = list(tmp_path.iterdir())
+    assert len(files) == 1
+    assert not str(files[0]).endswith("/etc/passwd")

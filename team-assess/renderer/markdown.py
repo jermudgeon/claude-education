@@ -120,6 +120,7 @@ def _render_facet_detail(dims_sorted: list) -> list[str]:
 
 
 def _sort_dimensions_by_score(dimensions: dict) -> list:
+    # Sort worst-first so highest-priority problems appear at the top of the report.
     return sorted(dimensions.items(), key=lambda x: x[1]["score"])
 
 
