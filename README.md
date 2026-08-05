@@ -11,8 +11,8 @@ synthetic before/after dataset that provides ground truth for validating the too
 
 ## Presentation
 
-- **`Team-Collaboration-Assessment.pdf`** *(in repo root — TBD)* — the walk-through deck for
-  stakeholders. Covers the problem, the rubric, the assessment loop, and the demo tour.
+- **[`docs/Team_Insights_5_Slides.pdf`](docs/Team_Insights_5_Slides.pdf)** — the 5-slide
+  walk-through deck. Covers the problem, the rubric, the assessment loop, and the demo tour.
 
 ---
 
