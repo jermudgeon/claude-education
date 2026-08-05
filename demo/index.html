@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team Insights: the metric contract on the Aurora Skills dataset</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:ital,wght@0,400;0,450;0,600;0,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --midnight:#0a121f; --tundra:#162235; --navy-light:#1b2b46; --snow:#faf8f5;
+  --aurora:#2bc93a; --cobalt:#1772dd; --arctic:#07759b; --harvest:#efa712;
+  --sunset:#e1460e; --glacial:#13c6b7; --rose:#e04080;
+  --bg:var(--midnight); --surface:var(--tundra); --card:var(--navy-light);
+  --fg:250,248,245; --line:rgba(250,248,245,.10); --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+[data-theme="light"]{ --bg:#eaf2f6; --surface:#d3e8f7; --card:#faf8f5; --fg:10,18,31; --line:rgba(10,18,31,.12); --shadow:0 10px 30px rgba(10,18,31,.09); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);color:rgb(var(--fg));
+  font-family:Inter,system-ui,sans-serif;font-weight:450;letter-spacing:.013em;
+  -webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;
+}
+h1,h2,h3{font-family:"PT Serif",Georgia,serif;font-weight:700;letter-spacing:0}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+.muted{color:rgb(var(--fg)/.6)} .dim{color:rgb(var(--fg)/.4)}
+.eyebrow{font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--aurora)}
+
+.provenance{
+  background:rgba(19,198,183,.10);border-bottom:1px solid rgba(19,198,183,.25);
+  font-size:.75rem;padding:7px 20px;text-align:center;color:rgb(var(--fg)/.75);
+}
+.provenance b{color:var(--glacial);font-weight:600}
+.provenance code{font-family:ui-monospace,Menlo,monospace;font-size:.72rem}
+
+header.top{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font-family:"PT Serif",Georgia,serif;font-size:1.05rem;display:inline-flex;align-items:baseline;gap:.34em}
+.brand s{text-decoration-thickness:.08em;color:rgb(var(--fg)/.42)}
+.brand i{color:var(--aurora);font-style:normal}
+.tabs{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+.tab{padding:8px 15px;border-radius:999px;border:1px solid var(--line);font-size:.82rem;color:rgb(var(--fg)/.6);transition:all .2s;min-height:40px}
+.tab.on{border-color:rgba(43,201,58,.5);background:rgba(43,201,58,.10);color:rgb(var(--fg))}
+.tab:hover{color:rgb(var(--fg))}
+
+main{flex:1;width:100%;max-width:1240px;margin:0 auto;padding:22px 20px 40px}
+.view{display:none} .view.on{display:block}
+
+.meta{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.meta h2{font-size:1.35rem}
+.meta .sub{font-size:.85rem;color:rgb(var(--fg)/.55)}
+
+.grid{display:grid;grid-template-columns:1.35fr 1fr;gap:16px;align-items:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.card h3{font-size:1rem;margin-bottom:2px}
+.cardhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:14px}
+
+/* transport */
+.transport{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-weight:600;font-size:.85rem;transition:all .2s;min-height:44px}
+.btn-primary{background:var(--aurora);color:#0a121f}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(43,201,58,.28)}
+.btn-ghost{border:1px solid rgb(var(--fg)/.22);color:rgb(var(--fg)/.8)}
+.btn-ghost:hover{border-color:var(--aurora);color:var(--aurora)}
+.clock{font-variant-numeric:tabular-nums;font-size:.9rem;color:rgb(var(--fg)/.6)}
+.track{flex:1;min-width:160px;height:5px;border-radius:3px;background:rgb(var(--fg)/.10);position:relative;overflow:hidden}
+.track i{position:absolute;inset:0 auto 0 0;background:var(--aurora);border-radius:3px;width:0}
+.track .mark{position:absolute;top:-3px;width:2px;height:11px;background:var(--harvest);opacity:.85}
+
+/* now speaking */
+.now{min-height:104px;display:flex;flex-direction:column;gap:8px;justify-content:center}
+.now .who{display:flex;align-items:center;gap:9px;font-size:.8rem;color:rgb(var(--fg)/.55)}
+.now .dot{width:8px;height:8px;border-radius:50%;background:var(--aurora);box-shadow:0 0 0 4px rgba(43,201,58,.18)}
+.now .line{font-family:"PT Serif",Georgia,serif;font-size:1.12rem;line-height:1.5}
+.now .line.texture{color:rgb(var(--fg)/.45);font-style:italic;font-size:1rem}
+
+/* talk bars */
+.bars{display:flex;flex-direction:column;gap:9px}
+.bar{display:grid;grid-template-columns:104px 1fr 46px;align-items:center;gap:10px;font-size:.82rem}
+.bar .name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .rail{height:16px;border-radius:5px;background:rgb(var(--fg)/.08);position:relative;overflow:hidden}
+.bar .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--cobalt);border-radius:5px;transition:width .25s linear}
+.bar.over .fill{background:var(--sunset)}
+.bar .pct{text-align:right;font-variant-numeric:tabular-nums;color:rgb(var(--fg)/.65)}
+.bar.silent .name{color:rgb(var(--fg)/.4)}
+.threshold{position:relative;height:14px;margin-left:114px;margin-top:4px;font-size:.68rem;color:rgb(var(--fg)/.4)}
+.threshold span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.threshold:before{content:"";position:absolute;top:-24px;height:24px;width:1px;background:rgb(var(--fg)/.25)}
+
+/* roster */
+.roster{display:flex;flex-wrap:wrap;gap:7px}
+.pip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);font-size:.76rem;color:rgb(var(--fg)/.5)}
+.pip.spoke{border-color:rgba(43,201,58,.35);color:rgb(var(--fg)/.85)}
+.pip.flagged{border-color:rgba(239,167,18,.5);color:var(--harvest)}
+.pip b{font-weight:600}
+
+/* nudges */
+.nudges{display:flex;flex-direction:column;gap:10px;max-height:340px;overflow-y:auto}
+.nudge{border:1px solid var(--line);border-radius:12px;padding:13px 14px;animation:rise .4s ease}
+@keyframes rise{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+.nudge .kind{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
+.nudge .body{font-size:.87rem;line-height:1.55}
+.nudge .at{font-size:.7rem;color:rgb(var(--fg)/.35);margin-top:6px}
+.nudge.balance{border-color:rgba(225,70,14,.35);background:rgba(225,70,14,.07)}
+.nudge.balance .kind{color:var(--sunset)}
+.nudge.silence{border-color:rgba(239,167,18,.35);background:rgba(239,167,18,.07)}
+.nudge.silence .kind{color:var(--harvest)}
+.nudge.question{border-color:rgba(23,114,221,.35);background:rgba(23,114,221,.07)}
+.nudge.question .kind{color:var(--cobalt)}
+.nudge.interrupt{border-color:rgba(224,64,128,.35);background:rgba(224,64,128,.07)}
+.nudge.interrupt .kind{color:var(--rose)}
+.nudge .cite{font-size:.72rem;color:rgb(var(--fg)/.45);margin-top:6px;font-style:italic}
+.empty{font-size:.85rem;color:rgb(var(--fg)/.35);line-height:1.6}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:.87rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgb(var(--fg)/.45);font-weight:600}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+.good{color:var(--aurora)} .bad{color:var(--sunset)}
+.scroller{overflow-x:auto}
+
+.note{font-size:.82rem;line-height:1.65;color:rgb(var(--fg)/.6);margin-top:12px}
+.note b{color:rgb(var(--fg)/.85);font-weight:600}
+.stack{display:flex;flex-direction:column;gap:16px}
+.lead{font-size:.95rem;line-height:1.7;color:rgb(var(--fg)/.72);max-width:70ch;margin-bottom:18px}
+
+@media (max-width:900px){ .grid{grid-template-columns:1fr} main{padding:16px 14px 32px} }
+</style>
+</head>
+<body>
+
+<div class="provenance">
+  <b>Every number on this page is read from the repo</b>, not invented here:
+  <code>simulated-data/aurora-skills</code>, a synthetic dataset whose collaboration signals are documented in <code>GROUND_TRUTH.md</code>.
+</div>
+
+<header class="top">
+  <span class="brand"><s>Claude</s> Team Insights<i>.</i></span>
+  <span class="dim" style="font-size:.78rem">PRD 05 and PRD 06, running on the repo's own data</span>
+  <div class="tabs">
+    <button class="tab on" data-view="live">Live session</button>
+    <button class="tab" data-view="readout">Meeting readout</button>
+    <button class="tab" data-view="quarter">Quarter over quarter</button>
+    <button class="tab" id="theme">Light</button>
+  </div>
+</header>
+
+<main>
+  <!-- LIVE -->
+  <section class="view on" id="view-live">
+    <div class="meta">
+      <h2 id="mtitle">—</h2>
+      <span class="sub" id="msub">—</span>
+    </div>
+    <p class="lead">
+      This replays a real transcript from the dataset, turn by turn, and runs PRD 05's metric contract
+      as it goes. The facilitator only surfaces a pattern once the transcript actually supports it, so
+      nothing appears before the evidence does.
+    </p>
+
+    <div class="transport">
+      <button class="btn btn-primary" id="play">Play</button>
+      <button class="btn btn-ghost" id="jump">Jump to the first nudge</button>
+      <button class="btn btn-ghost" id="reset">Reset</button>
+      <span class="clock" id="clock">00:00 / 29:08</span>
+      <span class="track" id="track"><i></i></span>
+      <span class="dim" style="font-size:.75rem">60x</span>
+    </div>
+
+    <div class="grid">
+      <div class="stack">
+        <div class="card">
+          <div class="cardhead"><div><span class="eyebrow">Now speaking</span></div>
+            <span class="dim" style="font-size:.72rem" id="turncount">turn 0 of 224</span></div>
+          <div class="now" id="now"><div class="line texture">Press play.</div></div>
+        </div>
+
+        <div class="card">
+          <div class="cardhead">
+            <div><span class="eyebrow">Talk-time balance</span><h3>Share of speech so far</h3></div>
+            <span class="dim" style="font-size:.72rem">healthy: nobody above 40%</span>
+          </div>
+          <div class="bars" id="bars"></div>
+          <div class="threshold" id="thresh"><span>40%</span></div>
+          <div class="cardhead" style="margin:18px 0 10px"><div><span class="eyebrow">Room</span><h3>Who has been heard from</h3></div></div>
+          <div class="roster" id="roster"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="cardhead"><div><span class="eyebrow">Facilitator</span><h3>Patterns, not verdicts</h3></div>
+          <span class="dim" style="font-size:.72rem" id="nudgecount">0</span></div>
+        <div class="nudges" id="nudges">
+          <div class="empty">Nothing yet. The facilitator stays quiet until the transcript gives it something countable.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- READOUT -->
+  <section class="view" id="view-readout">
+    <div class="meta"><h2>Meeting readout</h2><span class="sub" id="rsub">—</span></div>
+    <p class="lead">
+      PRD 05's metric contract, computed for this one meeting. The dataset authors content-only numbers
+      as the exact signal and wraps them in procedural texture, so both bases are shown: content-only
+      reproduces <code>GROUND_TRUTH.md</code>, all-speech is what a live tool actually hears.
+    </p>
+    <div class="card scroller">
+      <table id="readout"></table>
+      <p class="note" id="rnote"></p>
+    </div>
+  </section>
+
+  <!-- QUARTER -->
+  <section class="view" id="view-quarter">
+    <div class="meta"><h2>Quarter over quarter</h2><span class="sub" id="qsub">—</span></div>
+    <p class="lead">
+      The dataset's whole point is the before and after on one team. These are the repo's computed
+      figures from <code>_comparison/before_after.json</code>, which is what a scorer has to reproduce
+      before anyone should believe a trend line.
+    </p>
+    <div class="card scroller">
+      <table id="quarter"></table>
+      <p class="note">
+        <b>Why this matters more than the scores.</b> A ground-truth table is an accuracy test, not just
+        sample data. It turns "does the scorer work" from an opinion into a measurement, and it is the
+        thing that decides whether the trend feature can ship.
+      </p>
+    </div>
+  </section>
+</main>
+
+<script src="data.js"></script>
+<script>
+const D = window.DEMO;
+const el = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const mmss = s => String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0');
+const cap = h => (D.summary.speakers[h]||{}).name || h;
+
+const TURNS = D.turns;
+const END = TURNS[TURNS.length-1].end_s;
+const SPEAKERS = D.summary.speakers;
+const ATTENDEES = Object.entries(SPEAKERS).filter(([,v]) => v.attended).map(([h]) => h);
+const HANDLE = {};
+Object.entries(SPEAKERS).forEach(([h,v]) => HANDLE[v.name] = h);
+
+/* ---------- facilitator rules (PRD 05 metric contract) ---------- */
+// Each rule returns a nudge at most once. Firing requires evidence already on screen.
+const RULES = [
+  {
+    id: 'balance', kind: 'balance', label: 'Talk-time balance',
+    test: st => {
+      const [top] = st.ranked;
+      return top && st.spoken_s > 240 && top.pct >= 40 ? top : null;
+    },
+    render: top => ({
+      body: `<b>${esc(top.name)}</b> is holding ${top.pct.toFixed(0)}% of the airtime. Nobody else is above ${(top.second||0).toFixed(0)}%. A round would rebalance this faster than a request will.`,
+      cite: 'Healthy direction: no one holds more than about 40%.'
+    })
+  },
+  {
+    id: 'silence', kind: 'silence', label: 'Silence is not absence',
+    test: st => {
+      if (st.t < 600) return null;
+      const quiet = ATTENDEES.filter(h => !st.spoke.has(h) && (D.elsewhere[h]||{}).messages !== undefined);
+      const engaged = quiet.map(h => ({h, e: D.elsewhere[h]||{}}))
+        .map(x => ({...x, total: (x.e.messages||0)+(x.e.standups||0)+(x.e.pr_comments||0)}))
+        .filter(x => x.total >= 5).sort((a,b) => b.total - a.total);
+      return engaged.length ? {quiet, engaged} : null;
+    },
+    render: ({quiet, engaged}) => {
+      const top = engaged[0];
+      return {
+        body: `${quiet.length} of ${ATTENDEES.length} attendees have not spoken. <b>${esc(cap(top.h))}</b> is one of them, and has contributed ${top.total} times elsewhere this quarter (${top.e.messages} messages, ${top.e.standups} standups, ${top.e.pr_comments} review comments). That reads as a format effect, not disengagement.`,
+        cite: 'Cross-reference chat before calling anyone disengaged. Do not score them zero.'
+      };
+    }
+  },
+  {
+    id: 'question', kind: 'question', label: 'Questions are participation',
+    test: st => {
+      const asks = Object.entries(st.q).map(([h,q]) => ({h, q, a: st.a[h]||0}))
+        .filter(x => x.q >= 2 && x.q > x.a);
+      return asks.length ? asks.sort((x,y) => y.q - x.q)[0] : null;
+    },
+    render: x => ({
+      body: `<b>${esc(cap(x.h))}</b> has asked ${x.q} questions against ${x.a} assertions. Counted as participation, never as low engagement.`,
+      cite: 'A speaker who asks more than they assert is not low-value.'
+    })
+  },
+  {
+    id: 'interrupt', kind: 'interrupt', label: 'Interruption',
+    test: st => st.lastInterrupt,
+    render: t => ({
+      body: `<b>${esc(t.speaker)}</b> came in over the previous speaker. Logged, not scored. One interruption is texture; a pattern is a finding.`,
+      cite: 'Report patterns, not verdicts about people.'
+    })
+  }
+];
+
+/* ---------- replay state ---------- */
+let idx = 0, t = 0, timer = null, fired = new Set(), nudges = [];
+const talk = {}, qs = {}, as = {};
+
+function reset(){
+  clearInterval(timer); timer = null;
+  idx = 0; t = 0; fired = new Set(); nudges = [];
+  Object.keys(talk).forEach(k => delete talk[k]);
+  Object.keys(qs).forEach(k => delete qs[k]);
+  Object.keys(as).forEach(k => delete as[k]);
+  el('play').textContent = 'Play';
+  el('now').innerHTML = '<div class="line texture">Press play.</div>';
+  el('nudges').innerHTML = '<div class="empty">Nothing yet. The facilitator stays quiet until the transcript gives it something countable.</div>';
+  draw();
+}
+
+function state(){
+  const spoken_s = Object.values(talk).reduce((a,b) => a+b, 0) || 1;
+  const ranked = Object.entries(talk).map(([h,v]) => ({h, name: cap(h), s: v, pct: 100*v/spoken_s}))
+    .sort((a,b) => b.pct - a.pct);
+  if (ranked[1]) ranked[0].second = ranked[1].pct;
+  return {t, spoken_s, ranked, spoke: new Set(Object.keys(talk)), q: qs, a: as, lastInterrupt: null};
+}
+
+function step(){
+  const prev = idx;
+  t = Math.min(END, t + 1);
+  let interrupt = null;
+  while (idx < TURNS.length && TURNS[idx].start_s <= t){
+    const turn = TURNS[idx];
+    const h = turn.handle || HANDLE[turn.speaker];
+    if (h){
+      talk[h] = (talk[h]||0) + turn.dur_s;
+      qs[h] = (qs[h]||0) + (turn.questions||0);
+      as[h] = (as[h]||0) + (turn.assertions||0);
+    }
+    if (turn.interrupt) interrupt = turn;
+    idx++;
+  }
+  if (idx !== prev) showTurn(TURNS[idx-1]);
+
+  const st = state();
+  st.lastInterrupt = interrupt;
+  RULES.forEach(rule => {
+    if (fired.has(rule.id)) return;
+    const hit = rule.test(st);
+    if (!hit) return;
+    fired.add(rule.id);
+    nudges.unshift({rule, at: t, ...rule.render(hit)});
+  });
+
+  draw();
+  if (t >= END){ clearInterval(timer); timer = null; el('play').textContent = 'Replay'; }
+}
+
+function showTurn(turn){
+  if (!turn) return;
+  el('now').innerHTML = `
+    <div class="who"><span class="dot"></span>${esc(turn.speaker)}
+      <span class="dim">&middot; ${turn.kind}</span></div>
+    <div class="line ${turn.kind === 'texture' ? 'texture' : ''}">${esc(turn.text || '')}</div>`;
+}
+
+function draw(){
+  el('clock').textContent = `${mmss(t)} / ${mmss(END)}`;
+  el('track').querySelector('i').style.width = (100*t/END) + '%';
+  el('turncount').textContent = `turn ${idx} of ${TURNS.length}`;
+
+  const st = state();
+  el('bars').innerHTML = st.ranked.length ? st.ranked.map(r => `
+    <div class="bar ${r.pct >= 40 ? 'over' : ''}">
+      <span class="name">${esc(r.name)}</span>
+      <span class="rail"><span class="fill" style="width:${Math.min(100,r.pct)}%"></span></span>
+      <span class="pct">${r.pct.toFixed(0)}%</span>
+    </div>`).join('')
+    : '<div class="empty">No speech yet.</div>';
+  el('thresh').style.display = st.ranked.length ? 'block' : 'none';
+  el('thresh').firstElementChild.style.left = 'calc(40% - 8px)';
+
+  el('roster').innerHTML = ATTENDEES.map(h => {
+    const spoke = st.spoke.has(h);
+    const e = D.elsewhere[h] || {};
+    const total = (e.messages||0)+(e.standups||0)+(e.pr_comments||0);
+    const flagged = !spoke && total >= 5 && t >= 600;
+    return `<span class="pip ${spoke ? 'spoke' : ''} ${flagged ? 'flagged' : ''}">
+      <b>${esc(cap(h))}</b>${spoke ? '' : flagged ? ` silent, ${total} elsewhere` : ' silent'}</span>`;
+  }).join('');
+
+  el('nudgecount').textContent = nudges.length ? `${nudges.length} surfaced` : '';
+  if (nudges.length){
+    el('nudges').innerHTML = nudges.map(n => `
+      <div class="nudge ${n.rule.kind}">
+        <div class="kind">${esc(n.rule.label)}</div>
+        <div class="body">${n.body}</div>
+        <div class="cite">${esc(n.cite)}</div>
+        <div class="at">at ${mmss(n.at)}</div>
+      </div>`).join('');
+  }
+}
+
+el('play').onclick = () => {
+  if (timer){ clearInterval(timer); timer = null; el('play').textContent = 'Play'; return; }
+  if (t >= END) reset();
+  el('play').textContent = 'Pause';
+  timer = setInterval(step, 1000/60);
+};
+el('reset').onclick = reset;
+el('jump').onclick = () => {
+  clearInterval(timer); timer = null; el('play').textContent = 'Play';
+  while (t < END && !fired.has('balance')) step();
+};
+
+/* ---------- readout ---------- */
+function buildReadout(){
+  const contentTotal = D.summary.content_speech_s || 1;
+  const allTotal = TURNS.reduce((a,b) => a+b.dur_s, 0);
+  const all = {};
+  TURNS.forEach(x => { const h = x.handle || HANDLE[x.speaker]; if (h) all[h] = (all[h]||0)+x.dur_s; });
+
+  const rows = Object.entries(SPEAKERS)
+    .map(([h,v]) => ({
+      h, name: v.name, attended: v.attended,
+      content: v.talk_pct, allpct: 100*(all[h]||0)/allTotal,
+      turns: v.turns, q: v.questions, a: v.assertions
+    }))
+    .sort((x,y) => y.content - x.content);
+
+  el('readout').innerHTML = `
+    <thead><tr>
+      <th>Attendee</th><th class="num">Content-only</th><th class="num">All speech</th>
+      <th class="num">Turns</th><th class="num">Questions</th><th class="num">Assertions</th><th>Signal</th>
+    </tr></thead>
+    <tbody>${rows.map(r => {
+      const e = D.elsewhere[r.h] || {};
+      const total = (e.messages||0)+(e.standups||0)+(e.pr_comments||0);
+      let sig = '';
+      if (r.content >= 40) sig = `<span class="bad">holds ${r.content.toFixed(0)}% of content speech</span>`;
+      else if (r.turns === 0 && total >= 5) sig = `<span style="color:var(--harvest)">silent here, ${total} contributions elsewhere</span>`;
+      else if (r.q > r.a && r.q > 0) sig = `<span style="color:var(--cobalt)">asks more than asserts, counted as participation</span>`;
+      else if (r.turns === 0) sig = '<span class="dim">silent</span>';
+      return `<tr>
+        <td>${esc(r.name)}</td>
+        <td class="num">${r.content ? r.content.toFixed(1)+'%' : '—'}</td>
+        <td class="num">${r.allpct ? r.allpct.toFixed(1)+'%' : '—'}</td>
+        <td class="num">${r.turns}</td><td class="num">${r.q}</td><td class="num">${r.a}</td>
+        <td>${sig}</td></tr>`;
+    }).join('')}</tbody>`;
+
+  const s = D.summary;
+  el('rsub').textContent = `${s.title} · ${s.date} · ${s.duration_min} min · ${s.attendee_count} attendees`;
+  el('rnote').innerHTML = `<b>Two bases, one meeting.</b> Content-only speech is ${s.content_speech_s.toFixed(0)}s of the
+    ${s.speech_s.toFixed(0)}s spoken and ${s.duration_s.toFixed(0)}s elapsed. The peak of
+    ${Math.max(...rows.map(r => r.content)).toFixed(1)}% is the figure <code>GROUND_TRUTH.md</code> reports for this
+    meeting, so a scorer reading content turns reproduces the published number exactly. A live tool hearing the
+    room instead sees ${Math.max(...rows.map(r => r.allpct)).toFixed(1)}%, which crosses the same threshold and
+    triggers the same nudge. Both are defensible; mixing them silently is not.`;
+}
+
+/* ---------- quarter ---------- */
+function buildQuarter(){
+  const b = D.comparison.before, a = D.comparison.after;
+  const ROWS = [
+    ['Peak dominant talk-time, group meeting', 'peak_dominant_talk_pct', '%', 'down'],
+    ['Dana peak talk-time, group meeting', 'dana_peak_talk_pct', '%', 'down'],
+    ['Naomi average talk-time, group meeting', 'naomi_avg_talk_pct', '%', 'up'],
+    ['Naomi silent-but-present meetings', 'naomi_silent_meetings', '', 'down'],
+    ['Interruptions', 'total_interruptions', '', 'down'],
+    ['License conflict reopened', 'license_conflict_reopens', '', 'down'],
+    ['Regression time to surface, days', 'regression_time_to_surface_days', '', 'down'],
+    ['Hallway dissent events', 'hallway_dissent_events', '', 'down'],
+    ['Changed-mind-in-room events', 'changed_mind_in_room_events', '', 'up'],
+    ['Average psychological safety, 1 to 5', 'avg_psych_safety_1to5', '', 'up'],
+    ['Average conflict health, 1 to 5', 'avg_conflict_health_1to5', '', 'up'],
+  ];
+  el('qsub').textContent = `${D.eras.before}  →  ${D.eras.after}`;
+  el('quarter').innerHTML = `
+    <thead><tr><th>Signal</th><th class="num">Before, Q2</th><th class="num">After, Q3</th><th>Direction</th></tr></thead>
+    <tbody>${ROWS.map(([label, key, unit, want]) => {
+      const bv = b[key], av = a[key];
+      const moved = av === bv ? 'flat' : (av > bv ? 'up' : 'down');
+      const better = moved === 'flat' ? null : moved === want;
+      return `<tr>
+        <td>${esc(label)}</td>
+        <td class="num">${bv}${unit}</td>
+        <td class="num">${av}${unit}</td>
+        <td class="${better === null ? 'dim' : better ? 'good' : 'bad'}">
+          ${moved === 'flat' ? 'no change' : (moved === 'up' ? '↑' : '↓') + (better ? ' better' : ' worse')}</td>
+      </tr>`;
+    }).join('')}</tbody>`;
+}
+
+/* ---------- chrome ---------- */
+document.querySelectorAll('.tab[data-view]').forEach(btn => btn.onclick = () => {
+  document.querySelectorAll('.tab[data-view]').forEach(b => b.classList.toggle('on', b === btn));
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('on', v.id === 'view-' + btn.dataset.view));
+});
+el('theme').onclick = () => {
+  const dark = document.documentElement.dataset.theme === 'dark';
+  document.documentElement.dataset.theme = dark ? 'light' : 'dark';
+  el('theme').textContent = dark ? 'Dark' : 'Light';
+};
+
+el('mtitle').textContent = D.summary.title;
+el('msub').textContent = `${D.summary.date} · ${D.summary.duration_min} min · ${D.summary.attendee_count} attendees · ${TURNS.length} turns`;
+buildReadout(); buildQuarter(); reset();
+</script>
+</body>
+</html>
