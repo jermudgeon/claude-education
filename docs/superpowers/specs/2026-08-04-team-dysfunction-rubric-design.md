@@ -1,7 +1,7 @@
 # Team Dysfunction Assessment Tool — Design Spec
 
 **Date:** 2026-08-04  
-**Version:** 0.8 (rubric will be expanded with additional academic frameworks)  
+**Version:** 0.9 (OBM behavior codebook merged into the rubric)  
 **Status:** Approved
 
 ---
@@ -10,7 +10,7 @@
 
 `team-assess` is a Python CLI tool that periodically evaluates team health using the Five Dysfunctions of a Team framework (Lencioni). It ingests heterogeneous team artifacts, scores each dysfunction dimension via Claude, persists snapshots, and produces a before/after trend report with prioritized action recommendations for the team.
 
-The rubric is designed to accept additional academic frameworks — a research document will be merged in after initial implementation.
+The rubric slot reserved for an additional academic framework is now filled: `rubric/obm-behavior-codes.md` holds 120 observable behavior codes, grouped by dimension and behavior cluster, and `rubric/obm-behavior-codes.json` is the generated form the scoring prompt loads.
 
 ---
 
@@ -70,7 +70,31 @@ The pyramid structure is respected: lower-layer dysfunctions are weighted in int
 For each dimension, Claude provides:
 - A score (1–5)
 - Confidence level (low / medium / high) based on signal volume in inputs
-- 2–4 evidence items: direct quotes or behavioral observations from input documents
+- 2–4 evidence items: direct quotes or behavioral observations from input documents, each tagged with the behavior code it matches
+
+### Behavior codebook
+
+`rubric/obm-behavior-codes.md` is the canonical source; `build_codes.py` regenerates `obm-behavior-codes.json` from it. Editing the JSON directly is a bug.
+
+| Dimension | Codes | Clusters |
+|---|---|---|
+| Trust | 25 | 5 |
+| Conflict | 24 | 6 |
+| Commitment | 23 | 5 |
+| Accountability | 21 | 5 |
+| Results | 27 | 6 |
+
+Each code carries a stable id (`TRU-01-P1`), its dimension, its behavior cluster, a valence (`positive` raises the dimension, `negative` lowers it), and the behavior text. Ids are stable across text edits, so a snapshot taken today stays comparable after the wording is sharpened.
+
+Three rules bind the scorer to the codebook:
+
+1. **Every evidence item cites a code id.** An observation that matches no code is not evidence; it is a candidate new code, reported separately under `uncoded` rather than folded silently into a score.
+2. **Codes are markable from the record, not inferred from mood.** The behavior must be present in what was said or done. This is what keeps two runs over the same inputs from disagreeing.
+3. **Cluster spread constrains confidence.** A dimension whose marks all land in one cluster is `low` confidence regardless of how many marks there are, because one cluster is one behavior pattern, not a dimension.
+
+Scores follow from the marked balance: the positive and negative counts per dimension, weighted by cluster spread, rather than from an unanchored 1–5 judgment. Negative codes are not merely absent positives, so a dimension can hold both and score mid-range with high confidence.
+
+Coding is team-level. Marks retain `speaker_id` in storage so counts can be recomputed, and it is stripped before anything reaches a report, per the scorer constraint in `2026-08-04-facilitator-and-scorer-integration.md`.
 
 ---
 
@@ -87,7 +111,17 @@ One JSON file per period, saved to `snapshots/<period-label>.json`:
     "trust": {
       "score": 3.0,
       "confidence": "medium",
-      "evidence": ["Quote or observation...", "..."]
+      "marks": { "positive": 7, "negative": 3, "clusters": 4 },
+      "evidence": [
+        {
+          "code": "TRU-01-P1",
+          "valence": "positive",
+          "quote": "I got the migration order wrong, that one's on me.",
+          "source": "2026-06-09_roadmap-review.vtt",
+          "speaker_id": "stripped-before-report"
+        }
+      ],
+      "uncoded": ["Observation that matched no code..."]
     },
     "conflict": { "score": 2.5, "confidence": "high", "evidence": [...] },
     "commitment": { "score": 3.2, "confidence": "medium", "evidence": [...] },
@@ -178,7 +212,8 @@ api_key_env = "ANTHROPIC_API_KEY"
 format = "markdown"   # future: html, json-only
 
 [rubric]
-framework = "five-dysfunctions"  # extensible for additional frameworks
+framework = "five-dysfunctions"   # extensible for additional frameworks
+codebook = "rubric/obm-behavior-codes.json"
 ```
 
 ---
@@ -186,6 +221,7 @@ framework = "five-dysfunctions"  # extensible for additional frameworks
 ## Future Extensions
 
 - **Option C upgrade**: Introduce structured extraction layer — LLM tags evidence to dimensions, separate scorer applies rubric to tagged evidence. Enables auditability and easier rubric extension.
-- **Additional frameworks**: Research document to be merged in; `rubric/` directory designed to hold multiple framework definitions.
+- **Additional frameworks**: `rubric/` holds multiple framework definitions; the OBM codebook is the first, and `[rubric] framework` selects among them.
+- **Codebook growth**: `uncoded` observations accumulated across runs are the input to a review that promotes recurring ones to new codes. Adding a code never renumbers existing ids.
 - **Multiple audience views**: Same snapshot data rendered differently for team vs. manager vs. coach audiences.
 - **HTML/PDF output**: Additional renderers added to output layer without changing core pipeline.

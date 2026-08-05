@@ -1,0 +1,848 @@
+{
+  "name": "OBM Behavior Coding Reference",
+  "version": "1.0",
+  "source": "rubric/obm-behavior-codes.md",
+  "count": 120,
+  "codes": [
+    {
+      "id": "TRU-01-P1",
+      "dimension": "Trust",
+      "cluster": "Vulnerability & Psychological Safety",
+      "valence": "positive",
+      "behavior": "Admits a mistake, error, or gap in their own knowledge unprompted"
+    },
+    {
+      "id": "TRU-01-P2",
+      "dimension": "Trust",
+      "cluster": "Vulnerability & Psychological Safety",
+      "valence": "positive",
+      "behavior": "Asks a clarifying question that risks appearing uninformed"
+    },
+    {
+      "id": "TRU-01-P3",
+      "dimension": "Trust",
+      "cluster": "Vulnerability & Psychological Safety",
+      "valence": "positive",
+      "behavior": "Explicitly asks a named person for help or additional resources"
+    },
+    {
+      "id": "TRU-01-P4",
+      "dimension": "Trust",
+      "cluster": "Vulnerability & Psychological Safety",
+      "valence": "positive",
+      "behavior": "Proposes an unproven or half-formed idea and labels it as such"
+    },
+    {
+      "id": "TRU-01-P5",
+      "dimension": "Trust",
+      "cluster": "Vulnerability & Psychological Safety",
+      "valence": "positive",
+      "behavior": "Responds to another's admitted mistake with a question or offer of help rather than criticism"
+    },
+    {
+      "id": "TRU-01-P6",
+      "dimension": "Trust",
+      "cluster": "Vulnerability & Psychological Safety",
+      "valence": "positive",
+      "behavior": "Names their own fallibility to invite challenge (\"I may well be wrong here \u2014 push back on me\")"
+    },
+    {
+      "id": "TRU-01-N1",
+      "dimension": "Trust",
+      "cluster": "Vulnerability & Psychological Safety",
+      "valence": "negative",
+      "behavior": "Attributes negative intent to a teammate without evidence (\"he did that deliberately\")"
+    },
+    {
+      "id": "TRU-02-P1",
+      "dimension": "Trust",
+      "cluster": "Contractual Trust \u2014 Reliability of Character",
+      "valence": "positive",
+      "behavior": "States a commitment with a specific owner and a specific date"
+    },
+    {
+      "id": "TRU-02-P2",
+      "dimension": "Trust",
+      "cluster": "Contractual Trust \u2014 Reliability of Character",
+      "valence": "positive",
+      "behavior": "Reports back on a previously made commitment without being asked"
+    },
+    {
+      "id": "TRU-02-P3",
+      "dimension": "Trust",
+      "cluster": "Contractual Trust \u2014 Reliability of Character",
+      "valence": "positive",
+      "behavior": "Renegotiates a commitment they cannot meet, before the deadline rather than after"
+    },
+    {
+      "id": "TRU-02-P4",
+      "dimension": "Trust",
+      "cluster": "Contractual Trust \u2014 Reliability of Character",
+      "valence": "positive",
+      "behavior": "Delegates a task together with the authority and resources needed to do it"
+    },
+    {
+      "id": "TRU-02-P5",
+      "dimension": "Trust",
+      "cluster": "Contractual Trust \u2014 Reliability of Character",
+      "valence": "positive",
+      "behavior": "Declines a request explicitly rather than accepting it and letting it lapse"
+    },
+    {
+      "id": "TRU-03-P1",
+      "dimension": "Trust",
+      "cluster": "Communication Trust \u2014 Disclosure",
+      "valence": "positive",
+      "behavior": "Shares information relevant to another's work without being asked for it"
+    },
+    {
+      "id": "TRU-03-P2",
+      "dimension": "Trust",
+      "cluster": "Communication Trust \u2014 Disclosure",
+      "valence": "positive",
+      "behavior": "Gives direct, specific feedback to a person's face rather than about them"
+    },
+    {
+      "id": "TRU-03-P3",
+      "dimension": "Trust",
+      "cluster": "Communication Trust \u2014 Disclosure",
+      "valence": "positive",
+      "behavior": "Receives feedback without defending, and asks a follow-up question about it"
+    },
+    {
+      "id": "TRU-03-P4",
+      "dimension": "Trust",
+      "cluster": "Communication Trust \u2014 Disclosure",
+      "valence": "positive",
+      "behavior": "States explicitly what they do not know or the limits of their information"
+    },
+    {
+      "id": "TRU-04-P1",
+      "dimension": "Trust",
+      "cluster": "Competence Trust \u2014 Capability",
+      "valence": "positive",
+      "behavior": "Asks a specific named person for their expert judgment in their domain"
+    },
+    {
+      "id": "TRU-04-P2",
+      "dimension": "Trust",
+      "cluster": "Competence Trust \u2014 Capability",
+      "valence": "positive",
+      "behavior": "Visibly defers to another's expertise on that person's own subject"
+    },
+    {
+      "id": "TRU-04-P3",
+      "dimension": "Trust",
+      "cluster": "Competence Trust \u2014 Capability",
+      "valence": "positive",
+      "behavior": "Seeks input from those affected before making a decision that changes their work"
+    },
+    {
+      "id": "TRU-04-N1",
+      "dimension": "Trust",
+      "cluster": "Competence Trust \u2014 Capability",
+      "valence": "negative",
+      "behavior": "Requests granular status or approval on work that has already been delegated (micromanagement)"
+    },
+    {
+      "id": "TRU-04-N2",
+      "dimension": "Trust",
+      "cluster": "Competence Trust \u2014 Capability",
+      "valence": "negative",
+      "behavior": "Makes a decision affecting a person's work without consulting or informing them"
+    },
+    {
+      "id": "TRU-05-P1",
+      "dimension": "Trust",
+      "cluster": "Humility & Status Behavior",
+      "valence": "positive",
+      "behavior": "Attributes a success to a specific teammate by name"
+    },
+    {
+      "id": "TRU-05-P2",
+      "dimension": "Trust",
+      "cluster": "Humility & Status Behavior",
+      "valence": "positive",
+      "behavior": "Corrects a public misattribution of credit in someone else's favor"
+    },
+    {
+      "id": "TRU-05-N1",
+      "dimension": "Trust",
+      "cluster": "Humility & Status Behavior",
+      "valence": "negative",
+      "behavior": "Redirects a discussion toward their own accomplishments or standing"
+    },
+    {
+      "id": "TRU-05-N2",
+      "dimension": "Trust",
+      "cluster": "Humility & Status Behavior",
+      "valence": "negative",
+      "behavior": "Summarizes team work without naming its contributors"
+    },
+    {
+      "id": "CON-01-P1",
+      "dimension": "Conflict",
+      "cluster": "Surfacing Disagreement",
+      "valence": "positive",
+      "behavior": "States disagreement with a proposal in the same meeting where the proposal is made"
+    },
+    {
+      "id": "CON-01-P2",
+      "dimension": "Conflict",
+      "cluster": "Surfacing Disagreement",
+      "valence": "positive",
+      "behavior": "Names an unspoken concern the group has been circling (\"nobody's saying it, but...\")"
+    },
+    {
+      "id": "CON-01-P3",
+      "dimension": "Conflict",
+      "cluster": "Surfacing Disagreement",
+      "valence": "positive",
+      "behavior": "Asks another person directly for their dissenting view (\"what's the case against this?\")"
+    },
+    {
+      "id": "CON-01-P4",
+      "dimension": "Conflict",
+      "cluster": "Surfacing Disagreement",
+      "valence": "positive",
+      "behavior": "Explicitly invites disagreement or assigns someone to argue the opposing case"
+    },
+    {
+      "id": "CON-01-P5",
+      "dimension": "Conflict",
+      "cluster": "Surfacing Disagreement",
+      "valence": "positive",
+      "behavior": "Voices a dissenting opinion against the apparent consensus"
+    },
+    {
+      "id": "CON-01-N1",
+      "dimension": "Conflict",
+      "cluster": "Surfacing Disagreement",
+      "valence": "negative",
+      "behavior": "Changes the subject or defers to a later date when a contentious topic surfaces"
+    },
+    {
+      "id": "CON-02-P1",
+      "dimension": "Conflict",
+      "cluster": "Quality of Debate",
+      "valence": "positive",
+      "behavior": "States observable facts before stating a conclusion drawn from them"
+    },
+    {
+      "id": "CON-02-P2",
+      "dimension": "Conflict",
+      "cluster": "Quality of Debate",
+      "valence": "positive",
+      "behavior": "Explicitly separates observation from interpretation (\"the story I'm telling myself is...\")"
+    },
+    {
+      "id": "CON-02-P3",
+      "dimension": "Conflict",
+      "cluster": "Quality of Debate",
+      "valence": "positive",
+      "behavior": "Asks the other party for their reasoning or how they got to their position"
+    },
+    {
+      "id": "CON-02-P4",
+      "dimension": "Conflict",
+      "cluster": "Quality of Debate",
+      "valence": "positive",
+      "behavior": "Offers a concrete alternative proposal in response to an objection"
+    },
+    {
+      "id": "CON-02-P5",
+      "dimension": "Conflict",
+      "cluster": "Quality of Debate",
+      "valence": "positive",
+      "behavior": "Supplies factual information or orientation to settle a factual dispute"
+    },
+    {
+      "id": "CON-02-N1",
+      "dimension": "Conflict",
+      "cluster": "Quality of Debate",
+      "valence": "negative",
+      "behavior": "Attacks the person rather than the proposal, including labeling (\"that's a typical finance answer\")"
+    },
+    {
+      "id": "CON-02-N2",
+      "dimension": "Conflict",
+      "cluster": "Quality of Debate",
+      "valence": "negative",
+      "behavior": "Attributes a motive to the other party in order to discredit their argument"
+    },
+    {
+      "id": "CON-03-P1",
+      "dimension": "Conflict",
+      "cluster": "Tension Management & Repair",
+      "valence": "positive",
+      "behavior": "Expresses solidarity or support for a person while disagreeing with their position"
+    },
+    {
+      "id": "CON-03-P2",
+      "dimension": "Conflict",
+      "cluster": "Tension Management & Repair",
+      "valence": "positive",
+      "behavior": "Names rising tension explicitly and proposes a process remedy (\"let's take five and come back\")"
+    },
+    {
+      "id": "CON-03-P3",
+      "dimension": "Conflict",
+      "cluster": "Tension Management & Repair",
+      "valence": "positive",
+      "behavior": "Apologizes for a specific act, naming the act"
+    },
+    {
+      "id": "CON-04-N1",
+      "dimension": "Conflict",
+      "cluster": "Destructive Conflict \u2014 Aggression",
+      "valence": "negative",
+      "behavior": "Interrupts or talks over a speaker before they have finished"
+    },
+    {
+      "id": "CON-04-N2",
+      "dimension": "Conflict",
+      "cluster": "Destructive Conflict \u2014 Aggression",
+      "valence": "negative",
+      "behavior": "Reprimands or criticizes a person in front of the group"
+    },
+    {
+      "id": "CON-04-N3",
+      "dimension": "Conflict",
+      "cluster": "Destructive Conflict \u2014 Aggression",
+      "valence": "negative",
+      "behavior": "Makes a demeaning or nasty remark directed at a person"
+    },
+    {
+      "id": "CON-04-N4",
+      "dimension": "Conflict",
+      "cluster": "Destructive Conflict \u2014 Aggression",
+      "valence": "negative",
+      "behavior": "Sends a demeaning or hostile written message (email, chat) about or to a colleague"
+    },
+    {
+      "id": "CON-05-N1",
+      "dimension": "Conflict",
+      "cluster": "Destructive Conflict \u2014 Withdrawal & Incivility",
+      "valence": "negative",
+      "behavior": "Stops contributing to a discussion after being challenged"
+    },
+    {
+      "id": "CON-06-P1",
+      "dimension": "Conflict",
+      "cluster": "Resolution & Closure",
+      "valence": "positive",
+      "behavior": "Summarizes the points of disagreement and states what remains unresolved"
+    },
+    {
+      "id": "CON-06-P2",
+      "dimension": "Conflict",
+      "cluster": "Resolution & Closure",
+      "valence": "positive",
+      "behavior": "Proposes an explicit decision rule for resolving the dispute (who decides, by when)"
+    },
+    {
+      "id": "CON-06-N1",
+      "dimension": "Conflict",
+      "cluster": "Resolution & Closure",
+      "valence": "negative",
+      "behavior": "Allows a live disagreement to go unnamed at the close of the meeting"
+    },
+    {
+      "id": "COM-01-P1",
+      "dimension": "Commitment",
+      "cluster": "Clarity of Mission, Goals & Roles",
+      "valence": "positive",
+      "behavior": "States the team's objective or deliverable in explicit terms"
+    },
+    {
+      "id": "COM-01-P2",
+      "dimension": "Commitment",
+      "cluster": "Clarity of Mission, Goals & Roles",
+      "valence": "positive",
+      "behavior": "Asks what the priority order is when two goals conflict"
+    },
+    {
+      "id": "COM-01-P3",
+      "dimension": "Commitment",
+      "cluster": "Clarity of Mission, Goals & Roles",
+      "valence": "positive",
+      "behavior": "Names who owns a specific piece of work"
+    },
+    {
+      "id": "COM-01-P4",
+      "dimension": "Commitment",
+      "cluster": "Clarity of Mission, Goals & Roles",
+      "valence": "positive",
+      "behavior": "Restates a decision at the close of a discussion to confirm shared understanding"
+    },
+    {
+      "id": "COM-01-P5",
+      "dimension": "Commitment",
+      "cluster": "Clarity of Mission, Goals & Roles",
+      "valence": "positive",
+      "behavior": "Identifies the resources and constraints available for the task"
+    },
+    {
+      "id": "COM-01-P6",
+      "dimension": "Commitment",
+      "cluster": "Clarity of Mission, Goals & Roles",
+      "valence": "positive",
+      "behavior": "Asks for a decision to be stated explicitly when it has only been implied"
+    },
+    {
+      "id": "COM-01-N1",
+      "dimension": "Commitment",
+      "cluster": "Clarity of Mission, Goals & Roles",
+      "valence": "negative",
+      "behavior": "Closes a meeting with no explicit statement of what was decided"
+    },
+    {
+      "id": "COM-02-P1",
+      "dimension": "Commitment",
+      "cluster": "Strategy & Planning",
+      "valence": "positive",
+      "behavior": "Proposes a concrete plan or sequence of steps for achieving a stated goal"
+    },
+    {
+      "id": "COM-02-P2",
+      "dimension": "Commitment",
+      "cluster": "Strategy & Planning",
+      "valence": "positive",
+      "behavior": "Proposes a contingency (\"if the vendor slips, we fall back to X\")"
+    },
+    {
+      "id": "COM-02-P3",
+      "dimension": "Commitment",
+      "cluster": "Strategy & Planning",
+      "valence": "positive",
+      "behavior": "Assigns a named next step with an owner and a date"
+    },
+    {
+      "id": "COM-02-N1",
+      "dimension": "Commitment",
+      "cluster": "Strategy & Planning",
+      "valence": "negative",
+      "behavior": "Discusses a goal at length without any statement of how it will be achieved"
+    },
+    {
+      "id": "COM-03-P1",
+      "dimension": "Commitment",
+      "cluster": "Buy-In & Decision Closure",
+      "valence": "positive",
+      "behavior": "States support for a decision they argued against (\"I still disagree, and I'm in\")"
+    },
+    {
+      "id": "COM-03-P2",
+      "dimension": "Commitment",
+      "cluster": "Buy-In & Decision Closure",
+      "valence": "positive",
+      "behavior": "Asks each participant explicitly whether they can commit to the decision"
+    },
+    {
+      "id": "COM-03-P3",
+      "dimension": "Commitment",
+      "cluster": "Buy-In & Decision Closure",
+      "valence": "positive",
+      "behavior": "Sets a deadline for a decision to prevent drift toward consensus-seeking"
+    },
+    {
+      "id": "COM-03-P4",
+      "dimension": "Commitment",
+      "cluster": "Buy-In & Decision Closure",
+      "valence": "positive",
+      "behavior": "Commits to a decision made under uncertainty, naming it as reversible if wrong"
+    },
+    {
+      "id": "COM-03-N1",
+      "dimension": "Commitment",
+      "cluster": "Buy-In & Decision Closure",
+      "valence": "negative",
+      "behavior": "Proposes an action (\"we should do X\") that no one takes ownership of"
+    },
+    {
+      "id": "COM-04-P1",
+      "dimension": "Commitment",
+      "cluster": "Shared Vision & Meaning",
+      "valence": "positive",
+      "behavior": "Describes a specific picture of a desired future state"
+    },
+    {
+      "id": "COM-04-P2",
+      "dimension": "Commitment",
+      "cluster": "Shared Vision & Meaning",
+      "valence": "positive",
+      "behavior": "Connects a request to a stated value or interest of the person being asked"
+    },
+    {
+      "id": "COM-04-P3",
+      "dimension": "Commitment",
+      "cluster": "Shared Vision & Meaning",
+      "valence": "positive",
+      "behavior": "States why the work matters to them personally"
+    },
+    {
+      "id": "COM-04-P4",
+      "dimension": "Commitment",
+      "cluster": "Shared Vision & Meaning",
+      "valence": "positive",
+      "behavior": "States the organizational or customer consequence of the team's work"
+    },
+    {
+      "id": "COM-04-N1",
+      "dimension": "Commitment",
+      "cluster": "Shared Vision & Meaning",
+      "valence": "negative",
+      "behavior": "Assigns work with no stated rationale or connection to a larger purpose"
+    },
+    {
+      "id": "COM-05-P1",
+      "dimension": "Commitment",
+      "cluster": "Discretionary Engagement",
+      "valence": "positive",
+      "behavior": "Raises a problem that sits outside their own area of responsibility"
+    },
+    {
+      "id": "COM-05-P2",
+      "dimension": "Commitment",
+      "cluster": "Discretionary Engagement",
+      "valence": "positive",
+      "behavior": "Asks for more responsibility or scope"
+    },
+    {
+      "id": "ACC-01-P1",
+      "dimension": "Accountability",
+      "cluster": "Peer-to-Peer Accountability",
+      "valence": "positive",
+      "behavior": "Names a specific missed commitment directly to the person responsible"
+    },
+    {
+      "id": "ACC-01-P2",
+      "dimension": "Accountability",
+      "cluster": "Peer-to-Peer Accountability",
+      "valence": "positive",
+      "behavior": "Raises a peer's behavior that is hurting the team, to that peer"
+    },
+    {
+      "id": "ACC-01-P3",
+      "dimension": "Accountability",
+      "cluster": "Peer-to-Peer Accountability",
+      "valence": "positive",
+      "behavior": "Asks a peer for a revised commitment after a miss"
+    },
+    {
+      "id": "ACC-01-P4",
+      "dimension": "Accountability",
+      "cluster": "Peer-to-Peer Accountability",
+      "valence": "positive",
+      "behavior": "Verbally backs a colleague who has just raised an accountability issue"
+    },
+    {
+      "id": "ACC-01-P5",
+      "dimension": "Accountability",
+      "cluster": "Peer-to-Peer Accountability",
+      "valence": "positive",
+      "behavior": "Asks the team to hold them personally to a standard they have just set"
+    },
+    {
+      "id": "ACC-02-P1",
+      "dimension": "Accountability",
+      "cluster": "Expectation Setting (Antecedents)",
+      "valence": "positive",
+      "behavior": "States the standard or criteria for \"done\" before the work begins"
+    },
+    {
+      "id": "ACC-02-P2",
+      "dimension": "Accountability",
+      "cluster": "Expectation Setting (Antecedents)",
+      "valence": "positive",
+      "behavior": "Confirms the other person's understanding of an expectation rather than assuming it"
+    },
+    {
+      "id": "ACC-02-P3",
+      "dimension": "Accountability",
+      "cluster": "Expectation Setting (Antecedents)",
+      "valence": "positive",
+      "behavior": "States the consequence attached to meeting or missing a standard, in advance"
+    },
+    {
+      "id": "ACC-02-N1",
+      "dimension": "Accountability",
+      "cluster": "Expectation Setting (Antecedents)",
+      "valence": "negative",
+      "behavior": "Assigns work without stating what a good outcome would look like"
+    },
+    {
+      "id": "ACC-03-P1",
+      "dimension": "Accountability",
+      "cluster": "Performance Monitoring",
+      "valence": "positive",
+      "behavior": "Examines the actual work product rather than accepting a status summary"
+    },
+    {
+      "id": "ACC-03-P2",
+      "dimension": "Accountability",
+      "cluster": "Performance Monitoring",
+      "valence": "positive",
+      "behavior": "Asks specific, evidence-seeking follow-up questions about a status claim"
+    },
+    {
+      "id": "ACC-03-P3",
+      "dimension": "Accountability",
+      "cluster": "Performance Monitoring",
+      "valence": "positive",
+      "behavior": "Tracks progress against a named milestone in the meeting"
+    },
+    {
+      "id": "ACC-04-P1",
+      "dimension": "Accountability",
+      "cluster": "Consequences & Feedback Delivery",
+      "valence": "positive",
+      "behavior": "Delivers specific positive feedback promptly after the performance it refers to"
+    },
+    {
+      "id": "ACC-04-P2",
+      "dimension": "Accountability",
+      "cluster": "Consequences & Feedback Delivery",
+      "valence": "positive",
+      "behavior": "Delivers corrective feedback tied to a specific observed act"
+    },
+    {
+      "id": "ACC-04-P3",
+      "dimension": "Accountability",
+      "cluster": "Consequences & Feedback Delivery",
+      "valence": "positive",
+      "behavior": "Explicitly links a consequence to a behavior (\"because that shipped on time, the client renewed\")"
+    },
+    {
+      "id": "ACC-04-N1",
+      "dimension": "Accountability",
+      "cluster": "Consequences & Feedback Delivery",
+      "valence": "negative",
+      "behavior": "Delivers feedback long after the event, or only at formal review time"
+    },
+    {
+      "id": "ACC-04-N2",
+      "dimension": "Accountability",
+      "cluster": "Consequences & Feedback Delivery",
+      "valence": "negative",
+      "behavior": "Delivers generalized praise or criticism without naming a specific act"
+    },
+    {
+      "id": "ACC-05-P1",
+      "dimension": "Accountability",
+      "cluster": "Ownership vs. Blame-Shifting",
+      "valence": "positive",
+      "behavior": "States plainly that a miss was theirs, without qualification"
+    },
+    {
+      "id": "ACC-05-P2",
+      "dimension": "Accountability",
+      "cluster": "Ownership vs. Blame-Shifting",
+      "valence": "positive",
+      "behavior": "Separates diagnosis of a failure from attribution of fault"
+    },
+    {
+      "id": "ACC-05-P3",
+      "dimension": "Accountability",
+      "cluster": "Ownership vs. Blame-Shifting",
+      "valence": "positive",
+      "behavior": "Accepts corrective feedback without counter-argument, and states what they will change"
+    },
+    {
+      "id": "ACC-05-N1",
+      "dimension": "Accountability",
+      "cluster": "Ownership vs. Blame-Shifting",
+      "valence": "negative",
+      "behavior": "Responds to an accountability challenge with a counter-accusation"
+    },
+    {
+      "id": "RES-01-P1",
+      "dimension": "Results",
+      "cluster": "Collective Goal Focus vs. Individual Status",
+      "valence": "positive",
+      "behavior": "Subordinates their own function's or unit's interest to a stated team outcome"
+    },
+    {
+      "id": "RES-01-P2",
+      "dimension": "Results",
+      "cluster": "Collective Goal Focus vs. Individual Status",
+      "valence": "positive",
+      "behavior": "Refers to a shared metric or scoreboard when arguing a position"
+    },
+    {
+      "id": "RES-01-P3",
+      "dimension": "Results",
+      "cluster": "Collective Goal Focus vs. Individual Status",
+      "valence": "positive",
+      "behavior": "Redirects a discussion from individual contribution back to collective outcome"
+    },
+    {
+      "id": "RES-01-N1",
+      "dimension": "Results",
+      "cluster": "Collective Goal Focus vs. Individual Status",
+      "valence": "negative",
+      "behavior": "Argues a position on the basis of their own status, headcount, budget, or visibility"
+    },
+    {
+      "id": "RES-02-P1",
+      "dimension": "Results",
+      "cluster": "Dependability & Delivery",
+      "valence": "positive",
+      "behavior": "Delivers a committed item on the stated date and reports it"
+    },
+    {
+      "id": "RES-02-P2",
+      "dimension": "Results",
+      "cluster": "Dependability & Delivery",
+      "valence": "positive",
+      "behavior": "Flags a slip early, with a revised date"
+    },
+    {
+      "id": "RES-02-P3",
+      "dimension": "Results",
+      "cluster": "Dependability & Delivery",
+      "valence": "positive",
+      "behavior": "Takes care of shared resources, tools, or documentation without being asked"
+    },
+    {
+      "id": "RES-02-N1",
+      "dimension": "Results",
+      "cluster": "Dependability & Delivery",
+      "valence": "negative",
+      "behavior": "Misses a committed date without prior notice"
+    },
+    {
+      "id": "RES-03-P1",
+      "dimension": "Results",
+      "cluster": "Coordination & Backup Behavior",
+      "valence": "positive",
+      "behavior": "Notices a teammate is overloaded and offers or takes specific work from them"
+    },
+    {
+      "id": "RES-03-P2",
+      "dimension": "Results",
+      "cluster": "Coordination & Backup Behavior",
+      "valence": "positive",
+      "behavior": "Helps a new member get oriented"
+    },
+    {
+      "id": "RES-03-P3",
+      "dimension": "Results",
+      "cluster": "Coordination & Backup Behavior",
+      "valence": "positive",
+      "behavior": "States what they need from whom and by when, to synchronize a handoff"
+    },
+    {
+      "id": "RES-03-P4",
+      "dimension": "Results",
+      "cluster": "Coordination & Backup Behavior",
+      "valence": "positive",
+      "behavior": "Gives advance notice to people whose work will be affected by a change they are making"
+    },
+    {
+      "id": "RES-03-P5",
+      "dimension": "Results",
+      "cluster": "Coordination & Backup Behavior",
+      "valence": "positive",
+      "behavior": "Monitors tools, resources, or external conditions and reports an emerging risk"
+    },
+    {
+      "id": "RES-03-N1",
+      "dimension": "Results",
+      "cluster": "Coordination & Backup Behavior",
+      "valence": "negative",
+      "behavior": "Completes their own task while a dependent teammate visibly fails"
+    },
+    {
+      "id": "RES-04-P1",
+      "dimension": "Results",
+      "cluster": "Progress Monitoring & Adaptation",
+      "valence": "positive",
+      "behavior": "Reports actual progress against plan, including bad news"
+    },
+    {
+      "id": "RES-04-P2",
+      "dimension": "Results",
+      "cluster": "Progress Monitoring & Adaptation",
+      "valence": "positive",
+      "behavior": "Proposes a change of approach when monitoring shows the plan is failing"
+    },
+    {
+      "id": "RES-04-N1",
+      "dimension": "Results",
+      "cluster": "Progress Monitoring & Adaptation",
+      "valence": "negative",
+      "behavior": "Reports status in terms of activity rather than outcome (\"we've had a lot of meetings on it\")"
+    },
+    {
+      "id": "RES-05-P1",
+      "dimension": "Results",
+      "cluster": "Recognition & Collective Motivation",
+      "valence": "positive",
+      "behavior": "Publicly recognizes a specific individual's contribution to a result"
+    },
+    {
+      "id": "RES-05-P2",
+      "dimension": "Results",
+      "cluster": "Recognition & Collective Motivation",
+      "valence": "positive",
+      "behavior": "Marks a team milestone or accomplishment explicitly"
+    },
+    {
+      "id": "RES-05-P3",
+      "dimension": "Results",
+      "cluster": "Recognition & Collective Motivation",
+      "valence": "positive",
+      "behavior": "Expresses confidence in the team's capability to achieve the goal"
+    },
+    {
+      "id": "RES-05-P4",
+      "dimension": "Results",
+      "cluster": "Recognition & Collective Motivation",
+      "valence": "positive",
+      "behavior": "Names and defuses frustration or stress in the group"
+    },
+    {
+      "id": "RES-05-N1",
+      "dimension": "Results",
+      "cluster": "Recognition & Collective Motivation",
+      "valence": "negative",
+      "behavior": "Passes over a completed result with no acknowledgment"
+    },
+    {
+      "id": "RES-06-P1",
+      "dimension": "Results",
+      "cluster": "Continuous Improvement & Learning from Failure",
+      "valence": "positive",
+      "behavior": "Proposes a change to an existing process or way of working"
+    },
+    {
+      "id": "RES-06-P2",
+      "dimension": "Results",
+      "cluster": "Continuous Improvement & Learning from Failure",
+      "valence": "positive",
+      "behavior": "Frames a failure as information and states what was learned from it"
+    },
+    {
+      "id": "RES-06-P3",
+      "dimension": "Results",
+      "cluster": "Continuous Improvement & Learning from Failure",
+      "valence": "positive",
+      "behavior": "Runs or participates in a retrospective that produces a named, owned change"
+    },
+    {
+      "id": "RES-06-P4",
+      "dimension": "Results",
+      "cluster": "Continuous Improvement & Learning from Failure",
+      "valence": "positive",
+      "behavior": "Takes a considered risk on an unproven approach and says so"
+    },
+    {
+      "id": "RES-06-N1",
+      "dimension": "Results",
+      "cluster": "Continuous Improvement & Learning from Failure",
+      "valence": "negative",
+      "behavior": "Treats a failure solely as a fault to be assigned"
+    }
+  ]
+}
