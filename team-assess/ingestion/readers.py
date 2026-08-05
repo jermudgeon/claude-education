@@ -2,6 +2,8 @@ import csv
 import json
 from pathlib import Path
 
+from pypdf import PdfReader
+
 
 def read_txt(path: Path) -> str:
     return Path(path).read_text(encoding="utf-8")
@@ -27,10 +29,7 @@ def read_json(path: Path) -> str:
 
 
 def read_pdf(path: Path) -> str:
-    from pypdf import PdfReader
     path = Path(path)
-    if not path.exists():
-        raise FileNotFoundError(f"File not found: {path}")
     reader = PdfReader(str(path))
     pages = []
     for page in reader.pages:
