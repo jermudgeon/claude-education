@@ -35,9 +35,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .provenance code{font-family:ui-monospace,Menlo,monospace;font-size:.72rem}
 
 header.top{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.brand{font-family:"PT Serif",Georgia,serif;font-size:1.05rem;display:inline-flex;align-items:baseline;gap:.34em}
-.brand s{text-decoration-thickness:.08em;color:rgb(var(--fg)/.42)}
-.brand i{color:var(--aurora);font-style:normal}
+.logo{height:44px;width:auto;border-radius:9px;display:block}
 .tabs{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
 .tab{padding:8px 15px;border-radius:999px;border:1px solid var(--line);font-size:.82rem;color:rgb(var(--fg)/.6);transition:all .2s;min-height:40px}
 .tab.on{border-color:rgba(43,201,58,.5);background:rgba(43,201,58,.10);color:rgb(var(--fg))}
@@ -121,6 +119,42 @@ tr:last-child td{border-bottom:0}
 .good{color:var(--aurora)} .bad{color:var(--sunset)}
 .scroller{overflow-x:auto}
 
+/* speed control */
+.speeds{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.speed{padding:7px 12px;font-size:.75rem;color:rgb(var(--fg)/.55);transition:all .2s;min-height:36px}
+.speed.on{background:rgba(43,201,58,.14);color:var(--aurora);font-weight:600}
+.speed:hover{color:rgb(var(--fg))}
+
+/* behavior coding */
+.dims{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.dimchip{flex:1;min-width:86px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-align:center}
+.dimchip .dn{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--fg)/.5)}
+.dimchip .dc{font-size:.95rem;font-weight:600;font-variant-numeric:tabular-nums;margin-top:2px}
+.dimchip .dc .neg{color:var(--sunset)}
+.dimchip.hit{border-color:rgba(43,201,58,.4)}
+.codes{display:flex;flex-direction:column;gap:9px;max-height:300px;overflow-y:auto}
+.codemark{border:1px solid var(--line);border-left-width:3px;border-radius:10px;padding:10px 12px;animation:rise .4s ease}
+.codemark .cid{font-family:ui-monospace,Menlo,monospace;font-size:.68rem;font-weight:600}
+.codemark .beh{font-size:.8rem;line-height:1.5;margin-top:3px}
+.codemark .cq{font-size:.76rem;color:rgb(var(--fg)/.55);font-style:italic;margin-top:4px;line-height:1.5}
+.codemark .cmeta{font-size:.66rem;color:rgb(var(--fg)/.35);margin-top:5px}
+.codemark.negative{border-left-color:var(--sunset)}
+.codemark.positive{border-left-color:var(--aurora)}
+.kindtag{display:inline-block;padding:1px 7px;border-radius:999px;border:1px solid var(--line);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgb(var(--fg)/.45);margin-left:6px}
+.authored{background:rgba(239,167,18,.09);border:1px solid rgba(239,167,18,.3);border-radius:12px;padding:12px 15px;font-size:.8rem;line-height:1.6;color:rgb(var(--fg)/.75);margin-bottom:16px}
+.authored b{color:var(--harvest)}
+.dimcard{border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+.dimcard h4{font-family:"PT Serif",Georgia,serif;font-size:.95rem}
+.dimhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:8px}
+.conf{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 9px;border-radius:999px;border:1px solid var(--line)}
+.conf.low{color:var(--harvest);border-color:rgba(239,167,18,.4)}
+.conf.medium{color:var(--cobalt);border-color:rgba(23,114,221,.4)}
+.conf.high{color:var(--aurora);border-color:rgba(43,201,58,.4)}
+.conf.none{color:rgb(var(--fg)/.35)}
+.dimstats{font-size:.74rem;color:rgb(var(--fg)/.5);margin-bottom:10px}
+.codegrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+@media (max-width:900px){.codegrid{grid-template-columns:1fr}}
+
 .note{font-size:.82rem;line-height:1.65;color:rgb(var(--fg)/.6);margin-top:12px}
 .note b{color:rgb(var(--fg)/.85);font-weight:600}
 .stack{display:flex;flex-direction:column;gap:16px}
@@ -134,13 +168,15 @@ tr:last-child td{border-bottom:0}
 <div class="provenance">
   <b>Every number on this page is read from the repo</b>, not invented here:
   <code>simulated-data/aurora-skills</code>, a synthetic dataset whose collaboration signals are documented in <code>GROUND_TRUTH.md</code>.
+  One labeled exception: behavior-code assignments are authored judgment, marked as such where they appear.
 </div>
 
 <header class="top">
-  <span class="brand"><s>Claude</s> Team Insights<i>.</i></span>
+  <img class="logo" src="../claude-impact-lab-logo.png" alt="Claude Code, struck through: Team Insights">
   <span class="dim" style="font-size:.78rem">PRD 05 and PRD 06, running on the repo's own data</span>
   <div class="tabs">
     <button class="tab on" data-view="live">Live session</button>
+    <button class="tab" data-view="coding">Behavior coding</button>
     <button class="tab" data-view="readout">Meeting readout</button>
     <button class="tab" data-view="quarter">Quarter over quarter</button>
     <button class="tab" id="theme">Light</button>
@@ -166,7 +202,12 @@ tr:last-child td{border-bottom:0}
       <button class="btn btn-ghost" id="reset">Reset</button>
       <span class="clock" id="clock">00:00 / 29:08</span>
       <span class="track" id="track"><i></i></span>
-      <span class="dim" style="font-size:.75rem">60x</span>
+      <span class="speeds" role="group" aria-label="Replay speed">
+        <button class="speed" data-speed="1">1×</button>
+        <button class="speed" data-speed="15">15×</button>
+        <button class="speed on" data-speed="60">60×</button>
+        <button class="speed" data-speed="240">240×</button>
+      </span>
     </div>
 
     <div class="grid">
@@ -189,11 +230,49 @@ tr:last-child td{border-bottom:0}
         </div>
       </div>
 
-      <div class="card">
-        <div class="cardhead"><div><span class="eyebrow">Facilitator</span><h3>Patterns, not verdicts</h3></div>
-          <span class="dim" style="font-size:.72rem" id="nudgecount">0</span></div>
-        <div class="nudges" id="nudges">
-          <div class="empty">Nothing yet. The facilitator stays quiet until the transcript gives it something countable.</div>
+      <div class="stack">
+        <div class="card">
+          <div class="cardhead"><div><span class="eyebrow">Facilitator</span><h3>Patterns, not verdicts</h3></div>
+            <span class="dim" style="font-size:.72rem" id="nudgecount">0</span></div>
+          <div class="nudges" id="nudges">
+            <div class="empty">Nothing yet. The facilitator stays quiet until the transcript gives it something countable.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardhead"><div><span class="eyebrow">Behavior coding · authored</span><h3>Rubric marks as they land</h3></div>
+            <span class="dim" style="font-size:.72rem" id="markcount"></span></div>
+          <div class="dims" id="livedims"></div>
+          <div class="codes" id="livecodes">
+            <div class="empty">Marks dock here when the replay reaches the turn they cite. Assignments are authored judgment against the 120-code rubric; quotes are verbatim.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODING -->
+  <section class="view" id="view-coding">
+    <div class="meta"><h2>Behavior coding</h2><span class="sub" id="csub">—</span></div>
+    <p class="lead">
+      This is the rubric from <code>rubric/obm-behavior-codes.json</code> consuming the same meeting the
+      live view replays: 120 observable behaviors across the five Lencioni dimensions, applied to the
+      transcript per the team-assess spec. Marks, not verdicts: no 1–5 score appears here because the
+      scorer that would compute one is not built yet, and inventing one would be exactly the failure the
+      spec guards against.
+    </p>
+    <div class="authored" id="cprov"></div>
+    <div class="codegrid">
+      <div class="stack" id="dimcards"></div>
+      <div class="stack">
+        <div class="card">
+          <div class="cardhead"><div><span class="eyebrow">Uncoded</span><h3>Observations that matched no code</h3></div></div>
+          <div class="codes" id="uncoded"></div>
+          <p class="note" id="unnote"></p>
+        </div>
+        <div class="card">
+          <div class="cardhead"><div><span class="eyebrow">Not codable</span><h3>What the codebook cannot see</h3></div></div>
+          <p class="note" style="margin-top:0" id="notcodable"></p>
         </div>
       </div>
     </div>
@@ -301,13 +380,43 @@ const RULES = [
   }
 ];
 
+/* ---------- behavior coding (authored marks over the rubric) ---------- */
+const CODING = D.coding;
+const DIMS = ['Trust','Conflict','Commitment','Accountability','Results'];
+const MARKS = [...CODING.marks].sort((a,b) => a.at_s - b.at_s);
+const confidence = clusters => clusters === 0 ? 'none' : clusters === 1 ? 'low' : clusters === 2 ? 'medium' : 'high';
+
+function tally(marks){
+  return DIMS.map(dim => {
+    const mine = marks.filter(m => m.dimension === dim);
+    return {
+      dim, marks: mine,
+      pos: mine.filter(m => m.valence === 'positive').length,
+      neg: mine.filter(m => m.valence === 'negative').length,
+      clusters: new Set(mine.map(m => m.cluster)).size
+    };
+  });
+}
+
+function markCard(m){
+  return `<div class="codemark ${m.valence}">
+    <span class="cid">${esc(m.code)}</span>
+    <span class="dim" style="font-size:.68rem"> · ${esc(m.dimension)} · ${esc(m.cluster)}</span>
+    <span class="kindtag">${esc(m.kind)}</span>
+    <div class="beh">${m.valence === 'negative' ? '−' : '+'} ${esc(m.behavior)}</div>
+    <div class="cq">"${esc(m.quote)}" — ${esc(m.speaker)}, ${mmss(m.at_s)}</div>
+    <div class="cmeta">${esc(m.note)}</div>
+  </div>`;
+}
+
 /* ---------- replay state ---------- */
-let idx = 0, t = 0, timer = null, fired = new Set(), nudges = [];
+let idx = 0, t = 0, timer = null, fired = new Set(), nudges = [], docked = 0;
 const talk = {}, qs = {}, as = {};
 
 function reset(){
   clearInterval(timer); timer = null;
-  idx = 0; t = 0; fired = new Set(); nudges = [];
+  idx = 0; t = 0; fired = new Set(); nudges = []; docked = 0;
+  el('livecodes').innerHTML = '<div class="empty">Marks dock here when the replay reaches the turn they cite. Assignments are authored judgment against the 120-code rubric; quotes are verbatim.</div>';
   Object.keys(talk).forEach(k => delete talk[k]);
   Object.keys(qs).forEach(k => delete qs[k]);
   Object.keys(as).forEach(k => delete as[k]);
@@ -389,6 +498,18 @@ function draw(){
       <b>${esc(cap(h))}</b>${spoke ? '' : flagged ? ` silent, ${total} elsewhere` : ' silent'}</span>`;
   }).join('');
 
+  const live = MARKS.slice(0, docked);
+  while (docked < MARKS.length && MARKS[docked].at_s <= t) docked++;
+  if (docked !== live.length){
+    el('livecodes').innerHTML = MARKS.slice(0, docked).map(markCard).reverse().join('');
+  }
+  el('markcount').textContent = docked ? `${docked} of ${MARKS.length}` : '';
+  el('livedims').innerHTML = tally(MARKS.slice(0, docked)).map(d => `
+    <div class="dimchip ${d.marks.length ? 'hit' : ''}">
+      <div class="dn">${d.dim.slice(0,4)}</div>
+      <div class="dc">+${d.pos}${d.neg ? ` <span class="neg">−${d.neg}</span>` : ''}</div>
+    </div>`).join('');
+
   el('nudgecount').textContent = nudges.length ? `${nudges.length} surfaced` : '';
   if (nudges.length){
     el('nudges').innerHTML = nudges.map(n => `
@@ -401,11 +522,21 @@ function draw(){
   }
 }
 
+let speed = 60, carry = 0;
+document.querySelectorAll('.speed').forEach(btn => btn.onclick = () => {
+  speed = +btn.dataset.speed;
+  document.querySelectorAll('.speed').forEach(b => b.classList.toggle('on', b === btn));
+});
+function tick(){
+  carry += speed * 0.025;
+  while (carry >= 1 && t < END){ carry -= 1; step(); }
+}
 el('play').onclick = () => {
   if (timer){ clearInterval(timer); timer = null; el('play').textContent = 'Play'; return; }
   if (t >= END) reset();
   el('play').textContent = 'Pause';
-  timer = setInterval(step, 1000/60);
+  carry = 0;
+  timer = setInterval(tick, 25);
 };
 el('reset').onclick = reset;
 el('jump').onclick = () => {
@@ -459,6 +590,36 @@ function buildReadout(){
     triggers the same nudge. Both are defensible; mixing them silently is not.`;
 }
 
+/* ---------- coding tab ---------- */
+function buildCoding(){
+  el('csub').textContent = `${D.summary.title} · ${D.summary.date} · ${MARKS.length} marks over ${CODING.rubric.total_codes} codes`;
+  el('cprov').innerHTML = `<b>Authored, not measured.</b> ${esc(CODING.provenance)}
+    Coder: ${esc(CODING.authored_by)}, ${esc(CODING.authored_on)}.`;
+
+  el('dimcards').innerHTML = tally(MARKS).map(d => {
+    const meta = CODING.rubric.dimensions[d.dim];
+    const conf = confidence(d.clusters);
+    return `<div class="dimcard">
+      <div class="dimhead"><h4>${d.dim}</h4><span class="conf ${conf}">${conf === 'none' ? 'no signal' : conf + ' confidence'}</span></div>
+      <div class="dimstats">+${d.pos} / −${d.neg} marks · ${d.clusters} of ${meta.clusters} clusters · ${meta.codes} codes available</div>
+      ${d.marks.length
+        ? `<div class="codes" style="max-height:none">${d.marks.map(markCard).join('')}</div>`
+        : `<div class="empty">No mark in this meeting. Per the spec, absence of marks is absence of signal, never a score of zero.</div>`}
+    </div>`;
+  }).join('');
+
+  el('uncoded').innerHTML = CODING.uncoded.map(u => `
+    <div class="codemark" style="border-left-color:var(--harvest)">
+      <span class="cid">no match</span>
+      <div class="cq">"${esc(u.quote)}" — ${esc(u.speaker)}, ${mmss(u.at_s)}</div>
+      <div class="cmeta">${esc(u.note)}</div>
+    </div>`).join('');
+  el('unnote').innerHTML = `<b>This list is the codebook's growth path.</b> Per the spec, an observation
+    that matches no code is never folded silently into a score: it is reported here as a candidate new
+    code. Recurring candidates get promoted, and adding a code never renumbers existing ids.`;
+  el('notcodable').innerHTML = esc(CODING.not_codable);
+}
+
 /* ---------- quarter ---------- */
 function buildQuarter(){
   const b = D.comparison.before, a = D.comparison.after;
@@ -505,7 +666,7 @@ el('theme').onclick = () => {
 
 el('mtitle').textContent = D.summary.title;
 el('msub').textContent = `${D.summary.date} · ${D.summary.duration_min} min · ${D.summary.attendee_count} attendees · ${TURNS.length} turns`;
-buildReadout(); buildQuarter(); reset();
+buildReadout(); buildQuarter(); buildCoding(); reset();
 </script>
 </body>
 </html>

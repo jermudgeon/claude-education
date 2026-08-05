@@ -1,0 +1,41 @@
+name: dataset validate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "simulated-data/**"
+      - "rubric/**"
+      - "demo/**"
+      - ".github/workflows/dataset-validate.yml"
+  pull_request:
+    paths:
+      - "simulated-data/**"
+      - "rubric/**"
+      - "demo/**"
+      - ".github/workflows/dataset-validate.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@bf7454d06d71f1098171f2acdf0cd4708d7b5920 # v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Every VTT is spec-valid and agrees with its sidecar
+        run: python3 simulated-data/aurora-skills/validate.py
+
+      - name: The rubric JSON regenerates byte-identical from the markdown
+        run: |
+          python3 rubric/build_codes.py
+          git diff --exit-code rubric/obm-behavior-codes.json
+
+      - name: The demo builds and every authored mark validates
+        run: python3 demo/build_demo_data.py
