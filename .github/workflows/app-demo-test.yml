@@ -1,22 +1,22 @@
-name: team-insights test
+name: app-demo test
 
 on:
   push:
     branches: [main]
     paths:
-      - "team-insights/**"
-      - ".github/workflows/team-insights-test.yml"
+      - "app-demo/**"
+      - ".github/workflows/app-demo-test.yml"
   pull_request:
     paths:
-      - "team-insights/**"
-      - ".github/workflows/team-insights-test.yml"
+      - "app-demo/**"
+      - ".github/workflows/app-demo-test.yml"
 
 permissions:
   contents: read
 
 defaults:
   run:
-    working-directory: team-insights
+    working-directory: app-demo
 
 jobs:
   test:
