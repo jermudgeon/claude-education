@@ -1,0 +1,285 @@
+{
+  "schema_version": "1.0",
+  "meeting": {
+    "id": "2026-06-09_roadmap-review",
+    "title": "Q3 Roadmap Review",
+    "date": "2026-06-09",
+    "era": "before",
+    "duration_s": 1748.5,
+    "attendee_count": 12
+  },
+  "basis": "content",
+  "metrics": {
+    "talk_time_balance": {
+      "threshold_pct": 40.0,
+      "dominant": {
+        "handle": "dana",
+        "name": "Dana Whitfield",
+        "talk_pct": 66.2
+      },
+      "breached": true,
+      "speakers": {
+        "dana": {
+          "name": "Dana Whitfield",
+          "attended": true,
+          "talk_s": 54.0,
+          "talk_pct": 66.2
+        },
+        "rachel": {
+          "name": "Rachel Green",
+          "attended": true,
+          "talk_s": 9.6,
+          "talk_pct": 11.8
+        },
+        "marcus": {
+          "name": "Marcus Bell",
+          "attended": true,
+          "talk_s": 13.6,
+          "talk_pct": 16.7
+        },
+        "sarah": {
+          "name": "Sarah Kowalski",
+          "attended": true,
+          "talk_s": 4.4,
+          "talk_pct": 5.4
+        },
+        "priya": {
+          "name": "Priya Nair",
+          "attended": true,
+          "talk_s": 0.0,
+          "talk_pct": 0.0
+        },
+        "tomas": {
+          "name": "Tomás Reyes",
+          "attended": true,
+          "talk_s": 0.0,
+          "talk_pct": 0.0
+        },
+        "naomi": {
+          "name": "Naomi Kito",
+          "attended": true,
+          "talk_s": 0.0,
+          "talk_pct": 0.0
+        },
+        "ben": {
+          "name": "Ben Larsson",
+          "attended": true,
+          "talk_s": 0.0,
+          "talk_pct": 0.0
+        },
+        "james": {
+          "name": "James Ahkivgak",
+          "attended": true,
+          "talk_s": 0.0,
+          "talk_pct": 0.0
+        },
+        "kevin": {
+          "name": "Kevin Osei",
+          "attended": true,
+          "talk_s": 0.0,
+          "talk_pct": 0.0
+        },
+        "lily": {
+          "name": "Lily Chen",
+          "attended": true,
+          "talk_s": 0.0,
+          "talk_pct": 0.0
+        },
+        "mark": {
+          "name": "Mark Dupont",
+          "attended": true,
+          "talk_s": 0.0,
+          "talk_pct": 0.0
+        }
+      }
+    },
+    "questions_vs_assertions": {
+      "dana": {
+        "questions": 1,
+        "assertions": 14,
+        "q_to_a": 0.07
+      },
+      "rachel": {
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "marcus": {
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "sarah": {
+        "questions": 0,
+        "assertions": 2,
+        "q_to_a": 0.0
+      },
+      "priya": {
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "tomas": {
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "naomi": {
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "ben": {
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "james": {
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "kevin": {
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "lily": {
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      },
+      "mark": {
+        "questions": 0,
+        "assertions": 0,
+        "q_to_a": null
+      }
+    },
+    "silent_but_engaged": {
+      "silent_pct_ceiling": 3.0,
+      "flagged": [
+        {
+          "handle": "priya",
+          "name": "Priya Nair",
+          "talk_pct": 0.0,
+          "elsewhere": {
+            "messages": 3,
+            "standups": 0,
+            "pr_comments": 0
+          }
+        },
+        {
+          "handle": "tomas",
+          "name": "Tomás Reyes",
+          "talk_pct": 0.0,
+          "elsewhere": {
+            "messages": 2,
+            "standups": 1,
+            "pr_comments": 1
+          }
+        },
+        {
+          "handle": "naomi",
+          "name": "Naomi Kito",
+          "talk_pct": 0.0,
+          "elsewhere": {
+            "messages": 3,
+            "standups": 3,
+            "pr_comments": 3
+          }
+        },
+        {
+          "handle": "ben",
+          "name": "Ben Larsson",
+          "talk_pct": 0.0,
+          "elsewhere": {
+            "messages": 3,
+            "standups": 3,
+            "pr_comments": 0
+          }
+        },
+        {
+          "handle": "james",
+          "name": "James Ahkivgak",
+          "talk_pct": 0.0,
+          "elsewhere": {
+            "messages": 3,
+            "standups": 0,
+            "pr_comments": 0
+          }
+        },
+        {
+          "handle": "kevin",
+          "name": "Kevin Osei",
+          "talk_pct": 0.0,
+          "elsewhere": {
+            "messages": 1,
+            "standups": 0,
+            "pr_comments": 0
+          }
+        },
+        {
+          "handle": "lily",
+          "name": "Lily Chen",
+          "talk_pct": 0.0,
+          "elsewhere": {
+            "messages": 1,
+            "standups": 1,
+            "pr_comments": 1
+          }
+        },
+        {
+          "handle": "mark",
+          "name": "Mark Dupont",
+          "talk_pct": 0.0,
+          "elsewhere": {
+            "messages": 2,
+            "standups": 0,
+            "pr_comments": 0
+          }
+        }
+      ]
+    },
+    "dissent_timing": null,
+    "changed_mind_events": null,
+    "reopened_conflict": null,
+    "interruptions": {
+      "count": 1,
+      "events": [
+        {
+          "turn_idx": 124,
+          "speaker": "Dana Whitfield",
+          "at_s": 997.1
+        }
+      ]
+    },
+    "psych_safety_trend": null
+  },
+  "not_computed": {
+    "dissent_timing": "needs the decision record and cross-meeting context, not one transcript",
+    "changed_mind_events": "editorial signal; grounded in authored content, not derivable from counts (open question 5)",
+    "reopened_conflict": "needs the same topic tracked across meetings",
+    "psych_safety_trend": "the pulse survey is per sprint, not per meeting"
+  },
+  "evidence": [
+    {
+      "metric": "interruptions",
+      "quote": "Maybe, but I'd rather keep the demo coherent. Let's hold the sequence.",
+      "source": "before-q2-2026/transcripts/2026-06-09_roadmap-review.vtt",
+      "speaker": "Dana Whitfield",
+      "timestamp_s": 997.1,
+      "provoked_by": null
+    }
+  ],
+  "provenance": {
+    "generator": "insights/session_metrics.py",
+    "inputs": [
+      "simulated-data/aurora-skills/before-q2-2026/transcripts/2026-06-09_roadmap-review.vtt",
+      "simulated-data/aurora-skills/before-q2-2026/transcripts/meta/2026-06-09_roadmap-review.json",
+      "simulated-data/aurora-skills/before-q2-2026/slack-export/",
+      "simulated-data/aurora-skills/before-q2-2026/standups/standups.json",
+      "simulated-data/aurora-skills/before-q2-2026/git/pull_requests.json"
+    ],
+    "synthetic": true
+  }
+}

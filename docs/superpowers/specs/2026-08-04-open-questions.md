@@ -59,11 +59,11 @@ PRD 06 marks this **UNKNOWN** and names it the failure mode raised repeatedly in
 
 ## Privacy and consent
 
-### 8. Who can read a snapshot? — blocking
+### 8. Who can read a snapshot? — answered 2026-08-04
 
 Everyone in the session, their manager, both, or only an aggregate. Determines whether people speak freely, which determines whether the data is worth collecting.
 
-No default. PRD 05's non-goal ("not a manager's dashboard") points at the answer but does not state who the audience is.
+**Answered (Erik, 2026-08-04): everyone, no permissions layer, because this is a demo.** In Erik's words: "Everyone right now, dont worry about perms, this is a demo." Revisit before any real team's data is captured; the question returns to blocking at that boundary.
 
 ### 9. Does audio get recorded at all?
 

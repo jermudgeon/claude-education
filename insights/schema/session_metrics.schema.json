@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/jermudgeon/claude-education/insights/schema/session_metrics.schema.json",
+  "title": "session_metrics",
+  "description": "One document per meeting: the seam between PRD 05 (which computes the metric contract once) and its two consumers, the PRD 06 facilitator and the team-assess scorer. Carries computed metrics and the attributed quotes that justify them, and nothing scored.",
+  "type": "object",
+  "required": ["schema_version", "meeting", "basis", "metrics", "evidence", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "meeting": {
+      "type": "object",
+      "required": ["id", "title", "date", "duration_s", "attendee_count"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "era": { "type": ["string", "null"] },
+        "duration_s": { "type": "number" },
+        "attendee_count": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "basis": {
+      "description": "Which speech the durations count. Both bases are sanctioned; mixing them silently is the failure mode. Every consumer must report which basis it read.",
+      "enum": ["content", "all-speech"]
+    },
+    "metrics": {
+      "type": "object",
+      "description": "PRD 05's eight-metric contract. Metrics that cannot be computed from a single meeting are null here, with the reason recorded in not_computed.",
+      "required": [
+        "talk_time_balance",
+        "questions_vs_assertions",
+        "silent_but_engaged",
+        "dissent_timing",
+        "changed_mind_events",
+        "reopened_conflict",
+        "interruptions",
+        "psych_safety_trend"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "talk_time_balance": {
+          "type": "object",
+          "required": ["threshold_pct", "dominant", "breached", "speakers"],
+          "properties": {
+            "threshold_pct": { "type": "number" },
+            "dominant": {
+              "type": "object",
+              "required": ["handle", "name", "talk_pct"],
+              "properties": {
+                "handle": { "type": "string" },
+                "name": { "type": "string" },
+                "talk_pct": { "type": "number" }
+              }
+            },
+            "breached": { "type": "boolean" },
+            "speakers": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "required": ["name", "attended", "talk_s", "talk_pct"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "attended": { "type": "boolean" },
+                  "talk_s": { "type": "number" },
+                  "talk_pct": { "type": "number" }
+                }
+              }
+            }
+          }
+        },
+        "questions_vs_assertions": {
+          "type": "object",
+          "description": "Per handle. More questions is participation, never low engagement.",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["questions", "assertions", "q_to_a"],
+            "properties": {
+              "questions": { "type": "integer" },
+              "assertions": { "type": "integer" },
+              "q_to_a": { "type": ["number", "null"] }
+            }
+          }
+        },
+        "silent_but_engaged": {
+          "type": "object",
+          "required": ["silent_pct_ceiling", "flagged"],
+          "properties": {
+            "silent_pct_ceiling": { "type": "number" },
+            "flagged": {
+              "type": "array",
+              "description": "People who attended silently, each with their contribution volume elsewhere. Never scored zero; the cross-reference is mandatory.",
+              "items": {
+                "type": "object",
+                "required": ["handle", "name", "talk_pct", "elsewhere"],
+                "properties": {
+                  "handle": { "type": "string" },
+                  "name": { "type": "string" },
+                  "talk_pct": { "type": "number" },
+                  "elsewhere": {
+                    "type": "object",
+                    "required": ["messages", "standups", "pr_comments"],
+                    "properties": {
+                      "messages": { "type": "integer" },
+                      "standups": { "type": "integer" },
+                      "pr_comments": { "type": "integer" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dissent_timing": { "type": ["object", "null"] },
+        "changed_mind_events": { "type": ["array", "null"] },
+        "reopened_conflict": { "type": ["object", "null"] },
+        "interruptions": {
+          "type": "object",
+          "required": ["count", "events"],
+          "properties": {
+            "count": { "type": "integer" },
+            "events": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["turn_idx", "speaker", "at_s"],
+                "properties": {
+                  "turn_idx": { "type": "integer" },
+                  "speaker": { "type": "string" },
+                  "at_s": { "type": "number" }
+                }
+              }
+            }
+          }
+        },
+        "psych_safety_trend": { "type": ["object", "null"] }
+      }
+    },
+    "not_computed": {
+      "type": "object",
+      "description": "Reason per null metric, so a null is a stated limit rather than a silent gap.",
+      "additionalProperties": { "type": "string" }
+    },
+    "evidence": {
+      "type": "array",
+      "description": "Attributed quotes justifying the metrics. speaker, timestamp_s, and provoked_by are present but nullable, so document-sourced evidence survives ingestion unchanged.",
+      "items": {
+        "type": "object",
+        "required": ["metric", "quote", "source", "speaker", "timestamp_s", "provoked_by"],
+        "additionalProperties": false,
+        "properties": {
+          "metric": { "type": "string" },
+          "quote": { "type": "string" },
+          "source": { "type": "string" },
+          "speaker": { "type": ["string", "null"] },
+          "timestamp_s": { "type": ["number", "null"] },
+          "provoked_by": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["generator", "inputs", "synthetic"],
+      "properties": {
+        "generator": { "type": "string" },
+        "inputs": { "type": "array", "items": { "type": "string" } },
+        "synthetic": { "type": "boolean" }
+      }
+    }
+  }
+}

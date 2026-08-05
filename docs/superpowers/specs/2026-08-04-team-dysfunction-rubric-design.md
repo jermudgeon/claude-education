@@ -205,7 +205,7 @@ Options:
 
 ```toml
 [claude]
-model = "claude-sonnet-4-6"
+model = "claude-sonnet-5"
 api_key_env = "ANTHROPIC_API_KEY"
 
 [output]

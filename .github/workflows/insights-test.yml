@@ -1,0 +1,36 @@
+name: insights test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "insights/**"
+      - "rubric/**"
+      - "simulated-data/**"
+      - ".github/workflows/insights-test.yml"
+  pull_request:
+    paths:
+      - "insights/**"
+      - "rubric/**"
+      - "simulated-data/**"
+      - ".github/workflows/insights-test.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@bf7454d06d71f1098171f2acdf0cd4708d7b5920 # v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s insights/test -v
+
+      - name: Reproduce the ground-truth table from raw rows
+        run: python3 insights/verify_ground_truth.py
